@@ -17,7 +17,7 @@ const LinkWrapper = ({ children, to, className, highlight }) => (
 
 const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
   return (
-    <nav className={cn(styles.Root, showNav && styles.Responsive)} id={id}>
+    <nav className={cn(styles.Root, showNav && styles.showNav)} id={id}>
       <h1 hidden>{siteTitle}</h1>
       <div className={styles.Branding}>
         <SmartLink to="/">
@@ -31,7 +31,7 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
         Blog
       </LinkWrapper>
       <div className={styles.Dropdown}>
-        <button className={cn(styles.DropdownBtn, styles.primary)}>
+        <button className={styles.DropdownBtn}>
           <Type as="span" size="menu">
             SubNav
           </Type>
@@ -51,7 +51,7 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
           </LinkWrapper>
           <LinkWrapper
             className={cn(styles.NavLink, styles.DropdownLink)}
-            to=""
+            to="/"
           >
             SubNav 3
           </LinkWrapper>

@@ -1,36 +1,24 @@
-@import '_backline-mixins';
-@import 'setting';
+@import "_backline-mixins";
+@import "setting";
 
 .Root {
   background-color: $color-primary-white;
   position: fixed;
   z-index: 300;
   width: 100%;
-  padding: 2px spacing(2);
-  transition: $duration-shortest $easing-standard;
+  padding: spacing(1) spacing(2);
 }
 
-.NavLink {
-  float: right;
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  padding: 8px 14px;
-  margin: 4px 0px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  min-width: 65px;
-  color: $color-primary-black;
-}
+// Branding
 
 .Branding {
   font-size: inherit;
   display: inline-block;
   position: relative;
-  top: 5px;
+  vertical-align: middle;
+
   & a {
-    display: inline-block;
+    display: block;
   }
 }
 
@@ -38,8 +26,6 @@
   display: block;
   transition: $duration-short $easing-standard;
   width: 45px;
-  height: 100%;
-  object-fit: contain;
 
   &:hover {
     transform: scale(1.2);
@@ -47,64 +33,70 @@
   }
 }
 
-.Root .ToggleNavButton {
+// Regular link
+
+.NavLink,
+.DropdownBtn {
+  display: block;
+  padding: 8px 14px;
+  color: $color-primary-black;
+
+  &.highlight {
+    color: $color-primary-purple;
+  }
+}
+
+.NavLink {
+  float: right;
+}
+
+// Nav toggle
+
+.ToggleNavButton {
   display: none;
 }
 
-.Dropdown {
-  float: right;
-  overflow: hidden;
+.ToggleNavButton {
+  &:hover {
+    svg path {
+      fill: $color-hover;
+      stroke: $color-hover;
+    }
+  }
 }
 
-.Dropdown .DropdownBtn {
-  border: none;
-  outline: none;
-  margin: 0;
-  border-radius: $radius-small;
+// Dropdown
+
+.Dropdown {
+  float: right;
 
   &:hover {
-    color: $color-primary-white;
-  }
+    .DropdownBtn {
+      color: $color-primary-red;
+    }
 
-  &.primary {
-    padding: 8px 14px;
-    margin: 4px 0px;
-    min-width: 65px;
+    .DropdownContent {
+      visibility: visible;
+    }
   }
 }
 
 .DropdownContent {
   visibility: hidden;
-  opacity: 0;
   position: absolute;
-  min-width: 180px;
   z-index: 300;
-  background-color: $color-primary-white;
+  top: 10px;
+
   border-radius: $radius-small;
   background-color: $color-primary-grey-light;
-  margin-left: 8px;
 }
 
-.DropdownContent .NavLink {
+.DropdownLink {
   float: none;
-  color: black;
-
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  margin: 0;
-  background-image: none;
-  transition: $duration-short $easing-standard;
-  &:hover {
-    color: $color-primary-white;
-    background-color: $color-hover;
-  }
-}
-
-.DropdownContent .DropdownLink {
-  display: block;
   padding: spacing(1);
-  border-radius: 0;
+  width: 100%;
+  text-align: left;
+
   &:first-child {
     border-radius: $radius-small $radius-small 0 0;
   }
@@ -112,138 +104,60 @@
   &:last-child {
     border-radius: 0 0 $radius-small $radius-small;
   }
-
-  &:hover {
-    transition: $duration-shortest $easing-standard;
-  }
 }
 
-.Root .NavLink:hover,
-.Dropdown:hover .DropdownBtn {
-  color: $color-primary-white;
-  border-radius: $radius-small;
-}
+// Mobile only styles
 
-.DropdownContent .NavLink:hover {
-  color: $color-primary-white;
-  border-radius: $radius-small;
-  transition: $duration-shortest $easing-standard;
-}
-
-.Dropdown:hover .DropdownContent {
-  opacity: 1;
-  transition: $duration-shortest $easing-standard;
-  visibility: visible;
-}
-
-.ToggleNavButton {
-  transition: $duration-shortest $easing-standard;
-
-  &:hover {
-    svg path {
-      fill: $color-hover;
-      stroke: $color-hover;
-      transition: $duration-shortest $easing-standard;
-    }
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .Root .NavLink:not(:first-child),
+@include mq(null, $breakpoint-mobileLandscape) {
+  .NavLink,
   .Dropdown .DropdownBtn {
     display: none;
   }
-  .Root .ToggleNavButton {
+
+  .ToggleNavButton {
     float: right;
     display: block;
-    position: relative;
-    top: 10px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .Root.Responsive {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
-  .Root.Responsive .Branding {
-    order: 1;
-  }
-
-  .Root.Responsive .ToggleNavButton {
     position: absolute;
     right: 15px;
     top: 15px;
   }
 
+  .Root.showNav {
+    display: flex;
+    flex-direction: column-reverse;
 
-  .Root.Responsive .NavLink {
-    float: none;
-    display: block;
-    text-align: left;
-    background-image: none;
-    &:hover {
-      background-color: $color-primary-red;
-    }
-  }
-
-  .Root.Responsive .DropdownContent {
-    position: absolute;
-  }
-
-  .Root.Responsive .Dropdown:hover .DropdownContent {
-    position: relative;
-  }
-
-  .Root.Responsive .Dropdown .DropdownBtn {
-    display: block;
-    width: 100%;
-    text-align: left;
-    background-image: none;
-    &:first-of-type {
-      margin-top: spacing(1);
+    .Branding {
+      order: 1;
+      margin-bottom: spacing(1);
     }
 
-    &:hover {
-      background-color: $color-primary-red;
+    .NavLink, .DropdownBtn {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      border-radius: $radius-small;
+      &:hover {
+        background-color: $color-primary-red;
+        color: $color-primary-white;
+      }
+    }
+
+    .DropdownContent {
+      position: absolute;
+    }
+
+    .Dropdown:hover {
+      .DropdownBtn {
+        background-color: $color-hover;
+        color: $color-primary-white;
+      }
+
+      .DropdownContent {
+        position: relative;
+        top: 0;
+        margin: spacing(0.5) 0;
+      }
     }
   }
-
-  .Root.Root.Responsive .NavLink:hover,
-  .Dropdown:hover .DropdownBtn {
-    background-color: $color-hover;
-  }
-
-  .Root.Responsive .DropdownLink {
-    span {
-      margin-left: spacing(1);
-    }
-  }
-}
-
-.isDark {
-  &.Root {
-    background-color: $color-primary-black;
-  }
-
-  .Dropdown,
-  .DropdownContent {
-    transition: $duration-shortest $easing-standard;
-  }
-
-  .DropdownContent {
-    background-color: $color-primary-black-light;
-  }
-
-  .NavLink,
-  .Dropdown,
-  .DarkModeToggle,
-  .ToggleNavButton {
-    color: $color-primary-white;
-  }
-}
-
-.NavLink.highlight {
-  color: $color-primary-purple;
 }
