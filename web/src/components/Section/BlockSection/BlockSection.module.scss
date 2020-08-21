@@ -1,0 +1,24 @@
+@import 'setting';
+
+.Title {
+  margin-bottom: spacing(3);
+  //   margin-left: spacing(1);
+}
+
+.isDark {
+  .Title {
+    color: $color-primary-white;
+  }
+
+  &.BlockSection a {
+    color: $color-primary-yellow;
+    &:hover {
+      color: $color-primary-red;
+    }
+  }
+
+  div,
+  p {
+    color: $color-primary-white;
+  }
+}

@@ -1,0 +1,29 @@
+@import '_backline-mixins';
+@import 'setting';
+
+.Wrapper {
+  overflow: hidden;
+}
+
+.Content {
+  scroll-snap-type: y mandatory;
+  margin-top: 56px;
+}
+
+.FooterWrapper {
+  box-sizing: border-box;
+  max-width: 960px;
+  padding: spacing(1);
+  margin: 0 auto;
+
+  @include mq($breakpoint-mobileLandscape) {
+    padding: 2em;
+  }
+}
+
+.SiteInfo {
+  text-align: center;
+  & a {
+    color: inherit;
+  }
+}

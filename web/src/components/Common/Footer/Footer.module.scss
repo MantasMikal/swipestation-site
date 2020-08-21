@@ -1,0 +1,105 @@
+@import 'setting';
+@import '_backline-mixins';
+
+.Wrapper {
+  position: relative;
+}
+
+.Footer {
+  padding: spacing(2) spacing(5) spacing(2);
+  position: relative;
+  display: flex;
+  align-content: center;
+  overflow: hidden;
+  color: $color-primary-black;
+  transition: $duration-shortest;
+  a:hover {
+    color: $color-hover;
+    transition: $duration-shortest;
+  }
+}
+
+.Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include mq($breakpoint-tablet) {
+    flex-direction: row;
+  }
+}
+
+.Branding {
+  flex: 1 0 200px;
+  margin-right: spacing(6);
+}
+
+.Logo {
+  display: block;
+  img {
+    width: auto;
+    object-fit: contain;
+    height: 100px;
+    transition: $duration-short $easing-standard;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: $duration-short $easing-standard;
+    }
+
+    @include mq($breakpoint-tablet) {
+      height: 150px;
+    }
+  }
+}
+
+.Social {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: spacing(4) 0;
+
+  a,
+  button {
+    padding-right: spacing(2);
+    &:hover {
+      transform: scale(1.03);
+      transition: $easing-standard $duration-short;
+    }
+  }
+}
+
+.LinkListWrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @include mq($breakpoint-tabletLandscape) {
+    flex: 1 1 60%;
+    flex-direction: row;
+  }
+}
+
+
+.LinkList {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 spacing(4) 0;
+
+  a {
+    text-decoration: none;
+    color: $color-primary-black;
+    padding-bottom: spacing(2);
+  }
+
+  &::after {
+    content: '_';
+    color: inherit;
+  }
+
+  @include mq($breakpoint-tabletLandscape) {
+    &::after {
+      content: none;
+    }
+  }
+}
