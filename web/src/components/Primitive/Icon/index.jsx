@@ -7,7 +7,7 @@ import ratioScaler from '../../../lib/ratio-scaler'
 
 import styles from './Icon.module.scss'
 
-const svgs = require.context('../../../asset/svg/icon/', false, /\.svg$/)
+const svgs = require.context('../../../assets/svg/icon/', false, /\.svg$/)
 
 // Exported to allow iteration in storybook
 export const vAligns = ['baseline', 'bottom', 'middle', 'top']

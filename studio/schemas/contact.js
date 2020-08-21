@@ -11,12 +11,6 @@ export default {
       title: 'Body',
       type: 'blockContent'
     },
-    {
-      name: 'venues',
-      title: 'Venues',
-      type: 'array',
-      of: [{ type: 'venue' }]
-    }
   ],
   preview: {
     prepare () {

@@ -15,14 +15,14 @@ export default {
       type: 'string'
     },
     {
-      name: 'hero',
-      title: 'Hero Image',
-      type: 'figure'
-    },
-    {
       name: 'subtitle',
       title: 'Subtitle',
       type: 'string'
+    },
+    {
+      name: 'hero',
+      title: 'Hero Image',
+      type: 'figure'
     },
     {
       name: 'sections',
@@ -30,12 +30,6 @@ export default {
       type: 'array',
       description: 'Extra sections for the homepage',
       of: [{ type: 'section' }]
-    },
-    {
-      name: 'aboutSection',
-      title: 'About Section',
-      type: 'array',
-      of: [{ type: 'card' }]
     }
   ],
   preview: {

@@ -15,26 +15,19 @@ import page from './page'
 import post from './post'
 import siteSettings from './siteSettings'
 import slideshow from './slideshow'
-import galleryMedia from './gallery-media'
 import seo from './seo'
 import video from './video'
-import course from './course'
-import courses from './courses'
 import grid from './grid'
 import contentBlock from './contentBlock'
 import location from './location'
-import venue from './venue'
-import concat from './contact'
+import contact from './contact'
 import home from './home'
 import section from './section'
-import card from './card'
-import team from './team'
-import teamsPage from './teamsPage'
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
   name: 'default',
-  // Then proceed to concatenate our our document type
+  // Then proceed to contactenate our our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     // The following are document types which will appear
@@ -49,19 +42,14 @@ export default createSchema({
     post,
     siteSettings,
     slideshow,
-    galleryMedia,
     video,
     seo,
-    course,
-    courses,
     contentBlock,
     grid,
     location,
-    venue,
-    concat,
+    contact,
     home,
     section,
-    card,
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

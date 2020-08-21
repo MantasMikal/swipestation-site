@@ -13,22 +13,9 @@ export const query = graphql`
       edges {
         node {
           _rawBody(resolveReferences: { maxDepth: 5 })
-          _rawVenues(resolveReferences: { maxDepth: 10 })
         }
       }
     }
-
-    # page: sanityPage(_id: { regex: "/(drafts.|)contact/" }) {
-    #   title
-    #   _rawBody(resolveReferences: { maxDepth: 5 })
-    # }
-
-    # company: sanityCompanyInfo(_id: { regex: "/(drafts.|)companyInfo/" }) {
-    #   locations {
-    #     lng
-    #     lat
-    #   }
-    # }
   }
 `
 
@@ -57,7 +44,6 @@ const ContactPage = props => {
       <ContactSection
         title='Contact'
         body={contact[0]._rawBody && contact[0]._rawBody}
-        venues={contact[0]._rawVenues}
       />
     </Layout>
   )

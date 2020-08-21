@@ -2,29 +2,10 @@
 
 .Title {
   margin-bottom: spacing(3);
-  //   margin-left: spacing(1);
 }
-
-.ContactSection {
-}
-
 
 .Body {
   margin-bottom: spacing(6);
-}
-
-.Venue {
-  display: block;
-  margin-bottom: spacing(6);
-
-  @include mq($breakpoint-tabletLandscape) {
-    display: flex;
-  }
-}
-
-.MapWrapper {
-  flex: 1 1 50%;
-  height: 300px;
 }
 
 .BlockWrapper {
@@ -33,23 +14,5 @@
 
   @include mq($breakpoint-tabletLandscape) {
     margin-right: spacing(6);
-  }
-}
-
-.isDark {
-  .Title {
-    color: $color-primary-white;
-  }
-
-  .BlockWrapper, .Body a {
-    color: $color-primary-yellow;
-    &:hover {
-      color: $color-primary-red;
-    }
-  }
-
-  div,
-  p {
-    color: $color-primary-white;
   }
 }

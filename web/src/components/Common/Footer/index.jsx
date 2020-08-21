@@ -9,11 +9,12 @@ import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
 
 import styles from './Footer.module.scss'
+import Media from 'Common/Media'
 
 // TODO
 // Use logo from CMS
 
-const Footer = ({ social }) => {
+const Footer = ({ social, logo, siteTitle }) => {
 
   return (
     <div className={styles.Wrapper}>
@@ -21,7 +22,7 @@ const Footer = ({ social }) => {
         <Container gutter center size='wide' className={styles.Container}>
           <div className={styles.Branding}>
             <SmartLink href='/' className={styles.Logo}>
-              <img src='/asset/logo.png' alt='EOB Academy' />
+              <Media media={logo} alt={siteTitle} />
             </SmartLink>
             <div className={styles.Social}>
               <SocialLink type='twitter' url={social.twitter} />

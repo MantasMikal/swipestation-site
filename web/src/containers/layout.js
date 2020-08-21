@@ -6,6 +6,13 @@ const query = graphql`
   query SiteTitleQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       title
+      logo {
+        asset {
+          fluid(maxWidth: 300) {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
     }
 
     companyInfo: sanityCompanyInfo(_id: { regex: "/(drafts.|)companyInfo/" }) {
@@ -47,19 +54,22 @@ const LayoutContainer = (props) => {
           instagram: data.companyInfo.instagramUrl || null,
         };
 
+        const { site } = data;
+
         return (
-            <Layout
-              {...props}
-              showNav={showNav}
-              onHideNav={handleHideNav}
-              onShowNav={handleShowNav}
-              siteTitle={data.site.title}
-              social={social}
-            />
+          <Layout
+            {...props}
+            showNav={showNav}
+            onHideNav={handleHideNav}
+            onShowNav={handleShowNav}
+            siteTitle={site && site.title}
+            social={social}
+            logo={site && site.logo}
+          />
         );
       }}
     />
   );
-}
+};
 
 export default LayoutContainer;

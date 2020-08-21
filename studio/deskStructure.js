@@ -2,33 +2,22 @@ import S from '@sanity/desk-tool/structure-builder'
 import {
   MdBusiness,
   MdSettings,
-  MdGroup,
-  MdLibraryBooks,
   MdHome,
   MdInfoOutline
 } from 'react-icons/md'
 import { FaFile, FaPhone } from 'react-icons/fa'
-import { FiFileText, FiBook } from 'react-icons/fi'
-import { TiContacts } from 'react-icons/ti'
-import { AiFillFlag } from 'react-icons/ai'
-import { RiPagesLine } from 'react-icons/ri'
-import { GoSignIn } from 'react-icons/go'
+import { FiFileText } from 'react-icons/fi'
+
 const hiddenTypes = [
   'category',
   'companyInfo',
   'page',
   'person',
   'post',
-  'project',
   'siteSettings',
-  'sponsors',
-  'coursesPage',
-  'course',
   'seo-plugin',
   'contactPage',
   'homePage',
-  'teamsPage',
-  'team'
 ]
 
 export default () =>
@@ -78,15 +67,6 @@ export default () =>
                 )
                 .icon(FaPhone),
               S.listItem()
-                .title('Teams')
-                .child(
-                  S.editor()
-                    .id('teamsPage')
-                    .schemaType('teamsPage')
-                    .documentId('teamsPage')
-                )
-                .icon(RiPagesLine),
-              S.listItem()
                 .title('About')
                 .child(
                   S.editor()
@@ -95,15 +75,6 @@ export default () =>
                     .documentId('about')
                 )
                 .icon(MdInfoOutline),
-              S.listItem()
-                .title('Apply')
-                .child(
-                  S.editor()
-                    .id('applyPage')
-                    .schemaType('page')
-                    .documentId('apply')
-                )
-                .icon(GoSignIn),
               S.listItem()
                 .title('Terms And Conditions')
                 .child(
@@ -132,52 +103,5 @@ export default () =>
         .title('Blog Categories')
         .schemaType('category')
         .child(S.documentTypeList('category').title('Category')),
-      S.listItem()
-        .title('Teams')
-        .schemaType('team')
-        .child(S.documentTypeList('team').title('Teams'))
-        .icon(AiFillFlag),
-      S.listItem()
-        .title('Sponsors')
-        .child(
-          S.editor()
-            .id('sponsors')
-            .schemaType('sponsors')
-            .documentId('sponsors')
-        )
-        .icon(MdGroup),
-      S.listItem()
-        .title('Courses')
-        .child(
-          S.list()
-            .title('Courses')
-            .items([
-              S.listItem()
-                .title('College Courses')
-                .child(
-                  S.editor()
-                    .id('collegeCourses')
-                    .schemaType('coursesPage')
-                    .documentId('collegeCourses')
-                ),
-              S.listItem()
-                .title('Alternative Schools Provision')
-                .child(
-                  S.editor()
-                    .id('alternativeSchoolsCourses')
-                    .schemaType('coursesPage')
-                    .documentId('alternativeSchoolsCourses')
-                ),
-              S.listItem()
-                .title('Online')
-                .child(
-                  S.editor()
-                    .id('onlineCourses')
-                    .schemaType('coursesPage')
-                    .documentId('onlineCourses')
-                )
-            ])
-        )
-        .icon(FiBook),
       ...S.documentTypeListItems().filter(listItem => !hiddenTypes.includes(listItem.getId()))
     ])

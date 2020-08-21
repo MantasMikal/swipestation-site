@@ -16,16 +16,12 @@
   display: inline-block;
   position: relative;
   vertical-align: middle;
-
+  width: 45px;
+  transition: $duration-short $easing-standard;
+  
   & a {
     display: block;
   }
-}
-
-.Logo {
-  display: block;
-  transition: $duration-short $easing-standard;
-  width: 45px;
 
   &:hover {
     transform: scale(1.2);

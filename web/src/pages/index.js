@@ -21,11 +21,6 @@ export const query = graphql`
       _rawSections(resolveReferences: { maxDepth: 10 })
       title
       subtitle
-      aboutSection {
-        title
-        icon
-        description
-      }
     }
 
     posts: allSanityPost(
@@ -80,7 +75,7 @@ const IndexPage = (props) => {
     ? mapEdgesToNodes(data.posts).filter(filterOutDocsWithoutSlugs)
     : [];
 
-  const home = data.home && data.home;
+  const {home} = data
   const sections = home && home._rawSections;
 
   if (!site) {

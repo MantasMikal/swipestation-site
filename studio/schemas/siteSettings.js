@@ -19,6 +19,12 @@ export default {
       type: 'text'
     },
     {
+      name: 'logo',
+      description: 'Will be used in various places across the site',
+      title: 'Logo Image',
+      type: 'image'
+    },
+    {
       name: 'metaImage',
       description: 'Will be used in social media previews. Size must be 512px x 512px',
       title: 'Meta Image',

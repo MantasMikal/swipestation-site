@@ -24,34 +24,23 @@
   flex-direction: column;
   justify-content: space-between;
 
-  @include mq($breakpoint-tablet) {
+  @include mq($breakpoint-mobileLandscape) {
     flex-direction: row;
   }
 }
 
 .Branding {
-  flex: 1 0 200px;
-  margin-right: spacing(6);
-}
+  flex: 1 0 150px;
+  max-width: 200px;
+  margin-right: spacing(8);
+  transition: $duration-short $easing-standard;
 
-.Logo {
-  display: block;
-  img {
-    width: auto;
-    object-fit: contain;
-    height: 100px;
+  &:hover {
+    transform: scale(1.1);
     transition: $duration-short $easing-standard;
-
-    &:hover {
-      transform: scale(1.1);
-      transition: $duration-short $easing-standard;
-    }
-
-    @include mq($breakpoint-tablet) {
-      height: 150px;
-    }
   }
 }
+
 
 .Social {
   display: flex;
@@ -73,8 +62,8 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-
-  @include mq($breakpoint-tabletLandscape) {
+  max-width: 900px;
+  @include mq($breakpoint-tablet + 100) {
     flex: 1 1 60%;
     flex-direction: row;
   }
@@ -97,7 +86,7 @@
     color: inherit;
   }
 
-  @include mq($breakpoint-tabletLandscape) {
+  @include mq($breakpoint-tablet + 100) {
     &::after {
       content: none;
     }

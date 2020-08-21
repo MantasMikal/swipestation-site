@@ -31,7 +31,7 @@ module.exports = {
         includePaths: [
           ...require('backline-mixins').includePaths,
           ...require('backline-normalize').includePaths,
-          path.join(__dirname, 'src/asset/scss/setting')
+          path.join(__dirname, 'src/assets/scss/setting')
         ],
         sassRuleModulesTest: /\.module\.s(a|c)ss$/
       }
@@ -40,7 +40,7 @@ module.exports = {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /asset/
+          include: /assets/
         }
       }
     },
@@ -61,7 +61,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/asset/content`,
+        path: `${__dirname}/src/assets/content`,
       },
     },
     {
@@ -73,7 +73,7 @@ module.exports = {
         theme_color: config.site.themeColor,
         start_url: '/',
         display: 'standalone',
-        icon: 'src/asset/favicon.png'
+        icon: 'src/assets/favicon.png'
       }
     },
     {

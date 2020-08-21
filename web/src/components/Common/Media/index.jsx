@@ -7,6 +7,8 @@ const Media = ({ media, ratio, imgWrapperStyle, imgStyle }) => {
   const fixedImg = media && media.asset && media.asset.fixed ? media.asset.fixed : undefined
   const fluidImg = media && media.asset && media.asset.fluid ? media.asset.fluid : undefined
   
+  if(!media) return null
+  
   return ratio
     ? (fixedImg || fluidImg) && (
         <ResponsiveMedia ratio={ratio}>

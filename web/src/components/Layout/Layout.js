@@ -1,5 +1,5 @@
 import React from 'react'
-import { bool, func, node, string } from 'prop-types'
+import { bool, func, node, string, object } from 'prop-types'
 
 import Navigation from 'Common/Navigation'
 import A11yNavigation from 'Primitive/A11yNavigation'
@@ -14,6 +14,7 @@ const Layout = ({
   showNav,
   siteTitle,
   social,
+  logo
 }) => {
 
   return (
@@ -27,12 +28,13 @@ const Layout = ({
         onHideNav={onHideNav}
         onShowNav={onShowNav}
         showNav={showNav}
+        logo={logo}
         id='navigation'
       />
       <div className={styles.Content} id='content'>
         {children}
       </div>
-      <Footer social={social} />
+      <Footer social={social} logo={logo} />
     </div>
   )
 }
@@ -43,6 +45,7 @@ Layout.propTypes = {
   onShowNav: func,
   showNav: bool,
   siteTitle: string,
+  logo: object
 }
 
 export default Layout

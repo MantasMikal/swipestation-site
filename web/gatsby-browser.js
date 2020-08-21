@@ -7,7 +7,7 @@
 // You can delete this file if you're not using it
 
 
-import './src/asset/scss/base.scss'
+import './src/assets/scss/base.scss'
 
 // exports.wrapPageElement = ({ element, props }) => {
 //     return <Layout {...props}>{element}</Layout>
