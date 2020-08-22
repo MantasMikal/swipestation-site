@@ -2,7 +2,7 @@ var config = {
   site: {
     siteTitle: "Picks",
     shortName: "Picks",
-    siteUrl: "gatsby-starter-picks.netlify.app",
+    siteUrl: "https://gatsby-starter-picks.netlify.app",
     bgColor: "#ffffff",
     themeColor: "#c8167c",
     description: "To be adedd...",

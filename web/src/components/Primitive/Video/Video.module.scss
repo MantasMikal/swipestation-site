@@ -1,9 +1,6 @@
+@import 'settings';
+@import '_backline-mixins';
+
 .Caption {
   padding-top: spcing(0.5);
-}
-
-.isDark {
-  .Caption {
-    color: $color-primary-white;
-  }
 }

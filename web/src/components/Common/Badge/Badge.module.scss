@@ -1,3 +1,6 @@
+@import 'settings';
+@import '_backline-mixins';
+
 .Badge {
   color: $color-primary-white;
   border-radius: $radius-small;

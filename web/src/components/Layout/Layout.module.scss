@@ -1,3 +1,6 @@
+@import 'settings';
+@import '_backline-mixins';
+
 .Wrapper {
   overflow: hidden;
 }
@@ -14,7 +17,7 @@
   margin: 0 auto;
 
   @include mq($breakpoint-mobileLandscape) {
-    padding: 2em;
+    padding: spacing(2);
   }
 }
 

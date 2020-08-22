@@ -39,6 +39,7 @@
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-robots-txt": "^1.5.1",
+    "gatsby-plugin-sass": "^2.3.12",
     "gatsby-plugin-sharp": "^2.6.27",
     "gatsby-plugin-sitemap": "^2.4.11",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
@@ -52,8 +53,7 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-medium-image-zoom": "^4.3.1",
-    "react-scroll-percentage": "^4.2.0",
-    "sass-loader": "^9.0.3"
+    "react-scroll-percentage": "^4.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",

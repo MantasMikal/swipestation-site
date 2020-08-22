@@ -1,4 +1,5 @@
 require('dotenv').config()
+const path = require('path')
 const config = require('../config')
 const {
   api: { projectId, dataset }
@@ -11,6 +12,17 @@ module.exports = {
     description: config.site.description
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        includePaths: [
+          ...require('backline-mixins').includePaths,
+          ...require('backline-normalize').includePaths,
+          path.join(__dirname, 'src/assets/scss/settings')
+        ],
+        sassRuleModulesTest: /\.module\.s(a|c)ss$/
+      }
+    },
     {
       resolve: 'gatsby-alias-imports',
       options: {
