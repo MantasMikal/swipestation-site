@@ -16,7 +16,6 @@ export const query = graphql`
 
 const ContactPage = props => {
   const { data, errors } = props
-  console.log("data", data)
 
   if (errors) {
     return (
@@ -33,9 +32,7 @@ const ContactPage = props => {
   }
 
   const contact = (data || {}).contact
-
   const {_rawBody} = contact
-  console.log("contact", contact)
 
   return (
     <Layout>

@@ -1,0 +1,31 @@
+:global {
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+      Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol';
+    height: auto;
+    min-height: 100%;
+    overflow: visible;
+  }
+
+  body,
+  #root {
+    height: 100%;
+    overflow: visible;
+  }
+
+  [style*='selector-hack--story-info-content'] {
+    > * + * {
+      margin-top: 20px;
+    }
+  }
+}

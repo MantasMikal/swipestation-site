@@ -9,7 +9,6 @@ import styles from "./Navigation.module.scss";
 import Media from "Common/Media";
 
 const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, logo, id }) => {
-  console.log("Navigation -> logo", logo)
   return (
     <nav className={classnames(styles.Root, showNav && styles.showNav)} id={id}>
       <h1 hidden>{siteTitle}</h1>

@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { oneOfType, string, bool, node } from 'prop-types'
 import Type from 'Primitive/Type'
 
 import styles from './Badge.module.scss'
@@ -19,6 +19,10 @@ const Bdage = ({ content, color, isInactive, ...rest }) => {
   )
 }
 
-Bdage.propTypes = {}
+Bdage.propTypes = {
+  content: oneOfType([node, string]),
+  color: string,
+  isInactive: bool
+}
 
 export default Bdage

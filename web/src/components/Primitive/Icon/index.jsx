@@ -2,8 +2,8 @@ import React from 'react'
 import { number, oneOf, string } from 'prop-types'
 import classNames from 'classnames'
 
-import svgDimensionsFormatter from '../../../lib/svg-dimensions-formatter'
-import ratioScaler from '../../../lib/ratio-scaler'
+import svgDimensionsFormatter from 'lib/svg-dimensions-formatter'
+import ratioScaler from 'lib/ratio-scaler'
 
 import styles from './Icon.module.scss'
 

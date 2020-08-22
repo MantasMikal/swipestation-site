@@ -5,6 +5,10 @@ import SmartLink from 'Primitive/SmartLink'
 
 import styles from './SocialShare.module.scss'
 
+
+// TODO:
+// Refactor this
+
 const getLink = (type, url) => {
   switch (type) {
     case 'facebook':

@@ -1,5 +1,4 @@
 require('dotenv').config()
-const path = require('path')
 const config = require('../config')
 const {
   api: { projectId, dataset }
