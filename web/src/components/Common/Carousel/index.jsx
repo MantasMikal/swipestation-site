@@ -20,18 +20,18 @@ const Carousel = (props) => {
 
   return (
     <CarouselProvider
-      naturalSlideWidth={400}
+      naturalSlideWidth={500}
       naturalSlideHeight={500}
       totalSlides={props.children.length + 1}
       visibleSlides={slidesToShow || 3}
       isIntrinsicHeight
       className={styles.Carousel}
-      dragStep={slidesToShow || 3}
+      dragStep={!isPhone && !isTablet ? 3 : 1}
       step={slidesToShow || 3}
     >
       <Slider moveThreshold={0.5} className={styles.Slider}>
         {props.children.map((child, i) => (
-          <Slide key={child.key} className={styles.Slide} index={i}>
+          <Slide key={`Slide-${i}`} className={styles.Slide} index={i}>
             {child}
           </Slide>
         ))}
