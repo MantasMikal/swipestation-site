@@ -2,7 +2,7 @@
    <img width="300" src='https://i.imgur.com/GhcxkhC.png'>
 </p>
 <p align="center">
-  An opinionted starter that contains everything you need to quickly ship any type of static site.
+  An opinionated starter that contains everything you need to quickly ship any type of static site.
 </p>
 <p align="center">
   <a href='https://gatsby-starter-picks.netlify.com'><b>DEMO</b></a>
