@@ -1,13 +1,13 @@
 {
-    "compilerOptions": {
-      "baseUrl": ".",
-      "jsx": "react",
-      "paths": {
-        "Primitive/*": ["./src/components/Primitive/*"],
-        "Common/*":[ "./src/components/Common/*"],
-        "Context/*": ["./src/components/Context/*"],
-        "Section/*": ["./src/components/Section/*"],
-        "lib/*": ["./src/lib/*"]
-      }
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "react",
+    "paths": {
+      "Primitive/*": ["./src/components/Primitive/*"],
+      "Common/*": ["./src/components/Common/*"],
+      "Context/*": ["./src/components/Context/*"],
+      "Section/*": ["./src/components/Section/*"],
+      "lib/*": ["./src/lib/*"]
     }
   }
+}
