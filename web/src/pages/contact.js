@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'lib/helpers'
 
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
@@ -9,18 +8,15 @@ import ContactSection from 'Section/ContactSection'
 
 export const query = graphql`
   query ContactPageQuery {
-    contact: allSanityContactPage {
-      edges {
-        node {
-          _rawBody(resolveReferences: { maxDepth: 5 })
-        }
-      }
+    contact: sanityContactPage(_id: { regex: "/(drafts.|)contactPage/" }) {
+      _rawBody(resolveReferences: { maxDepth: 5 })
     }
   }
 `
 
 const ContactPage = props => {
   const { data, errors } = props
+  console.log("data", data)
 
   if (errors) {
     return (
@@ -36,14 +32,17 @@ const ContactPage = props => {
     )
   }
 
-  const contact = (data || {}).contact ? mapEdgesToNodes(data.contact) : []
+  const contact = (data || {}).contact
+
+  const {_rawBody} = contact
+  console.log("contact", contact)
 
   return (
     <Layout>
       <SEO title='Contact' slug='/contact' />
       <ContactSection
         title='Contact'
-        body={contact[0]._rawBody && contact[0]._rawBody}
+        body={_rawBody}
       />
     </Layout>
   )

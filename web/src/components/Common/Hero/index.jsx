@@ -10,7 +10,7 @@ import styles from "./Hero.module.scss";
 const Hero = ({ heroImage, title, subtitle }) => {
   return (
     <div className={styles.Hero}>
-      <Media ratio={9 / 16} media={heroImage} />
+      <Media media={heroImage} />
       <Container size="wide" gutter center className={styles.Content}>
         <Type size="displayHero" as="h2" className={styles.Title}>
           {title}

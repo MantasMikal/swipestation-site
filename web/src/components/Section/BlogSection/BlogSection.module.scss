@@ -1,7 +1,7 @@
 @import 'setting';
 
 .Title {
-  margin-bottom: spacing(1);
+  margin-bottom: spacing(3);
   margin-left: spacing(1);
 }
 
@@ -23,10 +23,6 @@
   }
 }
 
-.FilterLabel {
-  // margin-bottom: spacing(1);
-}
-
 .CategoryFilter {
   display: flex;
   justify-content: flex-start;
@@ -44,8 +40,3 @@
   }
 }
 
-.isDark {
-  .Title, .FilterLabel {
-    color: $color-primary-white;
-  }
-}

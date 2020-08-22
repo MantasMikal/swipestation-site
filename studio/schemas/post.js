@@ -36,11 +36,6 @@ export default {
       of: [{ type: "reference", to: { type: "category" } }]
     },
     {
-      name: "readTime",
-      title: "Read time",
-      type: "number"
-    },
-    {
       name: "publishedAt",
       title: "Published at",
       description: "You can use this field to schedule post where you show them",
@@ -54,13 +49,7 @@ export default {
     {
       name: "mainImage",
       title: "Main image",
-      type: "mainImage"
-    },
-    {
-      name: "highlightedText",
-      title: "Highlighted Text",
-      description: "Adds highlighted (purple) text at the top of the blog post",
-      type: "blockText"
+      type: "image"
     },
     {
       name: "body",

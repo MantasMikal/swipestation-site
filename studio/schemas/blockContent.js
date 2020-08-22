@@ -28,10 +28,6 @@ export default {
         { title: "H3", value: "h3" },
         { title: "H4", value: "h4" },
         { title: "Quote", value: "blockquote" },
-        { title: "Title", value: "title" },
-        { title: "Large div", value: "large" },
-        { title: "Medium div", value: "medium" },
-        { title: "Small div", value: "small" }, 
       ],
       lists: [{ title: "Bullet", value: "bullet" }],
       // Marks let you mark up inline text in the block editor.

@@ -5,20 +5,16 @@ export default [
       url: '/'
     },
     {
-      text: 'Online Courses',
-      url: '/online-courses'
-    },
-    {
-      text: 'Gallery',
-      url: '/gallery'
-    },
-    {
       text: 'Blog',
       url: '/blog'
     },
     {
       text: 'Contact',
       url: '/contact'
+    },
+    {
+      text: 'About',
+      url: '/about'
     }
   ],
   [

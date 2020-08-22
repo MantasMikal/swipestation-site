@@ -22,7 +22,6 @@ export const query = graphql`
           }
           readTime
           mainImage {
-            alt
             asset {
               url
               fluid(maxWidth: 500) {

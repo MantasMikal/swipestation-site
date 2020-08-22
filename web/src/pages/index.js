@@ -21,6 +21,13 @@ export const query = graphql`
       _rawSections(resolveReferences: { maxDepth: 10 })
       title
       subtitle
+      hero {
+        asset {
+          fluid(maxWidth: 500) {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
     }
 
     posts: allSanityPost(
@@ -46,7 +53,6 @@ export const query = graphql`
                 ...GatsbySanityImageFluid
               }
             }
-            alt
           }
           title
           _rawExcerpt
@@ -75,7 +81,8 @@ const IndexPage = (props) => {
     ? mapEdgesToNodes(data.posts).filter(filterOutDocsWithoutSlugs)
     : [];
 
-  const {home} = data
+  const { home } = data;
+  const {hero, title, subtitle} = home
   const sections = home && home._rawSections;
 
   if (!site) {
@@ -92,7 +99,7 @@ const IndexPage = (props) => {
         keywords={site.keywords}
       />
       <h1 hidden>Welcome to {site.title}</h1>
-      {home && <Hero title={home.title} subtitle={home.subtitle} />}
+      {home && <Hero heroImage={hero} title={title} subtitle={subtitle} />}
       {sections &&
         sections.map((section) => (
           <div key={section._key}>

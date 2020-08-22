@@ -1,61 +1,56 @@
 import React from 'react'
-import NukaCarousel from 'nuka-carousel'
 import useMedia from 'lib/use-media'
-
-import ButtonBase from 'Primitive/ButtonBase'
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel'
+import classNames from 'classnames'
 import Icon from 'Primitive/Icon'
 
+import 'pure-react-carousel/dist/react-carousel.es.css'
 import styles from './Carousel.module.scss'
 
-function Carousel({ children }) {
+const Carousel = props => {
   const isTablet = useMedia('(max-width: 960px)')
   const isPhone = useMedia('(max-width: 600px)')
   const slidesToShow = isTablet ? (isPhone ? 1 : 2) : 3
-
+   
   return (
-    <div className={styles.Root}>
-      <NukaCarousel
-        slidesToShow={slidesToShow}
-        cellSpacing={24}
-        enableKeyboardControls
-        frameOverflow="visible"
-        initialSlideHeight={360}
-        inirialSlideWidth={640}
-        speed={250}
-        transitionMode="scroll"
-        renderTopRightControls={({ nextSlide }) => (
-          <ButtonBase className={styles.ControlRight} onClick={nextSlide}>
-            <Icon
-              className={styles.ControlIcon}
-              type="chevron-right"
-              width={30}
-              height={20}
-              a11yText="Next slide"
-            />
-          </ButtonBase>
-        )}
-        renderTopLeftControls={({ previousSlide }) => (
-          <ButtonBase className={styles.ControlLeft} onClick={previousSlide}>
-            <Icon
-              className={styles.ControlIcon}
-              type="chevron-left"
-              width={30}
-              height={20}
-              a11yText="Previous Slide"
-            />
-          </ButtonBase>
-        )}
-        // Removes default controls
-        renderBottomCenterControls={() => null}
-        renderCenterRightControls={() => null}
-        renderCenterLeftControls={() => null}
-      >
-        {children}
-      </NukaCarousel>
-    </div>
+    <CarouselProvider
+      naturalSlideWidth={400}
+      naturalSlideHeight={500}
+      totalSlides={props.children.length}
+      visibleSlides={slidesToShow}
+      isIntrinsicHeight
+      className={styles.Carousel}
+      dragStep={slidesToShow}
+      step={slidesToShow}
+      dragEnabled
+      touchEnabled
+    >
+      <Slider className={styles.Slider} moveThreshold={100}>
+        {props.children.map((child, i) => (
+          <Slide key={child.key} className={styles.Slide} index={i}>
+            {child}
+          </Slide>
+        ))}
+      </Slider>
+      <ButtonBack className={classNames(styles.Button, styles.Back)}>
+        <Icon
+          className={styles.ControlIcon}
+          type="chevron-left"
+          width={30}
+          height={20}
+          a11yText="Previous Slide"
+        />
+      </ButtonBack>
+      <ButtonNext className={classNames(styles.Button, styles.Next)}>
+        <Icon
+          className={styles.ControlIcon}
+          type="chevron-right"
+          width={30}
+          height={20}
+          a11yText="Previous Slide"
+        />
+      </ButtonNext>
+    </CarouselProvider>
   )
 }
-
-Carousel.propTypes = {}
-
 export default Carousel

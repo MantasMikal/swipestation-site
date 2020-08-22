@@ -1,7 +1,5 @@
 import React from 'react'
 import { string, object, array, arrayOf, shape } from 'prop-types'
-import { useDarkContext } from 'Context/DarkContext'
-import { cn } from 'lib/helpers'
 
 import Carousel from 'Common/Carousel'
 import BlogPostPreview from 'Common/BlogPostPreview'
@@ -12,10 +10,9 @@ import Type from 'Primitive/Type'
 import styles from './BlogPostCarouselSection.module.scss'
 
 const BlogPostCarouselSection = ({ postNodes, title }) => {
-  const isDark = useDarkContext()
   return (
-    <section className={cn(styles.BlogPostCarouselSection, isDark && styles.isDark)}>
-      <Container size="wide" center gutter spacious>
+    <section className={styles.BlogPostCarouselSection}>
+      <Container size="wide" center gutter spacious hideOverflow>
         <Type size="displayLarge" as="h2" className={styles.Title}>
           {title}
         </Type>

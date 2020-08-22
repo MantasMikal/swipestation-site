@@ -1,63 +1,60 @@
 @import 'setting';
 
-.Root {
-  margin: spacing(4) 0 spacing(3);
+.Carousel {
+  position: relative;
+  
+  ul, li {
+    list-style: none;
+    &::before {
+      content: '';
+      display: none;
+    }
+  } 
 
-  @include mq($breakpoint-tablet) {
-    margin: spacing(4) 0 spacing(12);
+  & > div, li, ul {
+    outline: 0;
+    &:active, &:focus {
+      outline: 0;
+    }
+  }
+}
+
+.Slide {
+  margin: 20px 10px;
+  &:first-child {
+    margin-left: 0;
   }
 }
 
 .ControlIcon {
-  svg {
-    width: 20px !important;
-  }
-  
   svg path {
     transition: $duration-shortest $easing-standard;
-    // fill: $color-hover;
   }
 
   &:hover svg path {
     transition: $duration-shortest $easing-standard;
     fill: $color-hover;
   }
+}
+
+.Next {
+  position: absolute;
+  top: spacing(-3.5);
+  right: spacing(2);
 
   @include mq($breakpoint-tablet) {
-    svg {
-      width: 27px !important;
-    }
+    right: spacing(1);
+    top: spacing(-5);
   }
 }
 
-// Hacky, but works the best
-:global {
-  // .slider-control-bottomleft {
-  //   right: 4rem;
-  //   left: unset !important;
-  //   // bottom: spacing(-6) !important;
-  // }
-  // .slider-control-bottomright {
-  //   // bottom: spacing(-6) !important;
-  // }
-
-  .slider-control-topleft {
-    right: 3rem;
-    left: unset !important;
-    top: spacing(-6) !important;
-  }
-  .slider-control-topright {
-    top: spacing(-6) !important;
-  }
-
-  @include mq($breakpoint-tablet) {
-    .slider-control-topleft {
-      right: 4rem;
-    }
-    
-    .slider-control-topleft,
-    .slider-control-topright {
-      top: spacing(-7) !important;
+.Back {
+    position: absolute;
+    top: spacing(-3.5);
+    right: spacing(9);
+  
+    @include mq($breakpoint-tablet) {
+      right: spacing(7);
+      top: spacing(-5);
     }
   }
-}

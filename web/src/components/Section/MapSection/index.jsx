@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { cn } from 'lib/helpers'
+import classNames from 'classnames'
 import { useDarkContext } from 'Context/DarkContext'
 
 import Container from 'Primitive/Container'
@@ -13,7 +13,7 @@ import styles from './MapSection.module.scss'
 const MapSection = ({ title }) => {
   const isDark = useDarkContext()
   return (
-    <section className={cn(styles.GelleryCarouselSection, isDark && styles.isDark)}>
+    <section className={classNames(styles.GelleryCarouselSection, isDark && styles.isDark)}>
       <Container size='wide' center gutter spacious>
         <Type size='displayLarge' as='h2' className={styles.Title}>
           {title}

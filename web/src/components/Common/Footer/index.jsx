@@ -17,7 +17,7 @@ import Media from 'Common/Media'
 const Footer = ({ social, logo, siteTitle }) => {
 
   return (
-    <div className={styles.Wrapper}>
+    <Container gutter className={styles.Wrapper}>
       <footer className={styles.Footer}>
         <Container gutter center size='wide' className={styles.Container}>
           <div className={styles.Branding}>
@@ -44,7 +44,7 @@ const Footer = ({ social, logo, siteTitle }) => {
           </div>
         </Container>
       </footer>
-    </div>
+    </Container>
   )
 }
 export default Footer

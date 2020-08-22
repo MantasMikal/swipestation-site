@@ -36,24 +36,16 @@
   position: relative;
   margin: spacing(1) 0;
   padding: spacing(1) 0;
-  margin-left: 2.2rem;
   font-style: italic;
+
+  &::after {
+    content: '"';
+    position: relative;
+  }
+
   &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -2.2rem;
-    width: 1.3rem;
-    height: 100%;
-    background-image: url('/assets/overlay2.svg');
+    content: '"';
+    position: relative;
   }
 }
 
-.isDark {
-  &.qoute {
-    color: $color-primary-white;
-    &::before {
-      background-image: url('/assets/overlay2white.svg');
-    }
-  }
-}

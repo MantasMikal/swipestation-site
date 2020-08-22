@@ -1,5 +1,5 @@
 import React from 'react'
-import { cn } from 'lib/helpers'
+import classNames from 'classnames'
 import { object, bool, number, string } from 'prop-types'
 import { useDarkContext } from 'Context/DarkContext'
 
@@ -19,7 +19,7 @@ const GalleryPreview = ({ media, ratio, surround, isZoomable, className }) => {
   )
 
   return (
-    <div className={cn(styles.Root, isDark && styles.isDark, surround && styles.surround, className)}>
+    <div className={classNames(styles.Root, isDark && styles.isDark, surround && styles.surround, className)}>
       {el}
       {media.caption && (
         <Type size="baseSmall" className={styles.Caption}>

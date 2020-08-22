@@ -17,7 +17,6 @@ export const query = graphql`
         }
         title
       }
-      readTime
       mainImage {
         asset {
           _id
@@ -32,13 +31,11 @@ export const query = graphql`
             }
           }
         }
-        alt
       }
       title
       slug {
         current
       }
-      _rawHighlightedText
       _rawBody(resolveReferences: { maxDepth: 5 })
       seo {
         seo {
@@ -75,7 +72,7 @@ const BlogPostTemplate = props => {
         </Container>
       )}
 
-      {post && <BlogPost {...post} url={pageContext.absPath} />}
+      {post && <BlogPost {...post} url={pageContext.absolutePath} />}
     </Layout>
   )
 }

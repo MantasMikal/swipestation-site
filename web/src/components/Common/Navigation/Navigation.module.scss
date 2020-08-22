@@ -16,9 +16,10 @@
   display: inline-block;
   position: relative;
   vertical-align: middle;
-  width: 45px;
   transition: $duration-short $easing-standard;
-  
+  width: 42px;
+  height: 42px;
+  order: 1;
   & a {
     display: block;
   }
@@ -123,7 +124,6 @@
     flex-direction: column-reverse;
 
     .Branding {
-      order: 1;
       margin-bottom: spacing(1);
     }
 

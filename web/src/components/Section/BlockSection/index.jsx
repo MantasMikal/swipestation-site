@@ -1,7 +1,5 @@
 import React from 'react'
 import { array, string } from 'prop-types'
-import { cn } from 'lib/helpers'
-import { useDarkContext } from 'Context/DarkContext'
 
 import BlockContent from '../../block-content'
 import Container from 'Primitive/Container'
@@ -10,16 +8,14 @@ import Type from 'Primitive/Type'
 import styles from './BlockSection.module.scss'
 
 
-const Index = ({ blockContent, title }) => {
-  const isDark = useDarkContext()
+const BlockSection = ({ blockContent, title }) => {
   return (
     <Container
-      className={cn(styles.BlockSection, isDark && styles.isDark)}
+      className={styles.BlockSection}
       size="wide"
       center
       gutter
       spacious
-      withNavSpace
       as="section"
     >
       <Type as="h1" size="displayLarge" className={styles.Title}>
@@ -30,9 +26,9 @@ const Index = ({ blockContent, title }) => {
   )
 }
 
-Index.propTypes = {
+BlockSection.propTypes = {
   blockContent: array,
   title: string
 }
 
-export default Index
+export default BlockSection

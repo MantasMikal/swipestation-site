@@ -32,12 +32,6 @@ const serializers = {
   types: {
     block (props) {
       switch (props.node.style) {
-        // case 'h1':
-        //   return (
-        //     <Type as='h1' size='titleLarge' padded>
-        //       {props.children}
-        //     </Type>
-        //   )
 
         case 'h2':
           return (
@@ -48,42 +42,18 @@ const serializers = {
 
         case 'h3':
           return (
-            <Type as='h3' size='title' padded>
+            <Type as='h3' size='titleMedium' padded>
               {props.children}
             </Type>
           )
 
         case 'h4':
           return (
-            <Type as='h4' size='subtitle' padded>
-              {props.children}
-            </Type>
-          )
-
-        case 'title':
-          return (
-            <Type as='div' size='displayLarge' padded>
-              {props.children}
-            </Type>
-          )
-        case 'large':
-          return (
-            <Type as='h4' size='titleLarge' padded>
-              {props.children}
-            </Type>
-          )
-        case 'medium':
-          return (
-            <Type as='h4' size='titleMedium' padded>
-              {props.children}
-            </Type>
-          )
-        case 'small':
-          return (
             <Type as='h4' size='title' padded>
               {props.children}
             </Type>
           )
+
         case 'blockquote':
           return <Qoute>{props.children}</Qoute>
 
@@ -101,8 +71,6 @@ const serializers = {
       return createFigure(props.node)
     },
     slideshow (props) {
-      //  ("slideshow -> props", props)
-
       return createSlideshow(props.node)
     },
     grid (props) {

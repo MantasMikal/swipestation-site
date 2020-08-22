@@ -2,7 +2,7 @@ import React from 'react'
 import { node, number } from 'prop-types'
 
 import styles from './ResponsiveMedia.module.scss'
-import { cn } from 'lib/helpers'
+import classNames from 'classnames'
 
 const formatRatio = ratio => {
   return parseFloat((ratio * 100).toFixed(4))
@@ -10,7 +10,7 @@ const formatRatio = ratio => {
 
 const ResponsiveMedia = ({ children, className, ratio }) => (
   <div
-    className={cn(styles.ResponsiveMedia, className)}
+    className={classNames(styles.ResponsiveMedia, className)}
     style={{ paddingBottom: `${formatRatio(ratio)}%` }}
   >
     {children}
