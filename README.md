@@ -39,20 +39,22 @@
 
 ## Features
 
-- Sanity.io CMS integration
-- SCSS Modules
-- Buletproof base level component library to get the boring stuff out of the way
-- Useful set of SCSS utility [mixins](https://www.npmjs.com/package/backline-mixins) to aid development
-- Storybook integration
-- Optimised with Google Lighthouse
-- Inline SVG support
-- PWA Support
-- Sitemap support
-- ESLint
+- ✔ Sanity.io CMS integration
+- ✔ SCSS Modules
+- ✔ Buletproof base level component library to get the boring stuff out of the way
+- ✔ Useful set of SCSS utility [mixins](https://www.npmjs.com/package/backline-mixins) to aid development
+- ✔ Storybook integration
+- ✔ Optimised with Google Lighthouse
+- ✔ Inline SVG support
+- ✔ PWA Support
+- ✔ Sitemap support
+- ✔ ESLint
 
 ## Setup
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/MantasMikal/gatsby-starter-picks)
+
+Use NPM
 
 ```
 # Install deps
