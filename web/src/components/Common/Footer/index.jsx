@@ -2,7 +2,6 @@ import React from 'react'
 
 import links from './links'
 
-import List from 'Primitive/List'
 import SmartLink from 'Primitive/SmartLink'
 import SocialLink from './component/SocialLink'
 import Container from 'Primitive/Container'
@@ -32,13 +31,13 @@ const Footer = ({ social, logo, siteTitle }) => {
           </div>
           <div className={styles.LinkListWrapper}>
             {links.map((linkList, i) => (
-              <List key={i} className={styles.LinkList}>
+              <div key={i} className={styles.LinkList}>
                 {linkList.map((link, j) => (
                   <SmartLink className={styles.Link} key={j} href={link.url}>
                     <Type size="base">{link.text}</Type>
                   </SmartLink>
                 ))}
-              </List>
+              </div>
             ))}
           </div>
         </Container>

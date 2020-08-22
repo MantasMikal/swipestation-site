@@ -62,10 +62,6 @@ const LayoutContainer = (props) => {
           <>
             <Helmet>
               <link rel="preconnect" href="https://use.typekit.net" />
-              <link
-                rel="stylesheet"
-                href="https://use.typekit.net/rnl5jdi.css"
-              />
             </Helmet>
             <Layout
               {...props}
