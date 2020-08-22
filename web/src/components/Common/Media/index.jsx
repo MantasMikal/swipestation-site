@@ -32,7 +32,7 @@ const Media = ({ media, ratio, imgWrapperStyle, imgStyle, alt }) => {
         imgStyle={imgStyle}
         fixed={fixedImg}
         fluid={fluidImg}
-        alt={media.alt}
+        alt={alt}
       />
     )
   )
