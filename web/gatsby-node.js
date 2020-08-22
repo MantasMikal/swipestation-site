@@ -22,7 +22,8 @@ async function createBlogPostPages(graphql, actions, reporter) {
   if (result.errors) throw result.errors
 
   const postEdges = (result.data.post || {}).edges || []
-  const siteUrl = result.data && result.data.siteUrl
+  const siteUrl = result.data && result.data.site && result.data.site.siteUrl
+
   postEdges.forEach((edge, index) => {
     const { id, slug = {} } = edge.node
     const path = `/blog/${slug.current}/`
