@@ -17,17 +17,18 @@ const Carousel = (props) => {
   const isTablet = useMedia('(max-width: 960px)')
   const isPhone = useMedia('(max-width: 600px)')
   const slidesToShow = isTablet ? (isPhone ? 1 : 2) : 3
+  console.log('Carousel -> slidesToShow', slidesToShow)
 
   return (
     <CarouselProvider
       naturalSlideWidth={400}
       naturalSlideHeight={500}
       totalSlides={props.children.length}
-      visibleSlides={slidesToShow}
+      visibleSlides={slidesToShow || 3}
       isIntrinsicHeight
       className={styles.Carousel}
-      dragStep={slidesToShow}
-      step={slidesToShow}
+      dragStep={slidesToShow || 3}
+      step={slidesToShow || 3}
       dragEnabled
       touchEnabled
     >
