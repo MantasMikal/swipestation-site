@@ -1,5 +1,9 @@
 # gatsby-starter-picks
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/93ecc1ca-2fd8-427a-96de-245af6e0d17a/deploy-status)](https://app.netlify.com/sites/gatsby-starter-picks/deploys)
+
+https://gatsby-starter-picks.netlify.com
+
 ## Features
 
 - Sanity.io CMS integration

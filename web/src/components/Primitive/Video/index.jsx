@@ -1,6 +1,6 @@
 import React from 'react'
 import { string } from 'prop-types'
-import classNames from 'classNames'
+import classNames from 'classnames'
 
 import Type from 'Primitive/Type'
 import ResponsiveMedia from 'Primitive/ResponsiveMedia'
