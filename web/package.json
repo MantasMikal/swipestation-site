@@ -16,12 +16,15 @@
     "now-dev": "npm run build",
     "start": "npm run develop",
     "format": "prettier-eslint --write \"**/*.js\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@react-google-maps/api": "^1.9.12",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/image-url": "^0.140.19",
+    "@svgr/webpack": "^5.4.0",
     "backline-mixins": "^1.0.3",
     "backline-normalize": "^1.0.1",
     "browser-monads": "^1.0.0",
@@ -57,6 +60,12 @@
     "react-scroll-percentage": "^4.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@storybook/addon-actions": "^6.0.16",
+    "@storybook/addon-essentials": "^6.0.16",
+    "@storybook/addon-links": "^6.0.16",
+    "@storybook/react": "^6.0.16",
+    "babel-loader": "^8.1.0",
     "eslint": "^7.5.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-config-standard-react": "^9.2.0",
@@ -66,6 +75,7 @@
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-standard": "^4.0.1",
     "prettier-eslint-cli": "^5.0.0",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "react-is": "^16.13.1"
   }
 }
