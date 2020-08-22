@@ -32,19 +32,19 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, logo, id }) => {
         <div className={styles.DropdownContent}>
           <LinkWrapper
             className={classnames(styles.NavLink, styles.DropdownLink)}
-            to="/"
+            to="/404"
           >
             Sub Nav 1
           </LinkWrapper>
           <LinkWrapper
             className={classnames(styles.NavLink, styles.DropdownLink)}
-            to="/"
+            to="/404"
           >
             SubNav 2
           </LinkWrapper>
           <LinkWrapper
             className={classnames(styles.NavLink, styles.DropdownLink)}
-            to="/"
+            to="/404"
           >
             SubNav 3
           </LinkWrapper>
@@ -78,10 +78,11 @@ Navigation.propTypes = {
 
 export default Navigation
 
-const LinkWrapper = ({ children, to, className, highlight }) => (
+const LinkWrapper = ({ children, to, className, highlight, ...other }) => (
   <SmartLink
     className={classnames(className, highlight && styles.highlight)}
     to={to}
+    {...other}
   >
     <Type as="span" size="menu">
       {children}

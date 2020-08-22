@@ -72,20 +72,29 @@
       color: $color-primary-red;
     }
 
-    .DropdownContent {
-      visibility: visible;
+    .DropdownLink {
+      opacity: 1;
     }
   }
 }
 
+.DropdownBtn {
+  &:focus .DropdownLink,
+  &:active .DropdownLink {
+    opacity: 1;
+  }
+}
+
 .DropdownContent {
-  visibility: hidden;
   position: absolute;
   z-index: 300;
   top: 10px;
+}
 
-  border-radius: $radius-small;
-  background-color: $color-primary-grey-light;
+.DropdownLink:focus ~ .DropdownLink,
+.DropdownLink:focus + .DropdownLink,
+.DropdownLink:focus {
+  opacity: 1;
 }
 
 .DropdownLink {
@@ -93,6 +102,8 @@
   padding: spacing(1);
   width: 100%;
   text-align: left;
+  opacity: 0;
+  background-color: $color-primary-grey-light;
 
   &:first-child {
     border-radius: $radius-small $radius-small 0 0;
