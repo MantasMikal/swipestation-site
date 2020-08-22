@@ -26,9 +26,8 @@
       alt="Netlify Status"
     />
   </a>
-  
 <p>
-
+<br>
 <p align="center">
   <img width="500" src="https://i.imgur.com/Md3UTQ9.png" alt="Google lighthouse"/>
 </p>
@@ -39,16 +38,16 @@
 
 ## Features
 
-- ✔ Sanity.io CMS integration
-- ✔ SCSS Modules
-- ✔ Buletproof base level component library to get the boring stuff out of the way
-- ✔ Useful set of SCSS utility [mixins](https://www.npmjs.com/package/backline-mixins) to aid development
-- ✔ Storybook integration
-- ✔ Optimised with Google Lighthouse
-- ✔ Inline SVG support
-- ✔ PWA Support
-- ✔ Sitemap support
-- ✔ ESLint
+- [x] Sanity.io CMS integration
+- [x] SCSS Modules
+- [x] Buletproof base level component library to get the boring stuff out of the way
+- [x] Useful set of SCSS utility [mixins](https://www.npmjs.com/package/backline-mixins) to aid development
+- [x] Storybook integration
+- [x] Optimised with Google Lighthouse
+- [x] Inline SVG support
+- [x] PWA Support
+- [x] Sitemap support
+- [x] ESLint
 
 ## Setup
 
@@ -56,7 +55,7 @@
 
 Use NPM
 
-```
+```bash
 # Install deps
 cd gatsby-starter-picks && npm i && npm i -g @sanity/cli gatsby-cli
 
