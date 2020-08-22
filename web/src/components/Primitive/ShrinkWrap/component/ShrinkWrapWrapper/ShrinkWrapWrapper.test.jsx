@@ -20,7 +20,6 @@ describe('Component: ShrinkWrapWrapper', function () {
   })
 
   test('shouldn’t error if valid default props passed', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(
       ShrinkWrapWrapper.propTypes,
       requiredProps()

@@ -1,7 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import classnames from 'classnames'
-import { useDarkContext } from 'Context/DarkContext'
+import { array, string } from 'prop-types'
 
 import BlockContent from '../../block-content'
 import Container from 'Primitive/Container'
@@ -9,18 +7,9 @@ import Type from 'Primitive/Type'
 
 import styles from './ContactSection.module.scss'
 
-const ContactSection = ({ body, venues, title }) => {
-  const isDark = useDarkContext()
+const ContactSection = ({ body, title }) => {
   return (
-    <Container
-      className={classnames(isDark && styles.isDark)}
-      size="wide"
-      center
-      gutter
-      spacious
-      withNavSpace
-      as="section"
-    >
+    <Container size="wide" center gutter spacious withNavSpace as="section">
       <Type as="h1" size="displayLarge" className={styles.Title}>
         {title}
       </Type>
@@ -33,6 +22,9 @@ const ContactSection = ({ body, venues, title }) => {
   )
 }
 
-ContactSection.propTypes = {}
+ContactSection.propTypes = {
+  body: array,
+  title: string
+}
 
 export default ContactSection

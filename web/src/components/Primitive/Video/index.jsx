@@ -1,5 +1,6 @@
 import React from 'react'
 import { string } from 'prop-types'
+import classNames from 'classNames'
 
 import Type from 'Primitive/Type'
 import ResponsiveMedia from 'Primitive/ResponsiveMedia'
@@ -13,7 +14,7 @@ const Video = ({ videoType, videoId, caption, className }) => {
   switch (videoType) {
     case 'youtube':
       return (
-        <div className={styles.Video} className={className}>
+        <div className={classNames(styles.Video, className)}>
           <ResponsiveMedia ratio={9 / 16}>
             <YouTubeEmbed videoId={videoId} width="100%" height="100%" />
           </ResponsiveMedia>
@@ -27,7 +28,7 @@ const Video = ({ videoType, videoId, caption, className }) => {
 
     case 'vimeo':
       return (
-        <div className={styles.Video} className={className}>
+        <div className={classNames(styles.Video, className)}>
           <ResponsiveMedia ratio={9 / 16}>
             <VimeoEmbed videoId={videoId} width="100%" height="100%" />
           </ResponsiveMedia>

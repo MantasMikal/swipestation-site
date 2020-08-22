@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import SmartLink from 'Primitive/SmartLink'
 
@@ -12,9 +11,6 @@ const getLink = (type, url) => {
   switch (type) {
     case 'facebook':
       return `https://facebook.com/sharer/sharer.php?u=${url}`
-
-    case 'twitter':
-      return `https://twitter.com/intent/tweet/?&url=${url}&`
 
     case 'twitter':
       return `https://twitter.com/intent/tweet/?&url=${url}&`

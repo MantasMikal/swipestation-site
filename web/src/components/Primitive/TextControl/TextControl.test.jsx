@@ -9,8 +9,8 @@ const requiredProps = () => ({
 })
 
 describe('Component: TextControl', function () {
-  // eslint-disable-next-line react/forbid-foreign-prop-types
   test('should return errors if invalid default props passed', function () {
+    // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(TextControl.propTypes, {})
     const expected = {
       name:

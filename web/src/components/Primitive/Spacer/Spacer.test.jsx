@@ -9,6 +9,7 @@ const requiredProps = () => ({
 
 describe('Component: Spacer', function () {
   test('should return errors if invalid default props passed', function () {
+    // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Spacer.propTypes, {})
     const expected = {
       children:
@@ -19,6 +20,7 @@ describe('Component: Spacer', function () {
   })
 
   test('shouldn’t error if valid default props passed', function () {
+    // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Spacer.propTypes, requiredProps())
     const expected = undefined
     expect(actual).toEqual(expected)
