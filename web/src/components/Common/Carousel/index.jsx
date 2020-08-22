@@ -29,7 +29,7 @@ const Carousel = (props) => {
       dragStep={!isPhone && !isTablet ? 3 : 1}
       step={slidesToShow || 3}
     >
-      <Slider moveThreshold={0.5} className={styles.Slider}>
+      <Slider moveThreshold={isPhone ? 0.05 : 0.1} className={styles.Slider}>
         {props.children.map((child, i) => (
           <Slide key={`Slide-${i}`} className={styles.Slide} index={i}>
             {child}
