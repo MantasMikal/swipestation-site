@@ -4,6 +4,11 @@
 
 https://gatsby-starter-picks.netlify.com
 
+<p align="center">
+  <img src="https://i.imgur.com/9wThDxg.png" alt="Google lighthouse"/>
+</p>
+
+
 ## Features
 
 - Sanity.io CMS integration
