@@ -5,7 +5,7 @@
 https://gatsby-starter-picks.netlify.com
 
 <p align="center">
-  <img width="600" src="https://i.imgur.com/9wThDxg.png" alt="Google lighthouse"/>
+  <img width="800" src="https://i.imgur.com/9wThDxg.png" alt="Google lighthouse"/>
 </p>
 
 
