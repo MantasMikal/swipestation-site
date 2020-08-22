@@ -16,12 +16,11 @@ const Layout = ({
   social,
   logo
 }) => {
-
   return (
     <div className={styles.Wrapper}>
       <A11yNavigation>
-        <a href='#content'>Jump to main content</a>
-        <a href='#navigation'>Jump to primary navigation</a>
+        <a href="#content">Jump to main content</a>
+        <a href="#navigation">Jump to primary navigation</a>
       </A11yNavigation>
       <Navigation
         siteTitle={siteTitle}
@@ -29,9 +28,9 @@ const Layout = ({
         onShowNav={onShowNav}
         showNav={showNav}
         logo={logo}
-        id='navigation'
+        id="navigation"
       />
-      <div className={styles.Content} id='content'>
+      <div className={styles.Content} id="content">
         {children}
       </div>
       <Footer social={social} logo={logo} />

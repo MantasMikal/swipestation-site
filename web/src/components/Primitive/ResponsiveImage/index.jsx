@@ -1,8 +1,8 @@
 import React from 'react'
 import { arrayOf, number, shape, string } from 'prop-types'
 
-const srcSetFormatter = srcSet => {
-  return srcSet.map(image => `${image.src} ${image.width}w`).join(', ')
+const srcSetFormatter = (srcSet) => {
+  return srcSet.map((image) => `${image.src} ${image.width}w`).join(', ')
 }
 
 const ResponsiveImage = ({ alt, sizes, src, srcSet }) => (

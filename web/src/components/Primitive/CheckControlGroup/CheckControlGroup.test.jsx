@@ -17,8 +17,8 @@ const requiredProps = () => ({
   ]
 })
 
-describe('Component: CheckControlGroup', function() {
-  test('should return errors if required props missing', function() {
+describe('Component: CheckControlGroup', function () {
+  test('should return errors if required props missing', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(CheckControlGroup.propTypes, {})
     const expected = {
@@ -30,7 +30,7 @@ describe('Component: CheckControlGroup', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(
       CheckControlGroup.propTypes,
@@ -40,7 +40,7 @@ describe('Component: CheckControlGroup', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', function() {
+  test('should output the expected markup with default props', function () {
     const wrapper = shallow(<CheckControlGroup {...requiredProps()} />)
     expect(wrapper.find('label')).toHaveLength(2)
   })

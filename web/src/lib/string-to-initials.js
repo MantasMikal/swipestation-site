@@ -1,9 +1,9 @@
-const stringToInitials = string => {
+const stringToInitials = (string) => {
   if (typeof string !== 'string') return
 
   return string
     .split(/[ '’-]/g)
-    .map(word => word[0].toUpperCase())
+    .map((word) => word[0].toUpperCase())
     .join('')
 }
 

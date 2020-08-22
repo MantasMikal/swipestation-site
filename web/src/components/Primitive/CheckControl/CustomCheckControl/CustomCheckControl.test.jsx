@@ -10,8 +10,8 @@ const defaultProps = () => ({
   value: '1'
 })
 
-describe('Component: CustomCheckControl', function() {
-  test('should return errors if required props missing', function() {
+describe('Component: CustomCheckControl', function () {
+  test('should return errors if required props missing', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(CustomCheckControl.propTypes, {})
     const expected = {
@@ -21,7 +21,7 @@ describe('Component: CustomCheckControl', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(
       CustomCheckControl.propTypes,
@@ -31,7 +31,7 @@ describe('Component: CustomCheckControl', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', function() {
+  test('should output the expected markup with default props', function () {
     const wrapper = shallow(
       <CustomCheckControl {...requiredProps()} {...defaultProps()} />
     )
@@ -40,7 +40,7 @@ describe('Component: CustomCheckControl', function() {
     expect(wrapper.prop('className')).toEqual('CustomCheckControl checkbox')
   })
 
-  test('should output as expected when `radio` type passed', function() {
+  test('should output as expected when `radio` type passed', function () {
     const wrapper = shallow(
       <CustomCheckControl
         {...requiredProps()}
@@ -52,7 +52,7 @@ describe('Component: CustomCheckControl', function() {
     expect(wrapper.prop('className')).toEqual('CustomCheckControl radio')
   })
 
-  test('should output expected styles when `status` passed', function() {
+  test('should output expected styles when `status` passed', function () {
     const wrapper = shallow(
       <CustomCheckControl
         {...requiredProps()}

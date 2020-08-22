@@ -9,7 +9,10 @@ import BlogSection from 'Section/BlogSection'
 
 export const query = graphql`
   query BlogPageQuery {
-    posts: allSanityPost(limit: 100, sort: { fields: [publishedAt], order: DESC }) {
+    posts: allSanityPost(
+      limit: 100
+      sort: { fields: [publishedAt], order: DESC }
+    ) {
       edges {
         node {
           id
@@ -39,7 +42,7 @@ export const query = graphql`
   }
 `
 
-const BlogPage = props => {
+const BlogPage = (props) => {
   const { data, errors } = props
 
   if (errors) {
@@ -55,7 +58,9 @@ const BlogPage = props => {
   return (
     <Layout>
       <SEO title="Blog" slug={'/blog'} />
-      {blogNodes && blogNodes.length > 0 && <BlogSection blogNodes={blogNodes} />}
+      {blogNodes && blogNodes.length > 0 && (
+        <BlogSection blogNodes={blogNodes} />
+      )}
     </Layout>
   )
 }

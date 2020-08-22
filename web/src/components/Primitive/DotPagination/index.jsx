@@ -14,7 +14,7 @@ const DotPagination = ({
 }) => (
   <nav className={styles.DotPagination}>
     <ol className={styles.DotPaginationList} aria-label={labelTitle}>
-      {[...Array(dots).keys()].map(dot => {
+      {[...Array(dots).keys()].map((dot) => {
         const isActive = activeIndex === dot
         const label = isActive ? labelActive : `${labelInactive} ${dot + 1}`
         return (

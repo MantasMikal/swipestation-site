@@ -8,8 +8,8 @@ const defaultProps = () => ({
   text: 'Text'
 })
 
-describe('Component: Downloads', function() {
-  test('should output the expected markup with default props', function() {
+describe('Component: Downloads', function () {
+  test('should output the expected markup with default props', function () {
     const wrapper = shallow(<SocialLink {...defaultProps()} />)
     expect(wrapper.find('SmartLink')).toHaveLength(1)
   })

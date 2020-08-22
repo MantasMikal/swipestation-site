@@ -24,7 +24,7 @@ stories.add(
 
 stories.add('All available sizes', () => (
   <div>
-    {sizes.map(size => (
+    {sizes.map((size) => (
       <div style={{ margin: '5px 0 20px' }} key={`Type${size}`}>
         <code style={{ display: 'block' }}>{size}</code>
         <Type size={size}>Example content</Type>
@@ -35,7 +35,7 @@ stories.add('All available sizes', () => (
 
 stories.add('Custom element', () => (
   <div>
-    {['h1', 'a', 'span'].map(element => (
+    {['h1', 'a', 'span'].map((element) => (
       <div style={{ margin: '5px 0 20px' }} key={`Type${element}`}>
         <code style={{ display: 'block' }}>{element}</code>
         <Type as={element}>Example content as &lt;{element}/&gt;</Type>

@@ -7,8 +7,8 @@ const requiredProps = () => ({
   children: 'Example text'
 })
 
-describe('Component: FieldFeedback', function() {
-  test('should return errors if invalid default props passed', function() {
+describe('Component: FieldFeedback', function () {
+  test('should return errors if invalid default props passed', function () {
     const actual = validatePropTypes(FieldFeedback.propTypes, {})
     const expected = {
       children:
@@ -17,18 +17,18 @@ describe('Component: FieldFeedback', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', function () {
     const actual = validatePropTypes(FieldFeedback.propTypes, requiredProps())
     const expected = undefined
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', function() {
+  test('should output the expected markup with default props', function () {
     const wrapper = shallow(<FieldFeedback {...requiredProps()} />)
     expect(wrapper.prop('className')).toEqual('FieldFeedback')
   })
 
-  test('should output additional className when `status` prop passed', function() {
+  test('should output additional className when `status` prop passed', function () {
     const wrapper = shallow(
       <FieldFeedback {...requiredProps()} status="success" />
     )

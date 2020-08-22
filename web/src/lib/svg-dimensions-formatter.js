@@ -1,4 +1,4 @@
-const svgDimensionsFormatter = svg => {
+const svgDimensionsFormatter = (svg) => {
   const svgProps = svg().props
   const { width, height, viewBox } = svgProps
 

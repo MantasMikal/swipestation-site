@@ -2,7 +2,16 @@ import React from 'react'
 import { func, node, oneOf, string } from 'prop-types'
 import { Link } from 'gatsby'
 
-const SmartLink = ({ children, className, href, setRef, to, target, type, ...other }) => {
+const SmartLink = ({
+  children,
+  className,
+  href,
+  setRef,
+  to,
+  target,
+  type,
+  ...other
+}) => {
   // Standard link, use an `anchor` element
   if (href) {
     return (

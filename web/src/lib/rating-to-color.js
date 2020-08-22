@@ -1,4 +1,4 @@
-const ratingToColor = rating => {
+const ratingToColor = (rating) => {
   if (typeof rating !== 'string') return
 
   const colorMap = {

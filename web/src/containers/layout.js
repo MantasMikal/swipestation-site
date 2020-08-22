@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { graphql, StaticQuery } from "gatsby";
-import Layout from "../components/Layout/Layout";
+import React, { useState } from 'react'
+import { graphql, StaticQuery } from 'gatsby'
+import Layout from '../components/Layout/Layout'
 
 const query = graphql`
   query SiteTitleQuery {
@@ -22,15 +22,15 @@ const query = graphql`
       instagramUrl
     }
   }
-`;
+`
 
 const LayoutContainer = (props) => {
-  const [showNav, setShowNav] = useState(false);
+  const [showNav, setShowNav] = useState(false)
   function handleShowNav() {
-    setShowNav(true);
+    setShowNav(true)
   }
   function handleHideNav() {
-    setShowNav(false);
+    setShowNav(false)
   }
 
   return (
@@ -40,21 +40,21 @@ const LayoutContainer = (props) => {
         if (!data.site) {
           throw new Error(
             'Missing "Site settings". Open the studio at http://localhost:3333 and add "Site settings" data'
-          );
+          )
         }
         if (!data.companyInfo) {
           throw new Error(
             'Missing "Company info". Open the studio at http://localhost:3333 and add "Company info" data'
-          );
+          )
         }
         const social = {
           facebook: data.companyInfo.facebookUrl || null,
           twitter: data.companyInfo.twitterUrl || null,
           youtube: data.companyInfo.youtubeUrl || null,
-          instagram: data.companyInfo.instagramUrl || null,
-        };
+          instagram: data.companyInfo.instagramUrl || null
+        }
 
-        const { site } = data;
+        const { site } = data
 
         return (
           <Layout
@@ -66,10 +66,10 @@ const LayoutContainer = (props) => {
             social={social}
             logo={site && site.logo}
           />
-        );
+        )
       }}
     />
-  );
-};
+  )
+}
 
-export default LayoutContainer;
+export default LayoutContainer

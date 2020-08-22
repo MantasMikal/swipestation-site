@@ -5,8 +5,8 @@ import { DarkContextProvider } from '.'
 
 const requiredProps = () => ({ children: 'Default content', isDark: false })
 
-describe('Component: DarkContext', function() {
-  test('should return errors if required props missing', function() {
+describe('Component: DarkContext', function () {
+  test('should return errors if required props missing', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(DarkContextProvider.propTypes, {})
     const expected = {
@@ -18,7 +18,7 @@ describe('Component: DarkContext', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(
       DarkContextProvider.propTypes,
@@ -28,7 +28,7 @@ describe('Component: DarkContext', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', function() {
+  test('should output the expected markup with default props', function () {
     const wrapper = shallow(<DarkContextProvider {...requiredProps()} />)
     expect(wrapper.text()).toEqual('Default content')
   })

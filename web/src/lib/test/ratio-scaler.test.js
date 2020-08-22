@@ -1,7 +1,7 @@
 import ratioScaler from '../ratio-scaler'
 
-describe('ratioScaler', function() {
-  test('should return target if passed', function() {
+describe('ratioScaler', function () {
+  test('should return target if passed', function () {
     const target = { width: 10, height: 20 }
     const native = { width: 100, height: 200 }
     const output = ratioScaler(target, native)
@@ -10,7 +10,7 @@ describe('ratioScaler', function() {
     expect(output.ratio).toEqual(undefined)
   })
 
-  test('should return native if no target passed if passed', function() {
+  test('should return native if no target passed if passed', function () {
     const target = {}
     const native = { width: 100, height: 200 }
     const output = ratioScaler(target, native)
@@ -19,7 +19,7 @@ describe('ratioScaler', function() {
     expect(output.ratio).toEqual(undefined)
   })
 
-  test('should return scaled height if target width passed', function() {
+  test('should return scaled height if target width passed', function () {
     const target = { width: 50 }
     const native = { width: 100, height: 200 }
     const output = ratioScaler(target, native)
@@ -28,7 +28,7 @@ describe('ratioScaler', function() {
     expect(output.ratio).toEqual(0.5)
   })
 
-  test('should return scaled width if target height passed', function() {
+  test('should return scaled width if target height passed', function () {
     const target = { height: 50 }
     const native = { width: 100, height: 200 }
     const output = ratioScaler(target, native)
@@ -37,7 +37,7 @@ describe('ratioScaler', function() {
     expect(output.ratio).toEqual(0.25)
   })
 
-  test('should not round results', function() {
+  test('should not round results', function () {
     const target = { height: 50 }
     const native = { width: 103, height: 200 }
     const output = ratioScaler(target, native)

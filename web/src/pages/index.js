@@ -1,13 +1,13 @@
-import React from "react";
-import { graphql } from "gatsby";
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from "../lib/helpers";
+import React from 'react'
+import { graphql } from 'gatsby'
+import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
 
-import GraphQLErrorList from "../components/graphql-error-list";
-import SEO from "../components/seo";
-import Layout from "../containers/layout";
-import Hero from "Common/Hero";
-import BlogPostCarouselSection from "Section/BlogPostCarouselSection";
-import BlockSection from "Section/BlockSection";
+import GraphQLErrorList from '../components/graphql-error-list'
+import SEO from '../components/seo'
+import Layout from '../containers/layout'
+import Hero from 'Common/Hero'
+import BlogPostCarouselSection from 'Section/BlogPostCarouselSection'
+import BlockSection from 'Section/BlockSection'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -40,7 +40,7 @@ export const query = graphql`
           id
           publishedAt
           isFeatured
-          
+
           category {
             color {
               hex
@@ -63,32 +63,32 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 const IndexPage = (props) => {
-  const { data, errors } = props;
+  const { data, errors } = props
 
   if (errors) {
     return (
       <Layout>
         <GraphQLErrorList errors={errors} />
       </Layout>
-    );
+    )
   }
 
-  const site = (data || {}).site;
+  const site = (data || {}).site
   const postNodes = (data || {}).posts
     ? mapEdgesToNodes(data.posts).filter(filterOutDocsWithoutSlugs)
-    : [];
+    : []
 
-  const { home } = data;
-  const {hero, title, subtitle} = home
-  const sections = home && home._rawSections;
+  const { home } = data
+  const { hero, title, subtitle } = home
+  const sections = home && home._rawSections
 
   if (!site) {
     throw new Error(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
-    );
+    )
   }
 
   return (
@@ -112,7 +112,7 @@ const IndexPage = (props) => {
         title="Featured blog posts"
       />
     </Layout>
-  );
-};
+  )
+}
 
-export default IndexPage;
+export default IndexPage

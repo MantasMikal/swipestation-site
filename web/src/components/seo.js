@@ -24,21 +24,33 @@ const detailsQuery = graphql`
   }
 `
 
-function SEO ({ description, lang, meta, keywords = [], keySentence, title, image, slug }) {
+function SEO({
+  description,
+  lang,
+  meta,
+  keywords = [],
+  keySentence,
+  title,
+  image,
+  slug
+}) {
   return (
     <StaticQuery
       query={detailsQuery}
-      render={data => {
+      render={(data) => {
         if (!data.site) {
           return
         }
         const metaDescription = description || data.site.description
 
-        const metaImage = image && image.asset && image.asset.url ? image : data.site.metaImage
+        const metaImage =
+          image && image.asset && image.asset.url ? image : data.site.metaImage
 
-        const metaKeywords = keySentence || (data.site.keywords && data.site.keywords.length
-          ? data.site.keywords.join(', ')
-          : null)
+        const metaKeywords =
+          keySentence ||
+          (data.site.keywords && data.site.keywords.length
+            ? data.site.keywords.join(', ')
+            : null)
 
         return (
           <Helmet
@@ -46,7 +58,9 @@ function SEO ({ description, lang, meta, keywords = [], keySentence, title, imag
               lang
             }}
             title={title}
-            titleTemplate={title === data.site.title ? '%s' : `%s | ${data.site.title}`}
+            titleTemplate={
+              title === data.site.title ? '%s' : `%s | ${data.site.title}`
+            }
             meta={[
               {
                 name: 'description',
@@ -80,36 +94,36 @@ function SEO ({ description, lang, meta, keywords = [], keySentence, title, imag
               .concat(
                 metaImage
                   ? [
-                    {
-                      property: 'og:image',
-                      content: metaImage.asset.url
-                    },
-                    {
-                      property: 'og:image:width',
-                      content: metaImage.asset.metadata.dimensions.width
-                    },
-                    {
-                      property: 'og:image:height',
-                      content: metaImage.asset.metadata.dimensions.height
-                    },
-                    {
-                      name: 'twitter:card',
-                      content: 'summary_large_image'
-                    }
-                  ]
+                      {
+                        property: 'og:image',
+                        content: metaImage.asset.url
+                      },
+                      {
+                        property: 'og:image:width',
+                        content: metaImage.asset.metadata.dimensions.width
+                      },
+                      {
+                        property: 'og:image:height',
+                        content: metaImage.asset.metadata.dimensions.height
+                      },
+                      {
+                        name: 'twitter:card',
+                        content: 'summary_large_image'
+                      }
+                    ]
                   : [
-                    {
-                      name: 'twitter:card',
-                      content: 'summary'
-                    }
-                  ]
+                      {
+                        name: 'twitter:card',
+                        content: 'summary'
+                      }
+                    ]
               )
               .concat(
                 metaKeywords
                   ? {
-                    name: 'keywords',
-                    content: metaKeywords
-                  }
+                      name: 'keywords',
+                      content: metaKeywords
+                    }
                   : {}
               )
               .concat(meta)}

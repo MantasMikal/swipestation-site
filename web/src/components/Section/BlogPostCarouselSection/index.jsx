@@ -22,7 +22,10 @@ const BlogPostCarouselSection = ({ postNodes, title }) => {
           </Type>
         </SmartLink>
         <Carousel>
-          {postNodes && postNodes.map(node => <BlogPostPreview key={node.id} {...node} surround />)}
+          {postNodes &&
+            postNodes.map((node) => (
+              <BlogPostPreview key={node.id} {...node} surround />
+            ))}
         </Carousel>
       </Container>
     </section>

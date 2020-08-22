@@ -8,8 +8,8 @@ const requiredProps = () => ({
   ratio: 1
 })
 
-describe('Component: ResponsiveMedia', function() {
-  test('should return errors if required props missing', function() {
+describe('Component: ResponsiveMedia', function () {
+  test('should return errors if required props missing', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(ResponsiveMedia.propTypes, {})
     const expected = {
@@ -21,19 +21,19 @@ describe('Component: ResponsiveMedia', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid required props passed', function() {
+  test('shouldn’t error if valid required props passed', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(ResponsiveMedia.propTypes, requiredProps())
     const expected = undefined
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', function() {
+  test('should output the expected markup with default props', function () {
     const wrapper = shallow(<ResponsiveMedia {...requiredProps()} />)
     expect(wrapper.prop('style').paddingBottom).toEqual('100%')
   })
 
-  test('should handle a variety of ratio types', function() {
+  test('should handle a variety of ratio types', function () {
     const wrapper = shallow(<ResponsiveMedia {...requiredProps()} />)
     wrapper.setProps({ ratio: 1 })
     expect(wrapper.prop('style').paddingBottom).toEqual('100%')
@@ -49,7 +49,7 @@ describe('Component: ResponsiveMedia', function() {
     expect(wrapper.prop('style').paddingBottom).toEqual('10000%')
   })
 
-  test('should round ratio percentage to 4 decimal places', function() {
+  test('should round ratio percentage to 4 decimal places', function () {
     const wrapper = shallow(
       <ResponsiveMedia {...requiredProps()} ratio={321 / 111} />
     )

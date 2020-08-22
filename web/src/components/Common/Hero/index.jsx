@@ -1,11 +1,10 @@
-import React from "react";
+import React from 'react'
 
-import Type from "Primitive/Type";
-import Container from "Primitive/Container";
-import Media from "Common/Media";
+import Type from 'Primitive/Type'
+import Container from 'Primitive/Container'
+import Media from 'Common/Media'
 
-import styles from "./Hero.module.scss";
-
+import styles from './Hero.module.scss'
 
 const Hero = ({ heroImage, title, subtitle }) => {
   return (
@@ -20,9 +19,9 @@ const Hero = ({ heroImage, title, subtitle }) => {
         </Type>
       </Container>
     </div>
-  );
-};
+  )
+}
 
-Hero.propTypes = {};
+Hero.propTypes = {}
 
-export default Hero;
+export default Hero

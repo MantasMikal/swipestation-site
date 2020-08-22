@@ -14,7 +14,7 @@ export const query = graphql`
   }
 `
 
-const ContactPage = props => {
+const ContactPage = (props) => {
   const { data, errors } = props
 
   if (errors) {
@@ -32,15 +32,12 @@ const ContactPage = props => {
   }
 
   const contact = (data || {}).contact
-  const {_rawBody} = contact
+  const { _rawBody } = contact
 
   return (
     <Layout>
-      <SEO title='Contact' slug='/contact' />
-      <ContactSection
-        title='Contact'
-        body={_rawBody}
-      />
+      <SEO title="Contact" slug="/contact" />
+      <ContactSection title="Contact" body={_rawBody} />
     </Layout>
   )
 }

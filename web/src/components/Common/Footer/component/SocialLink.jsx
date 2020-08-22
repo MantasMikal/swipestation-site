@@ -11,7 +11,7 @@ const SocialLink = ({ url, type, text }) => (
   <SmartLink className={Link} href={url} key={`${type}-icon`}>
     <Icon type={type} width={30} height={30} a11yText={type} />
     {text && (
-      <Type as='span' size='base'>
+      <Type as="span" size="base">
         {text}
       </Type>
     )}

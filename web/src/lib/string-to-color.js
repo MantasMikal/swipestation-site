@@ -1,4 +1,4 @@
-const stringToColor = string => {
+const stringToColor = (string) => {
   if (typeof string !== 'string') return
 
   let hash = 0

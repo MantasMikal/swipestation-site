@@ -3,7 +3,7 @@ import createVideo from './createVideo'
 import createFigure from './createFigure'
 import createContentBlock from './createContentBlock'
 
-export const createMediaComponent = component => {
+export const createMediaComponent = (component) => {
   switch (component._type) {
     case 'figure':
       return createFigure(component)

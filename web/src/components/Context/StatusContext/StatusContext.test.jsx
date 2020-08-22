@@ -5,8 +5,8 @@ import { StatusContextProvider } from '.'
 
 const requiredProps = () => ({ children: 'Default content' })
 
-describe('Component: StatusContext', function() {
-  test('should return errors if required props missing', function() {
+describe('Component: StatusContext', function () {
+  test('should return errors if required props missing', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(StatusContextProvider.propTypes, {})
     const expected = {
@@ -16,7 +16,7 @@ describe('Component: StatusContext', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(
       StatusContextProvider.propTypes,
@@ -26,12 +26,12 @@ describe('Component: StatusContext', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', function() {
+  test('should output the expected markup with default props', function () {
     const wrapper = shallow(<StatusContextProvider {...requiredProps()} />)
     expect(wrapper.text()).toEqual('Default content')
   })
 
-  test('should output status value when `status` prop passed', function() {
+  test('should output status value when `status` prop passed', function () {
     const wrapper = shallow(
       <StatusContextProvider {...requiredProps()} status="success" />
     )

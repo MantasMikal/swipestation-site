@@ -10,7 +10,6 @@ import VimeoEmbed from './VimeoEmbed'
 import styles from './Video.module.scss'
 
 const Video = ({ videoType, videoId, caption, className }) => {
-
   switch (videoType) {
     case 'youtube':
       return (

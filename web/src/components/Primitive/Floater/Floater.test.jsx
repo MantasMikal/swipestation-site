@@ -5,8 +5,8 @@ import Floater from '.'
 
 const requiredProps = () => ({ children: 'Default content' })
 
-describe('Component: Floater', function() {
-  test('should return errors if required props missing', function() {
+describe('Component: Floater', function () {
+  test('should return errors if required props missing', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Floater.propTypes, {})
     const expected = {
@@ -16,25 +16,25 @@ describe('Component: Floater', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Floater.propTypes, requiredProps())
     const expected = undefined
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', function() {
+  test('should output the expected markup with default props', function () {
     const wrapper = shallow(<Floater {...requiredProps()} />)
     expect(wrapper.prop('className')).toEqual('Floater')
     expect(wrapper.text()).toEqual('Default content')
   })
 
-  test('should output additional className when `align` prop passed', function() {
+  test('should output additional className when `align` prop passed', function () {
     const wrapper = shallow(<Floater {...requiredProps()} align="left" />)
     expect(wrapper.prop('className')).toEqual('Floater left')
   })
 
-  test('should output additional className when `size` prop passed', function() {
+  test('should output additional className when `size` prop passed', function () {
     const wrapper = shallow(<Floater {...requiredProps()} size="medium" />)
     expect(wrapper.prop('className')).toEqual('Floater medium')
   })

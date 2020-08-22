@@ -1,5 +1,4 @@
 import React from 'react'
-import { mapEdgesToNodes } from 'lib/helpers'
 
 import { graphql } from 'gatsby'
 import BlockSection from 'Section/BlockSection'
@@ -17,7 +16,7 @@ export const query = graphql`
   }
 `
 
-const AboutPage = props => {
+const AboutPage = (props) => {
   const { data, errors } = props
 
   if (errors) {
@@ -38,7 +37,7 @@ const AboutPage = props => {
 
   return (
     <Layout>
-      <SEO title={page.title} slug='/about' />
+      <SEO title={page.title} slug="/about" />
       <BlockSection title={page.title} blockContent={page._rawBody || []} />
     </Layout>
   )

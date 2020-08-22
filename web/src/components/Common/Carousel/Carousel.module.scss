@@ -1,19 +1,21 @@
-
-
 .Carousel {
   position: relative;
-  
-  ul, li {
+
+  ul,
+  li {
     list-style: none;
     &::before {
       content: '';
       display: none;
     }
-  } 
+  }
 
-  & > div, li, ul {
+  & > div,
+  li,
+  ul {
     outline: 0;
-    &:active, &:focus {
+    &:active,
+    &:focus {
       outline: 0;
     }
   }
@@ -49,12 +51,12 @@
 }
 
 .Back {
-    position: absolute;
-    top: spacing(-3.5);
-    right: spacing(9);
-  
-    @include mq($breakpoint-tablet) {
-      right: spacing(7);
-      top: spacing(-5);
-    }
+  position: absolute;
+  top: spacing(-3.5);
+  right: spacing(9);
+
+  @include mq($breakpoint-tablet) {
+    right: spacing(7);
+    top: spacing(-5);
   }
+}

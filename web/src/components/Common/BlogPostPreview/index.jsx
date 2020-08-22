@@ -1,15 +1,15 @@
-import React from "react";
-import { string, object, array, bool } from "prop-types";
-import { Link } from "gatsby";
-import { getBlogUrl, formatDate } from "lib/helpers";
-import classNames from "classnames";
+import React from 'react'
+import { string, object, array, bool } from 'prop-types'
+import { Link } from 'gatsby'
+import { getBlogUrl, formatDate } from 'lib/helpers'
+import classNames from 'classnames'
 
-import BlockText from "Primitive/BlockText/BlockText";
-import Type from "Primitive/Type";
-import Media from "Common/Media";
-import Badge from "Common/Badge";
+import BlockText from 'Primitive/BlockText/BlockText'
+import Type from 'Primitive/Type'
+import Media from 'Common/Media'
+import Badge from 'Common/Badge'
 
-import styles from "./BlogPostPreview.module.scss";
+import styles from './BlogPostPreview.module.scss'
 
 const BlogPostPreview = ({
   slug,
@@ -20,7 +20,7 @@ const BlogPostPreview = ({
   ratio,
   surround,
   className,
-  category,
+  category
 }) => {
   return (
     <Link
@@ -59,8 +59,8 @@ const BlogPostPreview = ({
           ))}
       </div>
     </Link>
-  );
-};
+  )
+}
 
 BlogPostPreview.propTypes = {
   slug: object,
@@ -69,7 +69,7 @@ BlogPostPreview.propTypes = {
   publishedAt: string,
   excerpt: array,
   surround: bool,
-  className: string,
-};
+  className: string
+}
 
-export default BlogPostPreview;
+export default BlogPostPreview

@@ -3,10 +3,20 @@ import { bool, string } from 'prop-types'
 
 import shallowObjectToQuery from 'lib/shallow-object-to-query'
 
-export const YouTubeEmbedFallbackUrl = videoId =>
+export const YouTubeEmbedFallbackUrl = (videoId) =>
   `https://www.youtube.com/watch?v=${videoId}`
 
-const YouTubeEmbed = ({ hideControls, start, videoId, width, height, autoPlay, autoHide, mute, hideInfo }) => {
+const YouTubeEmbed = ({
+  hideControls,
+  start,
+  videoId,
+  width,
+  height,
+  autoPlay,
+  autoHide,
+  mute,
+  hideInfo
+}) => {
   const srcPrefix = 'https://www.youtube.com/embed/'
   const query = {
     rel: 0, // https://developers.google.com/youtube/player_parameters#release_notes_08_23_2018
@@ -16,7 +26,7 @@ const YouTubeEmbed = ({ hideControls, start, videoId, width, height, autoPlay, a
     ...(mute && { mute: 1 }),
     ...(hideInfo && { showInfo: 0 }),
     ...(hideControls && { controls: 0 }),
-    ...(autoPlay && { autoPlay: 1, }),
+    ...(autoPlay && { autoPlay: 1 }),
     ...(start && { start })
   }
 
@@ -24,13 +34,13 @@ const YouTubeEmbed = ({ hideControls, start, videoId, width, height, autoPlay, a
     <iframe
       title="Embedded YouTube video"
       src={`${srcPrefix}${videoId}?${shallowObjectToQuery(query)}`}
-      width={width ? width : "560"}
-      height={height ? height : "315"}
+      width={width ? width : '560'}
+      height={height ? height : '315'}
       frameBorder="0"
       allowFullScreen
-      samesite='None'
+      samesite="None"
       muted
-      secure='true'
+      secure="true"
     />
   )
 }

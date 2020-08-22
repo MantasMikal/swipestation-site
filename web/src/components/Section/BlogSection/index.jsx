@@ -1,15 +1,15 @@
-import React from "react";
-import { array } from "prop-types";
+import React from 'react'
+import { array } from 'prop-types'
 
-import BlogPostPreview from "Common/BlogPostPreview";
-import Container from "Primitive/Container";
-import Type from "Primitive/Type";
-import MasonryLayout from "Common/MasonryLayout";
+import BlogPostPreview from 'Common/BlogPostPreview'
+import Container from 'Primitive/Container'
+import Type from 'Primitive/Type'
+import MasonryLayout from 'Common/MasonryLayout'
 
-import styles from "./BlogSection.module.scss";
+import styles from './BlogSection.module.scss'
 
 const BlogSection = ({ blogNodes }) => {
-  let blogposts = [];
+  let blogposts = []
   for (let i = 0; i < blogNodes.length; i++) {
     blogposts.push(
       <BlogPostPreview
@@ -18,7 +18,7 @@ const BlogSection = ({ blogNodes }) => {
         {...blogNodes[i]}
         surround
       />
-    );
+    )
   }
 
   return (
@@ -36,11 +36,11 @@ const BlogSection = ({ blogNodes }) => {
       </Type>
       <MasonryLayout items={blogposts} gap={25} />
     </Container>
-  );
-};
+  )
+}
 
 BlogSection.propTypes = {
-  galleryNodes: array,
-};
+  galleryNodes: array
+}
 
-export default BlogSection;
+export default BlogSection

@@ -8,8 +8,8 @@ const requiredProps = () => ({
   src: '/image-800.jpg'
 })
 
-describe('Component: ResponsiveImage', function() {
-  test('should return errors if required props missing', function() {
+describe('Component: ResponsiveImage', function () {
+  test('should return errors if required props missing', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(ResponsiveImage.propTypes, {})
     const expected = {
@@ -21,14 +21,14 @@ describe('Component: ResponsiveImage', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(ResponsiveImage.propTypes, requiredProps())
     const expected = undefined
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', function() {
+  test('should output the expected markup with default props', function () {
     const wrapper = shallow(<ResponsiveImage {...requiredProps()} />)
     expect(wrapper.prop('alt')).toEqual('Default a11y text')
     expect(wrapper.prop('src')).toEqual('/image-800.jpg')
@@ -36,12 +36,12 @@ describe('Component: ResponsiveImage', function() {
     expect(wrapper.prop('srcSet')).toEqual(undefined)
   })
 
-  test('should still output `alt` if empty string passed', function() {
+  test('should still output `alt` if empty string passed', function () {
     const wrapper = shallow(<ResponsiveImage {...requiredProps()} alt="" />)
     expect(wrapper.prop('alt')).toEqual('')
   })
 
-  test('should output attribute if `sizes` prop passed', function() {
+  test('should output attribute if `sizes` prop passed', function () {
     const wrapper = shallow(
       <ResponsiveImage
         {...requiredProps()}
@@ -51,7 +51,7 @@ describe('Component: ResponsiveImage', function() {
     expect(wrapper.prop('sizes')).toEqual('(min-width: 200px) 50vw,100vw')
   })
 
-  test('should output attribute if `srcSet` prop passed', function() {
+  test('should output attribute if `srcSet` prop passed', function () {
     const wrapper = shallow(
       <ResponsiveImage
         {...requiredProps()}

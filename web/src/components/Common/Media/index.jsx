@@ -1,15 +1,15 @@
-import React from "react";
-import { object, number, string } from "prop-types";
-import Image from "gatsby-image";
-import ResponsiveMedia from "Primitive/ResponsiveMedia";
+import React from 'react'
+import { object, number, string } from 'prop-types'
+import Image from 'gatsby-image'
+import ResponsiveMedia from 'Primitive/ResponsiveMedia'
 
 const Media = ({ media, ratio, imgWrapperStyle, imgStyle, alt }) => {
   const fixedImg =
-    media && media.asset && media.asset.fixed ? media.asset.fixed : undefined;
+    media && media.asset && media.asset.fixed ? media.asset.fixed : undefined
   const fluidImg =
-    media && media.asset && media.asset.fluid ? media.asset.fluid : undefined;
+    media && media.asset && media.asset.fluid ? media.asset.fluid : undefined
 
-  if (!media) return null;
+  if (!media) return null
 
   if (ratio)
     return (
@@ -24,7 +24,7 @@ const Media = ({ media, ratio, imgWrapperStyle, imgStyle, alt }) => {
           />
         </ResponsiveMedia>
       )
-    );
+    )
   return (
     (fixedImg || fluidImg) && (
       <Image
@@ -35,15 +35,15 @@ const Media = ({ media, ratio, imgWrapperStyle, imgStyle, alt }) => {
         alt={media.alt}
       />
     )
-  );
-};
+  )
+}
 
 Media.propTypes = {
   media: object,
   ratio: number,
   imgWrapperStyle: object,
   imgStyle: object,
-  alt: string,
-};
+  alt: string
+}
 
-export default Media;
+export default Media

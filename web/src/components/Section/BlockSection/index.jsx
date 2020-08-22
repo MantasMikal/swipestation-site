@@ -7,7 +7,6 @@ import Type from 'Primitive/Type'
 
 import styles from './BlockSection.module.scss'
 
-
 const BlockSection = ({ blockContent, title }) => {
   return (
     <Container

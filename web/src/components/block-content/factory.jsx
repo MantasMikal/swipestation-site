@@ -6,7 +6,7 @@ export function createComponents(components) {
   if (!components) {
     return <> </>
   }
-  return components.map(component => {
+  return components.map((component) => {
     switch (component._type) {
       case 'grid':
         return createGrid(component)

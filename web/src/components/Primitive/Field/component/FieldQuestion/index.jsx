@@ -16,7 +16,7 @@ const FieldQuestion = ({ children, htmlFor, noLabel }) => {
 FieldQuestion.propTypes = {
   children: node.isRequired,
   noLabel: bool,
-  htmlFor: function(props, propName, componentName) {
+  htmlFor: function (props, propName, componentName) {
     if (
       (!props.noLabel || props.noLabel === false) &&
       (props[propName] === undefined || typeof props[propName] !== 'string')

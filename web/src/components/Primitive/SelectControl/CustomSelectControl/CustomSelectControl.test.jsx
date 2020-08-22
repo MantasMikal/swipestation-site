@@ -5,7 +5,7 @@ import CustomSelectControl from '.'
 
 const requiredProps = () => ({})
 
-describe('Component: CustomSelectControl', function() {
+describe('Component: CustomSelectControl', function () {
   // test('should return errors if required props missing', function() {
   //   // eslint-disable-next-line react/forbid-foreign-prop-types
   //   const actual = validatePropTypes(CustomSelectControl.propTypes, {})
@@ -16,7 +16,7 @@ describe('Component: CustomSelectControl', function() {
   //   expect(actual).toEqual(expected)
   // })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(
       CustomSelectControl.propTypes,
@@ -26,7 +26,7 @@ describe('Component: CustomSelectControl', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('should add expected default props', function() {
+  test('should add expected default props', function () {
     const wrapper = shallow(
       <CustomSelectControl {...requiredProps()} name="example">
         <option>Example 1</option>
@@ -38,7 +38,7 @@ describe('Component: CustomSelectControl', function() {
     expect(wrapper.prop('className')).toEqual('CustomSelectControl')
   })
 
-  test('should output additional styles when `multiple` prop passed', function() {
+  test('should output additional styles when `multiple` prop passed', function () {
     const wrapper = shallow(
       <CustomSelectControl {...requiredProps()} name="example" multiple>
         <option>Example 1</option>
@@ -47,7 +47,7 @@ describe('Component: CustomSelectControl', function() {
     expect(wrapper.prop('className')).toEqual('CustomSelectControl multiple')
   })
 
-  test('should output expected styles when `status` passed', function() {
+  test('should output expected styles when `status` passed', function () {
     const wrapper = shallow(
       <CustomSelectControl {...requiredProps()} status="error" name="example">
         <option>Example 1</option>

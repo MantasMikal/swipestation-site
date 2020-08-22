@@ -8,8 +8,8 @@ const requiredProps = () => ({
   name: 'example'
 })
 
-describe('Component: NativeSelectControl', function() {
-  test('should return errors if required props missing', function() {
+describe('Component: NativeSelectControl', function () {
+  test('should return errors if required props missing', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(NativeSelectControl.propTypes, {})
     const expected = {
@@ -21,7 +21,7 @@ describe('Component: NativeSelectControl', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(
       NativeSelectControl.propTypes,
@@ -31,7 +31,7 @@ describe('Component: NativeSelectControl', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('should add expected default props', function() {
+  test('should add expected default props', function () {
     const wrapper = shallow(<NativeSelectControl {...requiredProps()} />)
     expect(wrapper.type()).toEqual('select')
     expect(wrapper.prop('placeholder')).toEqual(undefined)
@@ -39,21 +39,21 @@ describe('Component: NativeSelectControl', function() {
     expect(wrapper.prop('className')).toEqual('NativeSelectControl')
   })
 
-  test('should output additional styles when `multiple` prop passed', function() {
+  test('should output additional styles when `multiple` prop passed', function () {
     const wrapper = shallow(
       <NativeSelectControl {...requiredProps()} multiple />
     )
     expect(wrapper.prop('className')).toEqual('NativeSelectControl multiple')
   })
 
-  test('should output expected styles when `status` passed', function() {
+  test('should output expected styles when `status` passed', function () {
     const wrapper = shallow(
       <NativeSelectControl {...requiredProps()} status="error" />
     )
     expect(wrapper.prop('className')).toEqual('NativeSelectControl error')
   })
 
-  test('should add additional classes when `className` passed', function() {
+  test('should add additional classes when `className` passed', function () {
     const wrapper = shallow(
       <NativeSelectControl {...requiredProps()} className="additional" />
     )

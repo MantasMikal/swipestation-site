@@ -13,7 +13,7 @@ const svgs = require.context('../../../assets/svg/icon/', false, /\.svg$/)
 export const vAligns = ['baseline', 'bottom', 'middle', 'top']
 export const types = svgs
   .keys()
-  .map(key => key.replace(`./`, '').replace(`.svg`, ''))
+  .map((key) => key.replace(`./`, '').replace(`.svg`, ''))
 
 const Icon = ({ a11yText, className, type, height, width, vAlign }) => {
   const SvgType = svgs(`./${type}.svg`).default

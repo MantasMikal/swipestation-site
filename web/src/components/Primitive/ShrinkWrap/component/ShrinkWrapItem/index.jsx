@@ -4,7 +4,14 @@ import { bool, node, oneOf, string } from 'prop-types'
 
 import styles from './ShrinkWrapItem.module.scss'
 
-const ShrinkWrapItem = ({ children, noWrap, shrink, spacing, vAlign, className }) => (
+const ShrinkWrapItem = ({
+  children,
+  noWrap,
+  shrink,
+  spacing,
+  vAlign,
+  className
+}) => (
   <span
     className={classNames(
       styles.ShrinkWrapItem,

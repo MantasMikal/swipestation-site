@@ -1,12 +1,12 @@
-import React from "react";
-import { func, bool, string, object, node } from "prop-types";
-import classnames from "classnames";
+import React from 'react'
+import { func, bool, string, object, node } from 'prop-types'
+import classnames from 'classnames'
 
-import Type from "Primitive/Type";
-import Icon from "Primitive/Icon";
-import SmartLink from "Primitive/SmartLink";
-import styles from "./Navigation.module.scss";
-import Media from "Common/Media";
+import Type from 'Primitive/Type'
+import Icon from 'Primitive/Icon'
+import SmartLink from 'Primitive/SmartLink'
+import styles from './Navigation.module.scss'
+import Media from 'Common/Media'
 
 const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, logo, id }) => {
   return (
@@ -64,8 +64,8 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, logo, id }) => {
         )}
       </button>
     </nav>
-  );
-};
+  )
+}
 
 Navigation.propTypes = {
   onHideNav: func,
@@ -73,11 +73,10 @@ Navigation.propTypes = {
   showNav: bool,
   siteTitle: string,
   logo: object,
-  id: string,
-};
+  id: string
+}
 
-export default Navigation;
-
+export default Navigation
 
 const LinkWrapper = ({ children, to, className, highlight }) => (
   <SmartLink
@@ -88,7 +87,7 @@ const LinkWrapper = ({ children, to, className, highlight }) => (
       {children}
     </Type>
   </SmartLink>
-);
+)
 
 LinkWrapper.propTypes = {
   children: node,

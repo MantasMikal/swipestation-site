@@ -8,7 +8,7 @@ import Element from '../Element'
 
 const unit = parseInt(styles.unit, 10) || 8
 
-const formatValue = value => {
+const formatValue = (value) => {
   if (typeof value === 'string') return value
   return value * unit
 }

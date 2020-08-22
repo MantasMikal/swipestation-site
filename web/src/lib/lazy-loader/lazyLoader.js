@@ -8,7 +8,7 @@ export default class LazyLoader extends Component {
     this.handleScroll = debounce(this.handleScroll.bind(this), 10)
   }
 
-  handleScroll () {
+  handleScroll() {
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop
 
@@ -18,9 +18,9 @@ export default class LazyLoader extends Component {
 
     const scrolled = winScroll / height
 
-    if(scrolled > this.props.threshold){
+    if (scrolled > this.props.threshold) {
       this.props.loadMore()
-      if(!this.props.hasMore) this.deattachListiner()
+      if (!this.props.hasMore) this.deattachListiner()
     }
   }
 
@@ -41,14 +41,9 @@ export default class LazyLoader extends Component {
   }
 
   render() {
-    return (
-      <>
-        {this.props.children}
-      </>
-    )
+    return <>{this.props.children}</>
   }
 }
-
 
 LazyLoader.propTypes = {
   threshold: PropTypes.number,

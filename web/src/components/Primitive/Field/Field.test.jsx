@@ -2,8 +2,8 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import Field from '.'
 
-describe('Component: Field', function() {
-  test('should output the expected markup', function() {
+describe('Component: Field', function () {
+  test('should output the expected markup', function () {
     const wrapper = shallow(
       <Field>
         <Field.Answer>Item one</Field.Answer>

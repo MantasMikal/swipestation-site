@@ -15,20 +15,19 @@ import Media from 'Common/Media'
 // Use logo from CMS
 
 const Footer = ({ social, logo, siteTitle }) => {
-
   return (
     <Container gutter className={styles.Wrapper}>
       <footer className={styles.Footer}>
-        <Container gutter center size='wide' className={styles.Container}>
+        <Container gutter center size="wide" className={styles.Container}>
           <div className={styles.Branding}>
-            <SmartLink href='/' className={styles.Logo}>
+            <SmartLink href="/" className={styles.Logo}>
               <Media media={logo} alt={siteTitle} />
             </SmartLink>
             <div className={styles.Social}>
-              <SocialLink type='twitter' url={social.twitter} />
-              <SocialLink type='facebook-round' url={social.facebook} />
-              <SocialLink type='youtube' url={social.youtube} />
-              <SocialLink type='instagram' url={social.instagram} />
+              <SocialLink type="twitter" url={social.twitter} />
+              <SocialLink type="facebook-round" url={social.facebook} />
+              <SocialLink type="youtube" url={social.youtube} />
+              <SocialLink type="instagram" url={social.instagram} />
             </div>
           </div>
           <div className={styles.LinkListWrapper}>
@@ -36,7 +35,7 @@ const Footer = ({ social, logo, siteTitle }) => {
               <List key={i} className={styles.LinkList}>
                 {linkList.map((link, j) => (
                   <SmartLink className={styles.Link} key={j} href={link.url}>
-                    <Type size='base'>{link.text}</Type>
+                    <Type size="base">{link.text}</Type>
                   </SmartLink>
                 ))}
               </List>

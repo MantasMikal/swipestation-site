@@ -13,9 +13,14 @@ import styles from './MapSection.module.scss'
 const MapSection = ({ title }) => {
   const isDark = useDarkContext()
   return (
-    <section className={classNames(styles.GelleryCarouselSection, isDark && styles.isDark)}>
-      <Container size='wide' center gutter spacious>
-        <Type size='displayLarge' as='h2' className={styles.Title}>
+    <section
+      className={classNames(
+        styles.GelleryCarouselSection,
+        isDark && styles.isDark
+      )}
+    >
+      <Container size="wide" center gutter spacious>
+        <Type size="displayLarge" as="h2" className={styles.Title}>
           {title}
         </Type>
         <div className={styles.MapWrapper}>

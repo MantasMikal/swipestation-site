@@ -1,7 +1,7 @@
 import svgDimensionsFormatter from '../svg-dimensions-formatter'
 
-describe('svgDimensionsFormatter', function() {
-  test('should early return width and height if supplied', function() {
+describe('svgDimensionsFormatter', function () {
+  test('should early return width and height if supplied', function () {
     const Svg = () => {
       return {
         props: {
@@ -16,7 +16,7 @@ describe('svgDimensionsFormatter', function() {
     expect(output.height).toEqual(40)
   })
 
-  test('should get width and height from svg viewbox', function() {
+  test('should get width and height from svg viewbox', function () {
     const Svg = () => {
       return {
         props: {
@@ -29,7 +29,7 @@ describe('svgDimensionsFormatter', function() {
     expect(output.height).toEqual(40)
   })
 
-  test('should return default values if no width or height can be determined', function() {
+  test('should return default values if no width or height can be determined', function () {
     const Svg = () => {
       return {
         props: {}

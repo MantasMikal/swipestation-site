@@ -5,7 +5,7 @@ import PasswordControl from '.'
 
 const requiredProps = () => ({})
 
-describe('Component: PasswordControl', function() {
+describe('Component: PasswordControl', function () {
   // test('should return errors if required props missing', function() {
   //   // eslint-disable-next-line react/forbid-foreign-prop-types
   //   const actual = validatePropTypes(PasswordControl.propTypes, {})
@@ -13,14 +13,14 @@ describe('Component: PasswordControl', function() {
   //   expect(actual).toEqual(expected)
   // })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(PasswordControl.propTypes, requiredProps())
     const expected = undefined
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', function() {
+  test('should output the expected markup with default props', function () {
     const wrapper = shallow(
       <PasswordControl {...requiredProps()} name="example" />
     )
@@ -30,7 +30,7 @@ describe('Component: PasswordControl', function() {
     expect(Button.prop('a11yText')).toEqual('Reveal password')
   })
 
-  test('should output the expected when set to `text` type', function() {
+  test('should output the expected when set to `text` type', function () {
     const wrapper = shallow(
       <PasswordControl {...requiredProps()} name="example" type="text" />
     )
@@ -40,7 +40,7 @@ describe('Component: PasswordControl', function() {
     expect(Button.prop('a11yText')).toEqual('Hide password')
   })
 
-  test('should toggle types when button is clicked', function() {
+  test('should toggle types when button is clicked', function () {
     const wrapper = mount(
       <PasswordControl {...requiredProps()} name="example" />
     )

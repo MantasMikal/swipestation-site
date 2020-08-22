@@ -8,8 +8,8 @@ const requiredProps = () => ({
   htmlFor: 'example-name'
 })
 
-describe('Component: FieldQuestion', function() {
-  test('should return errors if invalid default props passed', function() {
+describe('Component: FieldQuestion', function () {
+  test('should return errors if invalid default props passed', function () {
     const actual = validatePropTypes(FieldQuestion.propTypes, {})
     const expected = {
       children:
@@ -20,20 +20,20 @@ describe('Component: FieldQuestion', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', function () {
     const actual = validatePropTypes(FieldQuestion.propTypes, requiredProps())
     const expected = undefined
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', function() {
+  test('should output the expected markup with default props', function () {
     const wrapper = shallow(<FieldQuestion {...requiredProps()} />)
     expect(wrapper.prop('className')).toEqual('FieldQuestion')
     expect(wrapper.find('label')).toHaveLength(1)
     expect(wrapper.find('span')).toHaveLength(0)
   })
 
-  test('should output the expected markup with default props', function() {
+  test('should output the expected markup with default props', function () {
     const wrapper = shallow(<FieldQuestion {...requiredProps()} noLabel />)
     expect(wrapper.prop('className')).toEqual('FieldQuestion')
     expect(wrapper.find('label')).toHaveLength(0)

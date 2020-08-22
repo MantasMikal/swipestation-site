@@ -4,7 +4,7 @@ import { node, number } from 'prop-types'
 import styles from './ResponsiveMedia.module.scss'
 import classNames from 'classnames'
 
-const formatRatio = ratio => {
+const formatRatio = (ratio) => {
   return parseFloat((ratio * 100).toFixed(4))
 }
 

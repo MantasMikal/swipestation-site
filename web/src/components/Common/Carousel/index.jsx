@@ -1,17 +1,23 @@
 import React from 'react'
 import useMedia from 'lib/use-media'
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel'
+import {
+  CarouselProvider,
+  Slider,
+  Slide,
+  ButtonBack,
+  ButtonNext
+} from 'pure-react-carousel'
 import classNames from 'classnames'
 import Icon from 'Primitive/Icon'
 
 import 'pure-react-carousel/dist/react-carousel.es.css'
 import styles from './Carousel.module.scss'
 
-const Carousel = props => {
+const Carousel = (props) => {
   const isTablet = useMedia('(max-width: 960px)')
   const isPhone = useMedia('(max-width: 600px)')
   const slidesToShow = isTablet ? (isPhone ? 1 : 2) : 3
-   
+
   return (
     <CarouselProvider
       naturalSlideWidth={400}

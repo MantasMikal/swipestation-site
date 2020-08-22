@@ -13,8 +13,8 @@ const defaultProps = () => ({
   type: 'checkbox'
 })
 
-describe('Component: CheckControl', function() {
-  test('should return errors if invalid default props passed', function() {
+describe('Component: CheckControl', function () {
+  test('should return errors if invalid default props passed', function () {
     const actual = validatePropTypes(CheckControl.propTypes, {})
     const expected = {
       children:
@@ -23,13 +23,13 @@ describe('Component: CheckControl', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', function () {
     const actual = validatePropTypes(CheckControl.propTypes, requiredProps())
     const expected = undefined
     expect(actual).toEqual(expected)
   })
 
-  test('should render a CustomCheckControl by default', function() {
+  test('should render a CustomCheckControl by default', function () {
     const wrapper = shallow(
       <CheckControl {...defaultProps()} value="1">
         Example Text
@@ -39,7 +39,7 @@ describe('Component: CheckControl', function() {
     expect(wrapper.find('CustomCheckControl')).toHaveLength(1)
   })
 
-  test('should render a NativeCheckControl if passed `native` prop', function() {
+  test('should render a NativeCheckControl if passed `native` prop', function () {
     const wrapper = shallow(
       <CheckControl {...defaultProps()} value="1" native>
         Example Text
@@ -49,7 +49,7 @@ describe('Component: CheckControl', function() {
     expect(wrapper.find('NativeCheckControl')).toHaveLength(1)
   })
 
-  test('should allow a Component as the text prop', function() {
+  test('should allow a Component as the text prop', function () {
     const wrapper = shallow(
       <CheckControl {...defaultProps()} value="1">
         <em>
@@ -57,21 +57,13 @@ describe('Component: CheckControl', function() {
         </em>
       </CheckControl>
     )
-    expect(
-      wrapper
-        .render()
-        .find('em')
-        .text()
-    ).toEqual('I am HTML')
-    expect(
-      wrapper
-        .render()
-        .find('em')
-        .html()
-    ).toEqual('I am <strong>HTML</strong>')
+    expect(wrapper.render().find('em').text()).toEqual('I am HTML')
+    expect(wrapper.render().find('em').html()).toEqual(
+      'I am <strong>HTML</strong>'
+    )
   })
 
-  test('should not add a checked attribute if value not set', function() {
+  test('should not add a checked attribute if value not set', function () {
     const wrapper = shallow(
       <CheckControl {...defaultProps()}>Example Text</CheckControl>
     )
@@ -80,7 +72,7 @@ describe('Component: CheckControl', function() {
     )
   })
 
-  test('should not add a checked attribute if value not recognised', function() {
+  test('should not add a checked attribute if value not recognised', function () {
     const wrapper = shallow(
       <CheckControl {...defaultProps()}>Example Text</CheckControl>
     )
@@ -93,7 +85,7 @@ describe('Component: CheckControl', function() {
     )
   })
 
-  test('should add a checked attribute', function() {
+  test('should add a checked attribute', function () {
     const wrapper = shallow(
       <CheckControl {...defaultProps()}>Example Text</CheckControl>
     )

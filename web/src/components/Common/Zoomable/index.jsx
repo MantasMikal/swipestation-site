@@ -1,15 +1,15 @@
-import React from "react";
-import { object, node } from "prop-types";
-import Zoom from "react-medium-image-zoom";
+import React from 'react'
+import { object, node } from 'prop-types'
+import Zoom from 'react-medium-image-zoom'
 
-import Media from "Common/Media";
+import Media from 'Common/Media'
 
-import styles from "./Zoomable.module.scss";
-import "react-medium-image-zoom/dist/styles.css";
+import styles from './Zoomable.module.scss'
+import 'react-medium-image-zoom/dist/styles.css'
 
 const imageStyles = {
-  width: "100%",
-};
+  width: '100%'
+}
 
 // Can't be used with ResponsiveMedia
 
@@ -18,7 +18,7 @@ const ZoomableMedia = ({ media, children }) => {
     children
   ) : (
     <Media imgWrapperStyle={imageStyles} imgStyle={imageStyles} media={media} />
-  );
+  )
   return (
     <Zoom
       className={styles.ZoomableMedia}
@@ -29,12 +29,12 @@ const ZoomableMedia = ({ media, children }) => {
     >
       {component}
     </Zoom>
-  );
-};
+  )
+}
 
 ZoomableMedia.propTypes = {
   media: object,
-  children: node,
-};
+  children: node
+}
 
-export default ZoomableMedia;
+export default ZoomableMedia

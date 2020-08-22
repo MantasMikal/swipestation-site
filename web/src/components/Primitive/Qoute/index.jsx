@@ -5,10 +5,14 @@ import classNames from 'classnames'
 import styles from './Qoute.module.scss'
 
 const Qoute = ({ children, className, ...rest }) => {
-
   return (
     <blockquote
-      className={classNames(styles.baseLarge, styles.qoute, styles.common, className)}
+      className={classNames(
+        styles.baseLarge,
+        styles.qoute,
+        styles.common,
+        className
+      )}
       {...rest}
     >
       {children}

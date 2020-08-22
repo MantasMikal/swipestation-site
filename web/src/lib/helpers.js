@@ -4,7 +4,7 @@ export function cn(...args) {
 
 export function mapEdgesToNodes(data) {
   if (!data.edges) return []
-  return data.edges.map(edge => edge.node)
+  return data.edges.map((edge) => edge.node)
 }
 
 export function filterOutDocsWithoutSlugs({ slug }) {
@@ -32,7 +32,11 @@ export function buildImageObj(source) {
 
 export function formatDate(date) {
   const d = new Date(date)
-  const dtf = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit' })
+  const dtf = new Intl.DateTimeFormat('en', {
+    year: 'numeric',
+    month: 'short',
+    day: '2-digit'
+  })
   const [{ value: mo }, , { value: da }, , { value: ye }] = dtf.formatToParts(d)
   return (date = `${da} ${mo} ${ye}`)
 }

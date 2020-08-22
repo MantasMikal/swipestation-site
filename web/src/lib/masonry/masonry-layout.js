@@ -24,7 +24,10 @@ export default class MasonryLayout extends React.Component {
     })
 
   shouldComponentUpdate(nextProps, nextState) {
-    if (this.state.colCount === nextState.colCount && this.props.children === nextProps.children) {
+    if (
+      this.state.colCount === nextState.colCount &&
+      this.props.children === nextProps.children
+    ) {
       return false
     } else return true
   }
@@ -50,7 +53,10 @@ export default class MasonryLayout extends React.Component {
     for (let i = 0; i < this.props.children.length; i++) {
       const columnIndex = i % this.state.colCount
       columnWrapper[`column${columnIndex}`].push(
-        <div style={{ marginBottom: `${this.props.gap}px` }} key={`column-${columnIndex}-${i}`}>
+        <div
+          style={{ marginBottom: `${this.props.gap}px` }}
+          key={`column-${columnIndex}-${i}`}
+        >
           {this.props.children[i]}
         </div>
       )
