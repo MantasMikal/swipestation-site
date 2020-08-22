@@ -7,8 +7,8 @@ export default {
         sites: [
           {
             title: "Picks",
-            apiId: "9b190ed4-c8fe-4748-98c7-498ed8bf59a7",
-            buildHookId: "5e90c117577652eeb4818be6",
+            apiId: "xxxx-xxx-xxxxxxxxxxxxxxxxx",
+            buildHookId: "xxxxxxxxxxxxxxxxxxxxxxx",
             name: "gatsby-starter-picks",
           },
         ],
