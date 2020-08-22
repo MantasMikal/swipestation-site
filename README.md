@@ -1,4 +1,4 @@
-# Gatsby starter to quickly ship good quality sites ✈
+# gatsby-starter-picks
 
 ## Features
 
