@@ -28,7 +28,12 @@
 // SIZES
 .spacious {
   padding-top: spacing(4);
-  padding-bottom: spacing(8);
+  padding-bottom: spacing(4);
+
+  @include mq($breakpoint-tablet) {
+    padding-top: spacing(6);
+    padding-bottom: spacing(3);
+  }
 }
 
 .full {

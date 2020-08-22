@@ -3,7 +3,6 @@
 
 .Carousel {
   position: relative;
-
   ul,
   li {
     list-style: none;
@@ -44,8 +43,8 @@
 
 .Next {
   position: absolute;
-  top: spacing(-3.5);
-  right: spacing(2);
+  top: spacing(-2.8);
+  right: spacing(2.2);
 
   @include mq($breakpoint-tablet) {
     right: spacing(1);
@@ -55,7 +54,7 @@
 
 .Back {
   position: absolute;
-  top: spacing(-3.5);
+  top: spacing(-2.8);
   right: spacing(9);
 
   @include mq($breakpoint-tablet) {

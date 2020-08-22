@@ -17,22 +17,19 @@ const Carousel = (props) => {
   const isTablet = useMedia('(max-width: 960px)')
   const isPhone = useMedia('(max-width: 600px)')
   const slidesToShow = isTablet ? (isPhone ? 1 : 2) : 3
-  console.log('Carousel -> slidesToShow', slidesToShow)
 
   return (
     <CarouselProvider
       naturalSlideWidth={400}
       naturalSlideHeight={500}
-      totalSlides={props.children.length}
+      totalSlides={props.children.length + 1}
       visibleSlides={slidesToShow || 3}
       isIntrinsicHeight
       className={styles.Carousel}
       dragStep={slidesToShow || 3}
       step={slidesToShow || 3}
-      dragEnabled
-      touchEnabled
     >
-      <Slider className={styles.Slider} moveThreshold={100}>
+      <Slider moveThreshold={0.5} className={styles.Slider}>
         {props.children.map((child, i) => (
           <Slide key={child.key} className={styles.Slide} index={i}>
             {child}
@@ -43,8 +40,8 @@ const Carousel = (props) => {
         <Icon
           className={styles.ControlIcon}
           type="chevron-left"
-          width={30}
-          height={20}
+          width={24}
+          height={30}
           a11yText="Previous Slide"
         />
       </ButtonBack>
@@ -52,8 +49,8 @@ const Carousel = (props) => {
         <Icon
           className={styles.ControlIcon}
           type="chevron-right"
-          width={30}
-          height={20}
+          width={24}
+          height={30}
           a11yText="Previous Slide"
         />
       </ButtonNext>
