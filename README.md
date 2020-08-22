@@ -16,7 +16,7 @@ https://gatsby-starter-picks.netlify.com
 - Storybook
 - SCSS Modules
 - Style and javascript linting + prettier
-- Primitive component library to get the boring stuff done
+- Primitive component library to get the boring stuff out of the way
 
 ## Setup
 
