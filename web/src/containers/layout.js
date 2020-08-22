@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { graphql, StaticQuery } from 'gatsby'
+import { Helmet } from 'react-helmet'
+
 import Layout from '../components/Layout/Layout'
 
 const query = graphql`
@@ -57,15 +59,24 @@ const LayoutContainer = (props) => {
         const { site } = data
 
         return (
-          <Layout
-            {...props}
-            showNav={showNav}
-            onHideNav={handleHideNav}
-            onShowNav={handleShowNav}
-            siteTitle={site && site.title}
-            social={social}
-            logo={site && site.logo}
-          />
+          <>
+            <Helmet>
+              <link rel="preconnect" href="https://use.typekit.net" />
+              <link
+                rel="stylesheet"
+                href="https://use.typekit.net/rnl5jdi.css"
+              />
+            </Helmet>
+            <Layout
+              {...props}
+              showNav={showNav}
+              onHideNav={handleHideNav}
+              onShowNav={handleShowNav}
+              siteTitle={site && site.title}
+              social={social}
+              logo={site && site.logo}
+            />
+          </>
         )
       }}
     />

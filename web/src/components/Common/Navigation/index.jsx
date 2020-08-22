@@ -14,7 +14,7 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, logo, id }) => {
       <h1 hidden>{siteTitle}</h1>
       <div className={styles.Branding}>
         <SmartLink to="/">
-          <Media media={logo} className={styles.Logo} />
+          <Media media={logo} className={styles.Logo} alt={siteTitle} />
         </SmartLink>
       </div>
       <LinkWrapper className={styles.NavLink} to="/contact/">

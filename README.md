@@ -7,6 +7,7 @@ https://gatsby-starter-picks.netlify.com
 ## Features
 
 - Sanity.io CMS integration
+- PWA Support
 - Storybook
 - SCSS Modules
 - Style and javascript linting + prettier

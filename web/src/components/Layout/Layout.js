@@ -33,7 +33,7 @@ const Layout = ({
       <div className={styles.Content} id="content">
         {children}
       </div>
-      <Footer social={social} logo={logo} />
+      <Footer social={social} logo={logo} siteTitle={siteTitle} />
     </div>
   )
 }
