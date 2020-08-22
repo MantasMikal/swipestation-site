@@ -26,17 +26,6 @@ module.exports = {
     },
     'gatsby-plugin-postcss',
     {
-      resolve: 'gatsby-plugin-sass',
-      options: {
-        includePaths: [
-          ...require('backline-mixins').includePaths,
-          ...require('backline-normalize').includePaths,
-          path.join(__dirname, 'src/assets/scss/setting')
-        ],
-        sassRuleModulesTest: /\.module\.s(a|c)ss$/
-      }
-    },
-    {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
@@ -56,13 +45,6 @@ module.exports = {
         watchMode: true,
         overlayDrafts: true
       }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/assets/content`,
-      },
     },
     {
       resolve: 'gatsby-plugin-manifest',

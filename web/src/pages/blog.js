@@ -20,7 +20,6 @@ export const query = graphql`
             }
             title
           }
-          readTime
           mainImage {
             asset {
               url
