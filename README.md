@@ -4,6 +4,9 @@
 <p align="center">
   An opinionted starter that contains everything you need to quickly ship any type of site.
 </p>
+<p align="center">
+  <a href='https://gatsby-starter-picks.netlify.com'><b>DEMO</b></a>
+</p>
 <p>
 </p>
   <br>
@@ -12,6 +15,12 @@
     <img
       src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"
       alt="Contributions welcome"
+    />
+  </a>
+    <a href="https://github.com/MantasMikal/gatsby-starter-picks/blob/master/LICENSE">
+    <img
+      src="https://img.shields.io/github/license/MantasMikal/gatsby-starter-picks "
+      alt="styled with prettier"
     />
   </a>
   <a href="https://github.com/prettier/prettier">
@@ -27,14 +36,9 @@
     />
   </a>
 <p>
-<br>
 <p align="center">
   <img width="500" src="https://i.imgur.com/Md3UTQ9.png" alt="Google lighthouse"/>
 </p>
-
-## Demo
-
-[Gatsby Starter Picks](https://gatsby-starter-picks.netlify.com)
 
 ## Features
 
@@ -42,8 +46,8 @@
 - [x] SCSS Modules
 - [x] Buletproof base level component library to get the boring stuff out of the way
 - [x] Useful set of SCSS utility [mixins](https://www.npmjs.com/package/backline-mixins) to aid development
+- [x] Created with accessibility in mind
 - [x] Storybook integration
-- [x] Optimised with Google Lighthouse
 - [x] Inline SVG support
 - [x] PWA Support
 - [x] Sitemap support
