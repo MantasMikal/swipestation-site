@@ -36,6 +36,12 @@ const serializers = {
   types: {
     block(props) {
       switch (props.node.style) {
+        case 'title':
+          return (
+            <Type as="h2" size="displayLarge" padded>
+              {props.children}
+            </Type>
+          )
         case 'h2':
           return (
             <Type as="h2" size="titleLarge" padded>

@@ -6,7 +6,7 @@ const createContentBlock = (block) => {
   const padding = block.padding ? { padding: `${block.padding}` } : null
   const border = block.border ? { border: `${block.border}` } : null
 
-  const styles = Object.assign({}, padding, margin, border)
+  const styles = Object.assign({}, padding, margin, border, { width: '100%' })
   return (
     <div key={block._key} style={styles}>
       <BlockContent blocks={block.contentBlock} />
