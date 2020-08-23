@@ -15,13 +15,15 @@ import styles from './Prose.module.scss'
  * Prose will override most inline styles to avoid cases where content is
  * pasted into a WYSIWYG from Word or similar with inline styles attached.
 */
-const Prose = ({ children, className, html, inverse }) => {
-  if (!children && !html) return null
+const Prose = ({ children, className, dangerousHtml, inverse }) => {
+  if (!children && !dangerousHtml) return null
 
   return (
     <div
       className={classNames(styles.Prose, inverse && styles.inverse, className)}
-      {...(html && { dangerouslySetInnerHTML: { __html: html } })}
+      {...(dangerousHtml && {
+        dangerouslySetInnerHTML: { __html: dangerousHtml }
+      })}
     >
       {children}
     </div>
@@ -31,7 +33,7 @@ const Prose = ({ children, className, html, inverse }) => {
 Prose.propTypes = {
   children: node,
   className: string,
-  html: string,
+  dangerousHtml: string,
   inverse: bool
 }
 

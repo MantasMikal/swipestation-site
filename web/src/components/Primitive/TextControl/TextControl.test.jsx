@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from 'libs/validate-required-props'
 
 import TextControl from '.'
 
@@ -9,22 +9,7 @@ const requiredProps = () => ({
 })
 
 describe('Component: TextControl', function () {
-  test('should return errors if invalid default props passed', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(TextControl.propTypes, {})
-    const expected = {
-      name:
-        'The prop `name` is marked as required in `Component`, but its value is `undefined`.'
-    }
-    expect(actual).toEqual(expected)
-  })
-
-  test('shouldn’t error if valid default props passed', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(TextControl.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(TextControl, requiredProps())
 
   test('should add expected default props', function () {
     const wrapper = shallow(<TextControl {...requiredProps()} />)

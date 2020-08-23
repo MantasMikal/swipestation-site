@@ -1,16 +1,15 @@
 import React from 'react'
-import { bool, node, string } from 'prop-types'
 import classNames from 'classnames'
-
-import SmartLink from 'Primitive/SmartLink'
+import { bool, node, string } from 'prop-types'
 
 import styles from './ButtonBase.module.scss'
+
+import SmartLink from '../SmartLink'
 
 /**
  * A base for building button components, which sets up basic (un)styling,
   along with default options, such as block-level or disabled styling.
 */
-
 const ButtonBase = ({ block, className, disabled, ...other }) => (
   <SmartLink
     className={classNames(

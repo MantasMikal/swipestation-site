@@ -1,6 +1,6 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
-import { shallow } from 'enzyme'
+import validateRequiredProps from 'libs/validate-required-props'
+import { render } from '@testing-library/react'
 import A11yNavigation from '.'
 
 const requiredProps = () => ({
@@ -14,27 +14,15 @@ const requiredProps = () => ({
   ]
 })
 
-describe('Component: A11yNavigation', function () {
-  test('should return errors if required props missing', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(A11yNavigation.propTypes, {})
-    const expected = {
-      children:
-        'The prop `children` is marked as required in `Component`, but its value is `undefined`.'
-    }
-    expect(actual).toEqual(expected)
-  })
+describe('Component: A11yNavigation', () => {
+  validateRequiredProps(A11yNavigation, requiredProps())
 
-  test('shouldn’t error if valid default props passed', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(A11yNavigation.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
-
-  test('should output the expected markup with default props', function () {
-    const wrapper = shallow(<A11yNavigation {...requiredProps()} />)
-    expect(wrapper.prop('className')).toEqual('A11yNavigation')
-    expect(wrapper.find('a')).toHaveLength(2)
+  test('should output the expected markup with default props', () => {
+    const { getByText, getAllByRole } = render(
+      <A11yNavigation {...requiredProps()} />
+    )
+    expect(getAllByRole('link')).toHaveLength(2)
+    expect(getByText('Jump to main content')).toBeTruthy()
+    expect(getByText('Jump to primary navigation')).toBeTruthy()
   })
 })

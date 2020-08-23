@@ -7,31 +7,17 @@ export const YouTubeEmbedFallbackUrl = (videoId) =>
   `https://www.youtube.com/watch?v=${videoId}`
 
 /**
- * Embeds a Youtube video, with options for common video API preferences.
+ * Embeds a Vimeo video, with options for common video API preferences.
 
  * To make the video responsive, wrap in in a \`ResponsiveMedia\` component.
  */
-const YouTubeEmbed = ({
-  hideControls,
-  start,
-  videoId,
-  width,
-  height,
-  autoPlay,
-  autoHide,
-  mute,
-  hideInfo
-}) => {
+const YouTubeEmbed = ({ hideControls, start, videoId }) => {
   const srcPrefix = 'https://www.youtube.com/embed/'
   const query = {
-    rel: 0, // https://developers.google.com/youtube/player_parameters#release_notes_08_23_2018
     modestbranding: 1,
     playsinline: 1,
-    ...(autoHide && { autoHide: 1 }),
-    ...(mute && { mute: 1 }),
-    ...(hideInfo && { showInfo: 0 }),
+    rel: 0, // https://developers.google.com/youtube/player_parameters#release_notes_08_23_2018
     ...(hideControls && { controls: 0 }),
-    ...(autoPlay && { autoPlay: 1 }),
     ...(start && { start })
   }
 
@@ -39,13 +25,10 @@ const YouTubeEmbed = ({
     <iframe
       title="Embedded YouTube video"
       src={`${srcPrefix}${videoId}?${shallowObjectToQuery(query)}`}
-      width={width ? width : '560'}
-      height={height ? height : '315'}
+      width="560"
+      height="315"
       frameBorder="0"
       allowFullScreen
-      samesite="None"
-      muted
-      secure="true"
     />
   )
 }
@@ -53,13 +36,7 @@ const YouTubeEmbed = ({
 YouTubeEmbed.propTypes = {
   hideControls: bool,
   start: string,
-  videoId: string.isRequired,
-  width: string,
-  height: string,
-  autoPlay: bool,
-  autoHide: bool,
-  mute: bool,
-  showInfo: bool
+  videoId: string.isRequired
 }
 
 export default YouTubeEmbed

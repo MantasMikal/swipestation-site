@@ -1,8 +1,10 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from 'libs/validate-required-props'
 import { shallow } from 'enzyme'
 
 import FieldTemplate from './'
+
+const requiredProps = () => ({})
 
 const defaultProps = () => ({
   controlName: 'example',
@@ -11,11 +13,7 @@ const defaultProps = () => ({
 })
 
 describe('Component: FieldTemplate', function () {
-  test('shouldn’t error if valid default props passed', function () {
-    const actual = validatePropTypes(FieldTemplate.propTypes, {})
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(FieldTemplate, requiredProps())
 
   test('should output the expected markup with default props', function () {
     const wrapper = shallow(

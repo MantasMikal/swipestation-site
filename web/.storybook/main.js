@@ -105,7 +105,12 @@ module.exports = {
       __dirname,
       '../src/components/Common'
     )
-    config.resolve.alias['lib'] = path.join(__dirname, '../src/lib')
+    config.resolve.alias['Context'] = path.join(
+      __dirname,
+      '../src/components/Context'
+    )
+    config.resolve.alias['libs'] = path.join(__dirname, '../src/libs')
+    config.resolve.alias['hooks'] = path.join(__dirname, '../src/hooks')
     config.resolve.alias['Section'] = path.join(
       __dirname,
       '../src/components/Section'

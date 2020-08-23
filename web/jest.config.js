@@ -33,7 +33,8 @@ module.exports = {
     'Common/(.*)$': '<rootDir>/src/components/Common/$1',
     'Section/(.*)$': '<rootDir>/src/components/Section/$1',
     'Context/(.*)$': '<rootDir>/src/components/Context/$1',
-    'libs/(.*)$': '<rootDir>/src/libs/$1'
+    'libs/(.*)$': '<rootDir>/src/libs/$1',
+    'hooks/(.*)$': '<rootDir>/src/hooks/$1'
   },
   coverageReporters: ['text'],
   watchPlugins: [

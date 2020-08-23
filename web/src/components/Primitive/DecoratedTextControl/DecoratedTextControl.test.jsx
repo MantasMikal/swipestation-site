@@ -1,19 +1,12 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from 'libs/validate-required-props'
 import { shallow } from 'enzyme'
 import DecoratedTextControl from './'
 
 const requiredProps = () => ({})
 
 describe('Component: DecoratedTextControl', function () {
-  test('shouldn’t error if valid default props passed', function () {
-    const actual = validatePropTypes(
-      DecoratedTextControl.propTypes,
-      requiredProps()
-    )
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(DecoratedTextControl, requiredProps())
 
   test('should output the expected markup with default props', function () {
     const wrapper = shallow(

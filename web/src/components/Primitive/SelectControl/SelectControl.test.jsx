@@ -1,17 +1,13 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from 'libs/validate-required-props'
 
 import SelectControl from './'
 
 const requiredProps = () => ({})
 
 describe('Component: SelectControl', function () {
-  test('shouldn’t error if valid default props passed', function () {
-    const actual = validatePropTypes(SelectControl.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(SelectControl, requiredProps())
 
   test('should render a CustomSelectControl by default', function () {
     const wrapper = shallow(

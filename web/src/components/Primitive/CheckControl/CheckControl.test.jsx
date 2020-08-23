@@ -1,5 +1,5 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from 'libs/validate-required-props'
 import { shallow } from 'enzyme'
 
 import CheckControl from './'
@@ -14,20 +14,7 @@ const defaultProps = () => ({
 })
 
 describe('Component: CheckControl', function () {
-  test('should return errors if invalid default props passed', function () {
-    const actual = validatePropTypes(CheckControl.propTypes, {})
-    const expected = {
-      children:
-        'The prop `children` is marked as required in `Component`, but its value is `undefined`.'
-    }
-    expect(actual).toEqual(expected)
-  })
-
-  test('shouldn’t error if valid default props passed', function () {
-    const actual = validatePropTypes(CheckControl.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(CheckControl, requiredProps())
 
   test('should render a CustomCheckControl by default', function () {
     const wrapper = shallow(

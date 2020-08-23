@@ -1,5 +1,5 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from 'libs/validate-required-props'
 import { shallow } from 'enzyme'
 import CustomCheckControl from '.'
 
@@ -11,25 +11,7 @@ const defaultProps = () => ({
 })
 
 describe('Component: CustomCheckControl', function () {
-  test('should return errors if required props missing', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(CustomCheckControl.propTypes, {})
-    const expected = {
-      type:
-        'The prop `type` is marked as required in `Component`, but its value is `undefined`.'
-    }
-    expect(actual).toEqual(expected)
-  })
-
-  test('shouldn’t error if valid default props passed', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(
-      CustomCheckControl.propTypes,
-      requiredProps()
-    )
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(CustomCheckControl, requiredProps())
 
   test('should output the expected markup with default props', function () {
     const wrapper = shallow(

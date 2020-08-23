@@ -1,22 +1,22 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { render } from '@testing-library/react'
 import Field from '.'
 
 describe('Component: Field', function () {
   test('should output the expected markup', function () {
-    const wrapper = shallow(
+    const { getByText, getByTitle } = render(
       <Field>
-        <Field.Answer>Item one</Field.Answer>
-        <Field.Assistance>Item one</Field.Assistance>
-        <Field.Feedback>Item one</Field.Feedback>
-        <Field.Question htmlFor="example">Item one</Field.Question>
+        <Field.Answer>Answer</Field.Answer>
+        <Field.Assistance>Assistance</Field.Assistance>
+        <Field.Feedback>Feedback</Field.Feedback>
+        <Field.Question htmlFor="example">Question</Field.Question>
         <Field.Required />
       </Field>
     )
-    expect(wrapper.find(Field.Answer)).toHaveLength(1)
-    expect(wrapper.find(Field.Assistance)).toHaveLength(1)
-    expect(wrapper.find(Field.Feedback)).toHaveLength(1)
-    expect(wrapper.find(Field.Question)).toHaveLength(1)
-    expect(wrapper.find(Field.Required)).toHaveLength(1)
+    expect(getByText('Answer')).toBeTruthy()
+    expect(getByText('Assistance')).toBeTruthy()
+    expect(getByText('Feedback')).toBeTruthy()
+    expect(getByText('Question')).toBeTruthy()
+    expect(getByTitle('This field is required')).toBeTruthy()
   })
 })

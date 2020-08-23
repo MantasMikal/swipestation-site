@@ -1,24 +1,12 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from 'libs/validate-required-props'
 import { mount, shallow } from 'enzyme'
 import PasswordControl from '.'
 
 const requiredProps = () => ({})
 
 describe('Component: PasswordControl', function () {
-  // test('should return errors if required props missing', function() {
-  //   // eslint-disable-next-line react/forbid-foreign-prop-types
-  //   const actual = validatePropTypes(PasswordControl.propTypes, {})
-  //   const expected = {}
-  //   expect(actual).toEqual(expected)
-  // })
-
-  test('shouldn’t error if valid default props passed', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(PasswordControl.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(PasswordControl, requiredProps())
 
   test('should output the expected markup with default props', function () {
     const wrapper = shallow(
@@ -41,7 +29,7 @@ describe('Component: PasswordControl', function () {
   })
 
   // TODO:
-  // Fix this test
+  // Should work when Icon tests are fixed
 
   // test('should toggle types when button is clicked', function () {
   //   const wrapper = mount(

@@ -1,5 +1,5 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from 'libs/validate-required-props'
 import { shallow } from 'enzyme'
 import CheckControlGroup from '.'
 
@@ -18,27 +18,7 @@ const requiredProps = () => ({
 })
 
 describe('Component: CheckControlGroup', function () {
-  test('should return errors if required props missing', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(CheckControlGroup.propTypes, {})
-    const expected = {
-      a11yLabel:
-        'The prop `a11yLabel` is marked as required in `Component`, but its value is `undefined`.',
-      children:
-        'The prop `children` is marked as required in `Component`, but its value is `undefined`.'
-    }
-    expect(actual).toEqual(expected)
-  })
-
-  test('shouldn’t error if valid default props passed', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(
-      CheckControlGroup.propTypes,
-      requiredProps()
-    )
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(CheckControlGroup, requiredProps())
 
   test('should output the expected markup with default props', function () {
     const wrapper = shallow(<CheckControlGroup {...requiredProps()} />)

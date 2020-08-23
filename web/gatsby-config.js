@@ -31,7 +31,8 @@ module.exports = {
           Common: 'src/components/Common',
           Context: 'src/components/Context',
           libs: 'src/libs',
-          Section: 'src/components/Section'
+          Section: 'src/components/Section',
+          hooks: 'src/hooks'
         }
       }
     },

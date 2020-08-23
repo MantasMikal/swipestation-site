@@ -18,6 +18,7 @@
     "fix": "prettier-eslint --write $PWD/'**/*.{js,jsx,css,scss}'",
     "coverage": "jest --coverage",
     "test": "jest",
+    "watch-tests": "jest --coverage --watch --verbose",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -38,6 +39,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
     "fbjs": "^2.0.0",
+    "focus-trap-react": "^7.0.1",
     "gatsby": "^2.24.47",
     "gatsby-alias-imports": "^1.0.4",
     "gatsby-image": "^2.4.16",

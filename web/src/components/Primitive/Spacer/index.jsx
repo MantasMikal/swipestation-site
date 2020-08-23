@@ -6,7 +6,8 @@ import styles from './Spacer.module.scss'
 
 import Element from '../Element'
 
-const unit = parseInt(styles.unit, 10) || 8
+// const unit = parseInt(styles.unit, 10) || 8
+const unit = 8
 
 const formatValue = (value) => {
   if (typeof value === 'string') return value
@@ -33,7 +34,6 @@ const formatValues = (property, values) => {
  * spacing unit to allow for easy consistency. Values passed as strings
  * will be output without modification.
  */
-
 const Spacer = ({
   as,
   children,
