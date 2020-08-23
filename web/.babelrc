@@ -1,4 +1,5 @@
 {
+  "presets": ["babel-preset-gatsby"],
   "env": {
     "test": {
       "plugins": ["transform-require-context"]
