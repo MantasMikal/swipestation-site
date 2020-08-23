@@ -26,21 +26,21 @@ describe('Component: YouTubeEmbed', function () {
   test('should output the expected markup with default props', function () {
     const wrapper = mount(<YouTubeEmbed {...requiredProps()} />)
     expect(wrapper.getDOMNode().src).toEqual(
-      'https://www.youtube.com/embed/123?modestbranding=1&playsinline=1&rel=0'
+      'https://www.youtube.com/embed/123?rel=0&modestbranding=1&playsinline=1'
     )
   })
 
   test('should output additional querystring parameter if `hideControls` prop passed', function () {
     const wrapper = mount(<YouTubeEmbed {...requiredProps()} hideControls />)
     expect(wrapper.getDOMNode().src).toEqual(
-      'https://www.youtube.com/embed/123?modestbranding=1&playsinline=1&rel=0&controls=0'
+      'https://www.youtube.com/embed/123?rel=0&modestbranding=1&playsinline=1&controls=0'
     )
   })
 
   test('should output additional querystring parameter if `start` prop passed', function () {
     const wrapper = mount(<YouTubeEmbed {...requiredProps()} start="20" />)
     expect(wrapper.getDOMNode().src).toEqual(
-      'https://www.youtube.com/embed/123?modestbranding=1&playsinline=1&rel=0&start=20'
+      'https://www.youtube.com/embed/123?rel=0&modestbranding=1&playsinline=1&start=20'
     )
   })
 

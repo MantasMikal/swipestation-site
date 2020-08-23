@@ -25,24 +25,24 @@ describe('Component: Type', function () {
 
   test('should output the expected markup with default props', function () {
     const wrapper = shallow(<Type {...requiredProps()} />)
-    expect(wrapper.prop('className')).toEqual('Type base')
+    expect(wrapper.prop('className')).toEqual('Type base common')
     expect(wrapper.dive().text()).toEqual('Default content')
     expect(wrapper.dive().type()).toEqual('div')
   })
 
   test('should output as expected element when `as` prop passed', function () {
     const wrapper = shallow(<Type {...requiredProps()} as="h1" />)
-    expect(wrapper.prop('className')).toEqual('Type base')
+    expect(wrapper.prop('className')).toEqual('Type base common')
     expect(wrapper.dive().type()).toEqual('h1')
   })
 
   test('should output additional className when `size` prop passed', function () {
     const wrapper = shallow(<Type {...requiredProps()} size="title" />)
-    expect(wrapper.prop('className')).toEqual('Type title')
+    expect(wrapper.prop('className')).toEqual('Type title common')
   })
 
   test('should output additional className when `tight` prop passed', function () {
     const wrapper = shallow(<Type {...requiredProps()} tight />)
-    expect(wrapper.prop('className')).toEqual('Type base tight')
+    expect(wrapper.prop('className')).toEqual('Type base tight common')
   })
 })

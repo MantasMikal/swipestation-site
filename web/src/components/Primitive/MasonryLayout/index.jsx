@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { array, number, shape } from 'prop-types'
-import LazyLoader from 'lib/lazy-loader/lazyLoader'
-import MasonryLayout from 'lib/masonry/masonry-layout'
+import LazyLoader from 'libs/lazy-loader/lazyLoader'
+import MasonryLayout from 'libs/masonry/masonry-layout'
 
 /**
  * Basic masnory layout with lazy loading.

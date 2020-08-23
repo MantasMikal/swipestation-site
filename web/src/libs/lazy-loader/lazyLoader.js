@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import debounce from 'lib/debounce'
+import debounce from 'libs/debounce'
 
 // TODO: Transfrom into function
 

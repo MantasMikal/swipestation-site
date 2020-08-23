@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
+import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../libs/helpers'
 
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'

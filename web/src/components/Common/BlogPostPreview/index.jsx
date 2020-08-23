@@ -1,7 +1,7 @@
 import React from 'react'
 import { string, object, array, bool } from 'prop-types'
 import { Link } from 'gatsby'
-import { getBlogUrl, formatDate } from 'lib/helpers'
+import { getBlogUrl, formatDate } from 'libs/helpers'
 import classNames from 'classnames'
 
 import BlockText from 'Common/BlockText'

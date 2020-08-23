@@ -1,6 +1,6 @@
 import React from 'react'
 import { object, string, array } from 'prop-types'
-import { formatDate } from 'lib/helpers'
+import { formatDate } from 'libs/helpers'
 import { useScrollPercentage } from 'react-scroll-percentage'
 
 import BlockContent from '../../Editor'

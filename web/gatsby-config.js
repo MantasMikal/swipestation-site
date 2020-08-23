@@ -30,7 +30,7 @@ module.exports = {
           Primitive: 'src/components/Primitive',
           Common: 'src/components/Common',
           Context: 'src/components/Context',
-          lib: 'src/lib',
+          libs: 'src/libs',
           Section: 'src/components/Section'
         }
       }
