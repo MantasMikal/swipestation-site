@@ -42,7 +42,7 @@
 
 ## Notice
 
-The starter is still in work in progress, but will be finished very soon. Feel free to open a pull request to help me out! 🙌
+The starter is work in progress. Feel free to open a pull request to help me out! 🙌
 
 ## Features
 
@@ -50,10 +50,11 @@ The starter is still in work in progress, but will be finished very soon. Feel f
 - [x] SCSS Modules
 - [x] Buletproof base level component library to get the boring stuff out of the way
 - [x] Useful set of SCSS utility [mixins](https://www.npmjs.com/package/backline-mixins) to aid development
+- [x] Tests included
 - [x] Created with accessibility in mind
 - [x] Storybook 6 integration
 - [x] Inline SVG support
-- [x] PWA Support
+- [x] PWA support
 - [x] Sitemap support
 - [x] ESLint
 
@@ -93,6 +94,8 @@ npm run storybook
 ```
 
 ## Read the docs
+
+Run Storybook to learn how components work
 
 [Sanity.io](https://www.sanity.io/blog/get-started-with-gatsby-and-structured-content)
 
