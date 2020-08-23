@@ -40,7 +40,7 @@
   <img width="500" src="https://i.imgur.com/Md3UTQ9.png" alt="Google lighthouse"/>
 </p>
 
-## Notice
+## Notice ⚠
 
 The starter is work in progress. Feel free to open a pull request to help me out! 🙌
 
@@ -88,6 +88,9 @@ npm run build
 # Deploy Sanity Graphql API
 npm run graphql-deploy
 
+# Deploy the Sanity Studio to *.sanity.studio
+npm run sanity-deploy
+
 # Run storybook
 npm run storybook
 
@@ -112,3 +115,6 @@ Run Storybook to learn how components work
 ## Credits
 
 A massive thanks to [@jackbrewer](https://github.com/jackbrewer) for creating and mainting [Picks](https://github.com/jackbrewer/picks) component library and SASS utility [mixins](https://www.npmjs.com/package/backline-mixins)
+
+This starter is inspired by [Sanity](https://github.com/sanity-io/example-company-website-gatsby-sanity-combo)
+
