@@ -13,16 +13,10 @@ $color-primary-purple: #c8167c;
 $color-primary-red: #e72568;
 $color-primary-yellow: #fbc87c;
 
-$color-hover: $color-primary-red;
-
-$color-primary-base: #1565c0;
-$color-primary-light: #1976d2;
-$color-primary-dark: #0d47a1;
-
 $color-status-success: #33691e;
 $color-status-notice: #01579b;
 $color-status-warning: #ff6f00;
-$color-status-error: #b71c1c;
+$color-status-error: rgb(93, 119, 82);
 
 $color-status-list: (
   success: $color-status-success,

@@ -56,8 +56,8 @@
 .ToggleNavButton {
   &:hover {
     svg path {
-      fill: $color-hover;
-      stroke: $color-hover;
+      fill: $color-primary-red;
+      stroke: $color-primary-red;
     }
   }
 }
@@ -157,7 +157,7 @@
 
     .Dropdown:hover {
       .DropdownBtn {
-        background-color: $color-hover;
+        background-color: $color-primary-red;
         color: $color-primary-white;
       }
 

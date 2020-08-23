@@ -9,7 +9,7 @@
   @media (hover: hover) {
     &:hover {
       .Title {
-        color: $color-hover;
+        color: $color-primary-red;
         transition: $duration-shorter $easing-standard;
       }
     }

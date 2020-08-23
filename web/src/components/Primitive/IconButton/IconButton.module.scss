@@ -35,15 +35,15 @@
 
 .solid {
   color: $color-common-white;
-  background-color: $color-primary-base;
+  background-color: $color-primary-red;
 
   &:focus,
   &:hover {
     color: $color-common-white;
-    background-color: $color-primary-light;
+    background-color: $color-primary-yellow;
   }
   &:active {
-    background-color: $color-primary-dark;
+    background-color: $color-primary-purple;
   }
 }
 

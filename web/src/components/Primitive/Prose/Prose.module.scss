@@ -89,14 +89,14 @@
   }
 
   a {
-    color: $color-primary-base;
+    color: $color-primary-red;
     text-decoration: underline;
     transition: color $duration-standard $easing-standard;
 
     &:hover,
     &:focus,
     &:active {
-      color: $color-primary-dark;
+      color: $color-primary-purple;
       transition-duration: $duration-shortest;
     }
   }

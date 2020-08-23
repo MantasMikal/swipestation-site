@@ -30,13 +30,13 @@
   }
 
   .CustomCheckControlControl:checked ~ & {
-    border-color: $color-primary-base;
+    border-color: $color-primary-red;
   }
 
   .CustomCheckControlControl:hover:not([disabled]):checked ~ &,
   .CustomCheckControlControl:checked:focus ~ & {
-    border-color: $color-primary-base;
-    box-shadow: 0 0 0 1px $color-primary-base inset;
+    border-color: $color-primary-red;
+    box-shadow: 0 0 0 1px $color-primary-red inset;
   }
 
   .CustomCheckControlControl:disabled ~ & {
@@ -75,7 +75,7 @@
     height: 14px;
     transform: scale(0) rotate(45deg);
     border-style: solid;
-    border-color: $color-primary-base;
+    border-color: $color-primary-red;
     border-width: 0 3px 3px 0;
   }
 
@@ -103,7 +103,7 @@
     margin-left: spacing(-1);
     margin-top: spacing(-1);
     border-radius: 50%;
-    background-color: $color-primary-base;
+    background-color: $color-primary-red;
   }
   .CustomCheckControlControl:disabled .CustomCheckControlIndicator::after {
     background-color: $color-common-grey75;

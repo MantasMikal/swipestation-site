@@ -3,9 +3,6 @@
 @import '_backline-mixins';
 @import url('https://use.typekit.net/rnl5jdi.css');
 
-//TODO:
-// MAKE SURE ALL ELEMENTS ARE SELECTABLE
-
 :global {
   body {
     font-size: spacing(2); // 16
@@ -20,13 +17,12 @@
   }
 
   body::-webkit-scrollbar-track {
-    background-color: rgba(243, 243, 243, 0.933);
+    background-color: $color-primary-grey-light;
   }
 
   body::-webkit-scrollbar-thumb {
     background-color: $color-primary-yellow;
-    border-radius: 5px;
-    outline: 1px solid slategrey;
+    border-radius: $radius-small;
   }
 
   button {
@@ -93,20 +89,5 @@
         margin-right: spacing(1);
       }
     }
-  }
-
-  // Gracefully add Typekit fonts
-  .wf-loading {
-    opacity: 0;
-  }
-
-  .wf-active {
-    -webkit-transition: opacity 0.25s ease-in;
-    transition: opacity 0.25s ease-in;
-    opacity: 1;
-  }
-
-  .wf-inactive {
-    opacity: 1;
   }
 }
