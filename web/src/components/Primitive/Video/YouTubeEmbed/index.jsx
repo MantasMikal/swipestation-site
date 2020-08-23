@@ -6,6 +6,11 @@ import shallowObjectToQuery from 'lib/shallow-object-to-query'
 export const YouTubeEmbedFallbackUrl = (videoId) =>
   `https://www.youtube.com/watch?v=${videoId}`
 
+/**
+ * Embeds a Youtube video, with options for common video API preferences.
+
+ * To make the video responsive, wrap in in a \`ResponsiveMedia\` component.
+ */
 const YouTubeEmbed = ({
   hideControls,
   start,

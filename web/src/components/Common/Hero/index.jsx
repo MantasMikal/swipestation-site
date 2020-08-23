@@ -2,14 +2,14 @@ import React from 'react'
 
 import Type from 'Primitive/Type'
 import Container from 'Primitive/Container'
-import Media from 'Common/Media'
+import Image from 'Primitive/Image'
 
 import styles from './Hero.module.scss'
 
 const Hero = ({ heroImage, title, subtitle }) => {
   return (
     <div className={styles.Hero}>
-      <Media media={heroImage} />
+      <Image image={heroImage} />
       <Container size="wide" gutter center className={styles.Content}>
         <Type size="displayHero" as="h2" className={styles.Title}>
           {title}

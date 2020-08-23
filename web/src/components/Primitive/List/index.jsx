@@ -4,6 +4,16 @@ import classNames from 'classnames'
 
 import styles from './List.module.scss'
 
+/** 
+ * A simple list component with options to unset default styling when using
+ * as a non-traditional list, e.g. as a list of navigation items.
+
+ * If no styling adjustments are required, just use the standard \`<ul>\` or
+ * \`<ol>\` elements directly.
+
+ * Defaults to \`<ul>\`, but can be switched to \`<ol>\` by passing an
+ * \`ordered\` prop.
+*/
 const List = ({ children, className, inline, ordered, unstyled }) => {
   const ListEl = ordered ? 'ol' : 'ul'
 

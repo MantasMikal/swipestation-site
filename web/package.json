@@ -52,7 +52,8 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-medium-image-zoom": "^4.3.1",
-    "react-scroll-percentage": "^4.2.0"
+    "react-scroll-percentage": "^4.2.0",
+    "sass-loader": "^9.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
@@ -60,6 +61,7 @@
     "@storybook/addon-actions": "^6.0.16",
     "@storybook/addon-backgrounds": "^6.0.16",
     "@storybook/addon-controls": "^6.0.16",
+    "@storybook/addon-docs": "^6.0.16",
     "@storybook/addon-essentials": "^6.0.16",
     "@storybook/addon-links": "^6.0.16",
     "@storybook/react": "^6.0.16",

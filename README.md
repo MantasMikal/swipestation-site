@@ -42,7 +42,7 @@
 
 ## Features
 
-- [x] Sanity.io CMS integration
+- [x] Sanity.io CMS integration with a few predefined schemas
 - [x] SCSS Modules
 - [x] Buletproof base level component library to get the boring stuff out of the way
 - [x] Useful set of SCSS utility [mixins](https://www.npmjs.com/package/backline-mixins) to aid development
@@ -64,6 +64,9 @@ Use NPM
 cd gatsby-starter-picks && npm i && npm i -g @sanity/cli gatsby-cli
 
 # Runs out of the box
+# Studio at http://localhost:3333
+# Web frontend at http://localhost:8000
+# GraphiQL explorer at http://localhost:8000/___graphql
 npm start
 
 # Quickly setup Sanity.io CMS
@@ -81,6 +84,19 @@ npm run build
 npm run graphql-deploy
 
 ```
+
+## Read the docs
+
+[Sanity.io](https://www.sanity.io/blog/get-started-with-gatsby-and-structured-content)
+[gatsby-source-sanity](https://github.com/sanity-io/gatsby-source-sanity)
+
+## Contrubute
+
+1. [Fork it](https://github.com/MantasMikal/gatsby-starter-picks/fork)
+2. Create your feature branch `git checkout -b feature/fooBar`
+3. Commit your changes `git commit -am 'Add some fooBar'`
+4. Push to the branch `git push origin feature/fooBar`
+5. Create a new Pull Request
 
 ## Credits
 

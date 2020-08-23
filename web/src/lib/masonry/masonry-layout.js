@@ -1,13 +1,15 @@
 import React from 'react'
-import { arrayOf, number, element } from 'prop-types'
+import { arrayOf, number, element, shape } from 'prop-types'
 
-function getColCount(width) {
+function getColCount(width, widths) {
   if (width > 750) {
     if (width > 1000) {
-      return 3
-    } else return 2
-  } else return 1
+      return widths['desktop']
+    } else return widths['tablet']
+  } else return widths['mobile']
 }
+
+// TODO: Transform to function
 
 export default class MasonryLayout extends React.Component {
   constructor(props) {
@@ -20,7 +22,7 @@ export default class MasonryLayout extends React.Component {
 
   handleResize = () =>
     this.setState({
-      colCount: getColCount(window.innerWidth)
+      colCount: getColCount(window.innerWidth, this.props.widths)
     })
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -79,12 +81,22 @@ export default class MasonryLayout extends React.Component {
   }
 }
 
-MasonryLayout.propTypes = {
-  gap: number.isRequired,
-  children: arrayOf(element)
-}
-
 MasonryLayout.defaultProps = {
   gap: 20,
-  colCount: 3
+  colCount: 3,
+  widths: {
+    desktop: 3,
+    tablet: 2,
+    mobile: 1
+  }
+}
+
+MasonryLayout.propTypes = {
+  gap: number.isRequired,
+  children: arrayOf(element),
+  widths: shape({
+    desktop: number,
+    tablet: number,
+    mobile: number
+  })
 }

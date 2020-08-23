@@ -5,6 +5,10 @@ import CheckFieldTemplate from './CheckFieldTemplate'
 import MultiTextFieldTemplate from './MultiTextFieldTemplate'
 import TextFieldTemplate from './TextFieldTemplate'
 
+/**
+ * Pre-configured combinations of Field components which cover most
+ * common use cases
+ */
 const FieldTemplate = ({ template, ...other }) => {
   const componentMap = {
     check: () => <CheckFieldTemplate {...other} />,

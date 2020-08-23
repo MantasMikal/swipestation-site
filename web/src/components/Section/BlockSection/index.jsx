@@ -1,7 +1,7 @@
 import React from 'react'
 import { array, string } from 'prop-types'
 
-import BlockContent from '../../block-content'
+import BlockContent from '../../Editor'
 import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
 
@@ -17,9 +17,11 @@ const BlockSection = ({ blockContent, title }) => {
       spacious
       as="section"
     >
-      <Type as="h1" size="displayLarge" className={styles.Title}>
-        {title}
-      </Type>
+      {title && (
+        <Type as="h1" size="displayLarge" className={styles.Title}>
+          {title}
+        </Type>
+      )}
       <BlockContent blocks={blockContent} />
     </Container>
   )

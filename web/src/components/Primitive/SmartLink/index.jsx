@@ -2,6 +2,18 @@ import React from 'react'
 import { func, node, oneOf, string } from 'prop-types'
 import { Link } from 'gatsby'
 
+/** 
+ * SmartLink can be used in place of any clickable element and will output
+ * the correct HTML element for the props provided to it.
+
+ * At a basic level, it will output:
+ * - \`<a />\` if passed an \`href\`
+ * - \`<Link />\` if passed a \`to\` (needs enabling once a router component is enabled)
+ * - \`<button />\` if passed a \`type\` or \`onClick\`.
+
+ * It will also embellish output as required, for example automatically
+ * adding \`rel="noopener noreferrer"\` to any link with \`target="_blank"\`.
+ */
 const SmartLink = ({
   children,
   className,

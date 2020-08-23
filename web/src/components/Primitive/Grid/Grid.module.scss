@@ -3,14 +3,14 @@
 
 .Grid {
   display: block;
-  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   margin: auto;
   width: 100%;
-  margin: 0.625rem 0 0.625rem 0;
-  grid-gap: 0.325em;
+  margin: spacing(2) 0 spacing(2) 0;
+  grid-gap: spacing(1);
 
   & > div {
-    margin-bottom: 0.225em;
+    margin-bottom: spacing(1);
   }
 
   @include mq($breakpoint-mobileLandscape) {
@@ -20,8 +20,4 @@
       margin-bottom: auto;
     }
   }
-}
-
-.autoRows {
-  grid-auto-columns: 1fr;
 }

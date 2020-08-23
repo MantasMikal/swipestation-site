@@ -1,6 +1,6 @@
 import React, { Children } from 'react'
 import classNames from 'classnames'
-import { bool, node, string } from 'prop-types'
+import { bool, node, string, oneOf } from 'prop-types'
 
 import styles from './ShrinkWrapWrapper.module.scss'
 
@@ -36,8 +36,8 @@ ShrinkWrapWrapper.propTypes = {
   as: string,
   fixed: bool,
   fullWidth: bool,
-  spacing: string,
-  vAlign: string,
+  spacing: oneOf(['comfortable', 'normal']),
+  vAlign: oneOf(['top', 'middle', 'bottom']),
   className: string
 }
 

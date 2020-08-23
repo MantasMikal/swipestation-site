@@ -4,9 +4,9 @@ import { Link } from 'gatsby'
 import { getBlogUrl, formatDate } from 'lib/helpers'
 import classNames from 'classnames'
 
-import BlockText from 'Primitive/BlockText/BlockText'
+import BlockText from 'Common/BlockText'
 import Type from 'Primitive/Type'
-import Media from 'Common/Media'
+import Image from 'Primitive/Image'
 import Badge from 'Common/Badge'
 
 import styles from './BlogPostPreview.module.scss'
@@ -32,7 +32,7 @@ const BlogPostPreview = ({
       to={getBlogUrl(slug.current)}
     >
       <div className={styles.LeadMediaThumb}>
-        <Media ratio={ratio || undefined} media={mainImage} alt={title} />
+        <Image ratio={ratio || undefined} image={mainImage} alt={title} />
       </div>
       <Type as="h3" size="title" className={styles.Title}>
         {title}

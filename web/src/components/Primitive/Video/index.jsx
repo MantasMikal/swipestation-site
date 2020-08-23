@@ -10,13 +10,22 @@ import VimeoEmbed from './VimeoEmbed'
 
 import styles from './Video.module.scss'
 
-const Video = ({ videoType, videoId, caption, className }) => {
+/**
+ * Video embed component wrapper
+ */
+
+const Video = ({ videoType, videoId, caption, className, ...other }) => {
   switch (videoType) {
     case 'youtube':
       return (
         <div className={classNames(styles.Video, className)}>
           <ResponsiveMedia ratio={9 / 16}>
-            <YouTubeEmbed videoId={videoId} width="100%" height="100%" />
+            <YouTubeEmbed
+              {...other}
+              videoId={videoId}
+              width="100%"
+              height="100%"
+            />
           </ResponsiveMedia>
           {caption && (
             <Type className={styles.Caption} size="base" italic>
@@ -30,7 +39,12 @@ const Video = ({ videoType, videoId, caption, className }) => {
       return (
         <div className={classNames(styles.Video, className)}>
           <ResponsiveMedia ratio={9 / 16}>
-            <VimeoEmbed videoId={videoId} width="100%" height="100%" />
+            <VimeoEmbed
+              {...other}
+              videoId={videoId}
+              width="100%"
+              height="100%"
+            />
           </ResponsiveMedia>
           {caption && (
             <Type className={styles.Caption} size="base" italic>
@@ -48,6 +62,7 @@ const Video = ({ videoType, videoId, caption, className }) => {
 Video.propTypes = {
   videoType: string,
   videoId: string,
+  caption: string,
   alt: string
 }
 

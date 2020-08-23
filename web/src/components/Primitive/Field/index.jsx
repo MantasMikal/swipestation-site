@@ -5,6 +5,14 @@ import FieldQuestion from './component/FieldQuestion'
 import FieldRequired from './component/FieldRequired'
 import FieldWrapper from './component/FieldWrapper'
 
+/** 
+ * A collection of components that can be combined to create a single form
+ * field. Should be used in conjunction with an appropriate Control
+ * component.
+
+ * Note: Consider using a pre-built FieldTemplate component for common
+ * use cases.
+*/
 const Field = FieldWrapper
 Field.displayName = 'Field'
 

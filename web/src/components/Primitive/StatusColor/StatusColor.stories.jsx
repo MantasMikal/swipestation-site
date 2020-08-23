@@ -1,28 +1,26 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import { StatusContextProvider } from '../../Context/StatusContext'
 
 import StatusColor from '.'
 
-const stories = storiesOf('Core/StatusColor', module)
-
-stories.add('Info', () => <StatusColor status="success">Content</StatusColor>, {
-  info: {
-    inline: true,
-    text: `
-      Takes a status, either directly or via a context provider, to use as the
-      CSS \`color\` property.
-    `
+export default {
+  title: 'Utility/StatusColor',
+  component: StatusColor,
+  argTypes: {
+    status: {
+      control: {
+        type: 'inline-radio',
+        options: ['success', 'error', 'warning', 'notice']
+      }
+    }
   }
-})
+}
 
-stories.add('Status text (direct)', () => (
-  <StatusColor status="notice">Content</StatusColor>
-))
+export const Default = (args) => <StatusColor {...args}>Content</StatusColor>
 
-stories.add('Status text (via context)', () => (
+export const WithContext = () => (
   <StatusContextProvider status="error">
     <StatusColor>Content</StatusColor>
   </StatusContextProvider>
-))
+)

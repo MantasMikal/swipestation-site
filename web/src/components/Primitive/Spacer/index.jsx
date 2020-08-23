@@ -25,6 +25,15 @@ const formatValues = (property, values) => {
   }
 }
 
+/**
+ * A wrapper component which can be used to provide margin or padding where
+ * required.
+
+ * Values passed as numbers will be multiplied by the project’s default
+ * spacing unit to allow for easy consistency. Values passed as strings
+ * will be output without modification.
+ */
+
 const Spacer = ({
   as,
   children,

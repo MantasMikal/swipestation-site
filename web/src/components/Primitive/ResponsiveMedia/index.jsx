@@ -8,6 +8,13 @@ const formatRatio = (ratio) => {
   return parseFloat((ratio * 100).toFixed(4))
 }
 
+/** 
+ * Reserves a space on page for slow-loading resources, using the
+ * supplied ratio. Avoids document reflow when child elements load.
+
+ * Handles img, video as well as iframe for media
+ * like embedded videos.
+ */
 const ResponsiveMedia = ({ children, className, ratio }) => (
   <div
     className={classNames(styles.ResponsiveMedia, className)}

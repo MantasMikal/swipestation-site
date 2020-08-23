@@ -8,7 +8,7 @@ import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
 
 import styles from './Footer.module.scss'
-import Media from 'Common/Media'
+import Image from 'Primitive/Image'
 
 // TODO
 // Use logo from CMS
@@ -20,7 +20,7 @@ const Footer = ({ social, logo, siteTitle }) => {
         <Container gutter center size="wide" className={styles.Container}>
           <div className={styles.Branding}>
             <SmartLink href="/" className={styles.Logo}>
-              <Media media={logo} alt={siteTitle} />
+              <Image image={logo} alt={siteTitle} />
             </SmartLink>
             <div className={styles.Social}>
               <SocialLink type="twitter" url={social.twitter} />

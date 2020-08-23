@@ -6,7 +6,7 @@ import Type from 'Primitive/Type'
 import Icon from 'Primitive/Icon'
 import SmartLink from 'Primitive/SmartLink'
 import styles from './Navigation.module.scss'
-import Media from 'Common/Media'
+import Image from 'Primitive/Image'
 
 const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, logo, id }) => {
   return (
@@ -14,7 +14,7 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, logo, id }) => {
       <h1 hidden>{siteTitle}</h1>
       <div className={styles.Branding}>
         <SmartLink to="/">
-          <Media media={logo} className={styles.Logo} alt={siteTitle} />
+          <Image image={logo} className={styles.Logo} alt={siteTitle} />
         </SmartLink>
       </div>
       <LinkWrapper className={styles.NavLink} to="/contact/">

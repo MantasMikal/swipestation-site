@@ -1,25 +1,20 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import PasswordControl from '.'
 
-const stories = storiesOf('Form/PasswordControl', module)
-
-stories.add('Info', () => <PasswordControl name="password" />, {
-  info: {
-    inline: true,
-    text: `
-      A wrapper around a TextControl component which adds password visibility
-      toggling functionality. When the toggle button is pressed, focus
-      immediately returns to the input.
-    `
+export default {
+  title: 'Form/PasswordControl',
+  component: PasswordControl,
+  argTypes: {
+    defaultValue: {
+      control: {
+        type: 'text'
+      }
+    }
+  },
+  args: {
+    defaultValue: '1245'
   }
-})
+}
 
-stories.add('Password type (default)', () => (
-  <PasswordControl name="password" defaultValue="1234" />
-))
-
-stories.add('Text type (forced)', () => (
-  <PasswordControl name="password" defaultValue="1234" type="text" />
-))
+export const Default = (args) => <PasswordControl {...args} name="password" />

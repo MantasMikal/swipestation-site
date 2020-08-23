@@ -15,6 +15,17 @@ import { StatusContext } from '../../Context/StatusContext'
 
 import styles from './TextControl.module.scss'
 
+/**
+ * Standard text-style control, which defaults to a \`text\` type, but can
+ * also be used for most common text-based types, e.g. \`url\`, \`email\`,
+ * \`number\`. Some types, such as \`password\` provide their own wrapping
+ * components which extend this component to add additional functionality
+ * or styling.
+
+ * Note: some demos do not update when you type as they are presented as
+ * controlled components, but using dummy onChange functions.
+ */
+
 const TextControl = ({
   autoComplete,
   className,

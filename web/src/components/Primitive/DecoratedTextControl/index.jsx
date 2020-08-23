@@ -4,8 +4,15 @@ import classNames from 'classnames'
 
 import styles from './DecoratedTextControl.module.scss'
 
-import TextControl from '../TextControl'
+import TextControl from 'Primitive/TextControl'
 
+/**
+ * Adds icons or buttons before and/or after input content.
+
+ * By default, pointer events are disabled on the additional content, to
+ * allow clicks to pass through to the input below. If the additional
+ * content is interactive, additional props need to be passed.
+*/
 const DecoratedTextControlDecoration = ({ children, interactive }) => (
   <div
     className={classNames(

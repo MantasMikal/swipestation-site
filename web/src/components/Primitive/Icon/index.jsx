@@ -15,6 +15,15 @@ export const types = svgs
   .keys()
   .map((key) => key.replace(`./`, '').replace(`.svg`, ''))
 
+/**
+ * A wrapping element containing an inline SVG. Displays at the SVGs native
+ * size by default, but a custom width/height can be passed.
+
+ * An a11yText prop is required, similar to how an image requires an alt
+ * attribute. If the icon is purely decorational, or is described by text
+ * directly next to it, then a blank string can be passed as a11yText to
+ * hide the icon from assistive technology.
+ */
 const Icon = ({ a11yText, className, type, height, width, vAlign }) => {
   const SvgType = svgs(`./${type}.svg`).default
 

@@ -6,6 +6,10 @@ import { StatusContext } from '../../Context/StatusContext'
 
 import styles from './StatusColor.module.scss'
 
+/**
+ * Takes a status, either directly or via a context provider, to use as the
+ * CSS \`color\` property.
+ */
 const StatusColor = ({ children, status }) => {
   const contextStatus = useContext(StatusContext)
   const derivedStatus = status || contextStatus

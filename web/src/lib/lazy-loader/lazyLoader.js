@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import debounce from 'lib/debounce'
 
+// TODO: Transfrom into function
+
 export default class LazyLoader extends Component {
   constructor(props) {
     super(props)
@@ -46,6 +48,9 @@ export default class LazyLoader extends Component {
 }
 
 LazyLoader.propTypes = {
+  /**
+   * % of the page to scroll to load more items (0.1 - 1)
+   */
   threshold: PropTypes.number,
   loadMore: PropTypes.func.isRequired,
   hasMore: PropTypes.bool.isRequired

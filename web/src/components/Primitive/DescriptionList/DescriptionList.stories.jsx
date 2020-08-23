@@ -1,35 +1,15 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import DescriptionList from '.'
 
-const stories = storiesOf('Core/DescriptionList', module)
+export default {
+  title: 'Core/DescriptionList',
+  component: DescriptionList
+}
 
-stories.add(
-  'Info',
-  () => (
-    <DescriptionList
-      items={{
-        Position: 'Prop',
-        Age: '27',
-        Height: '200cm',
-        'Games Played': '41'
-      }}
-    />
-  ),
-  {
-    info: {
-      inline: true,
-      text: `
-        Accepts an object with a “term” as a key, and “details” as a key/value
-        pair. Currently only supports singe term/detail pairs.
-      `
-    }
-  }
-)
-
-stories.add('Default state', () => (
+export const Default = (args) => (
   <DescriptionList
+    {...args}
     items={{
       Position: 'Prop',
       Age: '27',
@@ -37,4 +17,4 @@ stories.add('Default state', () => (
       'Games Played': '41'
     }}
   />
-))
+)

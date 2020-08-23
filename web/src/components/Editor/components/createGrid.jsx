@@ -1,6 +1,6 @@
 import React from 'react'
 import createMedia from './createMedia'
-import Grid from 'Common/Grid'
+import Grid from 'Primitive/Grid'
 
 export function createGrid(component) {
   const gridMedia = component.gridMedia

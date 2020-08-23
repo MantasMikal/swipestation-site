@@ -4,7 +4,7 @@ import { array } from 'prop-types'
 import BlogPostPreview from 'Common/BlogPostPreview'
 import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
-import MasonryLayout from 'Common/MasonryLayout'
+import MasonryLayout from 'Primitive/MasonryLayout'
 
 import styles from './BlogSection.module.scss'
 

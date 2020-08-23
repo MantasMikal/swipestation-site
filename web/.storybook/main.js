@@ -3,6 +3,7 @@ const path = require('path')
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
+    '@storybook/addon-docs',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-actions',
@@ -55,7 +56,8 @@ module.exports = {
         {
           loader: 'css-loader',
           options: {
-            modules: { localIdentName: '[name]__[local]___[hash:base64:5]' }
+            modules: true,
+            localIdentName: '[name]__[local]___[hash:base64:5]'
           }
         },
         {
@@ -67,12 +69,19 @@ module.exports = {
               ]
             },
             additionalData: `
-            @import '~backline-mixins/src/backline-mixins';
-            @import 'settings';@import '_backline-mixins';
-          `
+              @import 'settings';
+            `
           }
         }
-      ]
+      ],
+      resolve: {
+        alias: {
+          '_backline-mixins': path.join(
+            __dirname,
+            '../node_modules/backline-mixins/src/_backline-mixins'
+          )
+        }
+      }
     })
 
     // Add support for creating icons using inline SVGs

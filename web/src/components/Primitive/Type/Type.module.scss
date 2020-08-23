@@ -7,13 +7,6 @@
   min-height: spacing(2);
 }
 
-.display2 {
-  font-size: spacing(3); // 24
-  line-height: spacing(4); // 32
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
 .displayLarge {
   font-weight: bold;
   font-family: $font-body;
@@ -180,12 +173,6 @@
     line-height: spacing(6);
   }
 }
-
-// .baseSmall, .base {
-//   a {
-//     text-decoration: underline;
-//   }
-// }
 
 .baseSmall {
   font-size: spacing(2.4); // 14

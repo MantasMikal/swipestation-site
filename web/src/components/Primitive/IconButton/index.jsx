@@ -4,9 +4,12 @@ import classNames from 'classnames'
 
 import styles from './IconButton.module.scss'
 
-import Icon from '../Icon'
-import SmartLink from '../SmartLink'
+import Icon from 'Primitive/Icon'
+import SmartLink from 'Primitive/SmartLink'
 
+/**
+ * A simple button component used to present clickable Icons
+ */
 const IconButton = ({
   a11yText,
   children,

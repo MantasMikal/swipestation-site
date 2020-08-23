@@ -4,6 +4,13 @@ import classNames from 'classnames'
 
 import styles from './Spinner.module.scss'
 
+/**
+ * Simple SVG spinner which can be used to indicate loading.
+
+ * If this component appears in the DOM but is not visible, pass the
+ * \`paused\` prop to remove the performance overhead of the multiple
+ * animations.
+ */
 const Spinner = ({ paused, revealDelay, size }) => (
   <div
     className={classNames(styles.Spinner, paused && styles.paused)}

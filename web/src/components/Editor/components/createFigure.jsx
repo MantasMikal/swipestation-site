@@ -1,9 +1,9 @@
 import React from 'react'
 import cfg from '../../../../../config'
-
-import ZoomableImage from 'Common/Zoomable'
-import Media from 'Common/Media'
 import { getFluidGatsbyImage } from 'gatsby-source-sanity'
+
+import Zoomable from 'Primitive/Zoomable'
+import Image from 'Primitive/Image'
 
 const createFigure = (figure) => {
   if (!figure || !figure.asset || !figure.asset.mimeType) return null
@@ -18,22 +18,21 @@ const createFigure = (figure) => {
       />
     )
   } else {
-    const mediaProps = getFluidGatsbyImage(
+    const imageProps = getFluidGatsbyImage(
       asset._id,
       { maxWidth: maxWidth || 800 },
       cfg.project
     )
-    const media = {
+    const image = {
       asset: {
-        fluid: mediaProps
-      },
-      alt: alt || ' '
+        fluid: imageProps
+      }
     }
 
-    const El = isZoomable === undefined || isZoomable ? ZoomableImage : Media
+    const El = isZoomable === undefined || isZoomable ? Zoomable : Image
     return (
       <div style={{ padding: '10px 0', maxWidth: maxWidth }}>
-        <El key={figure._key} media={media} />
+        <El key={figure._key} image={image} alt={alt || ' '} />
       </div>
     )
   }

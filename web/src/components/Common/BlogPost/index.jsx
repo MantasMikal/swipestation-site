@@ -3,9 +3,9 @@ import { object, string, array } from 'prop-types'
 import { formatDate } from 'lib/helpers'
 import { useScrollPercentage } from 'react-scroll-percentage'
 
-import BlockContent from '../../block-content'
+import BlockContent from '../../Editor'
 import Container from 'Primitive/Container'
-import Media from 'Common/Media'
+import Image from 'Primitive/Image'
 import Type from 'Primitive/Type'
 import Badge from 'Common/Badge'
 import SocialBlock from '../SocialShare/SocialBlock'
@@ -19,7 +19,7 @@ const BlogPost = (props) => {
   })
   return (
     <article className={styles.Root}>
-      <Media media={mainImage} alt={title} />
+      <Image image={mainImage} alt={title} />
       <div
         className={styles.LoadingBar}
         style={{ width: `${percentage * 100}%` }}

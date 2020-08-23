@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import FieldTemplate from './'
 import TextControl from '../TextControl'
@@ -10,6 +9,7 @@ import VisuallyHidden from '../VisuallyHidden'
 import SelectControl from '../SelectControl'
 import ShrinkWrap from '../ShrinkWrap'
 
+// Setup
 const days = [...Array(31).keys()].map((i) => `${i + 1}`)
 const months = [
   'January',
@@ -29,73 +29,51 @@ const year = new Date().getFullYear()
 const years = []
 for (var i = 0; i <= 10; ++i) years.push(`${year - i}`)
 
-const stories = storiesOf('Form/FieldTemplate', module)
-
-stories.add(
-  'Info',
-  () => (
-    <FieldTemplate
-      label="Example text question"
-      status="success"
-      required
-      feedback="Good answer"
-      controlName="exampleText"
-    >
-      <TextControl
-        name="exampleText"
-        type="text"
-        placeholder="Example placeholder"
-        required
-      />
-    </FieldTemplate>
-  ),
-  {
-    info: {
-      inline: true,
-      text: `
-        Pre-configured combinations of Field components which cover most
-        common use cases
-      `
+export default {
+  title: 'Form/FieldTemplate',
+  component: FieldTemplate,
+  argTypes: {
+    status: {
+      control: {
+        type: 'inline-radio',
+        options: ['success', 'error', 'warning', 'notice']
+      }
+    },
+    hideLabel: {
+      type: 'boolean'
+    },
+    label: {
+      type: 'string'
+    },
+    required: {
+      type: 'boolean'
+    },
+    feedback: {
+      type: 'string'
     }
   }
+}
+
+export const TextTemplate = (args) => (
+  <FieldTemplate
+    label="Example text question"
+    status="success"
+    required
+    feedback="Good answer"
+    controlName="exampleText"
+    {...args}
+  >
+    <TextControl
+      name="exampleText"
+      type="text"
+      placeholder="Example placeholder"
+      required
+      {...args}
+    />
+  </FieldTemplate>
 )
 
-stories.add('Text template (default)', () => (
-  <FieldTemplate
-    label="Example text question"
-    status="success"
-    required
-    feedback="Good answer"
-    controlName="exampleText"
-  >
-    <TextControl
-      name="exampleText"
-      type="text"
-      placeholder="Example placeholder"
-      required
-    />
-  </FieldTemplate>
-))
-
-stories.add('Text template with hidden label', () => (
-  <FieldTemplate
-    hideLabel
-    label="Example text question"
-    status="success"
-    required
-    feedback="Good answer"
-    controlName="exampleText"
-  >
-    <TextControl
-      name="exampleText"
-      type="text"
-      placeholder="Example placeholder"
-      required
-    />
-  </FieldTemplate>
-))
-
-stories.add('Check template', () => (
+export const CheckTemplate = (args) => (
   <FieldTemplate
     template="check"
     label="Example check question"
@@ -103,6 +81,7 @@ stories.add('Check template', () => (
     status="error"
     feedback="Please select at least one option"
     controlName="checkboxExample"
+    {...args}
   >
     <CheckControlGroup a11yLabel="Example checkboxes">
       <CheckControl type="checkbox" name="checkboxExample" value="1">
@@ -116,30 +95,18 @@ stories.add('Check template', () => (
       </CheckControl>
     </CheckControlGroup>
   </FieldTemplate>
-))
+)
+CheckTemplate.args = {
+  template: 'check'
+}
 
-stories.add('Check template with hidden label', () => (
-  <FieldTemplate
-    hideLabel
-    template="check"
-    label="Example check question"
-    assistance="Example assistance text"
-    status="error"
-    feedback="Please select at least one option"
-    controlName="checkboxExample"
-  >
-    <CheckControl type="checkbox" name="checkboxExample" value="1">
-      Option one
-    </CheckControl>
-  </FieldTemplate>
-))
-
-stories.add('Multi-text template (even width)', () => (
+export const MultiTextTemplate = (args) => (
   <FieldTemplate
     template="multiText"
     label="Example multi-text question"
     required
     controlName="exampleText"
+    {...args}
   >
     <ShrinkWrap fullWidth>
       <ShrinkWrap.Item shrink>
@@ -183,9 +150,12 @@ stories.add('Multi-text template (even width)', () => (
       </ShrinkWrap.Item>
     </ShrinkWrap>
   </FieldTemplate>
-))
+)
+MultiTextTemplate.args = {
+  template: 'multiText'
+}
 
-stories.add('Multi-text template (auto width)', () => (
+export const MultiTextTemplateWithAutoWidth = (args) => (
   <FieldTemplate
     template="multiText"
     label="Example multi-text question"
@@ -193,6 +163,7 @@ stories.add('Multi-text template (auto width)', () => (
     required
     feedback="Good answer"
     controlName="exampleText"
+    {...args}
   >
     <ShrinkWrap fullWidth>
       <ShrinkWrap.Item>
@@ -233,4 +204,7 @@ stories.add('Multi-text template (auto width)', () => (
       </ShrinkWrap.Item>
     </ShrinkWrap>
   </FieldTemplate>
-))
+)
+MultiTextTemplateWithAutoWidth.args = {
+  template: 'multiText'
+}

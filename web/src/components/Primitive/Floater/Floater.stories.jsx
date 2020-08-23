@@ -1,9 +1,6 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import Floater from '.'
-
-const stories = storiesOf('Core/Floater', module)
 
 const content = (
   <p>
@@ -19,64 +16,20 @@ const content = (
   </p>
 )
 
-stories.add(
-  'Info',
-  () => (
-    <div style={{ overflow: 'auto' }}>
-      <Floater size="small" align="left">
-        <img src="https://source.unsplash.com/800x600?nature" alt="" />
-      </Floater>
-      {content}
-    </div>
-  ),
-  {
-    info: {
-      inline: true,
-      text: `
-        A wrapper which optionally floats children left/right, with options to
-        constrain content width. Useful for floating images/video within article
-        text content.
-      `
-    }
+export default {
+  title: 'Utility/Floater',
+  component: Floater,
+  args: {
+    size: 'small',
+    align: 'left'
   }
+}
+
+export const Default = (args) => (
+  <div style={{ overflow: 'auto' }}>
+    <Floater {...args}>
+      <img src="https://source.unsplash.com/800x600?nature" alt="" />
+    </Floater>
+    {content}
+  </div>
 )
-
-stories.add('Aligned left', () => (
-  <div style={{ overflow: 'auto' }}>
-    <Floater size="small" align="left">
-      <img src="https://source.unsplash.com/800x600?nature" alt="" />
-    </Floater>
-    {content}
-    {content}
-  </div>
-))
-
-stories.add('Aligned right', () => (
-  <div style={{ overflow: 'auto' }}>
-    <Floater size="small" align="right">
-      <img src="https://source.unsplash.com/800x600?nature" alt="" />
-    </Floater>
-    {content}
-    {content}
-  </div>
-))
-
-stories.add('With set size (no align)', () => (
-  <div style={{ overflow: 'auto' }}>
-    <Floater size="medium">
-      <img src="https://source.unsplash.com/800x600?nature" alt="" />
-    </Floater>
-    {content}
-    {content}
-  </div>
-))
-
-stories.add('With set size (with align)', () => (
-  <div style={{ overflow: 'auto' }}>
-    <Floater size="medium" align="left">
-      <img src="https://source.unsplash.com/800x600?nature" alt="" />
-    </Floater>
-    {content}
-    {content}
-  </div>
-))

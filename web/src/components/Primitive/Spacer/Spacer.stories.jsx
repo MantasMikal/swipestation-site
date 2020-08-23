@@ -1,6 +1,5 @@
 import React from 'react'
 import { node } from 'prop-types'
-import { storiesOf } from '@storybook/react'
 
 import Spacer from '.'
 
@@ -9,7 +8,6 @@ const ContentTile = ({ children }) => (
     style={{
       backgroundColor: 'lightblue',
       height: '80px',
-      // width: '140px',
       borderRadius: '5px',
       lineHeight: '16px',
       textAlign: 'center',
@@ -25,53 +23,36 @@ ContentTile.propTypes = {
   children: node
 }
 
-const stories = storiesOf('Utility/Spacer', module)
-
-stories.add(
-  'Info',
-  () => (
-    <Spacer px={2} pt={1} pb="5px" style={{ outline: '2px dotted lime' }}>
-      <ContentTile />
-    </Spacer>
-  ),
-  {
-    info: {
-      inline: true,
-      text: `
-        A wrapper component which can be used to provide margin or padding where
-        required.
-
-        Values passed as numbers will be multiplied by the project’s default
-        spacing unit to allow for easy consistency. Values passed as strings
-        will be output without modification.
-      `
-    }
+export default {
+  title: 'Utility/Spacer',
+  component: Spacer,
+  args: {
+    px: 2,
+    pt: 1,
+    pb: '5px'
   }
+}
+
+export const Default = (args) => (
+  <Spacer {...args} style={{ outline: '2px dotted lime' }}>
+    <ContentTile />
+  </Spacer>
 )
 
-stories.add('Margin: 2x spacing unit', () => (
+export const Margin2x = () => (
   <div>
     <Spacer m={2} style={{ outline: '2px dotted lime' }}>
       <ContentTile />
     </Spacer>
     <ContentTile />
   </div>
-))
+)
 
-stories.add('Padding: 2x spacing unit', () => (
+export const Padding2x = () => (
   <div>
     <Spacer p={2} style={{ outline: '2px dotted lime' }}>
       <ContentTile />
     </Spacer>
     <ContentTile />
   </div>
-))
-
-stories.add('As a custom element', () => (
-  <div>
-    <Spacer as="header" p={2} style={{ outline: '2px dotted lime' }}>
-      <ContentTile />
-    </Spacer>
-    <ContentTile />
-  </div>
-))
+)

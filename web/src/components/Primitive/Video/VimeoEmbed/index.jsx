@@ -4,7 +4,11 @@ import { bool, string } from 'prop-types'
 import shallowObjectToQuery from 'lib/shallow-object-to-query'
 
 export const VimeoEmbedFallbackUrl = (videoId) => `https://vimeo.com/${videoId}`
+/**
+ * Embeds a Vimeo video, with options for common video API preferences.
 
+ * To make the video responsive, wrap in in a \`ResponsiveMedia\` component.
+ */
 const VimeoEmbed = ({ color, hideByline, hideTitle, start, videoId }) => {
   const srcPrefix = 'https://player.vimeo.com/video/'
   const query = {
