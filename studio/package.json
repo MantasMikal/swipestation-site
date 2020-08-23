@@ -11,7 +11,6 @@
     "format": "prettier-eslint --write \"**/*.js\" \"!node_modules/**\"",
     "graphql-deploy": "sanity graphql deploy --playground --generation gen2",
     "sanity-deploy": "sanity deploy",
-    "lint": "eslint .",
     "start": "sanity start",
     "build": "sanity build",
     "now-build": "npm run build",

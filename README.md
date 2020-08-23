@@ -47,7 +47,7 @@
 - [x] Buletproof base level component library to get the boring stuff out of the way
 - [x] Useful set of SCSS utility [mixins](https://www.npmjs.com/package/backline-mixins) to aid development
 - [x] Created with accessibility in mind
-- [x] Storybook integration
+- [x] Storybook 6 integration
 - [x] Inline SVG support
 - [x] PWA Support
 - [x] Sitemap support
@@ -83,11 +83,15 @@ npm run build
 # Deploy Sanity Graphql API
 npm run graphql-deploy
 
+# Run storybook
+npm run storybook
+
 ```
 
 ## Read the docs
 
 [Sanity.io](https://www.sanity.io/blog/get-started-with-gatsby-and-structured-content)
+
 [gatsby-source-sanity](https://github.com/sanity-io/gatsby-source-sanity)
 
 ## Contrubute
