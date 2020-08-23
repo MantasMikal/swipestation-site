@@ -12,7 +12,7 @@ module.exports = {
   testURL: 'http://localhost',
   testEnvironment: 'jsdom',
   transform: {
-    '^.+\\.jsx?$': `<rootDir>/jest-preprocess.js`,
+    '^.+\\.jsx?$': `<rootDir>/config/jest/jest-preprocess.js`,
     '^.+\\.css$': '<rootDir>/config/jest/css-transform.js',
     '^(?!.*\\.(js|jsx|css|json)$)': '<rootDir>/config/jest/file-transform.js'
   },
