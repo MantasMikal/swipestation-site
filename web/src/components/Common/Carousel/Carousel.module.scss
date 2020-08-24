@@ -12,9 +12,7 @@
     }
   }
 
-  & > div,
-  li,
-  ul {
+  & > * {
     outline: 0;
     &:active,
     &:focus {

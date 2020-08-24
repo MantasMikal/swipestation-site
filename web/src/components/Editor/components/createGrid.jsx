@@ -16,7 +16,7 @@ export function createGrid(component) {
     ? { gridColumnGap: `${component.colGap}` }
     : null
   const margin = component.margin ? { margin: component.margin } : null
-
+  const centered = component.centered && component.centered
   const styles = Object.assign(
     {},
     colTemplate,
@@ -34,7 +34,7 @@ export function createGrid(component) {
   })
   return (
     gridComponents && (
-      <Grid style={styles} key={component._key}>
+      <Grid style={styles} centered={centered} key={component._key}>
         {gridComponents}
       </Grid>
     )

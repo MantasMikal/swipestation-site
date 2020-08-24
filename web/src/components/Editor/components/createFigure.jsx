@@ -29,10 +29,10 @@ const createFigure = (figure) => {
       }
     }
 
-    const El = isZoomable === undefined || isZoomable ? Zoomable : Image
+    const El = isZoomable ? Zoomable : Image
     return (
-      <div style={{ padding: '10px 0', maxWidth: maxWidth }}>
-        <El key={figure._key} image={image} alt={alt || ' '} />
+      <div key={figure._key} style={{ maxWidth: maxWidth }}>
+        <El image={image} alt={alt || ' '} />
       </div>
     )
   }

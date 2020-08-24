@@ -53,6 +53,12 @@ export default {
       type: "string",
     },
     {
+      name: "centered",
+      title: "Centered",
+      description: "Centers the items in the grid",
+      type: "boolean",
+    },
+    {
       name: "margin",
       title: "Margin",
       description:

@@ -8,6 +8,9 @@ export const createMediaComponent = (component) => {
     case 'figure':
       return createFigure(component)
 
+    case 'image':
+      return createFigure(component)
+
     case 'video':
       return createVideo(component)
 

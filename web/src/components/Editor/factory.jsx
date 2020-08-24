@@ -2,7 +2,7 @@ import React from 'react'
 import createGrid from './components/createGrid'
 import createMedia from './components/createMedia'
 
-export function createComponents(components) {
+export default function createComponents(components) {
   if (!components) {
     return <> </>
   }
@@ -10,6 +10,8 @@ export function createComponents(components) {
     switch (component._type) {
       case 'grid':
         return createGrid(component)
+      case 'image':
+        return createMedia(component)
       case 'figure':
         return createMedia(component)
       case 'video':

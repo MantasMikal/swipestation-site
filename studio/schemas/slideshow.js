@@ -6,16 +6,16 @@ export default {
     {
       type: "string",
       name: "title",
-      title: "Title"
+      title: "Title",
     },
     {
       type: "array",
       name: "slides",
       title: "Slides",
-      of: [{ type: "figure" }, { type: "contentBlock" }, { type: "video" }, { type: "grid" }],
+      of: [{ type: "image" }, { type: "contentBlock" }, { type: "video" }],
       options: {
-        layout: "grid"
-      }
-    }
-  ]
+        layout: "grid",
+      },
+    },
+  ],
 };
