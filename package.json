@@ -16,6 +16,7 @@
     "lint": "lerna run lint --stream",
     "fix": "lerna run fix --stream",
     "test": "lerna run test --stream",
+    "build-storybook": "lerna run build-storybook",
     "test-watch": "lerna run test-watch --stream",
     "postinstall": "lerna bootstrap",
     "sanity-deploy": "lerna run sanity-deploy",
