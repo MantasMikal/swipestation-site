@@ -17,3 +17,9 @@
     margin-right: spacing(6);
   }
 }
+
+.Form {
+  @include mq($breakpoint-tabletLandscape) {
+    max-width: 60%;
+  }
+}

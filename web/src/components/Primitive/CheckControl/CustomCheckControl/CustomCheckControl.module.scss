@@ -20,7 +20,7 @@
   background: $color-common-white;
   vertical-align: middle;
   border: 1px solid $color-common-grey75;
-  border-radius: $radius-standard;
+  border-radius: $radius-small;
   transition: all $duration-standard $easing-standard;
 
   .CustomCheckControlControl:hover:not([disabled]) ~ &,

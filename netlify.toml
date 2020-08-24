@@ -3,12 +3,6 @@
   command = "npm run build"
   publish = "/public"
 
-# build a staging build for the `staging` branch
-[context.storybook]
-  base = "web/"
-  command = "npm run build-storybook"
-  publish = "/storybook-static"
-
 [[redirects]]
   from = "/*"
   to = "/index.html"
