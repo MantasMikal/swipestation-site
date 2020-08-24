@@ -8,5 +8,9 @@
   to = "/index.html"
   status = 200
 
+# build a staging build for the `staging` branch
+[context.storybook]
+  command = "npm run build-storybook"
+
 [[plugins]]
   package = "netlify-plugin-gatsby-cache"
