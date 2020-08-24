@@ -1,27 +1,25 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import Progress from '.'
 
-const stories = storiesOf('Core/Progress', module)
+export default {
+  title: 'Core/Progress',
+  component: Progress
+}
 
-stories.add('Info', () => <Progress value={50} />, {
-  info: {
-    inline: true,
-    text: `
-      Shows progress, just like an HTML \`<progress>\` element, but with better
-      cross-browser styling possibilities. Also supports stacked values.
+export const EmptyState = (args) => <Progress {...args} />
 
-      To use, pass an integer between 0-100, or an array of integers whose
-      values total no more than 100.
-    `
-  }
-})
+export const Default = EmptyState.bind({})
+Default.args = {
+  value: 50
+}
 
-stories.add('Default state', () => <Progress value={50} />)
+export const Filled = EmptyState.bind({})
+Filled.args = {
+  value: 100
+}
 
-stories.add('Empty state', () => <Progress />)
-
-stories.add('Filled state', () => <Progress value={100} />)
-
-stories.add('Stacked values', () => <Progress value={[25, 20, 10, 25]} />)
+export const StackedValues = EmptyState.bind({})
+StackedValues.args = {
+  value: [25, 20, 10, 25]
+}

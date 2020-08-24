@@ -28,3 +28,16 @@ export const Default = (args) => (
     </Field.Answer>
   </Field>
 )
+
+export const WithStatusContext = (args) => (
+  <Field status="success" {...args}>
+    <Field.Question htmlFor="example">
+      First name <Field.Required />
+    </Field.Question>
+    <Field.Answer>
+      <TextControl name="example" />
+      <Field.Assistance>Assistance text</Field.Assistance>
+      <Field.Feedback>Feedback text</Field.Feedback>
+    </Field.Answer>
+  </Field>
+)

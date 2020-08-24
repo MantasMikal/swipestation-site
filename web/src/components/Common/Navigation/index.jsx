@@ -5,8 +5,9 @@ import classnames from 'classnames'
 import Type from 'Primitive/Type'
 import Icon from 'Primitive/Icon'
 import SmartLink from 'Primitive/SmartLink'
-import styles from './Navigation.module.scss'
 import Image from 'Primitive/Image'
+
+import styles from './Navigation.module.scss'
 
 const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, logo, id }) => {
   return (
@@ -32,19 +33,19 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, logo, id }) => {
         <div className={styles.DropdownContent}>
           <LinkWrapper
             className={classnames(styles.NavLink, styles.DropdownLink)}
-            to="/404"
+            to="/"
           >
             Sub Nav 1
           </LinkWrapper>
           <LinkWrapper
             className={classnames(styles.NavLink, styles.DropdownLink)}
-            to="/404"
+            to="/"
           >
             SubNav 2
           </LinkWrapper>
           <LinkWrapper
             className={classnames(styles.NavLink, styles.DropdownLink)}
-            to="/404"
+            to="/"
           >
             SubNav 3
           </LinkWrapper>

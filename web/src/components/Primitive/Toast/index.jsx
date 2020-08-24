@@ -7,6 +7,16 @@ import styles from './Toast.module.scss'
 
 import Notification from '../Notification'
 
+/**
+ * A fixed-position notification-style component with optional onDismiss prop
+ * to manually handle visibility.
+
+ * Note: This component doesn’t include the state-based functionality
+ * required to dismiss: see \`<Toaster />\`.
+
+ * TODO: future functionality may include:
+ * - stacking multiple Toasts
+ */
 const Toast = ({ children, x, y, ...other }) => {
   if (typeof window === 'undefined') return null
 

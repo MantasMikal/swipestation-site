@@ -34,6 +34,18 @@ export const AllStyles = (args) => (
   </Prose>
 )
 
+export const Inversed = (args) => (
+  <div style={{ background: '#333', color: '#eee' }}>
+    <Prose {...args} inverse>
+      <ProseText />
+    </Prose>
+  </div>
+)
+
+export const HTMLPassedAsString = (args) => (
+  <Prose dangerousHtml="<p><strong>This text</strong> may have been passed from <em>a CMS</em>.</p><p>Do not use for User-supplied content.</p>" />
+)
+
 export const InlineHTMLOVerrides = (args) => {
   const inlineStyles = {
     boxSizing: 'content-box',

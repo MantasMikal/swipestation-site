@@ -14,8 +14,9 @@
   position: relative;
   display: block;
   padding: 0;
+  background-color: $color-primary-white;
   border: 1px solid $color-common-grey75;
-  border-radius: $radius-standard;
+  border-radius: $radius-small;
 
   // This is the native select, we’re making everything but the text invisible
   // so we can see the button styles in the wrapper
@@ -24,11 +25,11 @@
     -moz-appearance: none;
     appearance: none;
     border: 0;
-    height: spacing(6) - 2;
-    padding: spacing(0.5) - 1 spacing(2) - 1;
+    height: spacing(5) - 2;
+    padding: spacing(1) - 1 spacing(1.5) - 1;
     line-height: spacing(3);
     transition: all $duration-standard $easing-standard;
-    border-radius: $radius-standard - 1;
+    border-radius: $radius-small - 1;
 
     &:hover,
     &:focus,
@@ -42,7 +43,8 @@
 
     &:focus,
     &:active {
-      box-shadow: 0 0 0 1px $color-primary-yellow;
+      box-shadow: 0 0 0 1px $color-primary-yellow,
+        0 0 0 4px rgba($color-primary-yellow, 0.3);
     }
   }
 
@@ -55,26 +57,27 @@
     bottom: 2px;
     right: 2px;
     width: spacing(6);
-    background: $color-common-white;
+    background: $color-primary-white;
     background: linear-gradient(
       to right,
-      rgba($color-common-white, 0),
-      $color-common-white 40%
+      rgba($color-primary-white, 0),
+      $color-primary-white 40%
     );
     pointer-events: none;
   }
+}
 
-  // Custom arrow sits on top of the select
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: spacing(2);
-    transform: translateY(-50%);
-    z-index: 2;
-    // This hack make the select behind the arrow clickable in some browsers
-    pointer-events: none;
-    @include triangle(down, 6px, $color-common-grey50);
+.CustomSelectControlIndicator {
+  color: $color-primary-yellow;
+  position: absolute;
+  top: 50%;
+  right: spacing(0.75);
+  transform: translateY(-50%);
+  z-index: 2;
+  pointer-events: none;
+
+  svg {
+    fill: currentColor;
   }
 }
 
@@ -107,6 +110,25 @@
   }
 }
 
+.disabled {
+  pointer-events: none;
+  border-color: $color-common-grey75 !important;
+
+  .CustomSelectControlIndicator {
+    color: $color-common-grey75 !important;
+  }
+
+  select {
+    color: $color-common-grey75 !important;
+    opacity: 1;
+    &:hover,
+    &:focus,
+    &:active {
+      box-shadow: none !important;
+    }
+  }
+}
+
 // ------------------------------------
 // START OF UGLY BROWSER-SPECIFIC HACKS
 // ------------------------------------
@@ -124,7 +146,7 @@
   }
   .CustomSelectControl select:focus::-ms-value {
     background: transparent;
-    color: $color-common-black;
+    color: $color-primary-black;
   }
 }
 
@@ -157,5 +179,5 @@
 // See https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-focusring
 .CustomSelectControl select:-moz-focusring {
   color: transparent;
-  text-shadow: 0 0 0 $color-common-black;
+  text-shadow: 0 0 0 $color-primary-black;
 }

@@ -11,6 +11,15 @@ import styles from './Modal.module.scss'
 import VisuallyHidden from '../VisuallyHidden'
 import IconButton from '../IconButton'
 
+/**
+ * A static modal overlay which uses an \`open\` prop to show/hide.
+
+ * Has lots of accessibility functionality built-in, including
+ * focus-trapping, keyboard/click-outside closing.
+
+ * Note: This component doesn’t include the state-based functionality
+ * required to show/hide: see \`<ModalWithTrigger />\`.
+ */
 const Modal = ({
   actions,
   ariaLabel,

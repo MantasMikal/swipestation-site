@@ -3,6 +3,17 @@ import React, { useState } from 'react'
 
 import Toast from '../Toast'
 
+/**
+ * Simple state management for the \`<Toast />\` component, handling dismiss
+ * functionality.
+
+ * TODO: future functionality may include:
+ * - auto-dismiss functionality
+ * - auto-dismiss progress bar
+ * - pause/cancel auto-timeout on focus/hover
+ * - reveal delay
+ * - Multiple notifications stacked
+ */
 const Toaster = (props) => {
   const [visible, toggleVisible] = useState(true)
 

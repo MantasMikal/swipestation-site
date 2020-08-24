@@ -1,39 +1,37 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import TextAlign from '.'
 
-const stories = storiesOf('Utility/TextAlign', module)
-
-stories.add(
-  'Info',
-  () => <TextAlign center>Example text, center-aligned</TextAlign>,
-  {
-    info: {
-      inline: true,
-      text: `
-        Sets the text-alignment of child components`
-    }
+export default {
+  title: 'Utility/TextAlign',
+  component: TextAlign,
+  args: {
+    children: 'Example text, center-aligned'
   }
-)
+}
 
-stories.add('Aligned center', () => (
-  <TextAlign center>Example text, center-aligned</TextAlign>
-))
+export const Default = (args) => <TextAlign {...args} />
 
-stories.add('Aligned justified', () => (
-  <TextAlign justify>
-    Example text, justified. Lorem ipsum dolor sit amet consectetur adipisicing
-    elit. Qui delectus voluptas perspiciatis quod sequi? Necessitatibus eaque
-    tempora, odit est, atque voluptate minus magni ullam assumenda dolor
-    laudantium eveniet similique sapiente!
-  </TextAlign>
-))
+export const AlignedCenter = Default.bind({})
+AlignedCenter.args = {
+  center: true
+}
 
-stories.add('Aligned left', () => (
-  <TextAlign left>Example text, left-aligned</TextAlign>
-))
+export const AlignedJustified = Default.bind({})
+AlignedCenter.args = {
+  justify: true,
+  children: `Example text, justified. Lorem ipsum dolor sit amet consectetur adipisicing
+  elit. Qui delectus voluptas perspiciatis quod sequi? Necessitatibus eaque
+  tempora, odit est, atque voluptate minus magni ullam assumenda dolor
+  laudantium eveniet similique sapiente!`
+}
 
-stories.add('Aligned right', () => (
-  <TextAlign right>Example text, right-aligned</TextAlign>
-))
+export const AlignedLeft = Default.bind({})
+AlignedLeft.args = {
+  left: true
+}
+
+export const AlignedRight = Default.bind({})
+AlignedRight.args = {
+  right: true
+}

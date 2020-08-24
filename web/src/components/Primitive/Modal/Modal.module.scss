@@ -40,16 +40,15 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba($color-primary-black, 0.6);
+  background: rgba($color-primary-black, 0.2);
   @include modal-fade-in(300);
 }
 
 .ModalPanel {
   background: white;
-  border-radius: $radius-standard;
+  border-radius: $radius-small;
   overflow: hidden;
   box-shadow: shadow(5);
-  border: 1px solid $color-primary-black;
   display: flex;
   flex-direction: column;
   padding-left: spacing(2);

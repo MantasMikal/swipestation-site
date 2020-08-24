@@ -1,5 +1,5 @@
 import React from 'react'
-import { bool, node, string } from 'prop-types'
+import { bool, node, string, oneOf } from 'prop-types'
 import classNames from 'classnames'
 
 import styles from './ButtonStandard.module.scss'
@@ -15,6 +15,7 @@ const ButtonStandard = ({
   className,
   disabled,
   loading,
+  size,
   ...other
 }) => (
   <ButtonBase
@@ -22,6 +23,7 @@ const ButtonStandard = ({
       styles.ButtonStandard,
       disabled && styles.disabled,
       loading && styles.loading,
+      size && styles[size],
       className
     )}
     disabled={disabled}
@@ -40,7 +42,8 @@ ButtonStandard.propTypes = {
   children: node,
   className: string,
   disabled: bool,
-  loading: bool
+  loading: bool,
+  size: oneOf(['small', 'normal', 'large'])
 }
 
 export default ButtonStandard

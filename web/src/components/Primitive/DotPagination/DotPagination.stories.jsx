@@ -9,10 +9,10 @@ export default {
 }
 
 export const Default = (args) => (
-  <DotPagination
-    dots={10}
-    onChangeIndex={action('Dot clicked')}
-    activeIndex={5}
-    {...args}
-  />
+  <DotPagination dots={10} onChangeIndex={action('Dot clicked')} {...args} />
 )
+
+export const CustomDotSelectState = Default.bind({})
+CustomDotSelectState.args = {
+  activeIndex: 5
+}

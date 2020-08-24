@@ -73,6 +73,16 @@ export const TextTemplate = (args) => (
   </FieldTemplate>
 )
 
+export const TextTemplateWithHiddenLabel = TextTemplate.bind({})
+TextTemplateWithHiddenLabel.args = {
+  hideLabel: true
+}
+
+export const TextTemplateDisabled = TextTemplate.bind({})
+TextTemplateDisabled.args = {
+  disabled: true
+}
+
 export const CheckTemplate = (args) => (
   <FieldTemplate
     template="check"
@@ -98,6 +108,11 @@ export const CheckTemplate = (args) => (
 )
 CheckTemplate.args = {
   template: 'check'
+}
+
+export const CheckTemplateWithHiddenLabel = CheckTemplate.bind({})
+CheckTemplateWithHiddenLabel.args = {
+  hideLabel: true
 }
 
 export const MultiTextTemplate = (args) => (

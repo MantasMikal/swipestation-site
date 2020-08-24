@@ -7,6 +7,11 @@ import Spinner from 'Primitive/Spinner'
 
 import styles from './ToggleControl.module.scss'
 
+/**
+ * A toggle control similar to native controls on touch devices. As with
+ * all control components, this needs to be associated with a <label>
+ * for correct accessibility.
+ */
 const ToggleControl = ({
   checked,
   disabled,

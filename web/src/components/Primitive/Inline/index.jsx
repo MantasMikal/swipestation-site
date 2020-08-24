@@ -1,13 +1,12 @@
 import React from 'react'
 import classNames from 'classnames'
 import { bool, node, oneOf } from 'prop-types'
-// import sassKeysToArray from '@/lib/sass-keys-to-array'
 
 import styles from './Inline.module.scss'
 
-// const gaps = sassKeysToArray(styles.gaps)
-const gaps = ['small', 'medium', 'large']
-
+/**
+ *  A wrapper component which evenly horizontally spaces its children.
+ */
 const Inline = ({ children, gap, shrink }) => (
   <div
     className={classNames(
@@ -26,7 +25,7 @@ Inline.defaultProps = {
 
 Inline.propTypes = {
   children: node.isRequired,
-  gap: oneOf(gaps),
+  gap: oneOf(['small', 'medium', 'large']),
   shrink: bool
 }
 

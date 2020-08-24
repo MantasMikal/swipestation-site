@@ -4,11 +4,7 @@ import Blockquote from '.'
 
 export default {
   title: 'Core/Blockqoute',
-  component: Blockquote,
-  args: {
-    citation: 'Firstname Lastname',
-    quoteMarks: true
-  }
+  component: Blockquote
 }
 
 export const Default = (args) => (
@@ -16,3 +12,14 @@ export const Default = (args) => (
     This is an amazing pull quote for an article
   </Blockquote>
 )
+
+export const WithCitation = Default.bind({})
+WithCitation.args = {
+  citation: 'Firstname Lastname'
+}
+
+export const WithQuoteMarks = Default.bind({})
+WithQuoteMarks.args = {
+  quoteMarks: true,
+  citation: 'Firstname Lastname'
+}

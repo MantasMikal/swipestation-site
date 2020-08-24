@@ -3,6 +3,13 @@ import { arrayOf, number, oneOfType } from 'prop-types'
 
 import styles from './Progress.module.scss'
 
+/**
+ * Shows progress, just like an HTML \`<progress>\` element, but with better
+ * cross-browser styling possibilities. Also supports stacked values.
+
+ * To use, pass an integer between 0-100, or an array of integers whose
+ * values total no more than 100.
+ */
 const Progress = ({ value }) => {
   const progressArr = Array.isArray(value) ? value : [value]
 

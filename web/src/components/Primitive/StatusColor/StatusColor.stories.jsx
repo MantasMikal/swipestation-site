@@ -19,8 +19,15 @@ export default {
 
 export const Default = (args) => <StatusColor {...args}>Content</StatusColor>
 
-export const WithContext = () => (
+export const WithStatusContext = () => (
   <StatusContextProvider status="error">
     <StatusColor>Content</StatusColor>
   </StatusContextProvider>
 )
+
+export const AllStatus = (args) =>
+  ['none', 'success', 'notice', 'warning', 'error'].map((status) => (
+    <StatusColor {...args} key={`status-${status}`} status={status}>
+      Content
+    </StatusColor>
+  ))

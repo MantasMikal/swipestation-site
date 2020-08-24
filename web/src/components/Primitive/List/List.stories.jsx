@@ -13,3 +13,18 @@ export default {
 }
 
 export const Default = (args) => <List {...args}>{items}</List>
+
+export const Inline = Default.bind({})
+Inline.args = {
+  inline: true
+}
+
+export const Unstyled = Default.bind({})
+Unstyled.args = {
+  unstyled: true
+}
+
+export const Ordered = Default.bind({})
+Ordered.args = {
+  ordered: true
+}

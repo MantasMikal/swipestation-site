@@ -11,3 +11,19 @@ export default {
 }
 
 export const Default = (args) => <Container {...args}>{content}</Container>
+
+export const WithGutter = Default.bind({})
+WithGutter.args = {
+  gutter: true
+}
+
+export const WithSize = Default.bind({})
+WithSize.args = {
+  size: 'small'
+}
+
+export const WithCenteringAndSize = Default.bind({})
+WithCenteringAndSize.args = {
+  center: true,
+  size: 'small'
+}

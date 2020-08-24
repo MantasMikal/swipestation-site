@@ -1,60 +1,53 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import { StatusContextProvider } from 'Context/StatusContext'
 import ToggleControl from '.'
 
-const stories = storiesOf('Form/ToggleControl', module)
-
-stories.add(
-  'Info',
-  () => (
-    <label htmlFor="id-1">
-      <ToggleControl id="id-1" name="exampleToggleControl" value="true" />
-    </label>
-  ),
-  {
-    info: {
-      inline: true,
-      text: `
-        A toggle control similar to native controls on touch devices. As with
-        all control components, this needs to be associated with a <label>
-        for correct accessibility.
-      `
+export default {
+  title: 'Form/ToggleControl',
+  component: ToggleControl,
+  argTypes: {
+    status: {
+      control: {
+        type: 'inline-radio',
+        options: ['success', 'error', 'warning', 'notice']
+      }
     }
   }
-)
+}
 
-stories.add('Unchecked state', () => (
-  <label htmlFor="id-1">
-    <ToggleControl id="id-1" name="exampleToggleControl" value="true" />
-  </label>
-))
-
-stories.add('Checked state', () => (
-  <label htmlFor="id-1">
-    <ToggleControl id="id-1" checked name="exampleToggleControl" value="true" />
-  </label>
-))
-
-stories.add('Loading state', () => (
-  <label htmlFor="id-1">
-    <ToggleControl id="id-1" loading name="exampleToggleControl" value="true" />
-  </label>
-))
-
-stories.add('Disabled state', () => (
+export const Default = (args) => (
   <label htmlFor="id-1">
     <ToggleControl
+      {...args}
       id="id-1"
-      disabled
       name="exampleToggleControl"
       value="true"
     />
   </label>
-))
+)
 
-stories.add('Custom labels', () => (
+export const Checked = Default.bind({})
+Checked.args = {
+  checked: true
+}
+
+export const Loading = Default.bind({})
+Loading.args = {
+  loading: true
+}
+
+export const Disabled = Default.bind({})
+Disabled.args = {
+  disabled: true
+}
+
+export const WithStatus = Default.bind({})
+WithStatus.args = {
+  status: 'error'
+}
+
+export const CustomLabels = (args) => (
   <div>
     <label htmlFor="id-1">
       <ToggleControl
@@ -84,23 +77,12 @@ stories.add('Custom labels', () => (
       />
     </label>
   </div>
-))
+)
 
-stories.add('With status (direct)', () => (
-  <label htmlFor="id-1">
-    <ToggleControl
-      id="id-1"
-      name="exampleToggleControl"
-      value="true"
-      status="error"
-    />
-  </label>
-))
-
-stories.add('With status (via context)', () => (
+export const WithStatusContext = (args) => (
   <StatusContextProvider status="success">
     <label htmlFor="id-1">
       <ToggleControl id="id-1" name="exampleToggleControl" value="true" />
     </label>
   </StatusContextProvider>
-))
+)

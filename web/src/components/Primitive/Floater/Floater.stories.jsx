@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Floater from '.'
 
 const content = (
@@ -18,11 +17,7 @@ const content = (
 
 export default {
   title: 'Utility/Floater',
-  component: Floater,
-  args: {
-    size: 'small',
-    align: 'left'
-  }
+  component: Floater
 }
 
 export const Default = (args) => (
@@ -33,3 +28,20 @@ export const Default = (args) => (
     {content}
   </div>
 )
+
+export const AlignedLeft = Default.bind({})
+AlignedLeft.args = {
+  size: 'small',
+  align: 'left'
+}
+
+export const AlignedRight = Default.bind({})
+AlignedRight.args = {
+  size: 'small',
+  align: 'right'
+}
+
+export const WithSetSize = Default.bind({})
+WithSetSize.args = {
+  size: 'medium'
+}

@@ -47,3 +47,15 @@
     border-color: $value !important;
   }
 }
+
+.disabled {
+  pointer-events: none;
+  color: $color-common-grey75 !important;
+  border-color: $color-common-grey75 !important;
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: none !important;
+  }
+}

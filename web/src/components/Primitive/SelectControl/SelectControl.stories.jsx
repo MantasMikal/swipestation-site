@@ -47,16 +47,77 @@ export const Default = (args) => (
   </SelectControl>
 )
 
-export const WithContext = (args) => (
+export const PreSelectedValue = Default.bind({})
+PreSelectedValue.args = {
+  value: 'two'
+}
+
+export const Disabled = Default.bind({})
+Disabled.args = {
+  disabled: true
+}
+
+export const WithStatus = Default.bind({})
+WithStatus.args = {
+  status: 'success'
+}
+
+export const WithStatusContext = (args) => (
   <StatusContextProvider status="success">
-    <SelectControl {...args} name="exampleSelect" type="text">
+    <SelectControl
+      {...args}
+      name="exampleSelect"
+      onChange={() => {}}
+      type="text"
+    >
       {options}
     </SelectControl>
   </StatusContextProvider>
 )
 
 export const MultiSelect = (args) => (
-  <SelectControl {...args} name="exampleSelect" multiple>
+  <SelectControl onChange={() => {}} {...args} name="exampleSelect">
     {options}
   </SelectControl>
 )
+MultiSelect.args = {
+  multiple: true
+}
+
+export const MultiLineWithCustomTooShortHeight = MultiSelect.bind({})
+MultiLineWithCustomTooShortHeight.args = {
+  multiple: true,
+  size: 2
+}
+
+export const MultiLineWithCustomTooTallHeight = MultiSelect.bind({})
+MultiLineWithCustomTooTallHeight.args = {
+  multiple: true,
+  size: 10
+}
+
+export const DefaultNative = Default.bind({})
+DefaultNative.args = {
+  multiple: true,
+  native: true
+}
+
+export const MultiSelectNative = MultiSelect.bind({})
+MultiSelectNative.args = {
+  multiple: true,
+  native: true
+}
+
+export const MultiLineWithCustomTooShortHeightNative = MultiSelect.bind({})
+MultiLineWithCustomTooShortHeightNative.args = {
+  multiple: true,
+  native: true,
+  size: 2
+}
+
+export const MultiLineWithCustomTooTallHeightNative = MultiSelect.bind({})
+MultiLineWithCustomTooTallHeightNative.args = {
+  multiple: true,
+  native: true,
+  size: 10
+}

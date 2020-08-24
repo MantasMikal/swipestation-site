@@ -9,6 +9,10 @@ import styles from './Notification.module.scss'
 import Icon from '../Icon'
 import IconButton from '../IconButton'
 
+/**
+ * A status-ready notification component. If passed an onDismiss function,
+ * a close button is added to the right-hand side.
+ */
 const Notification = ({ children, icon, onDismiss, shadow, status }) => {
   const contextStatus = useContext(StatusContext)
   const derivedStatus = status || contextStatus

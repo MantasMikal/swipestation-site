@@ -7,6 +7,10 @@
   &:not(:first-child) {
     padding-left: spacing(0.5);
 
+    &.none {
+      padding-left: spacing(0);
+    }
+
     &.comfortable {
       padding-left: spacing(1);
     }
@@ -14,6 +18,10 @@
 
   &:not(:last-child) {
     padding-right: spacing(0.5);
+
+    &.none {
+      padding-right: spacing(0);
+    }
 
     &.comfortable {
       padding-right: spacing(1);

@@ -8,7 +8,10 @@ export default {
 }
 
 export const Default = (args) => (
-  <Element {...args} as="h1">
-    Content wrapped in h1
-  </Element>
+  <Element {...args}>Content wrapped in h1</Element>
 )
+
+export const WithSpecificELement = Default.bind({})
+WithSpecificELement.args = {
+  as: 'h2'
+}

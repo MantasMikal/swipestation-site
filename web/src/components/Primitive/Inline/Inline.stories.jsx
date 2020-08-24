@@ -1,52 +1,27 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 import Placeholder from 'Primitive/Placeholder'
-
 import Inline from '.'
 
-const stories = storiesOf('Layout/Inline', module)
+export default {
+  title: 'Layout/Inline',
+  component: Inline
+}
 
-stories.add(
-  'Info',
-  () => (
-    <Inline>
-      {[...Array(10).keys()].map((i) => (
-        <Placeholder key={i} width={80} height={40} />
-      ))}
-    </Inline>
-  ),
-  {
-    info: {
-      inline: true,
-      text: `
-        A wrapper component which evenly horizontally spaces its children.
-      `
-    }
-  }
+export const Default = (args) => (
+  <Inline {...args}>
+    {[...Array(10).keys()].map((i) => (
+      <Placeholder key={i} width={80} height={40} />
+    ))}
+  </Inline>
 )
 
-stories.add('Default gap', () => (
-  <Inline>
-    {[...Array(20).keys()].map((i) => (
-      <Placeholder key={i} width={80} height={40} />
-    ))}
-  </Inline>
-))
+export const CustomGap = Default.bind({})
+CustomGap.args = {
+  gap: 'small'
+}
 
-stories.add('Custom gap', () => (
-  <Inline gap="small">
-    {[...Array(20).keys()].map((i) => (
-      <Placeholder key={i} width={80} height={40} />
-    ))}
-  </Inline>
-))
-
-stories.add('Shrink', () => (
-  <Inline gap="small" shrink>
-    {[...Array(4).keys()].map((i) => (
-      <Placeholder key={i} width={80} height={40}>
-        Shrink
-      </Placeholder>
-    ))}
-  </Inline>
-))
+export const Shrink = Default.bind({})
+Shrink.args = {
+  gap: 'small',
+  shrink: true
+}

@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
 import Modal from '.'
@@ -8,88 +7,43 @@ import ButtonStandard from '../ButtonStandard'
 import Inline from '../Inline'
 import TextAlign from '../TextAlign'
 
-const stories = storiesOf('Core/Modal', module)
-
-stories.add(
-  'Info',
-  () => (
-    <>
-      See examples in following stories
-      <Modal
-        heading="Example Heading"
-        onClose={action('Close clicked')}
-        ariaLabel="Example Modal"
-      >
-        Example Content
-      </Modal>
-    </>
-  ),
-  {
-    info: {
-      inline: true,
-      text: `
-        A static modal overlay which uses an \`open\` prop to show/hide.
-
-        Has lots of accessibility functionality built-in, including
-        focus-trapping, keyboard/click-outside closing.
-
-        _Note: This component doesn’t include the state-based functionality
-        required to show/hide: see \`<ModalWithTrigger />\`_.
-      `
-    }
+export default {
+  title: 'Core/Modal',
+  component: Modal,
+  args: {
+    children: 'Example content',
+    open: true,
+    onClose: action('Close clicked')
   }
-)
+}
 
-stories.add('Dismiss', () => (
-  <Modal open onClose={action('Close clicked')} ariaLabel="Example Modal">
-    Example Content
-  </Modal>
-))
+export const Default = (args) => <Modal {...args} ariaLabel="Example Modal" />
 
-stories.add('Alert', () => (
-  <Modal
-    open
-    onClose={action('Close clicked')}
-    ariaLabel="Example Modal"
-    actions={<ButtonStandard onClick={action('OK clicked')}>OK</ButtonStandard>}
-  >
-    <TextAlign center>Example content</TextAlign>
-  </Modal>
-))
+export const Alert = Default.bind({})
+Alert.args = {
+  actions: <ButtonStandard onClick={action('OK clicked')}>OK</ButtonStandard>,
+  children: <TextAlign center>Example content</TextAlign>
+}
 
-stories.add('Dialog', () => (
-  <Modal
-    open
-    onClose={action('Close clicked')}
-    ariaLabel="Example Modal"
-    actions={
-      <Inline>
-        <ButtonStandard onClick={action('Save clicked')}>Save</ButtonStandard>
-        <ButtonStandard onClick={action('Cancel clicked')}>
-          Cancel
-        </ButtonStandard>
-      </Inline>
-    }
-  >
-    <TextAlign center>Example content</TextAlign>
-  </Modal>
-))
+export const Dialog = Default.bind({})
+Dialog.args = {
+  children: <TextAlign center>Example content</TextAlign>,
+  actions: (
+    <Inline>
+      <ButtonStandard onClick={action('Save clicked')}>Save</ButtonStandard>
+      <ButtonStandard onClick={action('Cancel clicked')}>Cancel</ButtonStandard>
+    </Inline>
+  )
+}
 
-stories.add('With Heading', () => (
-  <Modal
-    heading="Example Heading"
-    ariaLabel="Example Label"
-    children="Default content"
-    open
-    onClose={action('Close clicked')}
-  />
-))
+export const WithHeading = Default.bind({})
+WithHeading.args = {
+  heading: 'Example Heading',
+  children: 'Default content'
+}
 
-stories.add('Closed (nothing visible)', () => (
-  <Modal
-    heading="Example Heading"
-    ariaLabel="Example Label"
-    children="Default content"
-    onClose={action('Close clicked')}
-  />
-))
+export const Closed = Default.bind({})
+Closed.args = {
+  heading: 'Example Heading',
+  children: 'Default content'
+}
