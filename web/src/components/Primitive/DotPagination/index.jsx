@@ -4,6 +4,11 @@ import classNames from 'classnames'
 
 import styles from './DotPagination.module.scss'
 
+/**
+ * Simple pagination dots with accessible text and increased hit-areas.
+ * Accepts an index to highlight a dot, and returns a function when a
+ * dot is clicked.
+ */
 const DotPagination = ({
   activeIndex,
   dots,

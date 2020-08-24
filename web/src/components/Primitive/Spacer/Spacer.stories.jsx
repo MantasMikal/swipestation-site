@@ -19,12 +19,12 @@ Default.args = {
   pb: '5px'
 }
 
-export const Margin2x = Default.bind({})
-Margin2x.args = {
+export const Margin2SpacingUnits = Default.bind({})
+Margin2SpacingUnits.args = {
   m: 2
 }
 
-export const Padding2x = Default.bind({})
-Padding2x.args = {
+export const Padding2SpacingUnits = Default.bind({})
+Padding2SpacingUnits.args = {
   p: 2
 }

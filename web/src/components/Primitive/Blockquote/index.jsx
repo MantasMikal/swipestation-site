@@ -6,6 +6,9 @@ import styles from './Blockquote.module.scss'
 
 import Type from '../Type'
 
+/**
+ * Semantic markup for a quotation, with optional attribution.
+ */
 const Blockquote = ({ children, citation, quoteMarks }) => (
   <blockquote
     className={classNames(styles.Blockquote, quoteMarks && styles.quoteMarks)}

@@ -24,7 +24,6 @@ import styles from './TextControl.module.scss'
  * Note: some demos do not update when you type as they are presented as
  * controlled components, but using dummy onChange functions.
  */
-
 const TextControl = ({
   autoComplete,
   className,

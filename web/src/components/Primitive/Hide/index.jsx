@@ -5,6 +5,7 @@ import classNames from 'classnames'
 import styles from './Hide.module.scss'
 
 export const widths = ['tablet', 'desktop']
+
 /**
  * A primitive method of visually showing/hiding content using pre-defined
  * breakpoints to hide content. Uses \`display: none\`, so all markup still
