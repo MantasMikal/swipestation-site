@@ -72,15 +72,15 @@
       color: $color-primary-red;
     }
 
-    .DropdownLink {
+    .DropdownContent {
       opacity: 1;
     }
   }
 }
 
 .DropdownBtn {
-  &:focus .DropdownLink,
-  &:active .DropdownLink {
+  &:focus .DropdownContent,
+  &:active .DropdownContent {
     opacity: 1;
   }
 }
@@ -89,12 +89,7 @@
   position: absolute;
   z-index: 300;
   top: 10px;
-}
-
-.DropdownLink:focus ~ .DropdownLink,
-.DropdownLink:focus + .DropdownLink,
-.DropdownLink:focus {
-  opacity: 1;
+  opacity: 0;
 }
 
 .DropdownLink {
@@ -102,7 +97,6 @@
   padding: spacing(1);
   width: 100%;
   text-align: left;
-  opacity: 0;
   background-color: $color-primary-grey-light;
 
   &:first-child {
