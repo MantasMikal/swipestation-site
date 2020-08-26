@@ -100,6 +100,8 @@ npm run storybook
 
 Run Storybook to learn how components work
 
+[Getting started with Sanity.io](https://www.sanity.io/blog/get-started-with-gatsby-and-structured-content)
+
 [Sanity.io](https://www.sanity.io/blog/get-started-with-gatsby-and-structured-content)
 
 [gatsby-source-sanity](https://github.com/sanity-io/gatsby-source-sanity)
@@ -117,4 +119,3 @@ Run Storybook to learn how components work
 A massive thanks to [@jackbrewer](https://github.com/jackbrewer) for creating and mainting [Picks](https://github.com/jackbrewer/picks) component library and SASS utility [mixins](https://www.npmjs.com/package/backline-mixins)
 
 This starter is inspired by [Sanity](https://github.com/sanity-io/example-company-website-gatsby-sanity-combo)
-

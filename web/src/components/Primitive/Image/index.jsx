@@ -7,7 +7,7 @@ import ResponsiveMedia from 'Primitive/ResponsiveMedia'
 /**
  * Component to hanlde all types images with ratio support
  */
-const Image = ({ image, ratio, imgWrapperStyle, imgStyle, alt }) => {
+const Image = ({ image, ratio, imgWrapperStyle, imgStyle, alt, ...other }) => {
   if (!image) return null
 
   const fixedImg =
@@ -25,6 +25,7 @@ const Image = ({ image, ratio, imgWrapperStyle, imgStyle, alt }) => {
           fixed={fixedImg}
           fluid={fluidImg}
           alt={alt}
+          {...other}
         />
       </ResponsiveMedia>
     ) : (
@@ -34,6 +35,7 @@ const Image = ({ image, ratio, imgWrapperStyle, imgStyle, alt }) => {
         fixed={fixedImg}
         fluid={fluidImg}
         alt={alt}
+        {...other}
       />
     )
   }
@@ -41,10 +43,10 @@ const Image = ({ image, ratio, imgWrapperStyle, imgStyle, alt }) => {
   if (regularImg) {
     return ratio ? (
       <ResponsiveMedia ratio={ratio}>
-        <img src={regularImg} alt={alt} />
+        <img src={regularImg} alt={alt} {...other} />
       </ResponsiveMedia>
     ) : (
-      <img src={regularImg} alt={alt} />
+      <img src={regularImg} alt={alt} {...other} />
     )
   }
 }

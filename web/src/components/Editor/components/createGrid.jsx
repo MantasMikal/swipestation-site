@@ -4,6 +4,9 @@ import Grid from 'Primitive/Grid'
 
 export function createGrid(component) {
   const gridMedia = component.gridMedia
+
+  if (!gridMedia) return <> </>
+
   const colTemplate = component.colTemplate
     ? { gridTemplateColumns: `${component.colTemplate}` }
     : null
@@ -26,9 +29,6 @@ export function createGrid(component) {
     margin
   )
 
-  if (!gridMedia) return <> </>
-
-  // Build content
   const gridComponents = gridMedia.map((item) => {
     return createMedia(item)
   })
@@ -40,4 +40,5 @@ export function createGrid(component) {
     )
   )
 }
+
 export default createGrid

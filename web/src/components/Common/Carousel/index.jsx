@@ -1,5 +1,5 @@
 import React from 'react'
-import useMedia from 'libs/use-media'
+import useMedia from 'hooks/use-media'
 import {
   CarouselProvider,
   Slider,

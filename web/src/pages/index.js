@@ -23,8 +23,8 @@ export const query = graphql`
       subtitle
       hero {
         asset {
-          fluid(maxWidth: 500) {
-            ...GatsbySanityImageFluid
+          fluid(maxWidth: 800) {
+            ...GatsbySanityImageFluid_noBase64
           }
         }
       }

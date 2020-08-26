@@ -2,6 +2,9 @@ import React from 'react'
 import createGrid from './components/createGrid'
 import createMedia from './components/createMedia'
 
+/**
+ * Used to create components coming from CMS
+ */
 export default function createComponents(components) {
   if (!components) {
     return <> </>
