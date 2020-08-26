@@ -1,7 +1,7 @@
 import React from 'react'
 import { string, object, array, arrayOf, shape } from 'prop-types'
 
-import Carousel from 'Common/Carousel'
+import Carousel from 'Primitive/Carousel'
 import BlogPostPreview from 'Common/BlogPostPreview'
 import Container from 'Primitive/Container'
 import SmartLink from 'Primitive/SmartLink'

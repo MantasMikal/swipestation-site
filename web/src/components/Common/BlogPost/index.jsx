@@ -7,7 +7,7 @@ import BlockContent from '../../Editor'
 import Container from 'Primitive/Container'
 import Image from 'Primitive/Image'
 import Type from 'Primitive/Type'
-import Badge from 'Common/Badge'
+import Badge from 'Primitive/Badge'
 import SocialBlock from '../SocialShare/SocialBlock'
 
 import styles from './BlogPost.module.scss'

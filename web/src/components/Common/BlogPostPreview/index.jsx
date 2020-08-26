@@ -7,7 +7,7 @@ import classNames from 'classnames'
 import BlockText from 'Common/BlockText'
 import Type from 'Primitive/Type'
 import Image from 'Primitive/Image'
-import Badge from 'Common/Badge'
+import Badge from 'Primitive/Badge'
 
 import styles from './BlogPostPreview.module.scss'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Carousel from 'Common/Carousel'
+import Carousel from 'Primitive/Carousel'
 import createMedia from './createMedia'
 
 // TODO:
