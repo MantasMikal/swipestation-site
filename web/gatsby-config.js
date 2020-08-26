@@ -63,10 +63,11 @@ module.exports = {
         name: config.site.siteTitle,
         short_name: config.site.shortName,
         background_color: config.site.bgColor,
+        description: config.site.description,
         theme_color: config.site.themeColor,
+        icon: config.site.favIcon,
         start_url: '/',
-        display: 'standalone',
-        icon: 'src/assets/favicon.png'
+        display: 'standalone'
       }
     },
     {

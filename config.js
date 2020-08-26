@@ -5,6 +5,7 @@ var config = {
     siteUrl: "https://gatsby-starter-picks.netlify.app",
     bgColor: "#ffffff",
     themeColor: "#c8167c",
+    favIcon: "src/assets/favicon.png",
     description: "To be adedd...",
   },
   project: {
