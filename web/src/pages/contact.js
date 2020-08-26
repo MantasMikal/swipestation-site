@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import ContactSection from 'Section/ContactSection'
+import ContactSection from 'Section/Contact'
 
 export const query = graphql`
   query ContactPageQuery {

@@ -7,11 +7,11 @@ import Container from 'Primitive/Container'
 import SmartLink from 'Primitive/SmartLink'
 import Type from 'Primitive/Type'
 
-import styles from './BlogPostCarouselSection.module.scss'
+import styles from './BlogPostCarousel.module.scss'
 
-const BlogPostCarouselSection = ({ postNodes, title }) => {
+const BlogPostCarousel = ({ postNodes, title }) => {
   return (
-    <section className={styles.BlogPostCarouselSection}>
+    <section className={styles.BlogPostCarousel}>
       <Container size="wide" center gutter spacious hideOverflow>
         <Type size="displayLarge" as="h2" className={styles.Title}>
           {title}
@@ -32,7 +32,7 @@ const BlogPostCarouselSection = ({ postNodes, title }) => {
   )
 }
 
-BlogPostCarouselSection.propTypes = {
+BlogPostCarousel.propTypes = {
   postNodes: arrayOf(
     shape({
       slug: object,
@@ -44,4 +44,4 @@ BlogPostCarouselSection.propTypes = {
   )
 }
 
-export default BlogPostCarouselSection
+export default BlogPostCarousel

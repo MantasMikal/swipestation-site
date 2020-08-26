@@ -5,12 +5,12 @@ import BlockContent from '../../Editor'
 import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
 
-import styles from './BlockSection.module.scss'
+import styles from './Block.module.scss'
 
-const BlockSection = ({ blockContent, title }) => {
+const Block = ({ blockContent, title }) => {
   return (
     <Container
-      className={styles.BlockSection}
+      className={styles.Block}
       size="wide"
       center
       gutter
@@ -27,9 +27,9 @@ const BlockSection = ({ blockContent, title }) => {
   )
 }
 
-BlockSection.propTypes = {
+Block.propTypes = {
   blockContent: array,
   title: string
 }
 
-export default BlockSection
+export default Block

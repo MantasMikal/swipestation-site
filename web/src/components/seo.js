@@ -24,16 +24,7 @@ const detailsQuery = graphql`
   }
 `
 
-function SEO({
-  description,
-  lang,
-  meta,
-  keywords = [],
-  keySentence,
-  title,
-  image,
-  slug
-}) {
+function SEO({ description, lang, meta, keySentence, title, image }) {
   return (
     <StaticQuery
       query={detailsQuery}

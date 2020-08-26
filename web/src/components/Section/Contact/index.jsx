@@ -8,12 +8,12 @@ import TextControl from 'Primitive/TextControl'
 import FieldTemplate from 'Primitive/FieldTemplate'
 import ButtonStandard from 'Primitive/ButtonStandard'
 
-import styles from './ContactSection.module.scss'
+import styles from './Contact.module.scss'
 
 /**
  * If deployed on Netlify the form will be handled automagically! Just check the 'Forms' section under site settings
  */
-const ContactSection = ({ body, title }) => {
+const Contact = ({ body, title }) => {
   return (
     <Container size="wide" center gutter spacious withNavSpace as="section">
       <Type as="h1" size="displayLarge" className={styles.Title}>
@@ -57,9 +57,9 @@ const ContactSection = ({ body, title }) => {
   )
 }
 
-ContactSection.propTypes = {
+Contact.propTypes = {
   body: array,
   title: string
 }
 
-export default ContactSection
+export default Contact

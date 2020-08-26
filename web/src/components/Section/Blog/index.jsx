@@ -6,9 +6,9 @@ import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
 import MasonryLayout from 'Primitive/MasonryLayout'
 
-import styles from './BlogSection.module.scss'
+import styles from './Blog.module.scss'
 
-const BlogSection = ({ blogNodes }) => {
+const Blog = ({ blogNodes }) => {
   let blogposts = []
   for (let i = 0; i < blogNodes.length; i++) {
     blogposts.push(
@@ -39,8 +39,8 @@ const BlogSection = ({ blogNodes }) => {
   )
 }
 
-BlogSection.propTypes = {
+Blog.propTypes = {
   galleryNodes: array
 }
 
-export default BlogSection
+export default Blog

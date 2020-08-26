@@ -6,8 +6,8 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Hero from 'Common/Hero'
-import BlogPostCarouselSection from 'Section/BlogPostCarouselSection'
-import BlockSection from 'Section/BlockSection'
+import BlogPostCarouselSection from 'Section/BlogPostCarousel'
+import BlockSection from 'Section/Block'
 
 export const query = graphql`
   query IndexPageQuery {

@@ -5,7 +5,7 @@ import GraphQLErrorList from '../components/graphql-error-list'
 
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import BlogSection from 'Section/BlogSection'
+import BlogSection from 'Section/Blog'
 
 export const query = graphql`
   query BlogPageQuery {
