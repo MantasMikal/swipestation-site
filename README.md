@@ -40,10 +40,6 @@
   <img width="500" src="https://i.imgur.com/Md3UTQ9.png" alt="Google lighthouse"/>
 </p>
 
-## Notice ⚠
-
-The starter is work in progress. Feel free to open a pull request to help me out! 🙌
-
 ## Features
 
 - [x] Sanity.io CMS integration with a few predefined schemas
