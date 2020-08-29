@@ -41,7 +41,7 @@
 }
 
 .wide {
-  max-width: spacing(190);
+  max-width: spacing(200);
 
   @include mq($breakpoint-full + 100) {
     max-width: 80vw;

@@ -35,14 +35,14 @@ class Navigation extends React.PureComponent {
 
     const currentScrollPos =
       typeof window !== 'undefined' ? window.pageYOffset : 0
+    const visible = prevScrollPos > currentScrollPos
 
+    // Fix for ios when scrolled offscreen
     if (currentScrollPos < 50) {
       this.setState({
         prevScrollPos: currentScrollPos,
         visible: true
       })
-
-      const visible = prevScrollPos > currentScrollPos
       return
     }
 
