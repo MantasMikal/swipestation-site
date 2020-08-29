@@ -16,7 +16,7 @@ class Navigation extends React.PureComponent {
     super(props)
 
     this.state = {
-      prevScrollPos: window.pageYOffset,
+      prevScrollPos: typeof window !== 'undefined' ? window.pageYOffset : 0,
       visible: true
     }
   }
@@ -33,7 +33,8 @@ class Navigation extends React.PureComponent {
   handleScroll = debounce(() => {
     const { prevScrollPos } = this.state
 
-    const currentScrollPos = window.pageYOffset
+    const currentScrollPos =
+      typeof window !== 'undefined' ? window.pageYOffset : 0
     const visible = prevScrollPos > currentScrollPos
 
     this.setState({
