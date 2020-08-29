@@ -37,6 +37,21 @@
   }
 }
 
+.displaySmall {
+  font-weight: bold;
+  font-family: $font-heading;
+  font-size: spacing(3);
+  line-height: 1;
+
+  @include mq($breakpoint-tabletLandscape) {
+    font-size: spacing(4);
+  }
+
+  @include mq($breakpoint-desktop) {
+    font-size: spacing(6);
+  }
+}
+
 .title {
   font-family: $font-body;
   font-size: spacing(3); // 34

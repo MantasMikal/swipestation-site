@@ -38,7 +38,12 @@ const Hero = ({ mobileHero, title, subtitle, minutesSaved }) => {
         </Type>
         <div className={styles.MinutesSaved}>
           <Type size="displayLarge" className={styles.MinutesWrapper}>
-            <CountUp start={0} end={minutesSaved} />
+            <CountUp
+              start={0}
+              easing="outSine"
+              time={10000}
+              end={minutesSaved}
+            />
           </Type>
           <Type size="displayLarge" className={styles.SavedText}>
             Minutes saved queuing

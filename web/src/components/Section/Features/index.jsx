@@ -6,6 +6,8 @@ import Feature from 'Common/Feature'
 import Type from 'Primitive/Type'
 
 import styles from './Features.module.scss'
+import ButtonStandard from 'Primitive/ButtonStandard'
+import SmartLink from 'Primitive/SmartLink'
 
 const Features = ({ title, description, features }) => {
   console.log('Features -> features', features)
@@ -23,6 +25,16 @@ const Features = ({ title, description, features }) => {
             <Feature reverse={i % 2 !== 0} {...feat} />
           </div>
         ))}
+      <div className={styles.LearnMoreWrapper}>
+        <Type className={styles.LearnMoreText} size="displaySmall">
+          Learn more by reading
+        </Type>
+        <ButtonStandard>
+          <SmartLink to="/faqs">
+            <Type size="displaySmall">FAQS</Type>
+          </SmartLink>
+        </ButtonStandard>
+      </div>
     </Container>
   )
 }

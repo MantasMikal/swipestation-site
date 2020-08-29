@@ -10,11 +10,11 @@
 }
 
 .ViewAll {
-  color: $color-primary-purple;
+  color: $color-primary-yellow;
   transition: $duration-shorter $easing-standard;
 
   &:hover {
     transition: $duration-shorter $easing-standard;
-    color: $color-primary-red;
+    color: $color-primary-grey-light;
   }
 }

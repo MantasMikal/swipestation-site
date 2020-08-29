@@ -21,8 +21,8 @@ const Carousel = (props) => {
 
   return (
     <CarouselProvider
-      naturalSlideWidth={600}
-      naturalSlideHeight={500}
+      naturalSlideWidth={500}
+      naturalSlideHeight={600}
       totalSlides={props.children.length + 1}
       visibleSlides={slidesToShow}
       isIntrinsicHeight

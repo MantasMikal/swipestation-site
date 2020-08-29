@@ -8,15 +8,18 @@
   font-weight: 500;
   border-radius: $radius-small;
   background-color: $color-primary-yellow;
-  color: $color-primary-black;
+  color: $color-primary-white;
   transition: all $duration-standard $easing-standard;
 
   &:hover,
   &:focus,
   &:active {
-    background-color: $color-primary-red;
+    background-color: $color-primary-grey-light;
     color: $color-primary-white;
     transition-duration: $duration-shortest;
+  }
+  & a {
+    color: $color-primary-white;
   }
 }
 
