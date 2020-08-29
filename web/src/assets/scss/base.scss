@@ -1,7 +1,7 @@
 @import '~backline-normalize/src/backline-normalize';
 @import 'settings';
 @import '_backline-mixins';
-@import url('https://use.typekit.net/rnl5jdi.css');
+@import url('https://use.typekit.net/pze1zot.css');
 
 :global {
   body {
@@ -17,7 +17,7 @@
   }
 
   body::-webkit-scrollbar-track {
-    background-color: $color-primary-grey-light;
+    background-color: $color-primary-grey-lightest;
   }
 
   body::-webkit-scrollbar-thumb {
@@ -46,17 +46,17 @@
 
     &:focus,
     &:hover {
-      color: $color-primary-red;
+      color: $color-primary-yellow;
       outline: 0;
     }
 
     &:active {
-      color: $color-primary-red;
+      color: $color-primary-yellow;
     }
   }
 
   *::selection {
-    background-color: $color-primary-red;
+    background-color: $color-primary-grey-light;
     color: white;
   }
 

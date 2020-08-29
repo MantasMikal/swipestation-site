@@ -1,4 +1,5 @@
 import React from 'react'
+import CountUp from 'react-countup'
 
 import Type from 'Primitive/Type'
 import Container from 'Primitive/Container'
@@ -8,11 +9,16 @@ import heroVideo from '../../../assets/hero-video.mp4'
 import heroPoster from '../../../assets/hero-poster.jpg'
 
 import styles from './Hero.module.scss'
+import Image from 'Primitive/Image'
 
-const Hero = ({ title, subtitle }) => {
+const Hero = ({ mobileHero, title, subtitle, minutesSaved }) => {
   return (
     <div className={styles.Hero}>
-      <ResponsiveMedia ratio={9 / 16}>
+      <div className={styles.MobileHero}>
+        <Image image={mobileHero} alt="" />
+      </div>
+      <ResponsiveMedia className={styles.DesktopHero} ratio={9 / 16}>
+        <div className={styles.Overlay} />
         <video
           className={styles.VideoFrame}
           poster={heroPoster}
@@ -24,12 +30,20 @@ const Hero = ({ title, subtitle }) => {
         </video>
       </ResponsiveMedia>
       <Container size="wide" gutter center className={styles.Content}>
-        <Type size="displayHero" as="h2" className={styles.Title}>
+        <Type size="displayLarge" as="h2" className={styles.Title}>
           {title}
         </Type>
         <Type size="subtitle" as="p" className={styles.Subtitle}>
           {subtitle}
         </Type>
+        <div className={styles.MinutesSaved}>
+          <Type size="displayLarge" className={styles.MinutesWrapper}>
+            <CountUp start={0} end={minutesSaved} />
+          </Type>
+          <Type size="displayLarge" className={styles.SavedText}>
+            Minutes saved queuing
+          </Type>
+        </div>
       </Container>
     </div>
   )

@@ -1,33 +1,55 @@
 @import 'settings';
 @import '_backline-mixins';
 
+.Headroom {
+  border: 1px solid rebeccapurple;
+}
+
 .Root {
-  background-color: $color-primary-white;
   position: fixed;
   z-index: 300;
   width: 100%;
-  padding: spacing(1) spacing(2);
+  left: 50%;
+  transform: translateX(-50%);
+  // padding: spacing(1) spacing(2);
 }
 
 // Branding
 
 .Branding {
+  opacity: 1;
   font-size: inherit;
   display: inline-block;
   position: relative;
   vertical-align: middle;
   transition: $duration-short $easing-standard;
-  width: 42px;
-  height: 42px;
+  width: 300px;
+  height: 85px;
   order: 1;
+  margin-top: spacing(2);
+
+  background-color: rgba($color-primary-yellow, 0.9);
+  padding: spacing(2);
+  border-radius: $radius-small;
+  box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.16);
+
   & a {
     display: block;
   }
 
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.02);
     transition: $duration-short $easing-standard;
   }
+}
+
+.Links {
+  display: block;
+  float: right;
+  background-color: $color-primary-white;
+  border-radius: $radius-small;
+  margin-top: spacing(2);
+  box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.16);
 }
 
 // Regular link
@@ -51,13 +73,20 @@
 
 .ToggleNavButton {
   display: none;
+  background-color: $color-primary-white;
+  padding: spacing(1);
+  border-radius: $radius-small;
+
+  svg path {
+    // fill: $color-primary-black;
+    // stroke: $color-primary-black
+  }
 }
 
 .ToggleNavButton {
   &:hover {
     svg path {
-      fill: $color-primary-red;
-      stroke: $color-primary-red;
+      color: $color-primary-yellow;
     }
   }
 }
@@ -69,7 +98,7 @@
 
   &:hover {
     .DropdownBtn {
-      color: $color-primary-red;
+      color: $color-primary-yellow;
     }
 
     .DropdownContent {
@@ -97,7 +126,7 @@
   padding: spacing(1);
   width: 100%;
   text-align: left;
-  background-color: $color-primary-grey-light;
+  background-color: $color-primary-grey-lightest;
 
   &:first-child {
     border-radius: $radius-small $radius-small 0 0;
@@ -108,9 +137,25 @@
   }
 }
 
+.hidden {
+  .Branding {
+    opacity: 0;
+    pointer-events: none;
+    transition: $duration-short $easing-standard;
+    will-change: opacity;
+  }
+}
+
 // Mobile only styles
 
-@include mq(null, $breakpoint-mobileLandscape) {
+@include mq(0, $breakpoint-tabletLandscape) {
+  .Branding {
+    width: 280px;
+    height: 80px;
+  }
+}
+
+@include mq(0, $breakpoint-tablet) {
   .NavLink,
   .Dropdown .DropdownBtn {
     display: none;
@@ -122,6 +167,16 @@
     position: absolute;
     right: 15px;
     top: 15px;
+  }
+
+  .Links {
+    margin-top: 0;
+  }
+
+  .Branding {
+    margin-top: spacing(1);
+    width: 200px;
+    height: 65px;
   }
 
   .Root.showNav {
@@ -139,9 +194,21 @@
       text-align: left;
       width: 100%;
       border-radius: $radius-small;
-      &:hover {
-        background-color: $color-primary-red;
+
+      &:hover,
+      &:active,
+      &:focus {
+        border-radius: 0;
+        background-color: $color-primary-yellow;
         color: $color-primary-white;
+
+        &:first-of-type {
+          border-radius: $radius-small $radius-small 0 0;
+        }
+
+        &:last-of-type {
+          border-radius: 0 0 $radius-small $radius-small;
+        }
       }
     }
 
@@ -151,7 +218,7 @@
 
     .Dropdown:hover {
       .DropdownBtn {
-        background-color: $color-primary-red;
+        background-color: $color-primary-yellow;
         color: $color-primary-white;
       }
 

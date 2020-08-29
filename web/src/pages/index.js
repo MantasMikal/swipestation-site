@@ -21,6 +21,14 @@ export const query = graphql`
       title
       subtitle
       _rawSections(resolveReferences: { maxDepth: 10 })
+      minutesSaved
+      mobileHero {
+        asset {
+          fluid(maxWidth: 600) {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
     }
 
     posts: allSanityPost(
@@ -89,7 +97,7 @@ const IndexPage = (props) => {
     )
   }
 
-  const { title, subtitle, _rawSections } = home
+  const { title, subtitle, _rawSections, mobileHero, minutesSaved } = home
 
   return (
     <Layout>
@@ -99,7 +107,14 @@ const IndexPage = (props) => {
         keywords={site.keywords}
       />
       <h1 hidden>Welcome to {site.title}</h1>
-      {home && <Hero title={title} subtitle={subtitle} />}
+      {home && (
+        <Hero
+          title={title}
+          mobileHero={mobileHero}
+          subtitle={subtitle}
+          minutesSaved={minutesSaved}
+        />
+      )}
       {_rawSections &&
         _rawSections.map((section) => (
           <div key={section._key}>

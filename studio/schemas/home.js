@@ -20,6 +20,16 @@ export default {
       type: "string",
     },
     {
+      name: "minutesSaved",
+      title: "Minutes Saved Queuing",
+      type: "number",
+    },
+    {
+      name: "mobileHero",
+      title: "Hero image on mobile",
+      type: "image",
+    },
+    {
       name: "sections",
       title: "Sections",
       type: "array",

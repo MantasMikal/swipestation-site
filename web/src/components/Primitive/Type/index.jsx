@@ -9,7 +9,6 @@ import Element from '../Element'
 export const sizes = [
   'display2',
   'display1',
-  'displayHero',
   'displayLarge',
   'menu',
   'title',
@@ -35,7 +34,6 @@ const Type = ({
   bold,
   demi,
   heavy,
-  qoute,
   padded,
   ...rest
 }) => (
@@ -49,7 +47,6 @@ const Type = ({
       bold && styles.bold,
       demi && styles.demi,
       heavy && styles.heavy,
-      qoute && styles.qoute,
       padded && styles.padded,
       styles.common,
 

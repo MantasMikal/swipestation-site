@@ -7,27 +7,150 @@
   overflow: hidden;
 }
 
+.DesktopHero {
+  display: none;
+}
+
+.MobileHero {
+  display: block;
+}
+
 .Content {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 0;
+  background-color: rgba($color-primary-yellow, 0.9);
+  padding-top: spacing(2);
+  padding-bottom: spacing(2);
+}
+
+.Overlay {
+  position: absolute;
+  opacity: 0.95;
+
+  background-color: $color-primary-grey-lighter;
+  clip-path: polygon(0 0, 73% 0, 43% 100%, 0% 100%);
+  width: 100%;
+  height: 100%;
+
+  &:before {
+    content: '';
+    position: absolute;
+    background-color: $color-primary-yellow;
+    clip-path: polygon(0 0, 70% 0, 45% 100%, 0% 100%);
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .Title {
   color: $color-primary-white;
-  @include mq($breakpoint-desktop) {
-    font-size: 4.5vw;
-    line-height: 5vw;
-    max-width: 60%;
-  }
+  font-size: 8.5vw;
+  line-height: 1;
+  max-width: 16ch;
 }
 
 .Subtitle {
   color: $color-primary-white;
-  @include mq($breakpoint-desktop) {
-    font-size: 2.5vw;
-    line-height: 3vw;
+  font-size: 3.7vw;
+  line-height: 1;
+  max-width: 20ch;
+  margin-bottom: spacing(2);
+}
+
+.MinutesSaved {
+  display: flex;
+  align-items: center;
+}
+
+.MinutesWrapper {
+  background-color: $color-primary-white;
+  color: $color-primary-black;
+  padding: spacing(0.5) spacing(2);
+  margin-right: spacing(1);
+  border-radius: $radius-small;
+  text-align: center;
+  min-width: 7ch;
+
+  font-size: 5vw;
+  line-height: 1;
+}
+
+.SavedText {
+  font-size: 5vw;
+  line-height: 1;
+  color: $color-primary-white;
+}
+
+@include mq($breakpoint-mobileLandscape) {
+  .DesktopHero {
+    display: block;
+  }
+
+  .MobileHero {
+    display: none;
+  }
+
+  .Content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20%;
+    background-color: unset;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .MinutesSaved {
+    margin-top: auto;
+    margin-bottom: 5%;
+  }
+
+  .MinutesWrapper {
+    font-size: 3vw;
+  }
+
+  .SavedText {
+    font-size: 3vw;
+  }
+}
+
+@include mq($breakpoint-tabletLandscape) {
+  .Content {
+    top: 13%;
+  }
+
+  .MinutesSaved {
+    margin-bottom: 10%;
+  }
+
+  .MinutesWrapper {
+    font-size: 4vw;
+  }
+
+  .SavedText {
+    font-size: 4vw;
+  }
+}
+
+@include mq($breakpoint-desktopMedium) {
+  .Title {
+    color: $color-primary-white;
+    font-size: 7.5vw;
+  }
+
+  .Subtitle {
+    color: $color-primary-white;
+    font-size: 3vw;
+    line-height: 1;
+  }
+
+  .MinutesSaved {
+    margin-bottom: 15%;
+  }
+
+  .MinutesWrapper,
+  .SavedText {
+    font-size: 3.5vw;
   }
 }

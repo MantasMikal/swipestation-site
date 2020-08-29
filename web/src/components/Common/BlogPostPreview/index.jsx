@@ -16,7 +16,7 @@ const BlogPostPreview = ({
   mainImage,
   title,
   publishedAt,
-  excerpt,
+  _rawExcerpt,
   ratio,
   surround,
   className,
@@ -37,9 +37,9 @@ const BlogPostPreview = ({
       <Type as="h3" size="title" className={styles.Title}>
         {title}
       </Type>
-      {excerpt && (
+      {_rawExcerpt && (
         <div className={styles.Excerpt}>
-          <BlockText blocks={excerpt} />
+          <BlockText blocks={_rawExcerpt} />
         </div>
       )}
       <div className={styles.Details}>
