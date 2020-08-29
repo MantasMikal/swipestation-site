@@ -35,14 +35,14 @@ class Navigation extends React.PureComponent {
 
     const currentScrollPos =
       typeof window !== 'undefined' ? window.pageYOffset : 0
-    const visible = prevScrollPos > currentScrollPos
 
-    if (currentScrollPos < 0) {
+    if (currentScrollPos < 50) {
       this.setState({
         prevScrollPos: currentScrollPos,
-        visible
+        visible: true
       })
 
+      const visible = prevScrollPos > currentScrollPos
       return
     }
 
