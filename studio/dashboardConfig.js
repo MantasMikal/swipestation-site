@@ -6,10 +6,10 @@ export default {
         title: "Netlify deploys",
         sites: [
           {
-            title: "Picks",
-            apiId: "xxxx-xxx-xxxxxxxxxxxxxxxxx",
-            buildHookId: "xxxxxxxxxxxxxxxxxxxxxxx",
-            name: "gatsby-starter-picks",
+            title: "Deploy Swipestation",
+            apiId: "6fc94228-be94-4d16-8478-4cf6fb94432d",
+            buildHookId: "5f4a877786e5374883edafae",
+            name: "swipestation",
           },
         ],
       },
