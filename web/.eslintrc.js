@@ -5,8 +5,7 @@ module.exports = {
   plugins: ['prettier'],
   rules: {
     'prettier/prettier': 'error',
-    'react/forbid-foreign-prop-types': 'off',
-    'linebreak-style': ['error', 'unix']
+    'react/forbid-foreign-prop-types': 'off'
   },
   extends: ['react-app', 'plugin:prettier/recommended']
 }
