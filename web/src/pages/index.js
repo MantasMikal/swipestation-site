@@ -18,16 +18,9 @@ export const query = graphql`
     }
 
     home: sanityHomePage(_id: { regex: "/(drafts.|)homePage/" }) {
-      _rawSections(resolveReferences: { maxDepth: 10 })
       title
       subtitle
-      hero {
-        asset {
-          fluid(maxWidth: 800) {
-            ...GatsbySanityImageFluid_noBase64
-          }
-        }
-      }
+      _rawSections(resolveReferences: { maxDepth: 10 })
     }
 
     posts: allSanityPost(
@@ -40,19 +33,18 @@ export const query = graphql`
           id
           publishedAt
           isFeatured
-
-          category {
-            color {
-              hex
-            }
-            title
-          }
           mainImage {
             asset {
               fluid(maxWidth: 500) {
                 ...GatsbySanityImageFluid
               }
             }
+          }
+          category {
+            color {
+              hex
+            }
+            title
           }
           title
           _rawExcerpt
@@ -76,6 +68,8 @@ const IndexPage = (props) => {
     )
   }
 
+  console.log(data)
+
   const site = (data || {}).site
   const home = (data || {}).home
 
@@ -95,7 +89,7 @@ const IndexPage = (props) => {
     )
   }
 
-  const { hero, title, subtitle, _rawSections } = home
+  const { title, subtitle, _rawSections } = home
 
   return (
     <Layout>
@@ -105,7 +99,7 @@ const IndexPage = (props) => {
         keywords={site.keywords}
       />
       <h1 hidden>Welcome to {site.title}</h1>
-      {home && <Hero heroImage={hero} title={title} subtitle={subtitle} />}
+      {home && <Hero title={title} subtitle={subtitle} />}
       {_rawSections &&
         _rawSections.map((section) => (
           <div key={section._key}>

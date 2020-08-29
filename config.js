@@ -1,15 +1,15 @@
 var config = {
   site: {
-    siteTitle: "Picks",
-    shortName: "Picks",
-    siteUrl: "https://gatsby-starter-picks.netlify.app",
+    siteTitle: "SwipeStation - HALF TIME DRINKS. IN HALF THE TIME.",
+    shortName: "SwipeStation",
+    siteUrl: "https://swipestation.netlify.app",
     bgColor: "#ffffff",
-    themeColor: "#c8167c",
+    themeColor: "#FFBA00",
     favIcon: "src/assets/favicon.png",
     description: "To be adedd...",
   },
   project: {
-    projectId: "21x74mcv",
+    projectId: "fxgsdm3u",
     dataset: "production",
   },
 };

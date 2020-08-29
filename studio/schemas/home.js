@@ -20,11 +20,6 @@ export default {
       type: "string",
     },
     {
-      name: "hero",
-      title: "Hero Image",
-      type: "image",
-    },
-    {
       name: "sections",
       title: "Sections",
       type: "array",
