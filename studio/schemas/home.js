@@ -30,6 +30,11 @@ export default {
       type: "image",
     },
     {
+      name: "features",
+      title: "Features",
+      type: "features",
+    },
+    {
       name: "sections",
       title: "Sections",
       type: "array",

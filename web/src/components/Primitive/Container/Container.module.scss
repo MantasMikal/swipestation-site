@@ -31,7 +31,7 @@
   padding-bottom: spacing(4);
 
   @include mq($breakpoint-tablet) {
-    padding-top: spacing(8);
+    padding-top: spacing(10);
     padding-bottom: spacing(4);
   }
 }
@@ -41,7 +41,7 @@
 }
 
 .wide {
-  max-width: spacing(215);
+  max-width: spacing(190);
 
   @include mq($breakpoint-full + 100) {
     max-width: 80vw;

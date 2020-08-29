@@ -1,0 +1,59 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Feature {
+  display: block;
+}
+
+.ImageWrapper {
+  width: 70%;
+  margin: 0 auto spacing(3);
+}
+
+@include mq($breakpoint-tablet) {
+  .Feature {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 spacing(15);
+  }
+
+  .ImageWrapper {
+    flex: 1 0 40%;
+    max-width: 600px;
+    max-height: 600px;
+
+    margin: 0 spacing(10) 0 0;
+  }
+
+  .Content {
+    max-width: 800px;
+    flex: 1 0 40%;
+  }
+
+  .reverse {
+    .ImageWrapper {
+      order: 1;
+      margin: 0 0 0 spacing(10);
+    }
+  }
+}
+
+@include mq($breakpoint-tabletLandscape) {
+  .Feature {
+    margin: 0 0 spacing(20);
+  }
+
+  .ImageWrapper {
+    flex: 1 0 40%;
+    max-width: 600px;
+    max-height: 600px;
+    margin: 0 spacing(15) 0 0;
+  }
+
+  .reverse {
+    .ImageWrapper {
+      margin: 0 0 0 spacing(15);
+    }
+  }
+}

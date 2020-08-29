@@ -16,18 +16,19 @@ import styles from './Carousel.module.scss'
 const Carousel = (props) => {
   const isTablet = useMedia('(max-width: 960px)')
   const isPhone = useMedia('(max-width: 600px)')
-  const slidesToShow = isTablet ? (isPhone ? 1 : 2) : 3
+  const slidesPerPage = isTablet ? (isPhone ? 1 : 2) : 3
+  const slidesToShow = typeof window !== 'undefined' ? slidesPerPage : 3
 
   return (
     <CarouselProvider
-      naturalSlideWidth={500}
+      naturalSlideWidth={600}
       naturalSlideHeight={500}
       totalSlides={props.children.length + 1}
-      visibleSlides={slidesToShow || 3}
+      visibleSlides={slidesToShow}
       isIntrinsicHeight
       className={styles.Carousel}
       dragStep={!isPhone && !isTablet ? 3 : 1}
-      step={slidesToShow || 3}
+      step={slidesToShow}
     >
       <Slider moveThreshold={isPhone ? 0.05 : 0.1} className={styles.Slider}>
         {props.children.map((child, i) => (

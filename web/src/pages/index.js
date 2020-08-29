@@ -8,6 +8,7 @@ import Layout from '../containers/layout'
 import Hero from 'Common/Hero'
 import BlogPostCarouselSection from 'Section/BlogPostCarousel'
 import BlockSection from 'Section/Block'
+import Features from 'Section/Features'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -26,6 +27,21 @@ export const query = graphql`
         asset {
           fluid(maxWidth: 600) {
             ...GatsbySanityImageFluid
+          }
+        }
+      }
+      features {
+        title
+        _rawDescription
+        features {
+          title
+          _rawDescription
+          image {
+            asset {
+              fluid(maxWidth: 700) {
+                ...GatsbySanityImageFluid
+              }
+            }
           }
         }
       }
@@ -97,7 +113,14 @@ const IndexPage = (props) => {
     )
   }
 
-  const { title, subtitle, _rawSections, mobileHero, minutesSaved } = home
+  const {
+    title,
+    subtitle,
+    _rawSections,
+    mobileHero,
+    minutesSaved,
+    features
+  } = home
 
   return (
     <Layout>
@@ -113,6 +136,13 @@ const IndexPage = (props) => {
           mobileHero={mobileHero}
           subtitle={subtitle}
           minutesSaved={minutesSaved}
+        />
+      )}
+      {features && (
+        <Features
+          title={features.title}
+          description={features._rawDescription}
+          features={features.features}
         />
       )}
       {_rawSections &&

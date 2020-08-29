@@ -1,0 +1,16 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Description {
+  margin-bottom: spacing(6);
+}
+
+.FeatureWrapper {
+  margin-bottom: spacing(8);
+}
+
+@include mq($breakpoint-tablet) {
+  .FeatureWrapper {
+    margin-bottom: 0;
+  }
+}
