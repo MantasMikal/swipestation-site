@@ -76,6 +76,15 @@ module.exports = {
         extendTypes: [{ typeName: 'SanityPost', contentFieldName: 'body' }]
       }
     },
+    {
+      resolve: 'gatsby-plugin-crisp-chat',
+      options: {
+        websiteId: 'e6a7fddd-3d2f-4141-842e-86e71d2f8f90',
+        enableDuringDevelop: true, // Optional. Disables Crisp Chat during gatsby develop. Defaults to true.
+        defer: true, // Optional. Sets the Crisp loading script to defer instead of async. Defaults to false.
+        enableImprovedAccessibility: true // Optional. Sets aria-label attribute on pop-up icon for screen readers. Defaults to true.
+      }
+    },
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-offline'

@@ -7,7 +7,7 @@
   padding: spacing(2);
   margin-bottom: spacing(3);
   background-color: $color-primary-grey-lighter;
-  min-height: 700px;
+  min-height: 400px;
 }
 
 .SwipeStationTill {
@@ -62,7 +62,7 @@
 
 @include mq($breakpoint-mobileLandscape) {
   .Till {
-    min-height: 450px;
+    min-height: 700px;
   }
 }
 
