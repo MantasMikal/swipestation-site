@@ -26,3 +26,9 @@
     color: inherit;
   }
 }
+
+.withNavSpace {
+  &.Wrapper {
+    padding-top: spacing(7.5);
+  }
+}

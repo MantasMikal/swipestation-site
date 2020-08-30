@@ -57,7 +57,7 @@ const BlogPage = (props) => {
 
   return (
     <Layout>
-      <SEO title="Blog" slug={'/blog'} />
+      <SEO title="News" slug={'/news'} />
       {blogNodes && blogNodes.length > 0 && (
         <BlogSection blogNodes={blogNodes} />
       )}

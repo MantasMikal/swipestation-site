@@ -35,6 +35,11 @@ export default {
       type: "features",
     },
     {
+      name: "tillComparison",
+      title: "Till Comparison",
+      type: "tillComparison",
+    },
+    {
       name: "sections",
       title: "Sections",
       type: "array",

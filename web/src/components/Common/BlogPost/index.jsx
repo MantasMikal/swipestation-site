@@ -19,16 +19,16 @@ const BlogPost = (props) => {
     threshold: 0
   })
   return (
-    <article className={styles.Root}>
+    <article ref={ref} className={styles.Root}>
       <ResponsiveMedia className={styles.MainImage} ratio={9 / 20}>
         <Image image={mainImage} alt={title} />
       </ResponsiveMedia>
       <div
         className={styles.LoadingBar}
-        style={{ width: `${percentage * 100}%` }}
+        style={{ width: `${percentage * 100 + 20}%` }}
       />
       <Container className={styles.Container} size="medium" gutter center>
-        <div ref={ref} className={styles.Content}>
+        <div className={styles.Content}>
           {title && (
             <div className={styles.TitleWrapper}>
               <Type as="h1" size="displayLarge" className={styles.Title}>
@@ -45,7 +45,11 @@ const BlogPost = (props) => {
                 {category &&
                   category.length > 0 &&
                   category.map((cat) => (
-                    <Badge content={cat.title} color={cat.color.hex} />
+                    <Badge
+                      key={`badge-${cat.title}-${title}`}
+                      content={cat.title}
+                      color={cat.color.hex}
+                    />
                   ))}
               </div>
             </div>

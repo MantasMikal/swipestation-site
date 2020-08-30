@@ -62,7 +62,7 @@ const BlogPostTemplate = (props) => {
           description={seo ? seo.meta_description : ''}
           keySentence={seo ? seo.focus_keyword : ''}
           image={post.mainImage && post.mainImage}
-          slug={`/blog/${post.slug.current}`}
+          slug={`/news/${post.slug.current}`}
         />
       )}
 

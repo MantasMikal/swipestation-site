@@ -65,6 +65,7 @@
     "react-headroom": "^3.0.0",
     "react-helmet": "^6.1.0",
     "react-medium-image-zoom": "^4.3.1",
+    "react-scroll-parallax": "^2.3.4",
     "react-scroll-percentage": "^4.2.0",
     "react-spring": "^8.0.27",
     "sass-loader": "^9.0.3",

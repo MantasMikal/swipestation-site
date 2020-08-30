@@ -10,7 +10,7 @@ import heroPoster from '../../../assets/hero-poster.jpg'
 
 import styles from './Hero.module.scss'
 import Image from 'Primitive/Image'
-import useMedia from 'hooks/use-media'
+import useMedia from 'hooks/useMedia'
 
 const Hero = ({ mobileHero, title, subtitle, minutesSaved }) => {
   const isTablet = useMedia('(max-width: 576px)')

@@ -1,5 +1,4 @@
 import React from 'react'
-import useMedia from 'hooks/use-media'
 import {
   CarouselProvider,
   Slider,
@@ -14,11 +13,6 @@ import 'pure-react-carousel/dist/react-carousel.es.css'
 import styles from './Carousel.module.scss'
 
 const Carousel = (props) => {
-  // const isTablet = useMedia('(max-width: 960px)')
-  // const isPhone = useMedia('(max-width: 600px)')
-  // const slidesPerPage = isTablet ? (isPhone ? 1 : 2) : 3
-  // const slidesToShow = typeof window !== 'undefined' ? slidesPerPage : 2
-
   return (
     <CarouselProvider
       naturalSlideWidth={500}
@@ -26,8 +20,6 @@ const Carousel = (props) => {
       totalSlides={props.children.length}
       isIntrinsicHeight
       className={styles.Carousel}
-      // dragStep={!isPhone && !isTablet ? 3 : 1}
-      // step={slidesToShow}
     >
       <Slider className={styles.Slider}>
         {props.children.map((child, i) => (

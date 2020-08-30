@@ -25,6 +25,7 @@ import home from "./home";
 import section from "./section";
 import feature from "./feature";
 import features from "./features";
+import tillComparison from "./tillComparison";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -54,6 +55,7 @@ export default createSchema({
     section,
     feature,
     features,
+    tillComparison,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

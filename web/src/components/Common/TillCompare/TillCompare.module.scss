@@ -8,6 +8,13 @@
   margin-bottom: spacing(3);
   background-color: $color-primary-grey-lighter;
   min-height: 400px;
+  transition: $easing-standard 0.15s;
+  box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.16);
+  &:hover {
+    transition: $easing-standard 0.25s;
+    box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.16);
+    transform: scale(1.005);
+  }
 }
 
 .SwipeStationTill {

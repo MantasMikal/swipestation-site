@@ -32,7 +32,7 @@ const Blog = ({ blogNodes }) => {
       as="section"
     >
       <Type as="h1" size="displayLarge" className={styles.Title}>
-        Blog
+        News
       </Type>
       <MasonryLayout items={blogposts} gap={25} />
     </Container>

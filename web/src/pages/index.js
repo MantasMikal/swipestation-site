@@ -46,6 +46,10 @@ export const query = graphql`
           }
         }
       }
+      tillComparison {
+        title
+        _rawDescription
+      }
     }
 
     posts: allSanityPost(
@@ -118,7 +122,8 @@ const IndexPage = (props) => {
     _rawSections,
     mobileHero,
     minutesSaved,
-    features
+    features,
+    tillComparison
   } = home
 
   return (
@@ -151,12 +156,17 @@ const IndexPage = (props) => {
           </div>
         ))}
 
-      <TillComparison />
+      {tillComparison && (
+        <TillComparison
+          title={tillComparison.title}
+          description={tillComparison._rawDescription}
+        />
+      )}
       {postNodes.length > 0 && (
         <BlogPostCarouselSection
           postNodes={postNodes}
-          browseMoreHref="/blog/"
-          title="Featured blog posts"
+          browseMoreHref="/news/"
+          title="Latest news"
         />
       )}
     </Layout>
