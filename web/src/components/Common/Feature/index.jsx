@@ -9,8 +9,6 @@ import BlockText from 'Common/BlockText'
 import styles from './Feature.module.scss'
 
 const Feature = ({ title, _rawDescription, image, reverse }) => {
-  console.log('Feature -> reverse', reverse)
-
   return (
     <div className={classNames(styles.Feature, reverse && styles.reverse)}>
       <div className={styles.ImageWrapper}>

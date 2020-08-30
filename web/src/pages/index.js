@@ -93,8 +93,6 @@ const IndexPage = (props) => {
     )
   }
 
-  console.log(data)
-
   const site = (data || {}).site
   const home = (data || {}).home
 

@@ -1,10 +1,6 @@
 @import 'settings';
 @import '_backline-mixins';
 
-// .Example {
-
-// }
-
 .Till {
   width: 100%;
   border-radius: $radius-large;
@@ -17,6 +13,7 @@
 .SwipeStationTill {
   background-color: $color-primary-yellow;
   color: $color-primary-white;
+
   .PersonIcon,
   .GlassIcon {
     svg,
@@ -34,7 +31,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   margin-right: spacing(3);
   margin-bottom: spacing(2);
 }
@@ -53,7 +49,6 @@
 }
 
 .GlassIcon {
-  // margin-right: spacing(0.5);
   margin-bottom: spacing(0.5);
 }
 
@@ -92,6 +87,15 @@
     padding: spacing(3);
     &:first-child {
       margin-right: spacing(3);
+    }
+  }
+}
+
+@include mq($breakpoint-desktopLarge) {
+  .Till {
+    padding: spacing(5);
+    &:first-child {
+      margin-right: spacing(5);
     }
   }
 }

@@ -10,7 +10,6 @@ import ButtonStandard from 'Primitive/ButtonStandard'
 import SmartLink from 'Primitive/SmartLink'
 
 const Features = ({ title, description, features }) => {
-  console.log('Features -> features', features)
   return (
     <Container gutter size="wide" center spacious className={styles.Features}>
       <Type size="displayLarge" as="h3" className={styles.Title}>
