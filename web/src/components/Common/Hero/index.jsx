@@ -10,8 +10,10 @@ import heroPoster from '../../../assets/hero-poster.jpg'
 
 import styles from './Hero.module.scss'
 import Image from 'Primitive/Image'
+import useMedia from 'hooks/use-media'
 
 const Hero = ({ mobileHero, title, subtitle, minutesSaved }) => {
+  const isTablet = useMedia('(max-width: 576px)')
   return (
     <div className={styles.Hero}>
       <div className={styles.MobileHero}>
@@ -19,15 +21,17 @@ const Hero = ({ mobileHero, title, subtitle, minutesSaved }) => {
       </div>
       <ResponsiveMedia className={styles.DesktopHero} ratio={9 / 16}>
         <div className={styles.Overlay} />
-        <video
-          className={styles.VideoFrame}
-          poster={heroPoster}
-          autoPlay
-          muted
-          loop
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
+        {!isTablet && (
+          <video
+            className={styles.VideoFrame}
+            poster={heroPoster}
+            autoPlay
+            muted
+            loop
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
+        )}
       </ResponsiveMedia>
       <Container size="wide" gutter center className={styles.Content}>
         <Type size="displayLarge" as="h2" className={styles.Title}>
