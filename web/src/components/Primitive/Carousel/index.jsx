@@ -14,23 +14,22 @@ import 'pure-react-carousel/dist/react-carousel.es.css'
 import styles from './Carousel.module.scss'
 
 const Carousel = (props) => {
-  const isTablet = useMedia('(max-width: 960px)')
-  const isPhone = useMedia('(max-width: 600px)')
-  const slidesPerPage = isTablet ? (isPhone ? 1 : 2) : 3
-  const slidesToShow = typeof window !== 'undefined' ? slidesPerPage : 3
+  // const isTablet = useMedia('(max-width: 960px)')
+  // const isPhone = useMedia('(max-width: 600px)')
+  // const slidesPerPage = isTablet ? (isPhone ? 1 : 2) : 3
+  // const slidesToShow = typeof window !== 'undefined' ? slidesPerPage : 2
 
   return (
     <CarouselProvider
       naturalSlideWidth={500}
       naturalSlideHeight={600}
-      totalSlides={props.children.length + 1}
-      visibleSlides={slidesToShow}
+      totalSlides={props.children.length}
       isIntrinsicHeight
       className={styles.Carousel}
-      dragStep={!isPhone && !isTablet ? 3 : 1}
-      step={slidesToShow}
+      // dragStep={!isPhone && !isTablet ? 3 : 1}
+      // step={slidesToShow}
     >
-      <Slider moveThreshold={isPhone ? 0.05 : 0.1} className={styles.Slider}>
+      <Slider className={styles.Slider}>
         {props.children.map((child, i) => (
           <Slide key={`Slide-${i}`} className={styles.Slide} index={i}>
             {child}
