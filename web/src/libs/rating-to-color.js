@@ -4,10 +4,10 @@ const ratingToColor = (rating) => {
   const colorMap = {
     U: 'green',
     PG: 'yellow',
-    '12': 'orange',
+    12: 'orange',
     '12A': 'orange',
-    '15': 'pink',
-    '18': 'red'
+    15: 'pink',
+    18: 'red'
   }
 
   return colorMap[rating]

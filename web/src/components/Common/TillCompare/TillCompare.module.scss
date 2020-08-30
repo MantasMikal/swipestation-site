@@ -1,0 +1,97 @@
+@import 'settings';
+@import '_backline-mixins';
+
+// .Example {
+
+// }
+
+.Till {
+  width: 100%;
+  border-radius: $radius-large;
+  padding: spacing(2);
+  margin-bottom: spacing(3);
+  background-color: $color-primary-grey-lighter;
+  min-height: 700px;
+}
+
+.SwipeStationTill {
+  background-color: $color-primary-yellow;
+  color: $color-primary-white;
+  .PersonIcon,
+  .GlassIcon {
+    svg,
+    path {
+      fill: $color-primary-white;
+    }
+  }
+}
+
+.TillTitle {
+  margin-bottom: spacing(2);
+}
+
+.Person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-right: spacing(3);
+  margin-bottom: spacing(2);
+}
+
+.PersonLabel {
+  text-align: center;
+}
+
+.PersonIcon {
+  margin-bottom: spacing(1);
+}
+
+.Server {
+  display: flex;
+  align-items: center;
+}
+
+.GlassIcon {
+  // margin-right: spacing(0.5);
+  margin-bottom: spacing(0.5);
+}
+
+.PintsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  grid-column-gap: spacing(0.3);
+  column-gap: spacing(0.3);
+}
+
+@include mq($breakpoint-mobileLandscape) {
+  .Till {
+    min-height: 450px;
+  }
+}
+
+@include mq($breakpoint-tablet) {
+  .TillCompare {
+    display: flex;
+  }
+
+  .Till {
+    &:first-child {
+      margin-right: spacing(2);
+    }
+  }
+
+  .Server {
+    padding: spacing(2) 0;
+  }
+}
+
+@include mq($breakpoint-desktop) {
+  .Till {
+    padding: spacing(3);
+    &:first-child {
+      margin-right: spacing(3);
+    }
+  }
+}

@@ -9,6 +9,7 @@ import Hero from 'Common/Hero'
 import BlogPostCarouselSection from 'Section/BlogPostCarousel'
 import BlockSection from 'Section/Block'
 import Features from 'Section/Features'
+import TillComparison from 'Section/TillComparison'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -151,6 +152,8 @@ const IndexPage = (props) => {
             <BlockSection blockContent={section.body} title={section.title} />
           </div>
         ))}
+
+      <TillComparison />
       {postNodes.length > 0 && (
         <BlogPostCarouselSection
           postNodes={postNodes}

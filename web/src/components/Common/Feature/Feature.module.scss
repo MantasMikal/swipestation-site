@@ -42,6 +42,9 @@
 @include mq($breakpoint-tabletLandscape) {
   .Feature {
     margin: 0 0 spacing(20);
+    &:last-of-type {
+      margin: 0 0 spacing(15);
+    }
   }
 
   .ImageWrapper {

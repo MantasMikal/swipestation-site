@@ -50,7 +50,7 @@ class Navigation extends React.PureComponent {
       prevScrollPos: currentScrollPos,
       visible
     })
-  }, 30)
+  }, 20)
 
   render() {
     const { onHideNav, onShowNav, showNav, siteTitle, logo, id } = this.props
