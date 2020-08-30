@@ -17,6 +17,12 @@
   }
 }
 
+.MainImage {
+  @include mq(0, $breakpoint-mobileLandscape) {
+    padding-bottom: 55% !important;
+  }
+}
+
 .TitleWrapper {
   position: relative;
   margin-bottom: spacing(3);

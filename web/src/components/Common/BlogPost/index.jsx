@@ -11,6 +11,7 @@ import Badge from 'Primitive/Badge'
 import SocialBlock from '../SocialShare/SocialBlock'
 
 import styles from './BlogPost.module.scss'
+import ResponsiveMedia from 'Primitive/ResponsiveMedia'
 
 const BlogPost = (props) => {
   const { _rawBody, title, mainImage, publishedAt, category, url } = props
@@ -19,7 +20,9 @@ const BlogPost = (props) => {
   })
   return (
     <article className={styles.Root}>
-      <Image image={mainImage} alt={title} />
+      <ResponsiveMedia className={styles.MainImage} ratio={9 / 20}>
+        <Image image={mainImage} alt={title} />
+      </ResponsiveMedia>
       <div
         className={styles.LoadingBar}
         style={{ width: `${percentage * 100}%` }}

@@ -56,8 +56,8 @@
   display: flex;
   flex-wrap: wrap;
 
-  grid-column-gap: spacing(0.3);
   column-gap: spacing(0.3);
+  grid-column-gap: spacing(0.3);
 }
 
 @include mq($breakpoint-mobileLandscape) {
@@ -75,6 +75,11 @@
     &:first-child {
       margin-right: spacing(2);
     }
+  }
+
+  .PintsWrapper {
+    column-gap: spacing(0.5);
+    grid-column-gap: spacing(0.5);
   }
 
   .Server {
