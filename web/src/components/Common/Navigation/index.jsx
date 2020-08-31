@@ -17,7 +17,8 @@ class Navigation extends React.PureComponent {
 
     this.state = {
       prevScrollPos: typeof window !== 'undefined' ? window.pageYOffset : 0,
-      visible: true
+      visible: true,
+      noBackground: true
     }
   }
 
@@ -32,6 +33,7 @@ class Navigation extends React.PureComponent {
   // Hide or show the menu.
   handleScroll = debounce(() => {
     const { prevScrollPos } = this.state
+    console.log('Navigation -> handleScroll -> prevScrollPos', prevScrollPos)
 
     const currentScrollPos =
       typeof window !== 'undefined' ? window.pageYOffset : 0
@@ -41,20 +43,22 @@ class Navigation extends React.PureComponent {
     if (currentScrollPos < 50) {
       this.setState({
         prevScrollPos: currentScrollPos,
-        visible: true
+        visible: true,
+        noBackground: true
       })
       return
     }
 
     this.setState({
       prevScrollPos: currentScrollPos,
-      visible
+      visible,
+      noBackground: currentScrollPos < 100
     })
-  }, 20)
+  }, 15)
 
   render() {
     const { onHideNav, onShowNav, showNav, siteTitle, logo, id } = this.props
-    const { visible } = this.state
+    const { visible, noBackground } = this.state
     return (
       <Container
         as="nav"
@@ -64,7 +68,8 @@ class Navigation extends React.PureComponent {
         className={classnames(
           styles.Root,
           showNav && styles.showNav,
-          !visible && styles.hidden
+          !visible && styles.hidden,
+          noBackground && styles.noBackground
         )}
         id={id}
       >

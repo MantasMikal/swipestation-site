@@ -1,10 +1,6 @@
 @import 'settings';
 @import '_backline-mixins';
 
-.Headroom {
-  border: 1px solid rebeccapurple;
-}
-
 .Root {
   position: fixed;
   z-index: 300;
@@ -144,6 +140,15 @@
     pointer-events: none;
     transition: $duration-short $easing-standard;
     will-change: opacity;
+  }
+}
+
+.noBackground {
+  @include mq($breakpoint-tablet) {
+    .Branding {
+      transition: $duration-short $easing-standard;
+      background-color: unset;
+    }
   }
 }
 
