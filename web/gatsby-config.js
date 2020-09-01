@@ -77,6 +77,14 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/assets/images`,
+        ignore: [`**/\.*`] // ignore files starting with a dot
+      }
+    },
+    {
       resolve: 'gatsby-plugin-crisp-chat',
       options: {
         websiteId: 'e6a7fddd-3d2f-4141-842e-86e71d2f8f90',

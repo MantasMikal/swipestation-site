@@ -46,15 +46,6 @@ export default () =>
                 )
                 .icon(MdHome),
               S.listItem()
-                .title("Contact")
-                .child(
-                  S.editor()
-                    .id("contactPage")
-                    .schemaType("contactPage")
-                    .documentId("contactPage")
-                )
-                .icon(FaPhone),
-              S.listItem()
                 .title("About")
                 .child(
                   S.editor()

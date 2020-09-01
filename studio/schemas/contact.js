@@ -1,22 +1,42 @@
 export default {
-  name: 'contactPage',
-  title: 'Contact Page',
-  type: 'document',
+  name: "contact",
+  title: "Contact",
+  type: "object",
   liveEdit: false,
   // You probably want to uncomment the next line once you've made the pages documents in the Studio. This will remove the pages document type from the create-menus.
   // __experimental_actions: ['update', 'publish', /* 'create', 'delete' */],
   fields: [
     {
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent'
+      name: "title",
+      title: "Title",
+      type: "string",
+    },
+    {
+      name: "description",
+      title: "Description",
+      type: "blockText",
+    },
+    {
+      name: "phone",
+      title: "Phone",
+      type: "string",
+    },
+    {
+      name: "address",
+      title: "Address",
+      type: "string",
+    },
+    {
+      name: "email",
+      title: "Email",
+      type: "string",
     },
   ],
   preview: {
-    prepare () {
+    prepare() {
       return {
-        title: 'Contact'
-      }
-    }
-  }
-}
+        title: "Contact Details",
+      };
+    },
+  },
+};

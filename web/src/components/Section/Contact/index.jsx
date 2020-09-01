@@ -1,65 +1,89 @@
 import React from 'react'
 import { array, string } from 'prop-types'
+import { useStaticQuery, graphql } from 'gatsby'
 
-import BlockContent from '../../Editor'
 import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
-import TextControl from 'Primitive/TextControl'
-import FieldTemplate from 'Primitive/FieldTemplate'
-import ButtonStandard from 'Primitive/ButtonStandard'
+import BlockText from 'Common/BlockText'
+import ContactForm from 'Common/Contact'
 
 import styles from './Contact.module.scss'
 
 /**
  * If deployed on Netlify the form will be handled automagically! Just check the 'Forms' section under site settings
  */
-const Contact = ({ body, title }) => {
+const Contact = ({ _rawDescription, title, phone, email, address }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      appStore: file(relativePath: { eq: "app-store.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      googleStore: file(relativePath: { eq: "google-store.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      barcode: file(relativePath: { eq: "barcode.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
+
+  const storeLinks = {
+    apple: {
+      link: 'https://apps.apple.com/gb/app/swipestation/id1012471579',
+      image: data.appStore.childImageSharp.fluid
+    },
+    google: {
+      link:
+        'https://play.google.com/store/apps/details?id=com.adbibio.push&hl=en',
+      image: data.googleStore.childImageSharp.fluid
+    },
+    barcode: {
+      image: data.barcode.childImageSharp.fluid
+    }
+  }
   return (
-    <Container size="wide" center gutter spacious withNavSpace as="section">
+    <Container
+      className={styles.Contact}
+      size="wide"
+      center
+      gutter
+      spacious
+      as="section"
+    >
       <Type as="h1" size="displayLarge" className={styles.Title}>
         {title}
       </Type>
-      {body && (
-        <div className={styles.Body}>
-          <BlockContent blocks={body} />
+      {_rawDescription && (
+        <div className={styles.Description}>
+          <BlockText blocks={_rawDescription} size="baseLarge" />
         </div>
       )}
-      <form
-        name="contact"
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        className={styles.Form}
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        <FieldTemplate label="Name" required controlName="name">
-          <TextControl name="name" type="text" required />
-        </FieldTemplate>
-        <FieldTemplate label="Email" required controlName="email">
-          <TextControl name="email" type="email" required />
-        </FieldTemplate>
-        <FieldTemplate label="Message" required controlName="message">
-          <TextControl
-            name="message"
-            placeholder="Say hi!"
-            multiLine
-            rows={10}
-            required
-          />
-        </FieldTemplate>
-        <ButtonStandard className={styles.ApplyButton} type="submit">
-          <Type size="base" demi>
-            Apply
-          </Type>
-        </ButtonStandard>
-      </form>
+      <ContactForm
+        contactInfo={{ phone: phone, email: email, address: address }}
+        storeLinks={storeLinks}
+      />
     </Container>
   )
 }
 
 Contact.propTypes = {
   body: array,
-  title: string
+  title: string,
+  phone: string,
+  email: string,
+  address: string
 }
 
 export default Contact

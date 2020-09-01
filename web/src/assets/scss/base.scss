@@ -41,17 +41,17 @@
   }
 
   a {
-    color: $color-primary-purple;
+    color: $color-primary-yellow;
     text-decoration: none;
 
     &:focus,
     &:hover {
-      color: $color-primary-yellow;
+      color: $color-primary-grey-light;
       outline: 0;
     }
 
     &:active {
-      color: $color-primary-yellow;
+      color: $color-primary-grey-light;
     }
   }
 

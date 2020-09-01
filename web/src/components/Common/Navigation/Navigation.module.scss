@@ -60,6 +60,12 @@
   &.highlight {
     color: $color-primary-purple;
   }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-primary-yellow;
+  }
 }
 
 .NavLink {

@@ -1,25 +1,36 @@
 @import 'settings';
 @import '_backline-mixins';
 
-.Title {
+.Contact {
+  background-color: $color-primary-grey-lightest;
+}
+
+.Description {
   margin-bottom: spacing(3);
 }
 
-.Body {
-  margin-bottom: spacing(6);
-}
-
-.BlockWrapper {
-  flex: 1 1 50%;
-  margin-right: spacing(3);
-
-  @include mq($breakpoint-tabletLandscape) {
-    margin-right: spacing(6);
+@include mq($breakpoint-tablet) {
+  .Contact {
+    padding-bottom: 0;
+    margin-top: -20%;
+    transform: translateY(20%);
+    // Background colour is added from the footer to avoid z-index issues
+    background-color: unset;
+  }
+  .Description {
+    max-width: 60%;
+    margin-bottom: spacing(6);
   }
 }
 
-.Form {
-  @include mq($breakpoint-tabletLandscape) {
-    max-width: 60%;
+@include mq($breakpoint-desktop) {
+  .Contact {
+    margin-top: -15%;
+  }
+}
+
+@include mq($breakpoint-desktopMedium) {
+  .Contact {
+    margin-top: -8%;
   }
 }

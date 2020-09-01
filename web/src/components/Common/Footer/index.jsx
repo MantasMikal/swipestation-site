@@ -13,6 +13,7 @@ import Image from 'Primitive/Image'
 const Footer = ({ social, logo, siteTitle, awards }) => {
   return (
     <Container gutter className={styles.Wrapper}>
+      <div className={styles.ContactOverlay} />
       <div className={styles.FooterOverlay} />
       <footer className={styles.Footer}>
         <Container

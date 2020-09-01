@@ -40,11 +40,9 @@ export default {
       type: "tillComparison",
     },
     {
-      name: "sections",
-      title: "Sections",
-      type: "array",
-      description: "Extra sections for the homepage",
-      of: [{ type: "section" }],
+      name: "contactSection",
+      title: "Contact",
+      type: "contact",
     },
   ],
   preview: {

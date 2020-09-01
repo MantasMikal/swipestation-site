@@ -1,0 +1,123 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.Details {
+  order: 1;
+}
+
+.ContactDetails {
+  margin-bottom: spacing(4);
+}
+
+.ContactDetail {
+  display: flex;
+  margin-bottom: spacing(2);
+  a {
+    color: $color-primary-black;
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-primary-yellow;
+    }
+  }
+}
+
+.Form {
+  margin-bottom: spacing(3);
+  padding: spacing(2);
+  border-radius: $radius-small;
+  background-color: $color-primary-white;
+}
+
+.Icon {
+  margin-right: spacing(2);
+}
+
+.StoreLinksWrapper {
+  display: block;
+}
+
+.StoreLinksWrapper {
+  display: flex;
+}
+
+.StoreLinks {
+  margin-right: spacing(1);
+  margin-bottom: spacing(2);
+}
+
+.StoreLink {
+  display: block;
+  width: 165px;
+}
+
+.Barcode {
+  width: 106px;
+}
+
+.ButtonWrapper {
+  text-align: right;
+}
+
+.SubmitButton {
+  color: $color-primary-white;
+}
+
+@include mq($breakpoint-tablet) {
+  .Contact {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .Form {
+    flex: 1 1 50%;
+    max-width: 600px;
+    min-width: 400px;
+    padding: spacing(3);
+    box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.16);
+  }
+
+  .Details {
+    order: 0;
+    flex: 1 1 30%;
+    margin-right: spacing(6);
+    max-height: 550px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ContactDetail {
+    display: flex;
+    margin-bottom: spacing(2);
+  }
+}
+
+@include mq($breakpoint-tabletLandscape) {
+  .Icon {
+    &.phone {
+      width: 35px !important;
+      height: 35px !important;
+    }
+    &.email {
+      width: 40px !important;
+      height: 35px !important;
+    }
+    &.location {
+      width: 28px !important;
+      height: 35px !important;
+    }
+  }
+}
+
+@include mq($breakpoint-desktop) {
+  .ContactDetail {
+    margin-bottom: spacing(4);
+  }
+}

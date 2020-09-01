@@ -10,6 +10,7 @@ import BlogPostCarouselSection from 'Section/BlogPostCarousel'
 import BlockSection from 'Section/Block'
 import Features from 'Section/Features'
 import TillComparison from 'Section/TillComparison'
+import Contact from 'Section/Contact'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -22,7 +23,6 @@ export const query = graphql`
     home: sanityHomePage(_id: { regex: "/(drafts.|)homePage/" }) {
       title
       subtitle
-      _rawSections(resolveReferences: { maxDepth: 10 })
       minutesSaved
       mobileHero {
         asset {
@@ -49,6 +49,13 @@ export const query = graphql`
       tillComparison {
         title
         _rawDescription
+      }
+      contactSection {
+        title
+        _rawDescription
+        email
+        phone
+        address
       }
     }
 
@@ -123,7 +130,8 @@ const IndexPage = (props) => {
     mobileHero,
     minutesSaved,
     features,
-    tillComparison
+    tillComparison,
+    contactSection
   } = home
 
   return (
@@ -169,6 +177,7 @@ const IndexPage = (props) => {
           title="Latest news"
         />
       )}
+      {contactSection && <Contact {...contactSection} />}
     </Layout>
   )
 }

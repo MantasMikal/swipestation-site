@@ -18,7 +18,11 @@
   }
 
   @include mq($breakpoint-desktop) {
-    font-size: spacing(12); // 64
+    font-size: spacing(10); // 64
+  }
+
+  @include mq($breakpoint-desktopLarge) {
+    font-size: spacing(12);
   }
 }
 
@@ -33,6 +37,10 @@
   }
 
   @include mq($breakpoint-desktop) {
+    font-size: spacing(8);
+  }
+
+  @include mq($breakpoint-desktopLarge) {
     font-size: spacing(10);
   }
 }
