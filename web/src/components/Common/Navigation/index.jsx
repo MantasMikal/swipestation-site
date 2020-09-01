@@ -33,7 +33,6 @@ class Navigation extends React.PureComponent {
   // Hide or show the menu.
   handleScroll = debounce(() => {
     const { prevScrollPos } = this.state
-    console.log('Navigation -> handleScroll -> prevScrollPos', prevScrollPos)
 
     const currentScrollPos =
       typeof window !== 'undefined' ? window.pageYOffset : 0
@@ -59,6 +58,7 @@ class Navigation extends React.PureComponent {
   render() {
     const { onHideNav, onShowNav, showNav, siteTitle, logo, id } = this.props
     const { visible, noBackground } = this.state
+    const path = typeof window !== 'undefined' ? window.location.pathname : ''
     return (
       <Container
         as="nav"
@@ -69,7 +69,7 @@ class Navigation extends React.PureComponent {
           styles.Root,
           showNav && styles.showNav,
           !visible && styles.hidden,
-          noBackground && styles.noBackground
+          noBackground && path === '/' && styles.noBackground
         )}
         id={id}
       >
