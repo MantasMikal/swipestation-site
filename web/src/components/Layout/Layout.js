@@ -35,7 +35,8 @@ const Layout = ({
   showNav,
   siteTitle,
   social,
-  logo
+  logo,
+  awards
 }) => {
   return (
     <div
@@ -59,7 +60,12 @@ const Layout = ({
       <div className={styles.Content} id="content">
         {children}
       </div>
-      <Footer social={social} logo={logo} siteTitle={siteTitle} />
+      <Footer
+        social={social}
+        logo={logo}
+        siteTitle={siteTitle}
+        awards={awards}
+      />
     </div>
   )
 }
@@ -70,7 +76,8 @@ Layout.propTypes = {
   onShowNav: func,
   showNav: bool,
   siteTitle: string,
-  logo: object
+  logo: object,
+  awards: object
 }
 
 export default Layout

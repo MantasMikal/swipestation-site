@@ -23,6 +23,30 @@ const query = graphql`
       youtubeUrl
       instagramUrl
     }
+
+    awards: sanityAwards(_id: { regex: "/(drafts.|)awards/" }) {
+      trustpilotReview {
+        url
+        image {
+          asset {
+            fluid(maxWidth: 300) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+      }
+      allAwards {
+        title
+        url
+        image {
+          asset {
+            fluid(maxWidth: 300) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+      }
+    }
   }
 `
 
@@ -54,7 +78,7 @@ const LayoutContainer = (props) => {
             }
           : {}
 
-        const { site } = data
+        const { site, awards } = data
 
         return (
           <>
@@ -69,6 +93,7 @@ const LayoutContainer = (props) => {
               siteTitle={site && site.title}
               social={social}
               logo={site && site.logo}
+              awards={awards || {}}
             />
           </>
         )

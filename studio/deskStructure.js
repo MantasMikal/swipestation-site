@@ -1,107 +1,133 @@
-import S from '@sanity/desk-tool/structure-builder'
+import S from "@sanity/desk-tool/structure-builder";
 import {
   MdBusiness,
   MdSettings,
   MdHome,
-  MdInfoOutline
-} from 'react-icons/md'
-import { FaFile, FaPhone } from 'react-icons/fa'
-import { FiFileText } from 'react-icons/fi'
+  MdInfoOutline,
+  MdGroup,
+} from "react-icons/md";
+import { FaPhone, FaTrophy } from "react-icons/fa";
+import { FiFileText } from "react-icons/fi";
+import { RiPagesLine } from "react-icons/ri";
 
 const hiddenTypes = [
-  'category',
-  'companyInfo',
-  'page',
-  'person',
-  'post',
-  'siteSettings',
-  'seo-plugin',
-  'contactPage',
-  'homePage',
-]
+  "category",
+  "companyInfo",
+  "page",
+  "person",
+  "post",
+  "siteSettings",
+  "seo-plugin",
+  "contactPage",
+  "homePage",
+  "award",
+  "awards",
+  "sponsors",
+  "sponsor",
+];
 
 export default () =>
   S.list()
-    .title('Content')
+    .title("Content")
     .items([
       S.listItem()
-        .title('Site Settings')
-        .child(
-          S.editor()
-            .id('siteSettings')
-            .schemaType('siteSettings')
-            .documentId('siteSettings')
-        )
-        .icon(MdSettings),
-      S.listItem()
-        .title('Company Info')
-        .child(
-          S.editor()
-            .id('companyInfo')
-            .schemaType('companyInfo')
-            .documentId('companyInfo')
-        )
-        .icon(MdBusiness),
-      S.listItem()
-        .title('Pages')
+        .title("Pages")
         .child(
           S.list()
-            .title('Pages')
+            .title("Pages")
             .items([
               S.listItem()
-                .title('Home')
+                .title("Home")
                 .child(
                   S.editor()
-                    .id('homePage')
-                    .schemaType('homePage')
-                    .documentId('homePage')
+                    .id("homePage")
+                    .schemaType("homePage")
+                    .documentId("homePage")
                 )
                 .icon(MdHome),
               S.listItem()
-                .title('Contact')
+                .title("Contact")
                 .child(
                   S.editor()
-                    .id('contactPage')
-                    .schemaType('contactPage')
-                    .documentId('contactPage')
+                    .id("contactPage")
+                    .schemaType("contactPage")
+                    .documentId("contactPage")
                 )
                 .icon(FaPhone),
               S.listItem()
-                .title('About')
+                .title("About")
                 .child(
                   S.editor()
-                    .id('aboutPage')
-                    .schemaType('page')
-                    .documentId('about')
+                    .id("aboutPage")
+                    .schemaType("page")
+                    .documentId("about")
                 )
                 .icon(MdInfoOutline),
               S.listItem()
-                .title('Terms And Conditions')
+                .title("Terms And Conditions")
                 .child(
                   S.editor()
-                    .id('termsAndConditionsPage')
-                    .schemaType('page')
-                    .documentId('termsAndConditions')
+                    .id("termsAndConditionsPage")
+                    .schemaType("page")
+                    .documentId("termsAndConditions")
                 ),
               S.listItem()
-                .title('Privacy Statement')
+                .title("Privacy Statement")
                 .child(
                   S.editor()
-                    .id('privacyStatement')
-                    .schemaType('page')
-                    .documentId('privacyStatement')
-                )
+                    .id("privacyStatement")
+                    .schemaType("page")
+                    .documentId("privacyStatement")
+                ),
             ])
         )
-        .icon(FaFile),
+        .icon(RiPagesLine),
       S.listItem()
-        .title('Blog posts')
-        .schemaType('post')
-        .child(S.documentTypeList('post').title('Blog posts'))
+        .title("Blog posts")
+        .schemaType("post")
+        .child(S.documentTypeList("post").title("Blog posts"))
         .icon(FiFileText),
       S.listItem()
-        .title('Blog Categories')
-        .schemaType('category')
-        .child(S.documentTypeList('category').title('Category')),
-      ...S.documentTypeListItems().filter(listItem => !hiddenTypes.includes(listItem.getId()))
-    ])
+        .title("Blog Categories")
+        .schemaType("category")
+        .child(S.documentTypeList("category").title("Categories")),
+      ...S.documentTypeListItems().filter(
+        (listItem) => !hiddenTypes.includes(listItem.getId())
+      ),
+      S.listItem()
+        .title("Sponsors")
+        .child(
+          S.editor()
+            .id("sponsors")
+            .schemaType("sponsors")
+            .documentId("sponsors")
+        )
+        .icon(MdGroup),
+      S.listItem()
+        .title("Awards")
+        .child(
+          S.editor()
+            .id("awardsPage")
+            .schemaType("awards")
+            .documentId("awards")
+        )
+        .icon(FaTrophy),
+      S.listItem()
+        .title("Site Settings")
+        .child(
+          S.editor()
+            .id("siteSettings")
+            .schemaType("siteSettings")
+            .documentId("siteSettings")
+        )
+        .icon(MdSettings),
+      S.listItem()
+        .title("Company Info")
+        .child(
+          S.editor()
+            .id("companyInfo")
+            .schemaType("companyInfo")
+            .documentId("companyInfo")
+        )
+        .icon(MdBusiness),
+    ]);

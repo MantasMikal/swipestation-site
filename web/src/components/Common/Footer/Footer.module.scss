@@ -7,28 +7,33 @@
 
 .Footer {
   padding-top: spacing(4);
-  padding-bottom: spacing(4);
-
   position: relative;
   display: flex;
   align-content: center;
   overflow: hidden;
-  color: $color-primary-black;
+  color: $color-primary-white;
   transition: $duration-shortest;
   a:hover {
-    color: $color-primary-red;
+    color: $color-primary-yellow;
     transition: $duration-shortest;
   }
+}
+
+.FooterOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color-primary-grey;
+  z-index: -1;
 }
 
 .Container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  @include mq($breakpoint-mobileLandscape) {
-    flex-direction: row;
-  }
+  padding-bottom: 0;
 }
 
 .Branding {
@@ -54,13 +59,14 @@
     padding-right: spacing(2);
     &:hover,
     &:focus {
-      transform: scale(1.03);
+      transform: scale(1.01);
       transition: $easing-standard $duration-short;
-    }
-  }
 
-  @include mq($breakpoint-tablet) {
-    padding: spacing(4) 0 0;
+      & > svg,
+      path {
+        fill: $color-primary-yellow;
+      }
+    }
   }
 }
 
@@ -68,11 +74,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  max-width: 900px;
-  @include mq($breakpoint-tablet + 100) {
-    flex: 1 1 60%;
-    flex-direction: row;
-  }
+  max-width: 800px;
 }
 
 .LinkList {
@@ -82,11 +84,11 @@
 
   a {
     text-decoration: none;
-    color: $color-primary-black;
+    color: $color-primary-white;
     padding-bottom: spacing(2);
 
     &:focus {
-      color: $color-primary-red;
+      color: $color-primary-yellow;
     }
   }
 
@@ -94,10 +96,104 @@
     content: '_';
     color: inherit;
   }
+}
 
-  @include mq($breakpoint-tablet + 100) {
-    &::after {
-      content: none;
+.TrustPilotWrapper {
+  padding-bottom: spacing(2);
+}
+
+.TrustPilot {
+  display: block;
+  max-width: 200px;
+  margin: auto;
+  transition: $duration-short $easing-standard;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: $duration-short $easing-standard;
+  }
+}
+
+.Awards {
+  display: flex;
+  padding-bottom: spacing(2);
+}
+
+.Award {
+  flex: 1 1 120px;
+  margin-right: spacing(1);
+  transition: $duration-short $easing-standard;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: $duration-short $easing-standard;
+  }
+}
+
+.Copyright {
+  text-align: center;
+  color: $color-primary-white;
+  padding-bottom: spacing(1);
+}
+
+@include mq($breakpoint-mobileLandscape) {
+  .Container {
+    flex-direction: row;
+  }
+
+  .TrustPilotWrapper {
+    margin-bottom: spacing(6);
+  }
+
+  .TrustPilot {
+    margin: 0 0 0 auto;
+  }
+}
+
+@include mq($breakpoint-tablet) {
+  .Footer {
+    padding-top: spacing(12);
+  }
+
+  .FooterOverlay {
+    clip-path: polygon(0% 15%, 60% 15%, 100% 0, 100% 100%, 0 100%);
+    background-color: $color-primary-yellow;
+    &:before {
+      content: '';
+      clip-path: polygon(0% 15%, 60% 15%, 100% 0, 100% 100%, 0 100%);
+      position: absolute;
+      top: spacing(3);
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $color-primary-grey;
     }
+  }
+
+  .Container {
+    margin-top: spacing(4);
+  }
+
+  .LinkListWrapper {
+    flex: 1 1 60%;
+    flex-direction: row;
+  }
+
+  .LinkList::after {
+    content: none;
+  }
+
+  .Social {
+    padding: spacing(4) 0 0;
+  }
+
+  .Award {
+    margin-right: spacing(2);
+  }
+}
+
+@include mq($breakpoint-desktop) {
+  .Container {
+    margin-top: spacing(8);
   }
 }

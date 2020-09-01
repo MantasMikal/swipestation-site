@@ -10,23 +10,26 @@ import Type from 'Primitive/Type'
 import styles from './Footer.module.scss'
 import Image from 'Primitive/Image'
 
-// TODO
-// Use logo from CMS
-
-const Footer = ({ social, logo, siteTitle }) => {
+const Footer = ({ social, logo, siteTitle, awards }) => {
   return (
     <Container gutter className={styles.Wrapper}>
+      <div className={styles.FooterOverlay} />
       <footer className={styles.Footer}>
-        <Container gutter center size="wide" className={styles.Container}>
+        <Container
+          spacious
+          gutter
+          center
+          size="wide"
+          className={styles.Container}
+        >
           <div className={styles.Branding}>
             <SmartLink href="/" className={styles.Logo}>
               <Image image={logo} alt={siteTitle} />
             </SmartLink>
             <div className={styles.Social}>
-              <SocialLink type="twitter" url={social.twitter} />
-              <SocialLink type="facebook-round" url={social.facebook} />
-              <SocialLink type="youtube" url={social.youtube} />
-              <SocialLink type="instagram" url={social.instagram} />
+              <SocialLink type="twitter--white" url={social.twitter} />
+              <SocialLink type="facebook--white" url={social.facebook} />
+              <SocialLink type="instagram--white" url={social.instagram} />
             </div>
           </div>
           <div className={styles.LinkListWrapper}>
@@ -42,6 +45,30 @@ const Footer = ({ social, logo, siteTitle }) => {
           </div>
         </Container>
       </footer>
+      <Container gutter className={styles.TrustPilotWrapper} size="wide">
+        <SmartLink
+          className={styles.TrustPilot}
+          href={awards.trustpilotReview.url}
+          target="__blank"
+        >
+          <Image image={awards.trustpilotReview.image} alt="Trustpilot" />
+        </SmartLink>
+      </Container>
+      <Container className={styles.Awards} center gutter size="small">
+        {awards.allAwards &&
+          awards.allAwards.map((award, i) => (
+            <SmartLink
+              href={award.url}
+              className={styles.Award}
+              key={'award-' + i}
+            >
+              <Image image={award.image} alt={award.title} />
+            </SmartLink>
+          ))}
+      </Container>
+      <Type size="small" className={styles.Copyright}>
+        Copyright © 2020 SwipeStation Limited. All rights reserved
+      </Type>
     </Container>
   )
 }
