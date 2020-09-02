@@ -1,0 +1,64 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Wrapper {
+  padding-bottom: 0;
+}
+
+.FeaturedCaseStudy {
+  position: relative;
+  background-color: $color-primary-grey;
+  &::before {
+    content: '';
+    background-color: $color-primary-yellow;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    z-index: 1;
+  }
+}
+
+.Content {
+  padding-top: spacing(8);
+  padding-bottom: spacing(2);
+}
+
+.Title {
+  color: $color-primary-white;
+}
+
+.Description {
+  margin-bottom: spacing(4);
+  color: $color-primary-white;
+}
+
+.Body {
+  color: $color-primary-white;
+}
+
+@include mq($breakpoint-tablet) {
+  .Description {
+    max-width: 60%;
+  }
+
+  .Content {
+    padding-top: spacing(10);
+    padding-bottom: spacing(6);
+  }
+}
+
+@include mq($breakpoint-desktop) {
+  .Content {
+    padding-top: spacing(12);
+    padding-bottom: spacing(8);
+  }
+}
+
+@include mq($breakpoint-desktopMedium) {
+  .Content {
+    padding-top: spacing(16);
+    padding-bottom: spacing(10);
+  }
+}

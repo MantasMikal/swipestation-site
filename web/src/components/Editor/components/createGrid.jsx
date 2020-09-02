@@ -20,13 +20,18 @@ export function createGrid(component) {
     : null
   const margin = component.margin ? { margin: component.margin } : null
   const centered = component.centered && component.centered
+  const preserveGrid = component.preserveGrid ? { display: 'grid' } : null
+  const maxWidth = component.maxWidth ? { maxWidth: component.maxWidth } : null
+
   const styles = Object.assign(
     {},
     colTemplate,
     rowTemplate,
     rowGap,
     colGap,
-    margin
+    margin,
+    preserveGrid,
+    maxWidth
   )
 
   const gridComponents = gridMedia.map((item) => {

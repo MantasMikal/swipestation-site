@@ -1,10 +1,9 @@
-// TODO
-// There's a typo in quotes
-
+import { MdGroup } from "react-icons/md";
 export default {
   name: "sponsor",
   title: "Sponsor",
-  type: "object",
+  type: "document",
+  icon: MdGroup,
   fields: [
     {
       name: "name",
@@ -22,6 +21,12 @@ export default {
         }),
     },
     {
+      name: "image",
+      title: "Logo",
+      description: "Caption is not required.",
+      type: "image",
+    },
+    {
       name: "isFeatured",
       title: "Is Featured",
       type: "boolean",
@@ -36,12 +41,6 @@ export default {
       name: "qouteBody",
       title: "Quote Body",
       type: "text",
-    },
-    {
-      name: "image",
-      title: "Logo",
-      description: "Caption is not required.",
-      type: "figure",
     },
   ],
   preview: {

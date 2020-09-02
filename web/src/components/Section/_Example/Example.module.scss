@@ -1,2 +1,12 @@
 @import 'settings';
 @import '_backline-mixins';
+
+.Description {
+  margin-bottom: spacing(4);
+}
+
+@include mq($breakpoint-tablet) {
+  .Description {
+    max-width: 60%;
+  }
+}

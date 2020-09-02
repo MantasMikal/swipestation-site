@@ -31,6 +31,8 @@ import awards from "./awards";
 import sponsors from "./sponsors";
 import sponsor from "./sponsor";
 import trustpilot from "./trustpilot";
+import homepageSponsors from "./homepageSponsors";
+import caseStudy from "./case-study";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -66,6 +68,8 @@ export default createSchema({
     sponsor,
     sponsors,
     trustpilot,
+    homepageSponsors,
+    caseStudy,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

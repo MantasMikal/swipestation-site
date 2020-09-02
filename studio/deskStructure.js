@@ -1,11 +1,5 @@
 import S from "@sanity/desk-tool/structure-builder";
-import {
-  MdBusiness,
-  MdSettings,
-  MdHome,
-  MdInfoOutline,
-  MdGroup,
-} from "react-icons/md";
+import { MdBusiness, MdSettings, MdHome, MdInfoOutline } from "react-icons/md";
 import { FaPhone, FaTrophy } from "react-icons/fa";
 import { FiFileText } from "react-icons/fi";
 import { RiPagesLine } from "react-icons/ri";
@@ -24,6 +18,7 @@ const hiddenTypes = [
   "awards",
   "sponsors",
   "sponsor",
+  "caseStudy",
 ];
 
 export default () =>
@@ -86,14 +81,16 @@ export default () =>
         (listItem) => !hiddenTypes.includes(listItem.getId())
       ),
       S.listItem()
+        .title("Case Studies")
+        .schemaType("caseStudy")
+        .child(S.documentTypeList("caseStudy").title("Case Studies")),
+      S.listItem()
         .title("Sponsors")
-        .child(
-          S.editor()
-            .id("sponsors")
-            .schemaType("sponsors")
-            .documentId("sponsors")
-        )
-        .icon(MdGroup),
+        .schemaType("sponsor")
+        .child(S.documentTypeList("sponsor").title("Sponsors")),
+      ...S.documentTypeListItems().filter(
+        (listItem) => !hiddenTypes.includes(listItem.getId())
+      ),
       S.listItem()
         .title("Awards")
         .child(

@@ -59,10 +59,24 @@ export default {
       type: "boolean",
     },
     {
+      name: "preserveGrid",
+      title: "Preserve Grid",
+      description:
+        "By default grid becomes one column on mobile. This turns that off",
+      type: "boolean",
+    },
+    {
+      name: "maxWidth",
+      title: "Max Width",
+      description:
+        "Enforce max width on the grid. E.g. 250px. Available units: px, em, %, rem",
+      type: "string",
+    },
+    {
       name: "margin",
       title: "Margin",
       description:
-        "Used to create space around elements. More info: https://www.w3schools.com/css/css_margin.asp",
+        "Used to create space around grid. More info: https://www.w3schools.com/css/css_margin.asp",
       type: "string",
     },
     {

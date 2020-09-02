@@ -11,6 +11,8 @@ import BlockSection from 'Section/Block'
 import Features from 'Section/Features'
 import TillComparison from 'Section/TillComparison'
 import Contact from 'Section/Contact'
+import FeaturedCaseStudy from 'Section/FeaturedCaseStudy'
+import Sponsors from 'Section/Sponsors'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -49,6 +51,34 @@ export const query = graphql`
       tillComparison {
         title
         _rawDescription
+      }
+      featuredCaseStudy {
+        title
+        _rawDescription
+        image {
+          asset {
+            fluid(maxWidth: 1000) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+        _rawBody(resolveReferences: { maxDepth: 10 })
+      }
+
+      sponsors {
+        title
+        _rawDescription
+        sponsors {
+          name
+          url
+          image {
+            asset {
+              fluid(maxWidth: 300) {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+        }
       }
       contactSection {
         title
@@ -131,7 +161,9 @@ const IndexPage = (props) => {
     minutesSaved,
     features,
     tillComparison,
-    contactSection
+    contactSection,
+    sponsors,
+    featuredCaseStudy
   } = home
 
   return (
@@ -163,11 +195,18 @@ const IndexPage = (props) => {
             <BlockSection blockContent={section.body} title={section.title} />
           </div>
         ))}
-
       {tillComparison && (
         <TillComparison
           title={tillComparison.title}
           description={tillComparison._rawDescription}
+        />
+      )}
+      {featuredCaseStudy && (
+        <FeaturedCaseStudy
+          title={featuredCaseStudy.title}
+          description={featuredCaseStudy._rawDescription}
+          body={featuredCaseStudy._rawBody}
+          image={featuredCaseStudy.image}
         />
       )}
       {postNodes.length > 0 && (
@@ -175,6 +214,13 @@ const IndexPage = (props) => {
           postNodes={postNodes}
           browseMoreHref="/news/"
           title="Latest news"
+        />
+      )}
+      {sponsors && (
+        <Sponsors
+          title={sponsors.title}
+          description={sponsors._rawDescription}
+          sponsors={sponsors.sponsors}
         />
       )}
       {contactSection && <Contact {...contactSection} />}

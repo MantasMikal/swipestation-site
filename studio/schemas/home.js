@@ -40,6 +40,17 @@ export default {
       type: "tillComparison",
     },
     {
+      name: "featuredCaseStudy",
+      title: "Case Study",
+      type: "reference",
+      to: [{ type: "caseStudy" }],
+    },
+    {
+      name: "sponsors",
+      title: "Sponsors",
+      type: "homepageSponsors",
+    },
+    {
       name: "contactSection",
       title: "Contact",
       type: "contact",
