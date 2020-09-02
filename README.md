@@ -4,17 +4,13 @@ Use NPM
 
 ```bash
 # Install deps
-cd gatsby-starter-picks && npm i && npm i -g @sanity/cli gatsby-cli
+cd swipestation-site && npm i && npm i -g @sanity/cli gatsby-cli
 
-# Runs out of the box
+# Run
 # Studio at http://localhost:3333
 # Web frontend at http://localhost:8000
 # GraphiQL explorer at http://localhost:8000/___graphql
 npm start
-
-# Quickly setup Sanity.io CMS
-# Create a project and deploy Graphql API
-cd studio && sanity login && sanity init && npm run graphql-deploy
 
 # Format and lint
 npm run lint
