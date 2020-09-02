@@ -24,7 +24,7 @@ const FeaturedCaseStudy = ({ title, description, body, image }) => {
               {title}
             </Type>
             <div className={styles.Description}>
-              <BlockText blocks={description} />
+              <BlockText blocks={description} size="baseLarge" />
             </div>
             <div className={styles.Body}>
               <BlockContent blocks={body} />
