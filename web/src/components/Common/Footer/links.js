@@ -1,12 +1,12 @@
 export default [
   [
     {
-      text: 'Home',
-      url: '/'
+      text: 'Case Study',
+      url: '/case-study'
     },
     {
-      text: 'Blog',
-      url: '/blog'
+      text: 'News',
+      url: '/news'
     },
     {
       text: 'Contact',
@@ -20,24 +20,24 @@ export default [
   [
     {
       text: 'Facebook',
-      url: 'https://www.facebook.com/EOBFEED/'
-    },
-    {
-      text: 'Youtube',
-      url: 'https://www.youtube.com/channel/UC1q2-7FQrgne_cKFemMXWYA/featured'
+      url: 'https://www.facebook.com/SwipeStation/'
     },
     {
       text: 'Instagram',
-      url: 'https://www.instagram.com/enemyofboredom/'
+      url: 'https://www.instagram.com/swipestation/'
     },
     {
       text: 'Twitter',
-      url: 'https://twitter.com/eobbyte'
+      url: 'https://twitter.com/SwipeStation'
+    },
+    {
+      text: 'LinkedIn',
+      url: 'https://www.linkedin.com/company/swipestation-limited'
     }
   ],
   [
     {
-      text: 'Website Terms and Conditions',
+      text: 'Terms and Conditions',
       url: '/terms-and-conditions'
     },
     {

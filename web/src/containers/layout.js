@@ -20,7 +20,7 @@ const query = graphql`
     companyInfo: sanityCompanyInfo(_id: { regex: "/(drafts.|)companyInfo/" }) {
       facebookUrl
       twitterUrl
-      youtubeUrl
+      linkedinUrl
       instagramUrl
     }
 
@@ -73,7 +73,7 @@ const LayoutContainer = (props) => {
           ? {
               facebook: data.companyInfo.facebookUrl || null,
               twitter: data.companyInfo.twitterUrl || null,
-              youtube: data.companyInfo.youtubeUrl || null,
+              linkedin: data.companyInfo.linkedinUrl || null,
               instagram: data.companyInfo.instagramUrl || null
             }
           : {}

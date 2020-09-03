@@ -31,18 +31,29 @@ const Footer = ({ social, logo, siteTitle, awards }) => {
               <SocialLink type="twitter--white" url={social.twitter} />
               <SocialLink type="facebook--white" url={social.facebook} />
               <SocialLink type="instagram--white" url={social.instagram} />
+              <SocialLink type="linkedin--white" url={social.linkedin} />
             </div>
           </div>
           <div className={styles.LinkListWrapper}>
-            {links.map((linkList, i) => (
-              <div key={i} className={styles.LinkList}>
-                {linkList.map((link, j) => (
-                  <SmartLink className={styles.Link} key={j} href={link.url}>
-                    <Type size="base">{link.text}</Type>
-                  </SmartLink>
-                ))}
-              </div>
-            ))}
+            {links.map((linkList, i) => {
+              return (
+                <div key={i} className={styles.LinkList}>
+                  {linkList.map((link, j) => {
+                    console.log('Footer -> link', link)
+
+                    return (
+                      <SmartLink
+                        className={styles.Link}
+                        key={j}
+                        href={link.url}
+                      >
+                        <Type size="base">{link.text}</Type>
+                      </SmartLink>
+                    )
+                  })}
+                </div>
+              )
+            })}
           </div>
         </Container>
       </footer>
