@@ -23,9 +23,11 @@ const FeaturedCaseStudy = ({ title, description, body, image }) => {
             <Type size="displayLarge" as="h3" className={styles.Title}>
               {title}
             </Type>
-            <div className={styles.Description}>
-              <BlockText blocks={description} size="baseLarge" />
-            </div>
+            {description && (
+              <div className={styles.Description}>
+                <BlockText blocks={description} size="baseLarge" />
+              </div>
+            )}
             <div className={styles.Body}>
               <BlockContent blocks={body} />
             </div>
