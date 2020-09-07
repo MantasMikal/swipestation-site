@@ -167,7 +167,6 @@ const IndexPage = (props) => {
     )
   }
 
-  console.log('IndexPage -> site', site)
   const {
     title,
     subtitle,

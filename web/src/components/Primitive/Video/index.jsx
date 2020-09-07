@@ -14,7 +14,14 @@ import styles from './Video.module.scss'
  * Video embed component wrapper
  */
 
-const Video = ({ videoType, videoId, caption, className, ...other }) => {
+const Video = ({
+  videoType,
+  videoId,
+  caption,
+  className,
+  additionalParams,
+  ...other
+}) => {
   switch (videoType) {
     case 'youtube':
       return (
@@ -25,6 +32,7 @@ const Video = ({ videoType, videoId, caption, className, ...other }) => {
               videoId={videoId}
               width="100%"
               height="100%"
+              additionalParams={additionalParams}
             />
           </ResponsiveMedia>
           {caption && (
@@ -44,6 +52,7 @@ const Video = ({ videoType, videoId, caption, className, ...other }) => {
               videoId={videoId}
               width="100%"
               height="100%"
+              additionalParams={additionalParams}
             />
           </ResponsiveMedia>
           {caption && (

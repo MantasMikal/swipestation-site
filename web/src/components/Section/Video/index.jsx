@@ -32,6 +32,7 @@ const Video = ({ title, video }) => {
             videoType={videoType}
             alt={alt}
             caption={caption}
+            additionalParams={{ byline: 0, title: 0 }}
           />
         </ResponsiveMedia>
       </Container>

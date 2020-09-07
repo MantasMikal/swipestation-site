@@ -1,5 +1,5 @@
 import React from 'react'
-import { bool, string } from 'prop-types'
+import { bool, string, object } from 'prop-types'
 
 import shallowObjectToQuery from 'libs/shallow-object-to-query'
 
@@ -10,12 +10,20 @@ export const VimeoEmbedFallbackUrl = (videoId) => `https://vimeo.com/${videoId}`
 
  * To make the video responsive, wrap in in a \`ResponsiveMedia\` component.
  */
-const VimeoEmbed = ({ color, hideByline, hideTitle, start, videoId }) => {
+const VimeoEmbed = ({
+  color,
+  hideByline,
+  hideTitle,
+  start,
+  videoId,
+  additionalParams
+}) => {
   const srcPrefix = 'https://player.vimeo.com/video/'
   const query = {
     ...(color && { color: color.replace('#', '') }),
     ...(hideByline && { byline: 0 }),
-    ...(hideTitle && { title: 0 })
+    ...(hideTitle && { title: 0 }),
+    ...additionalParams
   }
   const formattedStart = start ? `#t=${start}s` : ``
 
@@ -38,7 +46,8 @@ VimeoEmbed.propTypes = {
   color: string,
   hideTitle: bool,
   hideByline: bool,
-  videoId: string.isRequired
+  videoId: string.isRequired,
+  additionalParams: object
 }
 
 export default VimeoEmbed
