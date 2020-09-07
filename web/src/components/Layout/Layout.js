@@ -40,11 +40,15 @@ const Layout = ({
     typeof window !== 'undefined' ? window.location.pathname : ''
   )
 
+  // FIX for SSR
   useEffect(() => {
-    setCurrentPath(
-      typeof window !== 'undefined' ? window.location.pathname : ''
-    )
-  }, [setCurrentPath])
+    const path = typeof window !== 'undefined' ? window.location.pathname : ''
+    if (path !== currentPath) {
+      setCurrentPath(
+        typeof window !== 'undefined' ? window.location.pathname : ''
+      )
+    } else return
+  }, [currentPath, setCurrentPath])
 
   return (
     <div
