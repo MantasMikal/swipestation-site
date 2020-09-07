@@ -11,6 +11,7 @@ import heroPoster from '../../../assets/hero-poster.jpg'
 import styles from './Hero.module.scss'
 import Image from 'Primitive/Image'
 import useMedia from 'hooks/useMedia'
+import Video from 'Primitive/Video'
 
 const Hero = ({ mobileHero, title, subtitle, minutesSaved }) => {
   const isTablet = useMedia('(max-width: 576px)')
@@ -22,15 +23,20 @@ const Hero = ({ mobileHero, title, subtitle, minutesSaved }) => {
       <ResponsiveMedia className={styles.DesktopHero} ratio={9 / 16}>
         <div className={styles.Overlay} />
         {!isTablet && (
-          <video
-            className={styles.VideoFrame}
-            poster={heroPoster}
-            autoPlay
-            muted
-            loop
-          >
-            <source src={heroVideo} type="video/mp4" />
-          </video>
+          <div className={styles.EmbedContainer}>
+            <iframe
+              className={styles.Video}
+              src="https://player.vimeo.com/video/455515299?background=1"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              allow="autoplay; fullscreen"
+              allowFullScreen
+              muted
+              autoPlay
+              title="Swipestation"
+            />
+          </div>
         )}
       </ResponsiveMedia>
       <Container size="wide" gutter center className={styles.Content}>
