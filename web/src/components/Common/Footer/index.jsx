@@ -38,19 +38,11 @@ const Footer = ({ social, logo, siteTitle, awards }) => {
             {links.map((linkList, i) => {
               return (
                 <div key={i} className={styles.LinkList}>
-                  {linkList.map((link, j) => {
-                    console.log('Footer -> link', link)
-
-                    return (
-                      <SmartLink
-                        className={styles.Link}
-                        key={j}
-                        href={link.url}
-                      >
-                        <Type size="base">{link.text}</Type>
-                      </SmartLink>
-                    )
-                  })}
+                  {linkList.map((link, j) => (
+                    <SmartLink className={styles.Link} key={j} href={link.url}>
+                      <Type size="base">{link.text}</Type>
+                    </SmartLink>
+                  ))}
                 </div>
               )
             })}

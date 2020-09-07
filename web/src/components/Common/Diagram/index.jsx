@@ -64,7 +64,6 @@ const Diagram = ({}) => {
   const diagramRef = useRef()
   const onScreen = useOnScreen(diagramRef, '-7%')
   const [isDone, setIsDone] = useState(false)
-  console.log('Diagram -> isDone', isDone)
 
   return (
     <div ref={diagramRef} className={styles.Diagram}>
