@@ -38,6 +38,10 @@ const Layout = ({
   logo,
   awards
 }) => {
+  const path =
+    typeof window !== 'undefined' ? window.location.pathname.split('/') : ''
+  console.log('PATH', path)
+  console.error('PATH', path)
   return (
     <div
       className={classNames(
