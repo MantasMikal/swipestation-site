@@ -34,7 +34,7 @@ const BlogPostPreview = ({
       <div className={styles.LeadMediaThumb}>
         <Image ratio={ratio || undefined} image={mainImage} alt={title} />
       </div>
-      <Type as="h3" size="title" className={styles.Title}>
+      <Type as="h4" size="title" className={styles.Title}>
         {title}
       </Type>
       {_rawExcerpt && (
