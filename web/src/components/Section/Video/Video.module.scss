@@ -29,6 +29,10 @@
     margin-bottom: 110px;
   }
 
+  .VideoWrapper {
+    padding: 0 spacing(4);
+  }
+
   .VideoOverlay {
     bottom: -65px;
   }
@@ -40,6 +44,9 @@
   }
   .VideoOverlay {
     bottom: -80px;
+  }
+  .Title {
+    margin-bottom: spacing(4);
   }
 }
 
