@@ -46,6 +46,21 @@
   }
 }
 
+.spaciousMargin {
+  margin-top: spacing(4);
+  margin-bottom: spacing(4);
+
+  @include mq($breakpoint-mobile-large) {
+    margin-top: spacing(6);
+    margin-bottom: spacing(6);
+  }
+
+  @include mq($breakpoint-tablet) {
+    margin-top: spacing(10);
+    margin-bottom: spacing(10);
+  }
+}
+
 .full {
   width: 100%;
 }
@@ -59,7 +74,7 @@
 }
 
 .large {
-  max-width: spacing(180);
+  max-width: spacing(170);
 }
 
 .medium {

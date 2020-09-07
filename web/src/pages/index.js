@@ -13,6 +13,7 @@ import Contact from 'Section/Contact'
 import FeaturedCaseStudy from 'Section/FeaturedCaseStudy'
 import Sponsors from 'Section/Sponsors'
 import GoCashless from 'Section/GoCashless'
+import Video from 'Section/Video'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -69,7 +70,15 @@ export const query = graphql`
         }
         _rawExcerpt(resolveReferences: { maxDepth: 10 })
       }
-
+      video {
+        title
+        video {
+          videoType
+          videoId
+          caption
+          alt
+        }
+      }
       sponsors {
         title
         _rawDescription
@@ -168,7 +177,8 @@ const IndexPage = (props) => {
     contactSection,
     sponsors,
     featuredCaseStudy,
-    goCashless
+    goCashless,
+    video
   } = home
 
   return (
@@ -194,6 +204,7 @@ const IndexPage = (props) => {
           features={features.features}
         />
       )}
+      {video && <Video {...video} />}
       {tillComparison && (
         <TillComparison
           title={tillComparison.title}

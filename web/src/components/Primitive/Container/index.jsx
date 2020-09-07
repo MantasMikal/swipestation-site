@@ -22,6 +22,7 @@ const Container = ({
   size,
   spacious,
   hideOverflow,
+  spaciousMargin,
   ...other
 }) => (
   <Element
@@ -34,6 +35,7 @@ const Container = ({
       size && styles[size],
       spacious && styles.spacious,
       hideOverflow && styles.hideOverflow,
+      spaciousMargin && styles.spaciousMargin,
       className
     )}
     {...other}
@@ -51,7 +53,8 @@ Container.propTypes = {
   noClearfix: bool,
   size: oneOf(sizes),
   spacious: bool,
-  hideOverflow: bool
+  hideOverflow: bool,
+  spaciousMargin: bool
 }
 
 export default Container

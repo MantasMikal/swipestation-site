@@ -1,0 +1,50 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Video {
+  position: relative;
+  background-color: $color-primary-grey-lighter;
+  margin-bottom: spacing(10);
+  margin-top: 0;
+}
+
+.VideoOverlay {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 100%;
+}
+
+.VideoWrapper {
+  border-radius: $radius-small;
+}
+
+.Title {
+  text-align: center;
+  margin-bottom: spacing(3);
+}
+
+@include mq($breakpoint-tablet) {
+  .Video {
+    margin-bottom: 110px;
+  }
+
+  .VideoOverlay {
+    bottom: -65px;
+  }
+}
+
+@include mq($breakpoint-desktop) {
+  .Video {
+    margin-bottom: spacing(20);
+  }
+  .VideoOverlay {
+    bottom: -80px;
+  }
+}
+
+@include mq($breakpoint-desktopMedium) {
+  .Video {
+    margin-bottom: spacing(25);
+  }
+}
