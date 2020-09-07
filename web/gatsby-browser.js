@@ -1,1 +1,1 @@
-import './src/assets/scss/base.scss'
+exports.onServiceWorkerUpdateFound = () => window.location.reload(true)

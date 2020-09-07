@@ -3,6 +3,7 @@ import { graphql, StaticQuery } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 import Layout from '../components/Layout/Layout'
+import '../assets/scss/base.scss'
 
 const query = graphql`
   query SiteTitleQuery {
