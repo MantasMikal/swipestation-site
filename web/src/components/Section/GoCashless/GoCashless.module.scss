@@ -32,6 +32,64 @@
   max-width: 170px;
 }
 
+.Labels {
+  margin-bottom: spacing(1);
+}
+
+.Label {
+  position: relative;
+  display: inline-block;
+  margin: 0 spacing(1) 0 spacing(2.2);
+  font-size: 12px;
+  min-height: 0;
+  &::before {
+    content: '';
+    position: absolute;
+    left: -17px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 14px;
+    height: 14px;
+    background-color: red;
+    border-radius: 2px;
+  }
+  &.Ordering {
+    &:before {
+      background-color: #a4edff;
+    }
+  }
+  &.Processing {
+    &:before {
+      background-color: #ce74bf;
+    }
+  }
+
+  &.Payment {
+    &:before {
+      background-color: $color-primary-grey-lighter;
+    }
+  }
+
+  &.Service {
+    &:before {
+      background-color: $color-primary-yellow;
+    }
+  }
+}
+
+@include mq($breakpoint-mobile-large) {
+  .Label {
+    font-size: 12px;
+    margin: 0 spacing(1.5) 0 spacing(2);
+    &::before {
+      left: -17px;
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
+
 @include mq($breakpoint-mobileLandscape) {
   .Wrapper {
     flex-direction: row;
@@ -51,6 +109,15 @@
   .Description {
     margin-bottom: spacing(4);
   }
+  .Label {
+    font-size: 15px;
+    margin: 0 spacing(2) 0 spacing(2.4);
+    &::before {
+      left: -20px;
+      width: 15px;
+      height: 15px;
+    }
+  }
 }
 
 @include mq($breakpoint-tabletLandscape) {
@@ -59,5 +126,26 @@
   }
   .FasterText {
     max-width: 240px;
+  }
+  .Label {
+    font-size: 18px;
+    margin: 0 spacing(2.5) 0 spacing(2.7);
+    &::before {
+      left: -22px;
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+@include mq($breakpoint-desktop) {
+  .Label {
+    font-size: 22px;
+    margin: 0 spacing(2.5) 0 spacing(3);
+    &::before {
+      left: -25px;
+      width: 20px;
+      height: 20px;
+    }
   }
 }

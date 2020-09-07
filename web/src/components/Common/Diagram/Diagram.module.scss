@@ -3,7 +3,7 @@
 
 .Diagram {
   width: 100%;
-  min-height: 210px;
+  min-height: 205px;
 }
 
 .Wrapper {
@@ -15,6 +15,12 @@
   &:hover {
     transform: scaleX(1.02);
     transition: $easing-standard 0.25s;
+  }
+
+  &:last-child {
+    .BarWrapper {
+      margin-bottom: 0;
+    }
   }
 }
 

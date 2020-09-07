@@ -1,5 +1,6 @@
 import React from 'react'
 import { string, array } from 'prop-types'
+import classNames from 'classnames'
 
 import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
@@ -22,6 +23,32 @@ const GoCashless = ({ title, description }) => {
       <div className={styles.Wrapper}>
         <div className={styles.DiagramWrapper}>
           <Diagram />
+          <div className={styles.Labels}>
+            <Type
+              size="displayTiny"
+              className={classNames(styles.Label, styles.Ordering)}
+            >
+              Ordering
+            </Type>
+            <Type
+              size="displayTiny"
+              className={classNames(styles.Label, styles.Processing)}
+            >
+              Processing
+            </Type>
+            <Type
+              size="displayTiny"
+              className={classNames(styles.Label, styles.Payment)}
+            >
+              Payment
+            </Type>
+            <Type
+              size="displayTiny"
+              className={classNames(styles.Label, styles.Service)}
+            >
+              Service
+            </Type>
+          </div>
         </div>
         <div className={styles.TimesFaster}>
           <Type size="displayLarge">3X</Type>

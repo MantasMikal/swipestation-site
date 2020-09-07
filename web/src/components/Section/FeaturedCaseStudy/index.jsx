@@ -1,11 +1,12 @@
 import React from 'react'
-import { string, array } from 'prop-types'
+import { array, object } from 'prop-types'
+
 import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
-
-import styles from './FeaturedCaseStudy.module.scss'
 import BlockText from 'Common/BlockText'
 import CaseStudyPreview from 'Common/CaseStudyPreview'
+
+import styles from './FeaturedCaseStudy.module.scss'
 
 const FeaturedCaseStudy = ({ _rawDescription, caseStudy }) => {
   const { title, _rawExcerpt, image } = caseStudy
@@ -37,8 +38,8 @@ const FeaturedCaseStudy = ({ _rawDescription, caseStudy }) => {
 }
 
 FeaturedCaseStudy.propTypes = {
-  title: string,
-  description: array
+  _rawDescription: array,
+  caseStudy: object
 }
 
 export default FeaturedCaseStudy
