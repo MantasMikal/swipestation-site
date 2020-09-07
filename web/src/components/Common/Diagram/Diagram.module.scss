@@ -3,7 +3,7 @@
 
 .Diagram {
   width: 100%;
-  min-height: 230px;
+  min-height: 210px;
 }
 
 .Wrapper {
@@ -16,7 +16,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  margin-bottom: spacing(2);
+  margin-bottom: spacing(1.5);
   overflow: hidden;
 }
 
@@ -64,7 +64,7 @@
 
 @include mq($breakpoint-mobile-large) {
   .Diagram {
-    min-height: 280px;
+    min-height: 260px;
   }
 
   .Bar {
@@ -86,7 +86,7 @@
 
 @include mq($breakpoint-tablet) {
   .Diagram {
-    min-height: 305px;
+    min-height: 285px;
   }
 
   .Bar {
@@ -109,6 +109,10 @@
 @include mq($breakpoint-tabletLandscape) {
   .Diagram {
     min-height: 380px;
+  }
+
+  .BarWrapper {
+    margin-bottom: spacing(2);
   }
 
   .Bar {
