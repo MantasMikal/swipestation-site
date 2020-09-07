@@ -31,7 +31,7 @@ const Blog = ({ blogNodes }) => {
       withNavSpace
       as="section"
     >
-      <Type as="h1" size="displayLarge" className={styles.Title}>
+      <Type as="h2" size="displayLarge" className={styles.Title}>
         News
       </Type>
       <MasonryLayout items={blogposts} gap={25} />

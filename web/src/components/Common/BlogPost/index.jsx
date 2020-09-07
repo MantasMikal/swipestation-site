@@ -31,7 +31,7 @@ const BlogPost = (props) => {
         <div className={styles.Content}>
           {title && (
             <div className={styles.TitleWrapper}>
-              <Type as="h1" size="displayLarge" className={styles.Title}>
+              <Type as="h2" size="displayLarge" className={styles.Title}>
                 {title}
               </Type>
               <div className={styles.DateWrapper}>

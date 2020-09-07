@@ -167,6 +167,7 @@ const IndexPage = (props) => {
     )
   }
 
+  console.log('IndexPage -> site', site)
   const {
     title,
     subtitle,
@@ -188,7 +189,6 @@ const IndexPage = (props) => {
         description={site.description}
         keywords={site.keywords}
       />
-      <h1 hidden>Welcome to {site.title}</h1>
       {home && (
         <Hero
           title={title}

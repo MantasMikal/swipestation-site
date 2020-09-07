@@ -18,7 +18,7 @@ const Block = ({ blockContent, title }) => {
       as="section"
     >
       {title && (
-        <Type as="h1" size="displayLarge" className={styles.Title}>
+        <Type as="h3" size="displayLarge" className={styles.Title}>
           {title}
         </Type>
       )}
