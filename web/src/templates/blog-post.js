@@ -54,7 +54,7 @@ const BlogPostTemplate = (props) => {
   const post = data && data.post
   const seo = data && data.post && data.post.seo && data.post.seo.seo
   return (
-    <Layout>
+    <Layout disableOverlay>
       {errors && <SEO title="GraphQL Error" />}
       {post && (
         <SEO

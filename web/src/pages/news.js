@@ -56,7 +56,7 @@ const BlogPage = (props) => {
   const blogNodes = data && data.posts && mapEdgesToNodes(data.posts)
 
   return (
-    <Layout>
+    <Layout shouldHaveSpaceForNav disableOverlay>
       <SEO title="News" slug={'/news'} />
       {blogNodes && blogNodes.length > 0 && (
         <BlogSection blogNodes={blogNodes} />

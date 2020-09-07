@@ -1,4 +1,5 @@
 import React from 'react'
+import { navigate } from '@reach/router'
 import { func, bool, string, object, node } from 'prop-types'
 import classnames from 'classnames'
 import debounce from 'libs/debounce'
@@ -31,10 +32,18 @@ class Navigation extends React.PureComponent {
   }
 
   scrollToPage = (sectionId) => {
-    document &&
-      document.querySelector(sectionId).scrollIntoView({
-        behavior: 'smooth'
-      })
+    const path = typeof window !== 'undefined' && window.location.pathname
+    if (path !== '/') {
+      navigate('/')
+      setTimeout(function () {
+        document && document.querySelector(sectionId).scrollIntoView()
+      }, 5)
+    } else {
+      document &&
+        document.querySelector(sectionId).scrollIntoView({
+          behavior: 'smooth'
+        })
+    }
   }
 
   // Hide or show the menu.

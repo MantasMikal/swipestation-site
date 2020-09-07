@@ -5,7 +5,7 @@ import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
 
 const NotFoundPage = () => (
-  <Layout>
+  <Layout shouldHaveSpaceForNav disableOverlay>
     <SEO title="404: Not found" slug={'/404'} />
     <Container size="wide" center gutter spacious as="section">
       <div style={{ marginTop: '80px' }} />

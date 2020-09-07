@@ -8,24 +8,6 @@ import Footer from 'Common/Footer'
 
 import styles from './Layout.module.scss'
 
-const sectionsWithSpaceForNav = [
-  'news',
-  'case-study',
-  'faqs',
-  'about',
-  'contact',
-  '404'
-]
-
-const shouldHaveSpaceForNav = (pathName) => {
-  const path = pathName.split('/')
-  if (path && !path[2] && sectionsWithSpaceForNav.includes(path[1])) {
-    return true
-  }
-
-  return false
-}
-
 const Layout = ({
   children,
   onHideNav,
@@ -34,27 +16,15 @@ const Layout = ({
   siteTitle,
   social,
   logo,
-  awards
+  awards,
+  shouldHaveSpaceForNav,
+  disableFooterOverlay
 }) => {
-  const [currentPath, setCurrentPath] = useState(
-    typeof window !== 'undefined' ? window.location.pathname : ''
-  )
-
-  // FIX for SSR
-  useEffect(() => {
-    const path = typeof window !== 'undefined' ? window.location.pathname : ''
-    if (path !== currentPath) {
-      setCurrentPath(
-        typeof window !== 'undefined' ? window.location.pathname : ''
-      )
-    } else return
-  }, [currentPath, setCurrentPath])
-
   return (
     <div
       className={classNames(
         styles.Wrapper,
-        shouldHaveSpaceForNav(currentPath) && styles.withNavSpace
+        shouldHaveSpaceForNav && styles.withNavSpace
       )}
     >
       <A11yNavigation>
@@ -77,7 +47,7 @@ const Layout = ({
         logo={logo}
         siteTitle={siteTitle}
         awards={awards}
-        disableOverlay={typeof window !== 'undefined' && currentPath !== '/'}
+        disableOverlay={disableFooterOverlay}
       />
     </div>
   )
