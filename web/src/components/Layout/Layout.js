@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { bool, func, node, string, object } from 'prop-types'
 import classNames from 'classnames'
 
@@ -17,10 +17,8 @@ const sectionsWithSpaceForNav = [
   '404'
 ]
 
-const shouldHaveSpaceForNav = () => {
-  const path =
-    typeof window !== 'undefined' ? window.location.pathname.split('/') : ''
-
+const shouldHaveSpaceForNav = (pathName) => {
+  const path = pathName.split('/')
   if (path && !path[2] && sectionsWithSpaceForNav.includes(path[1])) {
     return true
   }
@@ -38,15 +36,21 @@ const Layout = ({
   logo,
   awards
 }) => {
-  const path =
-    typeof window !== 'undefined' ? window.location.pathname.split('/') : ''
-  console.log('PATH', path)
-  console.error('PATH', path)
+  const [currentPath, setCurrentPath] = useState(
+    typeof window !== 'undefined' ? window.location.pathname : ''
+  )
+
+  useEffect(() => {
+    setCurrentPath(
+      typeof window !== 'undefined' ? window.location.pathname : ''
+    )
+  }, [setCurrentPath])
+
   return (
     <div
       className={classNames(
         styles.Wrapper,
-        shouldHaveSpaceForNav() && styles.withNavSpace
+        shouldHaveSpaceForNav(currentPath) && styles.withNavSpace
       )}
     >
       <A11yNavigation>
@@ -69,9 +73,7 @@ const Layout = ({
         logo={logo}
         siteTitle={siteTitle}
         awards={awards}
-        disableOverlay={
-          typeof window !== 'undefined' && window.location.pathname !== '/'
-        }
+        disableOverlay={typeof window !== 'undefined' && currentPath !== '/'}
       />
     </div>
   )
