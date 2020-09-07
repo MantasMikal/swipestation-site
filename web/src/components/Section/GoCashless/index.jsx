@@ -14,9 +14,11 @@ const GoCashless = ({ title, description }) => {
       <Type size="displayLarge" as="h3" className={styles.Title}>
         {title}
       </Type>
-      <div className={styles.Description}>
-        <BlockText blocks={description} size="baseLarge" />
-      </div>
+      {description && (
+        <div className={styles.Description}>
+          <BlockText blocks={description} size="baseLarge" />
+        </div>
+      )}
       <div className={styles.Wrapper}>
         <div className={styles.DiagramWrapper}>
           <Diagram />

@@ -14,9 +14,11 @@ const Sponsors = ({ title, description, sponsors }) => {
       <Type size="displayLarge" as="h3" className={styles.Title}>
         {title}
       </Type>
-      <div className={styles.Description}>
-        <BlockText blocks={description} size="baseLarge" />
-      </div>
+      {description && (
+        <div className={styles.Description}>
+          <BlockText blocks={description} size="baseLarge" />
+        </div>
+      )}
       <div className={styles.SponsorsWrapper}>
         {sponsors &&
           sponsors.map((sponsor, i) => (

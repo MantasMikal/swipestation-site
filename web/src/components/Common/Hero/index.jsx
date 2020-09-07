@@ -37,9 +37,11 @@ const Hero = ({ mobileHero, title, subtitle, minutesSaved }) => {
         <Type size="displayLarge" as="h2" className={styles.Title}>
           {title}
         </Type>
-        <Type size="subtitle" as="p" className={styles.Subtitle}>
-          {subtitle}
-        </Type>
+        {subtitle && (
+          <Type size="subtitle" as="p" className={styles.Subtitle}>
+            {subtitle}
+          </Type>
+        )}
         <div className={styles.MinutesSaved}>
           <Type size="displayLarge" className={styles.MinutesWrapper}>
             <CountUp
