@@ -5,10 +5,9 @@ import Type from 'Primitive/Type'
 
 import styles from './FeaturedCaseStudy.module.scss'
 import BlockText from 'Common/BlockText'
-import BlockContent from '../../Editor'
-import Separator from 'Common/Seperator'
+import CaseStudyPreview from 'Common/CaseStudyPreview'
 
-const FeaturedCaseStudy = ({ title, description, body, image }) => {
+const FeaturedCaseStudy = ({ title, description, body, excerpt, image }) => {
   return (
     <>
       <Container size="full" spacious className={styles.Wrapper}>
@@ -28,9 +27,7 @@ const FeaturedCaseStudy = ({ title, description, body, image }) => {
                 <BlockText blocks={description} size="baseLarge" />
               </div>
             )}
-            <div className={styles.Body}>
-              <BlockContent blocks={body} />
-            </div>
+            <CaseStudyPreview image={image} excerpt={excerpt} />
           </Container>
         </Container>
         {/* <Separator /> */}

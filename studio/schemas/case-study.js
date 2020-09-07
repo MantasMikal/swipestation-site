@@ -25,6 +25,12 @@ export default {
       type: "figure",
     },
     {
+      name: "excerpt",
+      title: "Excerpt",
+      description: "Short description that will appear on the side of image",
+      type: "blockContent",
+    },
+    {
       name: "body",
       title: "Body",
       type: "blockContent",

@@ -7,7 +7,6 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Hero from 'Common/Hero'
 import BlogPostCarouselSection from 'Section/BlogPostCarousel'
-import BlockSection from 'Section/Block'
 import Features from 'Section/Features'
 import TillComparison from 'Section/TillComparison'
 import Contact from 'Section/Contact'
@@ -61,13 +60,14 @@ export const query = graphql`
         title
         _rawDescription
         image {
+          alt
           asset {
             fluid(maxWidth: 1000) {
               ...GatsbySanityImageFluid
             }
           }
         }
-        _rawBody(resolveReferences: { maxDepth: 10 })
+        _rawExcerpt(resolveReferences: { maxDepth: 10 })
       }
 
       sponsors {
@@ -161,7 +161,6 @@ const IndexPage = (props) => {
   const {
     title,
     subtitle,
-    _rawSections,
     mobileHero,
     minutesSaved,
     features,
@@ -195,12 +194,6 @@ const IndexPage = (props) => {
           features={features.features}
         />
       )}
-      {_rawSections &&
-        _rawSections.map((section) => (
-          <div key={section._key}>
-            <BlockSection blockContent={section.body} title={section.title} />
-          </div>
-        ))}
       {tillComparison && (
         <TillComparison
           title={tillComparison.title}
@@ -217,7 +210,7 @@ const IndexPage = (props) => {
         <FeaturedCaseStudy
           title={featuredCaseStudy.title}
           description={featuredCaseStudy._rawDescription}
-          body={featuredCaseStudy._rawBody}
+          excerpt={featuredCaseStudy._rawExcerpt}
           image={featuredCaseStudy.image}
         />
       )}

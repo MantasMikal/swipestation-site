@@ -24,7 +24,7 @@ const Image = ({ image, ratio, imgWrapperStyle, imgStyle, alt, ...other }) => {
           imgStyle={imgStyle}
           fixed={fixedImg}
           fluid={fluidImg}
-          alt={alt}
+          alt={image.alt || alt}
           {...other}
         />
       </ResponsiveMedia>
@@ -34,7 +34,7 @@ const Image = ({ image, ratio, imgWrapperStyle, imgStyle, alt, ...other }) => {
         imgStyle={imgStyle}
         fixed={fixedImg}
         fluid={fluidImg}
-        alt={alt}
+        alt={image.alt || alt}
         {...other}
       />
     )

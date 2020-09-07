@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 
 import links from './links'
 
@@ -6,13 +7,20 @@ import SmartLink from 'Primitive/SmartLink'
 import SocialLink from './component/SocialLink'
 import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
-
-import styles from './Footer.module.scss'
 import Image from 'Primitive/Image'
 
-const Footer = ({ social, logo, siteTitle, awards }) => {
+import styles from './Footer.module.scss'
+
+const Footer = ({ social, logo, siteTitle, awards, disableOverlay }) => {
+  console.log('Footer -> disableOverlay', disableOverlay)
   return (
-    <Container gutter className={styles.Wrapper}>
+    <Container
+      gutter
+      className={classNames(
+        styles.Wrapper,
+        disableOverlay && styles.disableOverlay
+      )}
+    >
       <div className={styles.ContactOverlay} />
       <div className={styles.FooterOverlay} />
       <footer className={styles.Footer}>

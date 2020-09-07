@@ -61,6 +61,7 @@ const Contact = ({ _rawDescription, title, phone, email, address }) => {
       gutter
       spacious
       as="section"
+      id="contact"
     >
       <Type as="h1" size="displayLarge" className={styles.Title}>
         {title}

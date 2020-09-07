@@ -65,6 +65,9 @@ const Layout = ({
         logo={logo}
         siteTitle={siteTitle}
         awards={awards}
+        disableOverlay={
+          typeof window !== 'undefined' && window.location.pathname !== '/'
+        }
       />
     </div>
   )

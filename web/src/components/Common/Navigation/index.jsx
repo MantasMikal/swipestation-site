@@ -30,6 +30,13 @@ class Navigation extends React.PureComponent {
     window.removeEventListener('scroll', this.handleScroll)
   }
 
+  scrollToPage = (sectionId) => {
+    document &&
+      document.querySelector(sectionId).scrollIntoView({
+        behavior: 'smooth'
+      })
+  }
+
   // Hide or show the menu.
   handleScroll = debounce(() => {
     const { prevScrollPos } = this.state
@@ -80,7 +87,10 @@ class Navigation extends React.PureComponent {
           </SmartLink>
         </div>
         <div className={styles.Links}>
-          <LinkWrapper className={styles.NavLink} to="/contact/">
+          <LinkWrapper
+            onClick={() => this.scrollToPage('#contact')}
+            className={styles.NavLink}
+          >
             Contact
           </LinkWrapper>
           <LinkWrapper className={styles.NavLink} to="/about/">

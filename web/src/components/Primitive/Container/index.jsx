@@ -21,7 +21,8 @@ const Container = ({
   noClearfix,
   size,
   spacious,
-  hideOverflow
+  hideOverflow,
+  ...other
 }) => (
   <Element
     as={as}
@@ -35,6 +36,7 @@ const Container = ({
       hideOverflow && styles.hideOverflow,
       className
     )}
+    {...other}
   >
     {children}
   </Element>

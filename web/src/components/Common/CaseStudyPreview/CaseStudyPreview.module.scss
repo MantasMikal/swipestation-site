@@ -1,0 +1,28 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Image {
+  margin-bottom: spacing(3);
+}
+
+.Excerpt {
+  color: $color-primary-white;
+}
+
+@include mq($breakpoint-mobileLandscape) {
+  .CaseStudyPreview {
+    display: flex;
+  }
+
+  .Excerpt {
+    flex: 1 1 40%;
+    margin-right: spacing(3);
+    display: flex;
+    // align-items: center;
+  }
+
+  .Image {
+    order: 1;
+    flex: 1 1 50%;
+  }
+}

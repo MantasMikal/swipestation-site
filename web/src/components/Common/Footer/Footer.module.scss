@@ -137,6 +137,12 @@
   padding-bottom: spacing(1);
 }
 
+.disableOverlay {
+  .ContactOverlay {
+    display: none;
+  }
+}
+
 @include mq($breakpoint-mobileLandscape) {
   .Container {
     flex-direction: row;
@@ -205,6 +211,7 @@
     background-color: $color-primary-grey-lighter;
     z-index: -1;
   }
+
   .Social,
   .Branding,
   .LinkListWrapper,
