@@ -28,6 +28,12 @@
     path {
       fill: $color-primary-white;
     }
+    transition: $easing-standard 0.25s;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: $easing-standard 0.25s;
+    }
   }
 }
 
@@ -63,6 +69,16 @@
 .PintsWrapper {
   display: flex;
   flex-wrap: wrap;
+}
+
+.PersonIcon,
+.GlassIcon {
+  transition: $easing-standard 0.25s;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: $easing-standard 0.25s;
+  }
 }
 
 @include mq($breakpoint-mobileLandscape) {
