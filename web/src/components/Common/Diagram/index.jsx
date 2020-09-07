@@ -70,7 +70,7 @@ const Diagram = ({}) => {
       <div className={styles.Wrapper}>
         {(isDone || onScreen) && (
           <Bar
-            bars={[{ number: 15, width: '27%', color: '#ffba00' }]}
+            bars={[{ number: 15, width: '25%', color: '#ffba00' }]}
             label="Swipestation"
             delay={0}
             shouldAnimate={onScreen}
@@ -83,7 +83,7 @@ const Diagram = ({}) => {
         {(isDone || onScreen) && (
           <Bar
             bars={[
-              { number: 15, width: '27%', color: '#ffba00' },
+              { number: 15, width: '25%', color: '#ffba00' },
               { number: 10, width: '12%', color: '#A4EDFF' }
             ]}
             label="Free Bar!"
@@ -98,8 +98,8 @@ const Diagram = ({}) => {
         {(isDone || onScreen) && (
           <Bar
             bars={[
-              { number: 15, width: '27%', color: '#ffba00' },
-              { number: 15, width: '27%', color: '#CE74BF' }
+              { number: 15, width: '25%', color: '#ffba00' },
+              { number: 15, width: '25%', color: '#CE74BF' }
             ]}
             label="Other mobile Payment providers"
             delay={500}
@@ -113,9 +113,9 @@ const Diagram = ({}) => {
         {(isDone || onScreen) && (
           <Bar
             bars={[
-              { number: 15, width: '27%', color: '#ffba00' },
+              { number: 15, width: '25%', color: '#ffba00' },
               { number: 10, width: '12%', color: '#E6E6E6' },
-              { number: 15, width: '27%', color: '#CE74BF' },
+              { number: 15, width: '25%', color: '#CE74BF' },
               { number: 10, width: '12%', color: '#A4EDFF' }
             ]}
             label="Contactless"
@@ -130,9 +130,9 @@ const Diagram = ({}) => {
         {(isDone || onScreen) && (
           <Bar
             bars={[
-              { number: 15, width: '27%', color: '#ffba00' },
-              { number: 20, width: '34%', color: '#E6E6E6' },
-              { number: 15, width: '27%', color: '#CE74BF' },
+              { number: 15, width: '25%', color: '#ffba00' },
+              { number: 20, width: '30%', color: '#E6E6E6' },
+              { number: 15, width: '25%', color: '#CE74BF' },
               { number: 10, width: '12%', color: '#A4EDFF' }
             ]}
             label="Cash"
