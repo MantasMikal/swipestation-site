@@ -23,7 +23,9 @@ const GoCashless = ({ title, description }) => {
         </div>
         <div className={styles.TimesFaster}>
           <Type size="displayLarge">3X</Type>
-          <Type size="displaySmall">Faster than cashless</Type>
+          <Type className={styles.FasterText} size="displaySmall">
+            Faster than cashless
+          </Type>
         </div>
       </div>
     </Container>
