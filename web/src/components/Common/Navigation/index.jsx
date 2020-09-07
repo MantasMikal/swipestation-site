@@ -37,7 +37,7 @@ class Navigation extends React.PureComponent {
       navigate('/')
       setTimeout(function () {
         document && document.querySelector(sectionId).scrollIntoView()
-      }, 5)
+      }, 50)
     } else {
       document &&
         document.querySelector(sectionId).scrollIntoView({
