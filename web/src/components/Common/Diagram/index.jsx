@@ -34,7 +34,8 @@ const Bar = ({ bars, label, delay, shouldAnimate, onFinish }) => {
     to: {
       transform: 'translate(0%)'
     },
-    delay: delay
+    delay: delay,
+    config: { mass: 1, tension: 170, friction: 26, precision: 0.001 }
   })
 
   useEffect(() => {
