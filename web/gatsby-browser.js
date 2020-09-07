@@ -1,1 +1,1 @@
-exports.onServiceWorkerUpdateFound = () => window.location.reload(true)
+// exports.onServiceWorkerUpdateFound = () => window.location.reload(true)
