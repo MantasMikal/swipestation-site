@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { useChain, useTransition, animated, config } from 'react-spring'
 import classNames from 'classnames'
 import useOnScreen from 'libs/use-on-screen'
@@ -63,6 +63,7 @@ const Till = ({ title, className, pints, pintCount }) => {
           <Pints
             name={title}
             pints={pints}
+            shouldAnimate={onScreen}
             handleFinish={() => setIsDone(true)}
           />
         )}
@@ -72,7 +73,7 @@ const Till = ({ title, className, pints, pintCount }) => {
 }
 
 // Animates pints on the screen
-const Pints = ({ pints, handleFinish }) => {
+const Pints = ({ pints, handleFinish, shouldAnimate }) => {
   const transRef = useRef()
   const transitions = useTransition(pints, (item) => item.key, {
     ref: transRef,
@@ -80,9 +81,14 @@ const Pints = ({ pints, handleFinish }) => {
     trail: 10,
     from: { opacity: '0', transform: 'scale(0.6) translateY(20px)' },
     enter: { opacity: '1', transform: 'scale(1) translateY(0px)' },
-    config: config.stiff,
-    onRest: () => handleFinish()
+    config: config.stiff
   })
+
+  useEffect(() => {
+    if (shouldAnimate) {
+      handleFinish()
+    }
+  }, [shouldAnimate, handleFinish])
 
   useChain([transRef], [0])
 

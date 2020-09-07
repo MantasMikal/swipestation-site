@@ -10,6 +10,12 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  transform-origin: left;
+  transition: $easing-standard 0.25s;
+  &:hover {
+    transform: scaleX(1.02);
+    transition: $easing-standard 0.25s;
+  }
 }
 
 .BarWrapper {

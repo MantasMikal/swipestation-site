@@ -1,19 +1,11 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { node, number } from 'prop-types'
-import { useChain, useSpring, animated, config } from 'react-spring'
+import { node } from 'prop-types'
+import { useSpring, animated } from 'react-spring'
 import useOnScreen from 'libs/use-on-screen'
 
 import Type from 'Primitive/Type'
 
 import styles from './Diagram.module.scss'
-
-function usePrevious(value) {
-  const ref = useRef()
-  useEffect(() => {
-    ref.current = value
-  })
-  return ref.current
-}
 
 const BarBlock = ({ number, width, color }) => (
   <div className={styles.Bar} style={{ width: width, backgroundColor: color }}>
@@ -35,12 +27,12 @@ const Bar = ({ bars, label, delay, shouldAnimate, onFinish }) => {
       transform: 'translate(0%)'
     },
     delay: delay,
-    config: { mass: 1, tension: 170, friction: 26, precision: 0.001 }
+    config: { mass: 1, tension: 170, friction: 26, precision: 0.01 }
   })
 
   useEffect(() => {
     if (shouldAnimate) {
-      onFinish()
+      onFinish && onFinish()
     }
   }, [shouldAnimate, onFinish])
 
@@ -61,7 +53,7 @@ const Bar = ({ bars, label, delay, shouldAnimate, onFinish }) => {
   )
 }
 
-const Diagram = ({}) => {
+const Diagram = () => {
   const diagramRef = useRef()
   const onScreen = useOnScreen(diagramRef, '-7%')
   const [isDone, setIsDone] = useState(false)
@@ -90,7 +82,6 @@ const Diagram = ({}) => {
             label="Free Bar!"
             delay={250}
             shouldAnimate={onScreen}
-            onFinish={() => setIsDone(true)}
           />
         )}
       </div>
@@ -105,7 +96,6 @@ const Diagram = ({}) => {
             label="Other mobile Payment providers"
             delay={500}
             shouldAnimate={onScreen}
-            onFinish={() => setIsDone(true)}
           />
         )}
       </div>
@@ -122,7 +112,6 @@ const Diagram = ({}) => {
             label="Contactless"
             delay={750}
             shouldAnimate={onScreen}
-            onFinish={() => setIsDone(true)}
           />
         )}
       </div>
@@ -139,7 +128,6 @@ const Diagram = ({}) => {
             label="Cash"
             delay={1000}
             shouldAnimate={onScreen}
-            onFinish={() => setIsDone(true)}
           />
         )}
       </div>

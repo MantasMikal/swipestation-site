@@ -12,7 +12,6 @@ import Image from 'Primitive/Image'
 import styles from './Footer.module.scss'
 
 const Footer = ({ social, logo, siteTitle, awards, disableOverlay }) => {
-  console.log('Footer -> disableOverlay', disableOverlay)
   return (
     <Container
       gutter
