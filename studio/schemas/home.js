@@ -40,6 +40,11 @@ export default {
       type: "tillComparison",
     },
     {
+      name: "goCashless",
+      title: "Go Cashless",
+      type: "goCashless",
+    },
+    {
       name: "featuredCaseStudy",
       title: "Case Study",
       type: "reference",

@@ -1,0 +1,177 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Diagram {
+  width: 100%;
+  min-height: 230px;
+}
+
+.Wrapper {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.BarWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: spacing(2);
+  overflow: hidden;
+}
+
+.Bar {
+  display: inline-block;
+  height: 30px;
+  background-color: $color-primary-yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &:first-of-type {
+    border-radius: $radius-small 0 0 $radius-small;
+  }
+
+  &:last-of-type {
+    border-radius: 0 $radius-small $radius-small 0;
+  }
+
+  &:only-of-type {
+    border-radius: $radius-small;
+  }
+}
+
+.DiagramLabel {
+  font-size: 12px;
+  margin-left: spacing(1);
+}
+
+.BarWrapper {
+  width: 100%;
+}
+
+.Number {
+  font-size: 15px;
+  min-height: auto;
+}
+
+.Label {
+  font-size: 8px;
+  min-height: auto;
+  max-width: 115px;
+}
+
+@include mq($breakpoint-mobile-large) {
+  .Diagram {
+    min-height: 280px;
+  }
+
+  .Bar {
+    height: 40px;
+  }
+
+  .Number {
+    font-size: 18px;
+  }
+
+  .Label {
+    font-size: 10px;
+  }
+
+  .DiagramLabel {
+    font-size: 16px;
+  }
+}
+
+@include mq($breakpoint-tablet) {
+  .Diagram {
+    min-height: 305px;
+  }
+
+  .Bar {
+    height: 45px;
+  }
+
+  .Number {
+    font-size: 22px;
+  }
+
+  .Label {
+    font-size: 12px;
+  }
+
+  .DiagramLabel {
+    font-size: 16px;
+  }
+}
+
+@include mq($breakpoint-tabletLandscape) {
+  .Diagram {
+    min-height: 380px;
+  }
+
+  .Bar {
+    height: 60px;
+  }
+
+  .Number {
+    font-size: 32px;
+  }
+
+  .Label {
+    font-size: 14px;
+  }
+
+  .DiagramLabel {
+    font-size: 22px;
+    margin-left: spacing(2);
+  }
+}
+
+@include mq($breakpoint-desktop) {
+  .Diagram {
+    min-height: 405px;
+  }
+  .Bar {
+    height: 65px;
+  }
+
+  .Number {
+    font-size: 34px;
+  }
+
+  .Label {
+    font-size: 16px;
+  }
+
+  .DiagramLabel {
+    font-size: 24px;
+  }
+}
+
+@include mq($breakpoint-desktopMedium) {
+  .Diagram {
+    min-height: 520px;
+  }
+
+  .BarWrapper {
+    margin-bottom: spacing(3);
+  }
+
+  .Bar {
+    height: 80px;
+  }
+
+  .Number {
+    font-size: 42px;
+  }
+
+  .Label {
+    font-size: 20px;
+  }
+
+  .DiagramLabel {
+    font-size: 26px;
+  }
+}

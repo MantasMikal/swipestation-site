@@ -13,6 +13,7 @@ import TillComparison from 'Section/TillComparison'
 import Contact from 'Section/Contact'
 import FeaturedCaseStudy from 'Section/FeaturedCaseStudy'
 import Sponsors from 'Section/Sponsors'
+import GoCashless from 'Section/GoCashless'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -49,6 +50,10 @@ export const query = graphql`
         }
       }
       tillComparison {
+        title
+        _rawDescription
+      }
+      goCashless {
         title
         _rawDescription
       }
@@ -163,7 +168,8 @@ const IndexPage = (props) => {
     tillComparison,
     contactSection,
     sponsors,
-    featuredCaseStudy
+    featuredCaseStudy,
+    goCashless
   } = home
 
   return (
@@ -199,6 +205,12 @@ const IndexPage = (props) => {
         <TillComparison
           title={tillComparison.title}
           description={tillComparison._rawDescription}
+        />
+      )}
+      {goCashless && (
+        <GoCashless
+          title={goCashless.title}
+          description={goCashless._rawDescription}
         />
       )}
       {featuredCaseStudy && (

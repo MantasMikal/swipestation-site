@@ -35,6 +35,11 @@
   padding-top: spacing(4);
   padding-bottom: spacing(4);
 
+  @include mq($breakpoint-mobile-large) {
+    padding-top: spacing(6);
+    padding-bottom: spacing(6);
+  }
+
   @include mq($breakpoint-tablet) {
     padding-top: spacing(10);
     padding-bottom: spacing(10);
