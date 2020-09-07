@@ -7,7 +7,8 @@ import styles from './FeaturedCaseStudy.module.scss'
 import BlockText from 'Common/BlockText'
 import CaseStudyPreview from 'Common/CaseStudyPreview'
 
-const FeaturedCaseStudy = ({ title, description, body, excerpt, image }) => {
+const FeaturedCaseStudy = ({ _rawDescription, caseStudy }) => {
+  const { title, _rawExcerpt, image } = caseStudy
   return (
     <>
       <Container size="full" spacious className={styles.Wrapper}>
@@ -22,15 +23,14 @@ const FeaturedCaseStudy = ({ title, description, body, excerpt, image }) => {
             <Type size="displayLarge" as="h3" className={styles.Title}>
               {title}
             </Type>
-            {description && (
+            {_rawDescription && (
               <div className={styles.Description}>
-                <BlockText blocks={description} size="baseLarge" />
+                <BlockText blocks={_rawDescription} size="baseLarge" />
               </div>
             )}
-            <CaseStudyPreview image={image} excerpt={excerpt} />
+            <CaseStudyPreview image={image} excerpt={_rawExcerpt} />
           </Container>
         </Container>
-        {/* <Separator /> */}
       </Container>
     </>
   )

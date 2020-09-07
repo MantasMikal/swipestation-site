@@ -50,10 +50,9 @@ export default {
       type: "goCashless",
     },
     {
+      title: "Featured Case Study",
       name: "featuredCaseStudy",
-      title: "Case Study",
-      type: "reference",
-      to: [{ type: "caseStudy" }],
+      type: "featuredCaseStudy",
     },
     {
       name: "sponsors",

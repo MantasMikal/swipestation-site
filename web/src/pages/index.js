@@ -58,17 +58,19 @@ export const query = graphql`
         _rawDescription
       }
       featuredCaseStudy {
-        title
         _rawDescription
-        image {
-          alt
-          asset {
-            fluid(maxWidth: 1000) {
-              ...GatsbySanityImageFluid
+        caseStudy {
+          title
+          _rawExcerpt(resolveReferences: { maxDepth: 10 })
+          image {
+            alt
+            asset {
+              fluid(maxWidth: 1000) {
+                ...GatsbySanityImageFluid
+              }
             }
           }
         }
-        _rawExcerpt(resolveReferences: { maxDepth: 10 })
       }
       video {
         title
@@ -216,14 +218,7 @@ const IndexPage = (props) => {
           description={goCashless._rawDescription}
         />
       )}
-      {featuredCaseStudy && (
-        <FeaturedCaseStudy
-          title={featuredCaseStudy.title}
-          description={featuredCaseStudy._rawDescription}
-          excerpt={featuredCaseStudy._rawExcerpt}
-          image={featuredCaseStudy.image}
-        />
-      )}
+      {featuredCaseStudy && <FeaturedCaseStudy {...featuredCaseStudy} />}
       {postNodes.length > 0 && (
         <BlogPostCarouselSection
           postNodes={postNodes}

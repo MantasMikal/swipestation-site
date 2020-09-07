@@ -1,17 +1,13 @@
 import React from 'react'
 import CountUp from 'react-countup'
+import useMedia from 'hooks/useMedia'
 
 import Type from 'Primitive/Type'
 import Container from 'Primitive/Container'
 import ResponsiveMedia from 'Primitive/ResponsiveMedia'
-
-import heroVideo from '../../../assets/hero-video.mp4'
-import heroPoster from '../../../assets/hero-poster.jpg'
+import Image from 'Primitive/Image'
 
 import styles from './Hero.module.scss'
-import Image from 'Primitive/Image'
-import useMedia from 'hooks/useMedia'
-import Video from 'Primitive/Video'
 
 const Hero = ({ mobileHero, title, subtitle, minutesSaved }) => {
   const isTablet = useMedia('(max-width: 576px)')

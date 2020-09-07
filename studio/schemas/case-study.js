@@ -15,11 +15,6 @@ export default {
       type: "string",
     },
     {
-      name: "description",
-      title: "Description",
-      type: "blockText",
-    },
-    {
       name: "image",
       title: "Image",
       type: "figure",
