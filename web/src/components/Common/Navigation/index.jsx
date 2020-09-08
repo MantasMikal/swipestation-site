@@ -1,5 +1,4 @@
 import React from 'react'
-import { navigate } from '@reach/router'
 import { func, bool, string, object, node } from 'prop-types'
 import classnames from 'classnames'
 import debounce from 'libs/debounce'
@@ -29,21 +28,6 @@ class Navigation extends React.PureComponent {
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
-  }
-
-  scrollToPage = (sectionId) => {
-    const path = typeof window !== 'undefined' && window.location.pathname
-    if (path !== '/') {
-      navigate('/')
-      setTimeout(function () {
-        document && document.querySelector(sectionId).scrollIntoView()
-      }, 50)
-    } else {
-      document &&
-        document.querySelector(sectionId).scrollIntoView({
-          behavior: 'smooth'
-        })
-    }
   }
 
   // Hide or show the menu.
@@ -96,10 +80,7 @@ class Navigation extends React.PureComponent {
           </SmartLink>
         </div>
         <div className={styles.Links}>
-          <LinkWrapper
-            onClick={() => this.scrollToPage('#contact')}
-            className={styles.NavLink}
-          >
+          <LinkWrapper to="/#contact" className={styles.NavLink}>
             Contact
           </LinkWrapper>
           <LinkWrapper className={styles.NavLink} to="/about/">
