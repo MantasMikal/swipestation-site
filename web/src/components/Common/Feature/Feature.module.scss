@@ -8,6 +8,12 @@
 .ImageWrapper {
   width: 70%;
   margin: 0 auto spacing(3);
+
+  transition: $easing-standard 0.25s;
+  &:hover {
+    transition: $easing-standard 0.25s;
+    transform: scale(1.03);
+  }
 }
 
 @include mq($breakpoint-tablet) {
