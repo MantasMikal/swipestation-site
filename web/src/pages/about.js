@@ -36,7 +36,7 @@ const AboutPage = (props) => {
   }
 
   return (
-    <Layout shouldHaveSpaceForNav disableOverlay>
+    <Layout shouldHaveSpaceForNav disableFooterOverlay>
       <SEO title={page.title} slug="/about" />
       <BlockSection title={page.title} blockContent={page._rawBody || []} />
     </Layout>
