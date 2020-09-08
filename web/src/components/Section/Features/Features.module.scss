@@ -6,7 +6,7 @@
 }
 
 .FeatureWrapper {
-  margin-bottom: spacing(8);
+  margin: spacing(10) 0 spacing(15);
 
   &:last-of-type {
     margin-bottom: spacing(4);
@@ -27,7 +27,7 @@
 
 @include mq($breakpoint-tablet) {
   .FeatureWrapper {
-    margin-bottom: 0;
+    margin: spacing(15) 0;
   }
   .Description {
     max-width: 60%;
