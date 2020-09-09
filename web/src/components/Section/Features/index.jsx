@@ -1,5 +1,7 @@
 import React from 'react'
 import { string, array } from 'prop-types'
+import classNames from 'classnames'
+
 import Container from 'Primitive/Container'
 import BlockText from 'Common/BlockText'
 import Feature from 'Common/Feature'
@@ -22,7 +24,13 @@ const Features = ({ title, description, features }) => {
       )}
       {features &&
         features.map((feat, i) => (
-          <div className={styles.FeatureWrapper} key={feat.title}>
+          <div
+            className={classNames(
+              styles.FeatureWrapper,
+              i === features.length - 1 && styles.last
+            )}
+            key={feat.title}
+          >
             <Feature reverse={i % 2 !== 0} {...feat} />
           </div>
         ))}

@@ -8,8 +8,8 @@
 .FeatureWrapper {
   margin: spacing(10) 0 spacing(15);
 
-  &:last-of-type {
-    margin-bottom: spacing(4);
+  &.last {
+    margin-bottom: spacing(8);
   }
 }
 

@@ -37,7 +37,8 @@ export default TillCompare
 const Till = ({ title, className, pints, pintCount }) => {
   const ref = useRef()
   const [isDone, setIsDone] = useState(false)
-  const onScreen = useOnScreen(ref, '-7%')
+  const onScreen = useOnScreen(ref, '0%')
+
   return (
     <div ref={ref} className={classNames(styles.Till, className)}>
       <Type className={styles.TillTitle} as="h4" size="displayMedium">
@@ -46,8 +47,8 @@ const Till = ({ title, className, pints, pintCount }) => {
       <div className={styles.Server}>
         <div className={styles.Person}>
           <Icon
-            width={70}
-            height={70}
+            width={40}
+            height={40}
             className={styles.PersonIcon}
             type="person"
             a11yText="Server"
@@ -56,7 +57,9 @@ const Till = ({ title, className, pints, pintCount }) => {
             1 server
           </Type>
         </div>
-        <Type size="titleMedium">{pintCount} Pints</Type>
+        <Type className={styles.PintCount} size="displayTiny">
+          {pintCount} Pints
+        </Type>
       </div>
       <div className={styles.PintsWrapper}>
         {(onScreen || isDone) && (
@@ -93,11 +96,11 @@ const Pints = ({ pints, handleFinish, shouldAnimate }) => {
   useChain([transRef], [0])
 
   return transitions.map(({ item, props, key }) => (
-    <animated.div key={key} style={props}>
+    <animated.div className={styles.Pint} key={key} style={props}>
       <Icon
         type="glass"
-        width={17}
-        height={28}
+        width={8}
+        height={15}
         className={styles.GlassIcon}
         a11yText="Pint"
       />
