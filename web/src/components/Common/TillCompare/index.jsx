@@ -79,8 +79,8 @@ const Pints = ({ pintCount, title, handleFinish, shouldAnimate }) => {
       <div
         key={`Pint-${i}-${title}`}
         style={{
-          animationDelay: `${i * 19}ms`,
-          animationDuration: `${80 + i * 0.2}ms`
+          animationDelay: `${i * 19}ms`
+          // animationDuration: `${80 + i * 0.2}ms`
         }}
         className={styles.Pint}
       >
