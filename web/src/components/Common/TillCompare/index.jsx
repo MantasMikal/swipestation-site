@@ -47,8 +47,8 @@ const Till = ({ title, className, pints, pintCount }) => {
       <div className={styles.Server}>
         <div className={styles.Person}>
           <Icon
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             className={styles.PersonIcon}
             type="person"
             a11yText="Server"
@@ -81,7 +81,7 @@ const Pints = ({ pints, handleFinish, shouldAnimate }) => {
   const transitions = useTransition(pints, (item) => item.key, {
     ref: transRef,
     unique: true,
-    trail: 10,
+    trail: 15,
     from: { opacity: '0', transform: 'scale(0.6) translateY(20px)' },
     enter: { opacity: '1', transform: 'scale(1) translateY(0px)' },
     config: { ...config.stiff, precision: 0.1 }
