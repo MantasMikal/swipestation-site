@@ -23,7 +23,7 @@ const Accordion = ({ title, content }) => {
       className={classNames(styles.AccordionWrapper, isActive && styles.active)}
     >
       <button className={styles.Accordion} onClick={() => handleToggle()}>
-        <Type size="displayRegular" className={styles.Title}>
+        <Type size="base" heavy className={styles.Title}>
           {title}
         </Type>
         <Icon
