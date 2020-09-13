@@ -36,6 +36,9 @@ import caseStudy from "./case-study";
 import goCashless from "./goCashless";
 import featuredVideo from "./featuredVideo";
 import featuredCaseStudy from "./featuredCaseStudy";
+import faq from "./faq";
+import faqPage from "./faqPage";
+import qa from "./qa";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -76,6 +79,9 @@ export default createSchema({
     goCashless,
     featuredVideo,
     featuredCaseStudy,
+    faq,
+    faqPage,
+    qa,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

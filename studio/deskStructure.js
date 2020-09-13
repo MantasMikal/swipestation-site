@@ -1,6 +1,6 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { MdBusiness, MdSettings, MdHome, MdInfoOutline } from "react-icons/md";
-import { FaPhone, FaTrophy } from "react-icons/fa";
+import { FaPhone, FaTrophy, FaQuestion } from "react-icons/fa";
 import { FiFileText } from "react-icons/fi";
 import { RiPagesLine } from "react-icons/ri";
 
@@ -19,6 +19,7 @@ const hiddenTypes = [
   "sponsors",
   "sponsor",
   "caseStudy",
+  "faqPage",
 ];
 
 export default () =>
@@ -40,6 +41,15 @@ export default () =>
                     .documentId("homePage")
                 )
                 .icon(MdHome),
+              S.listItem()
+                .title("FAQ's")
+                .child(
+                  S.editor()
+                    .id("faqPage")
+                    .schemaType("faqPage")
+                    .documentId("faqPage")
+                )
+                .icon(FaQuestion),
               S.listItem()
                 .title("About")
                 .child(

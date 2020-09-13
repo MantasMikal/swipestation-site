@@ -1,0 +1,43 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.AccordionWrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.Accordion {
+  cursor: pointer;
+  padding: spacing(2) spacing(1);
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  transition: background-color 0.6s ease;
+  text-align: left;
+}
+
+.Title {
+  margin-right: spacing(1);
+}
+
+.Content {
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+}
+
+.ContentInner {
+  padding: 0 spacing(1) spacing(2);
+}
+
+.Icon {
+  margin-left: auto;
+  transition: transform 0.6s ease;
+  svg {
+    vertical-align: super;
+  }
+}
+
+.active {
+}

@@ -1,0 +1,50 @@
+@import 'settings';
+@import '_backline-mixins';
+
+// .Example {
+
+// }
+
+.FAQ {
+}
+
+.FAQWrapper {
+  border-top: 4px solid $color-primary-yellow;
+}
+
+.Title {
+  display: inline-block;
+  position: relative;
+  padding-bottom: spacing(2);
+  margin-bottom: spacing(1);
+  top: 10px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: -10px;
+    left: 0;
+    border-top: none;
+  }
+}
+
+@include mq($breakpoint-tablet) {
+  .FAQ {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .Questions {
+    flex: 0 1 60%;
+  }
+
+  .Title {
+    margin-right: spacing(6);
+    max-width: 250px;
+
+    &:before {
+      border-top: 6px $color-primary-yellow solid;
+    }
+  }
+}

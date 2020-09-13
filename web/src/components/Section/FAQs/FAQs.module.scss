@@ -1,0 +1,23 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Description {
+  margin-bottom: spacing(4);
+}
+
+.FAQWrapper {
+  padding-top: spacing(2);
+  padding-bottom: spacing(2);
+
+  @include mq($breakpoint-tablet) {
+    padding-top: spacing(10);
+    padding-bottom: spacing(10);
+  }
+}
+
+@include mq($breakpoint-tablet) {
+  .Description {
+    max-width: 60%;
+    margin-bottom: spacing(8);
+  }
+}

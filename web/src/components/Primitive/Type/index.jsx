@@ -12,6 +12,7 @@ export const sizes = [
   'displayLarge',
   'displayMedium',
   'displaySmall',
+  'displayRegular',
   'displayTiny',
   'menu',
   'title',

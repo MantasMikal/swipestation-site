@@ -45,7 +45,7 @@
   }
 
   @include mq($breakpoint-desktopLarge) {
-    font-size: spacing(10);
+    font-size: spacing(9);
   }
 }
 
@@ -61,6 +61,23 @@
 
   @include mq($breakpoint-desktop) {
     font-size: spacing(6);
+  }
+}
+
+.displayRegular {
+  font-weight: bold;
+  font-family: $font-heading;
+  font-size: spacing(2.5);
+  line-height: spacing(3);
+
+  @include mq($breakpoint-tablet) {
+    font-size: spacing(3.5);
+    line-height: spacing(4.5);
+  }
+
+  @include mq($breakpoint-desktop) {
+    font-size: spacing(5);
+    line-height: spacing(6);
   }
 }
 
