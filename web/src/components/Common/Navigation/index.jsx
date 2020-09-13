@@ -87,7 +87,6 @@ class Navigation extends React.PureComponent {
               image={logo}
               className={styles.Logo}
               alt={siteTitle}
-              fadeIn={false}
               loading="eager"
             />
           </SmartLink>

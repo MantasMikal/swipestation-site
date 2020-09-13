@@ -12,7 +12,7 @@ const query = graphql`
       logo {
         asset {
           fluid(maxWidth: 300) {
-            ...GatsbySanityImageFluid
+            ...GatsbySanityImageFluid_noBase64
           }
         }
       }
