@@ -5,21 +5,10 @@
 
 :global {
   body {
+    font-size: spacing(2.25); // 16
+    line-height: spacing(3); // 24
     font-weight: normal;
     font-family: $font-body;
-
-    font-size: spacing(2.25);
-    line-height: spacing(2.25);
-
-    @include mq($breakpoint-tablet) {
-      font-size: spacing(2.5);
-      line-height: spacing(2.25);
-    }
-
-    @include mq($breakpoint-desktop) {
-      font-size: spacing(3.2);
-      line-height: spacing(2.25);
-    }
   }
 
   // Scrollbar styles
