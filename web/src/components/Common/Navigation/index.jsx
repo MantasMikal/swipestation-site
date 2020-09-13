@@ -53,12 +53,19 @@ class Navigation extends React.PureComponent {
       visible,
       noBackground: currentScrollPos < 100
     })
-  }, 18)
+  }, 15)
 
   render() {
-    const { onHideNav, onShowNav, showNav, siteTitle, logo, id } = this.props
+    const {
+      onHideNav,
+      onShowNav,
+      showNav,
+      siteTitle,
+      hideBrandingBg,
+      logo,
+      id
+    } = this.props
     const { visible, noBackground } = this.state
-    const path = typeof window !== 'undefined' ? window.location.pathname : ''
     return (
       <Container
         as="nav"
@@ -69,14 +76,20 @@ class Navigation extends React.PureComponent {
           styles.Root,
           showNav && styles.showNav,
           !visible && styles.hidden,
-          noBackground && path === '/' && styles.noBackground
+          noBackground && hideBrandingBg && styles.noBackground
         )}
         id={id}
       >
         <h1 hidden>{siteTitle}</h1>
         <div className={styles.Branding}>
           <SmartLink to="/">
-            <Image image={logo} className={styles.Logo} alt={siteTitle} />
+            <Image
+              image={logo}
+              className={styles.Logo}
+              alt={siteTitle}
+              fadeIn={false}
+              loading="eager"
+            />
           </SmartLink>
         </div>
         <div className={styles.Links}>
@@ -144,7 +157,8 @@ Navigation.propTypes = {
   showNav: bool,
   siteTitle: string,
   logo: object,
-  id: string
+  id: string,
+  hideBrandingBg: bool
 }
 
 export default Navigation

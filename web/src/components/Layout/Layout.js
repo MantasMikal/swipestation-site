@@ -18,7 +18,8 @@ const Layout = ({
   logo,
   awards,
   shouldHaveSpaceForNav,
-  disableFooterOverlay
+  disableFooterOverlay,
+  hideBrandingBg
 }) => {
   return (
     <div
@@ -37,6 +38,7 @@ const Layout = ({
         onShowNav={onShowNav}
         showNav={showNav}
         logo={logo}
+        hideBrandingBg={hideBrandingBg}
         id="navigation"
       />
       <div className={styles.Content} id="content">

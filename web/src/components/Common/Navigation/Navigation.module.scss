@@ -146,6 +146,7 @@
     pointer-events: none;
     transition: $duration-short $easing-standard;
     will-change: opacity;
+    background-color: unset;
   }
 }
 

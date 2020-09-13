@@ -184,7 +184,7 @@ const IndexPage = (props) => {
   } = home
 
   return (
-    <Layout>
+    <Layout hideBrandingBg>
       <SEO
         title={site.title}
         description={site.description}
