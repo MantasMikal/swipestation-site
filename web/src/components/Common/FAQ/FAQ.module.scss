@@ -6,17 +6,27 @@
 // }
 
 .FAQ {
+  padding: spacing(1);
+  background-color: $color-primary-grey-lighter;
+  border-radius: $radius-small;
 }
 
 .FAQWrapper {
   border-top: 4px solid $color-primary-yellow;
 }
 
+.Questions {
+  background-color: $color-primary-white;
+  border-radius: $radius-small;
+  padding: spacing(1);
+  box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.16);
+}
+
 .Title {
   display: inline-block;
   position: relative;
-  padding-bottom: spacing(2);
-  top: 10px;
+  padding: 0 0 spacing(1) 0;
+  // top: 10px;
 
   &:before {
     content: '';
@@ -32,18 +42,46 @@
   .FAQ {
     display: flex;
     justify-content: space-between;
+    padding: spacing(4);
   }
 
   .Questions {
-    flex: 0 1 60%;
+    flex: 0 1 70%;
+    padding: spacing(4);
   }
-
   .Title {
-    margin-right: spacing(6);
+    margin-right: spacing(4);
+
     max-width: 250px;
 
     &:before {
       border-top: 6px $color-primary-yellow solid;
     }
+  }
+}
+
+@include mq($breakpoint-desktop) {
+  .Title {
+    margin-right: spacing(6);
+  }
+  .FAQ {
+    padding: spacing(6);
+  }
+
+  .Questions {
+    padding: spacing(6);
+  }
+}
+
+@include mq($breakpoint-desktopMedium) {
+  .Title {
+    margin-right: spacing(6);
+  }
+  .FAQ {
+    padding: spacing(8);
+  }
+
+  .Questions {
+    padding: spacing(6);
   }
 }
