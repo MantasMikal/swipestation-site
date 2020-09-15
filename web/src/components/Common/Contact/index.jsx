@@ -1,5 +1,5 @@
 import React from 'react'
-import { node } from 'prop-types'
+import { string } from 'prop-types'
 import classNames from 'classnames'
 import slugify from 'slugify'
 
@@ -13,7 +13,7 @@ import Icon from 'Primitive/Icon'
 import styles from './Contact.module.scss'
 import GatsbyImage from 'gatsby-image'
 
-const Contact = ({ contactInfo, storeLinks }) => (
+const Contact = ({ contactInfo, storeLinks, ctaLabel }) => (
   <div className={styles.Contact}>
     <div className={styles.Details}>
       <div className={styles.ContactDetails}>
@@ -65,6 +65,9 @@ const Contact = ({ contactInfo, storeLinks }) => (
           </SmartLink>
         </div>
       </div>
+      <Type className={styles.CTA} size="displaySmall">
+        {ctaLabel}
+      </Type>
       <div className={styles.StoreLinksWrapper}>
         <div className={styles.StoreLinks}>
           <SmartLink
@@ -141,7 +144,7 @@ const Contact = ({ contactInfo, storeLinks }) => (
 )
 
 Contact.propTypes = {
-  children: node.isRequired
+  ctaLabel: string
 }
 
 export default Contact

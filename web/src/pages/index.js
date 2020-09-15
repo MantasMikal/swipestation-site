@@ -102,6 +102,7 @@ export const query = graphql`
         email
         phone
         address
+        ctaLabel
       }
     }
 

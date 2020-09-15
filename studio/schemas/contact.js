@@ -17,6 +17,11 @@ export default {
       type: "blockText",
     },
     {
+      name: "ctaLabel",
+      title: "CTA Label",
+      type: "string",
+    },
+    {
       name: "phone",
       title: "Phone",
       type: "string",

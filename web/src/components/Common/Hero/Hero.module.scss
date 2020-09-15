@@ -7,16 +7,8 @@
   overflow: hidden;
 }
 
-.DesktopHero {
-  display: none;
-}
-
-.MobileHero {
-  display: block;
-}
-
 .Content {
-  position: absolute;
+  position: relative;
   bottom: 0;
   background-color: rgba($color-primary-yellow, 0.9);
   padding-top: spacing(2);
@@ -38,6 +30,7 @@
 }
 
 .Overlay {
+  display: none;
   position: absolute;
   opacity: 0.8;
 
@@ -100,10 +93,6 @@
     display: block;
   }
 
-  .MobileHero {
-    display: none;
-  }
-
   .Content {
     position: absolute;
     left: 0;
@@ -122,6 +111,10 @@
 
   .MinutesWrapper {
     font-size: 3vw;
+  }
+
+  .Overlay {
+    display: block;
   }
 
   .SavedText {

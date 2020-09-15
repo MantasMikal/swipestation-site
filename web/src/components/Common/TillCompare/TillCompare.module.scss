@@ -29,7 +29,6 @@
 .SwipeStationTill {
   background-color: $color-primary-yellow;
   color: $color-primary-white;
-  // min-height: 700px;
 
   .PersonIcon,
   .GlassIcon {
@@ -59,7 +58,6 @@
   flex-direction: column;
   align-items: center;
   margin-right: spacing(2);
-  // margin-bottom: spacing(1);
 }
 
 .PersonLabel {
@@ -83,7 +81,7 @@
 .PintsWrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  // justify-content: center;
 }
 
 .PersonIcon,

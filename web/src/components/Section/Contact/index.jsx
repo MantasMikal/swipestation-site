@@ -12,7 +12,14 @@ import styles from './Contact.module.scss'
 /**
  * If deployed on Netlify the form will be handled automagically! Just check the 'Forms' section under site settings
  */
-const Contact = ({ _rawDescription, title, phone, email, address }) => {
+const Contact = ({
+  _rawDescription,
+  title,
+  phone,
+  email,
+  address,
+  ctaLabel
+}) => {
   const data = useStaticQuery(graphql`
     query {
       appStore: file(relativePath: { eq: "app-store.png" }) {
@@ -74,6 +81,7 @@ const Contact = ({ _rawDescription, title, phone, email, address }) => {
       <ContactForm
         contactInfo={{ phone: phone, email: email, address: address }}
         storeLinks={storeLinks}
+        ctaLabel={ctaLabel}
       />
     </Container>
   )
@@ -84,7 +92,8 @@ Contact.propTypes = {
   title: string,
   phone: string,
   email: string,
-  address: string
+  address: string,
+  ctaLabel: string
 }
 
 export default Contact

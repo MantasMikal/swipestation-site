@@ -68,6 +68,10 @@
   color: $color-primary-white;
 }
 
+.CTA {
+  margin-bottom: spacing(2);
+}
+
 @include mq($breakpoint-tablet) {
   .Contact {
     justify-content: space-between;
