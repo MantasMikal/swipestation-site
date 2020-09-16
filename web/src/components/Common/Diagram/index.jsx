@@ -50,7 +50,7 @@ const Bar = ({ bars, label, delay, shouldAnimate }) => {
 
 const Diagram = () => {
   const diagramRef = useRef()
-  const onScreen = useOnScreen(diagramRef, '0%')
+  const onScreen = useOnScreen(diagramRef, '-7%')
 
   return (
     <div ref={diagramRef} className={styles.Diagram}>

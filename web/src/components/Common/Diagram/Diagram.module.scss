@@ -197,7 +197,7 @@
   animation-name: slideIn;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
+  animation-timing-function: $easing-standard;
 }
 
 .isDone {
