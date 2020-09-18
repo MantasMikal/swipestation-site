@@ -1,24 +1,17 @@
 import React from 'react'
 import CountUp from 'react-countup'
-// import useMedia from 'hooks/useMedia'
 
 import Type from 'Primitive/Type'
 import Container from 'Primitive/Container'
 import ResponsiveMedia from 'Primitive/ResponsiveMedia'
-// import Image from 'Primitive/Image'
 
 import styles from './Hero.module.scss'
 
-const Hero = ({ mobileHero, title, subtitle, minutesSaved }) => {
-  // const isTablet = useMedia('(max-width: 576px)')
+const Hero = ({ title, subtitle, minutesSaved }) => {
   return (
     <div className={styles.Hero}>
-      {/* <div className={styles.MobileHero}>
-        <Image image={mobileHero} alt="" />
-      </div> */}
       <ResponsiveMedia className={styles.DesktopHero} ratio={9 / 16}>
         <div className={styles.Overlay} />
-        {/* {!isTablet && ( */}
         <div className={styles.EmbedContainer}>
           <iframe
             className={styles.Video}
@@ -33,7 +26,6 @@ const Hero = ({ mobileHero, title, subtitle, minutesSaved }) => {
             title="Swipestation"
           />
         </div>
-        {/* )} */}
       </ResponsiveMedia>
       <Container size="wide" gutter center className={styles.Content}>
         <Type size="displayLarge" as="h2" className={styles.Title}>
