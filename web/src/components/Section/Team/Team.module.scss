@@ -1,0 +1,44 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Description {
+  margin-bottom: spacing(4);
+}
+
+@include mq($breakpoint-tablet) {
+  .Description {
+    max-width: 60%;
+  }
+}
+
+.TeamMembers {
+  display: grid;
+
+  grid-template-columns: repeat(1, 1fr);
+  gap: spacing(2);
+}
+
+.TeamMember {
+}
+
+@include mq($breakpoint-mobile-large) {
+  .TeamMembers {
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  }
+}
+
+@include mq($breakpoint-tabletLandscape - 200) {
+  .Description {
+    margin-bottom: spacing(6);
+  }
+
+  .TeamMembers {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  }
+}
+
+@include mq($breakpoint-desktopMedium) {
+  .TeamMembers {
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  }
+}

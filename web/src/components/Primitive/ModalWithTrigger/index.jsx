@@ -11,6 +11,7 @@ const ModalWithTrigger = ({ trigger, ...other }) => {
   const [open, toggleOpen] = useState(false)
 
   const handleToggleOpen = () => {
+    console.log('handleToggleOpen -> handleToggleOpen', handleToggleOpen)
     toggleOpen(!open)
   }
 

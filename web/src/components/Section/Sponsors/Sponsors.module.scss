@@ -49,6 +49,10 @@
 }
 
 @include mq($breakpoint-tablet) {
+  .Description {
+    margin-bottom: spacing(6);
+  }
+
   .SponsorsWrapper {
     grid-template-columns: repeat(6, 1fr);
     margin: spacing(8) 0 spacing(0);
@@ -59,7 +63,10 @@
 }
 
 @include mq($breakpoint-desktop) {
+  .Description {
+    margin-bottom: spacing(12);
+  }
   .SponsorsWrapper {
-    margin: spacing(16) 0 spacing(8);
+    margin: spacing(8) 0 spacing(8);
   }
 }

@@ -25,11 +25,6 @@ export default {
       type: "number",
     },
     {
-      name: "mobileHero",
-      title: "Hero image on mobile",
-      type: "image",
-    },
-    {
       name: "features",
       title: "Features",
       type: "features",

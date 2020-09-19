@@ -6,6 +6,7 @@ export default {
   type: "object",
   options: {
     hotspot: true,
+    liveEdit: true
   },
   fields: [
     {
@@ -33,21 +34,21 @@ export default {
     },
     {
       name: "rowTemplate",
-      title: "Row Template",
+      title: "Row Template (Optional)",
       description:
         "Same as column template, just for rows - leave empty for automatic rows",
       type: "string",
     },
     {
       name: "colGap",
-      title: "Column Gap",
+      title: "Column Gap (Optional)",
       description:
         'eg.: "10px". Defines size of gap in the grid. Available units: px, em, %, rem',
       type: "string",
     },
     {
       name: "rowGap",
-      title: "Row Gap",
+      title: "Row Gap (Optional)",
       description:
         'eg.: "10px". Defines size of gap in the grid. Available units: px, em, %, rem',
       type: "string",
@@ -67,14 +68,14 @@ export default {
     },
     {
       name: "maxWidth",
-      title: "Max Width",
+      title: "Max Width (Optional)",
       description:
         "Enforce max width on the grid. E.g. 250px. Available units: px, em, %, rem",
       type: "string",
     },
     {
       name: "margin",
-      title: "Margin",
+      title: "Margin (Optional)",
       description:
         "Used to create space around grid. More info: https://www.w3schools.com/css/css_margin.asp",
       type: "string",

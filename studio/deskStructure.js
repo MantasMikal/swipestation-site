@@ -21,6 +21,7 @@ const hiddenTypes = [
   "sponsor",
   "caseStudy",
   "faqPage",
+  "teamMember"
 ];
 
 export default () =>

@@ -27,13 +27,6 @@ export const query = graphql`
       title
       subtitle
       minutesSaved
-      mobileHero {
-        asset {
-          fluid(maxWidth: 600) {
-            ...GatsbySanityImageFluid
-          }
-        }
-      }
       features {
         title
         _rawDescription

@@ -6,6 +6,7 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Sponsors from 'Section/Sponsors'
+import Team from 'Section/Team'
 
 export const query = graphql`
   query AboutPageQuery {
@@ -13,6 +14,26 @@ export const query = graphql`
       id
       title
       _rawBody(resolveReferences: { maxDepth: 5 })
+      team {
+        title
+        _rawDescription
+        team {
+          name
+          position
+          _rawDescription
+          social {
+            type
+            url
+          }
+          image {
+            asset {
+              fluid(maxWidth: 350) {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+        }
+      }
       sponsors {
         title
         _rawDescription
@@ -54,11 +75,17 @@ const AboutPage = (props) => {
     )
   }
 
-  const { sponsors } = page
+  const { sponsors, team } = page
+  console.log('AboutPage -> team', team)
   return (
     <Layout shouldHaveSpaceForNav disableFooterOverlay>
       <SEO title={page.title} slug="/about" />
       <BlockSection title={page.title} blockContent={page._rawBody || []} />
+      <Team
+        team={team.team}
+        title={team.title}
+        description={team._rawDescription}
+      />
       {sponsors && (
         <Sponsors
           title={sponsors.title}
