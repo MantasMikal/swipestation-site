@@ -1,0 +1,42 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.SponsorCarousel {
+  position: relative;
+
+  ul,
+  li {
+    list-style: none;
+    &::before {
+      content: '';
+      display: none;
+    }
+  }
+
+  & > * {
+    outline: 0;
+    &:active,
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+.Slide {
+  // max-width: 500px;
+}
+
+.Back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+.Next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  right: 0;
+}

@@ -1,17 +1,36 @@
 import React from 'react'
-
 import { graphql } from 'gatsby'
+
 import BlockSection from 'Section/Block'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import Sponsors from 'Section/Sponsors'
 
 export const query = graphql`
   query AboutPageQuery {
-    page: sanityPage(_id: { regex: "/(drafts.|)about/" }) {
+    page: sanityAboutPage(_id: { regex: "/(drafts.|)about/" }) {
       id
       title
       _rawBody(resolveReferences: { maxDepth: 5 })
+      sponsors {
+        title
+        _rawDescription
+        sponsors {
+          name
+          url
+          isFeatured
+          image {
+            asset {
+              fluid(maxWidth: 350) {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+          quoteHeading
+          quoteBody
+        }
+      }
     }
   }
 `
@@ -35,10 +54,19 @@ const AboutPage = (props) => {
     )
   }
 
+  const { sponsors } = page
   return (
     <Layout shouldHaveSpaceForNav disableFooterOverlay>
       <SEO title={page.title} slug="/about" />
       <BlockSection title={page.title} blockContent={page._rawBody || []} />
+      {sponsors && (
+        <Sponsors
+          title={sponsors.title}
+          description={sponsors._rawDescription}
+          sponsors={sponsors.sponsors}
+          withTestimonials
+        />
+      )}
     </Layout>
   )
 }

@@ -4,11 +4,13 @@ import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
 import BlockText from 'Common/BlockText'
 
-import styles from './Sponsors.module.scss'
 import Image from 'Primitive/Image'
 import SmartLink from 'Primitive/SmartLink'
+import SponsorCarousel from 'Common/SponsorCarousel'
 
-const Sponsors = ({ title, description, sponsors }) => {
+import styles from './Sponsors.module.scss'
+
+const Sponsors = ({ title, description, sponsors, withTestimonials }) => {
   return (
     <Container gutter size="wide" center spacious className={styles.Sponsors}>
       <Type size="displayLarge" as="h3" className={styles.Title}>
@@ -17,6 +19,13 @@ const Sponsors = ({ title, description, sponsors }) => {
       {description && (
         <div className={styles.Description}>
           <BlockText blocks={description} size="baseLarge" />
+        </div>
+      )}
+      {withTestimonials && (
+        <div className={styles.SponsorCarousel}>
+          <SponsorCarousel
+            sponsors={sponsors.filter((sponsor) => sponsor.isFeatured)}
+          />
         </div>
       )}
       <div className={styles.SponsorsWrapper}>

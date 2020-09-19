@@ -57,7 +57,7 @@ export default {
     {
       name: "sponsors",
       title: "Sponsors",
-      type: "homepageSponsors",
+      type: "pageSponsors",
     },
     {
       name: "contactSection",

@@ -28,17 +28,18 @@ export default {
     },
     {
       name: "isFeatured",
+      description: "Will be used in the testimonials carousel",
       title: "Is Featured",
       type: "boolean",
     },
     {
-      name: "qouteHeading",
+      name: "quoteHeading",
       title: "Quote Heading",
       description: "Only sponsors with quotes appear in the slider",
       type: "string",
     },
     {
-      name: "qouteBody",
+      name: "quoteBody",
       title: "Quote Body",
       type: "text",
     },

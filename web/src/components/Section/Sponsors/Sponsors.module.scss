@@ -11,6 +11,10 @@
   }
 }
 
+.SponsorCarousel {
+  margin: spacing(4) 0 spacing(6);
+}
+
 .SponsorsWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -34,6 +38,9 @@
   }
 }
 
+@include mq($breakpoint-tablet) {
+}
+
 @include mq($breakpoint-mobileLandscape) {
   .SponsorsWrapper {
     grid-template-columns: repeat(4, 1fr);
@@ -45,6 +52,9 @@
   .SponsorsWrapper {
     grid-template-columns: repeat(6, 1fr);
     margin: spacing(8) 0 spacing(0);
+  }
+  .SponsorCarousel {
+    margin: spacing(4) 0 spacing(2);
   }
 }
 

@@ -6,6 +6,7 @@ import { RiPagesLine } from "react-icons/ri";
 
 const hiddenTypes = [
   "category",
+  "aboutPage",
   "companyInfo",
   "page",
   "person",
@@ -55,8 +56,8 @@ export default () =>
                 .child(
                   S.editor()
                     .id("aboutPage")
-                    .schemaType("page")
-                    .documentId("about")
+                    .schemaType("aboutPage")
+                    .documentId("aboutPage")
                 )
                 .icon(MdInfoOutline),
               S.listItem()
