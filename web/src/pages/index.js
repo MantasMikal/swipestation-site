@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../libs/helpers'
 
@@ -6,66 +6,14 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Hero from 'Common/Hero'
-// import BlogPostCarouselSection from 'Section/BlogPostCarousel'
-// import Features from 'Section/Features'
-// import TillComparison from 'Section/TillComparison'
-// import Contact from 'Section/Contact'
-// import FeaturedCaseStudy from 'Section/FeaturedCaseStudy'
-// import Sponsors from 'Section/Sponsors'
-// import GoCashless from 'Section/GoCashless'
-// import Video from 'Section/Video'
-
-const VideoC = lazy(() => import('Section/Video'))
-const BlogPostCarouselC = lazy(() => import('Section/BlogPostCarousel'))
-const TillComparisonC = lazy(() => import('Section/TillComparison'))
-const ContactC = lazy(() => import('Section/Contact'))
-const FeaturedCaseStudyC = lazy(() => import('Section/FeaturedCaseStudy'))
-const SponsorsC = lazy(() => import('Section/Sponsors'))
-const FeaturesC = lazy(() => import('Section/Features'))
-const GoCashlessC = lazy(() => import('Section/GoCashless'))
-
-const renderLoader = () => <p>Loading</p>
-
-const Video = (props) => (
-  <Suspense fallback={renderLoader()}>
-    <VideoC {...props} />
-  </Suspense>
-)
-const BlogPostCarousel = (props) => (
-  <Suspense fallback={renderLoader()}>
-    <BlogPostCarouselC {...props} />
-  </Suspense>
-)
-const TillComparison = (props) => (
-  <Suspense fallback={renderLoader()}>
-    <TillComparisonC {...props} />
-  </Suspense>
-)
-const Contact = (props) => (
-  <Suspense fallback={renderLoader()}>
-    <ContactC {...props} />
-  </Suspense>
-)
-const FeaturedCaseStudy = (props) => (
-  <Suspense fallback={renderLoader()}>
-    <FeaturedCaseStudyC {...props} />
-  </Suspense>
-)
-const Sponsors = (props) => (
-  <Suspense fallback={renderLoader()}>
-    <SponsorsC {...props} />
-  </Suspense>
-)
-const Features = (props) => (
-  <Suspense fallback={renderLoader()}>
-    <FeaturesC {...props} />
-  </Suspense>
-)
-const GoCashless = (props) => (
-  <Suspense fallback={renderLoader()}>
-    <GoCashlessC {...props} />
-  </Suspense>
-)
+import BlogPostCarouselSection from 'Section/BlogPostCarousel'
+import Features from 'Section/Features'
+import TillComparison from 'Section/TillComparison'
+import Contact from 'Section/Contact'
+import FeaturedCaseStudy from 'Section/FeaturedCaseStudy'
+import Sponsors from 'Section/Sponsors'
+import GoCashless from 'Section/GoCashless'
+import Video from 'Section/Video'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -273,7 +221,7 @@ const IndexPage = (props) => {
       )}
       {featuredCaseStudy && <FeaturedCaseStudy {...featuredCaseStudy} />}
       {postNodes.length > 0 && (
-        <BlogPostCarousel
+        <BlogPostCarouselSection
           postNodes={postNodes}
           browseMoreHref="/news/"
           title="Latest news"
