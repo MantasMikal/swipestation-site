@@ -6,7 +6,7 @@
 // }
 
 .FAQ {
-  padding: spacing(1);
+  padding: spacing(2);
   background-color: $color-primary-grey-lighter;
   border-radius: $radius-small;
 }
@@ -18,14 +18,14 @@
 .Questions {
   background-color: $color-primary-white;
   border-radius: $radius-small;
-  padding: spacing(1);
+  padding: spacing(2);
   box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.16);
 }
 
 .Title {
   display: inline-block;
   position: relative;
-  padding: 0 0 spacing(1) 0;
+  padding: 0 0 spacing(2) 0;
   // top: 10px;
 
   &:before {

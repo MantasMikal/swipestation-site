@@ -7,7 +7,6 @@ import Accordion from 'Primitive/Accordion'
 import BlockContent from '../../Editor'
 
 const FAQ = ({ category, faqs }) => {
-  console.log('{ category, faqs }', { category, faqs })
   return (
     <div className={styles.FAQ}>
       <Type size="displayMedium" className={styles.Title}>
