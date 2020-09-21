@@ -39,10 +39,6 @@ export default [
     {
       text: 'Terms and Conditions',
       url: '/terms-and-conditions'
-    },
-    {
-      text: 'Privacy Statement',
-      url: '/privacy-statement'
     }
   ]
 ]

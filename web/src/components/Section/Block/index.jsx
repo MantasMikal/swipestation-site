@@ -7,7 +7,7 @@ import Type from 'Primitive/Type'
 
 import styles from './Block.module.scss'
 
-const Block = ({ blockContent, title }) => {
+const Block = ({ blockContent, title, as }) => {
   return (
     <Container
       className={styles.Block}
@@ -18,7 +18,7 @@ const Block = ({ blockContent, title }) => {
       as="section"
     >
       {title && (
-        <Type as="h3" size="displayLarge" className={styles.Title}>
+        <Type as={as || 'h3'} size="displayLarge" className={styles.Title}>
           {title}
         </Type>
       )}
