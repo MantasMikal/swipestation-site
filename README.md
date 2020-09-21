@@ -1,7 +1,9 @@
 ## Links
 
 Site: https://swipestation.netlify.app
+
 Live preview: https://swipestation.herokuapp.com/
+
 Studio: https://swipestation.sanity.studio
 
 ## Setup
