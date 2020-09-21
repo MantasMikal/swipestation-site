@@ -17,7 +17,7 @@ export const Card = ({ name, position, image, social, onClick }) => (
     </div>
 
     <div className={styles.Details}>
-      <Type className={styles.Name} size="baseLarge" bold>
+      <Type className={styles.Name} size="subtitle" bold>
         {name}
       </Type>
       <Type className={styles.Position} size="base">
@@ -45,7 +45,7 @@ export const Page = (props) => {
       <div className={styles.PageImage}>
         <Image image={image} alt={name} ratio={1} />
       </div>
-      <Type className={styles.Name} size="baseLarge" bold>
+      <Type className={styles.Name} size="subtitle" bold>
         {name}
       </Type>
       <Type className={styles.Position} size="base">

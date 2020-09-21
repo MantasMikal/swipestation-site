@@ -9,6 +9,7 @@
   "scripts": {
     "clean": "lerna clean",
     "deploy": "lerna run deploy",
+    "start-web": "cd web && gatsby develop",
     "empty-cache": "lerna run empty-cache",
     "init": "cd studio && sanity init && lerna run graphql-deploy && cd ..",
     "storybook": "lerna run storybook --stream",

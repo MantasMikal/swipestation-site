@@ -2,5 +2,11 @@
 @import '_backline-mixins';
 
 .Title {
-  margin-bottom: spacing(3);
+  margin-bottom: spacing(1);
+}
+
+@include mq($breakpoint-tablet) {
+  .Title {
+    margin-bottom: spacing(2);
+  }
 }

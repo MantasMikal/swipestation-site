@@ -8,7 +8,6 @@
   border-radius: $radius-small;
   display: flex;
   align-items: center;
-
   transition: $easing-standard 0.2s;
   cursor: pointer;
 
@@ -74,6 +73,7 @@
 @include mq($breakpoint-tabletLandscape) {
   .TeamMember {
     padding: spacing(3);
+    min-height: 220px;
   }
 
   .Page {

@@ -1,11 +1,19 @@
 @import 'settings';
 @import '_backline-mixins';
 
+.Title {
+  margin-bottom: spacing(1);
+}
+
 .Description {
   margin-bottom: spacing(4);
 }
 
 @include mq($breakpoint-tablet) {
+  .Title {
+    margin-bottom: spacing(2);
+  }
+
   .Description {
     max-width: 60%;
   }
