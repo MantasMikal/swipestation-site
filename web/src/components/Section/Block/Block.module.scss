@@ -1,6 +1,10 @@
 @import 'settings';
 @import '_backline-mixins';
 
+.Block {
+  padding-bottom: 0;
+}
+
 .Title {
   margin-bottom: spacing(1);
 }
