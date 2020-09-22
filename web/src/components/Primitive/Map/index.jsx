@@ -15,14 +15,7 @@ const Map = ({ locations, mapId, center, style }) => {
         mapContainerStyle={style}
         options={{ styles: lightStyles }}
         zoom={8}
-        center={
-          center
-            ? center
-            : {
-                lat: 51.36537,
-                lng: -0.16077
-              }
-        }
+        center={center ? center : locations[0]}
       >
         {locations &&
           locations.map((loc) => (
@@ -34,12 +27,12 @@ const Map = ({ locations, mapId, center, style }) => {
 }
 
 Map.propTypes = {
-  locations: arrayOf([
+  locations: arrayOf(
     shape({
       lng: number,
       lat: number
     })
-  ]),
+  ),
   mapId: string,
   center: shape({
     lng: number,

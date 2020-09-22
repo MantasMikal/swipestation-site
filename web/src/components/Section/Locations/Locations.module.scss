@@ -1,0 +1,36 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Description {
+  margin-bottom: spacing(4);
+}
+
+@include mq($breakpoint-tablet) {
+  .Description {
+    max-width: 60%;
+  }
+}
+
+.Map {
+  height: 500px;
+  margin-bottom: spacing(1);
+  border-radius: $radius-small;
+}
+
+.MapWrapper {
+  margin-bottom: spacing(2);
+}
+
+@include mq($breakpoint-tablet) {
+  .Wrapper {
+    display: grid;
+    gap: spacing(2);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  // .MapWrapper {
+  //   &:first-child {
+  //     margin-right: spacing(2);
+  //   }
+  // }
+}

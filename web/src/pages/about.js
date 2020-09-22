@@ -7,6 +7,7 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Sponsors from 'Section/Sponsors'
 import Team from 'Section/Team'
+import Locations from 'Section/Locations'
 
 export const query = graphql`
   query AboutPageQuery {
@@ -31,6 +32,18 @@ export const query = graphql`
                 ...GatsbySanityImageFluid
               }
             }
+          }
+        }
+      }
+      locations {
+        title
+        _rawDescription
+        locations {
+          address
+          city
+          location {
+            lat
+            lng
           }
         }
       }
@@ -75,12 +88,17 @@ const AboutPage = (props) => {
     )
   }
 
-  const { sponsors, team } = page
-  console.log('AboutPage -> team', team)
+  const { sponsors, team, locations } = page
+
   return (
     <Layout shouldHaveSpaceForNav disableFooterOverlay>
       <SEO title={page.title} slug="/about" />
       <BlockSection title={page.title} blockContent={page._rawBody || []} />
+      <Locations
+        title={locations.title}
+        description={locations._rawDescription}
+        locations={locations.locations && locations.locations}
+      />
       <Team
         team={team.team}
         title={team.title}

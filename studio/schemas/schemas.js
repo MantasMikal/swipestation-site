@@ -43,6 +43,8 @@ import about from "./about";
 import teamMember from "./teamMember";
 import social from "./social";
 import pageTeamMember from "./pageTeamMember";
+import address from "./address";
+import pageAddress from "./pageAddress";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -90,6 +92,8 @@ export default createSchema({
     teamMember,
     social,
     pageTeamMember,
+    address,
+    pageAddress,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

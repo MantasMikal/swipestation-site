@@ -1,7 +1,8 @@
 export default {
-  name: "aboutPage",
-  title: "About",
-  type: "document",
+  name: "pageAddress",
+  title: "Locations",
+  type: "object",
+  liveEdit: false,
   // You probably want to uncomment the next line once you've made the pages documents in the Studio. This will remove the pages document type from the create-menus.
   // __experimental_actions: ['update', 'publish', /* 'create', 'delete' */],
   fields: [
@@ -11,24 +12,15 @@ export default {
       type: "string",
     },
     {
-      name: "body",
-      title: "Body",
-      type: "blockContent",
+      name: "description",
+      title: "Description",
+      type: "blockText",
     },
     {
       name: "locations",
       title: "Locations",
-      type: "pageAddress",
-    },
-    {
-      name: "team",
-      title: "Team",
-      type: "pageTeamMember",
-    },
-    {
-      name: "sponsors",
-      title: "Sponsors",
-      type: "pageSponsors",
+      type: "array",
+      of: [{ type: "address" }],
     },
   ],
 };
