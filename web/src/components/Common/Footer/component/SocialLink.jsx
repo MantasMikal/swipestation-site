@@ -6,7 +6,7 @@ import Icon from 'Primitive/Icon'
 import Type from 'Primitive/Type'
 
 const SocialLink = ({ url, type, text }) => (
-  <SmartLink href={url} key={`${type}-icon`}>
+  <SmartLink href={url} key={`${type}-icon`} target="__blank" rel="noreferer">
     <Icon type={type} width={30} height={30} a11yText={type} />
     {text && (
       <Type as="span" size="base">
