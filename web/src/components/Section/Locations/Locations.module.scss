@@ -24,13 +24,7 @@
 @include mq($breakpoint-tablet) {
   .Wrapper {
     display: grid;
-    gap: spacing(2);
+    gap: spacing(3);
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
-
-  // .MapWrapper {
-  //   &:first-child {
-  //     margin-right: spacing(2);
-  //   }
-  // }
 }

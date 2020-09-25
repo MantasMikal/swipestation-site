@@ -94,11 +94,11 @@ const AboutPage = (props) => {
     <Layout shouldHaveSpaceForNav disableFooterOverlay>
       <SEO title={page.title} slug="/about" />
       <BlockSection title={page.title} blockContent={page._rawBody || []} />
-      <Locations
+      {/* <Locations
         title={locations.title}
         description={locations._rawDescription}
         locations={locations.locations && locations.locations}
-      />
+      /> */}
       <Team
         team={team.team}
         title={team.title}

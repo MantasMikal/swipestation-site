@@ -8,11 +8,6 @@
 .FAQWrapper {
   padding-top: spacing(2);
   padding-bottom: spacing(2);
-
-  @include mq($breakpoint-tablet) {
-    padding-top: spacing(10);
-    padding-bottom: spacing(10);
-  }
 }
 
 @include mq($breakpoint-tablet) {

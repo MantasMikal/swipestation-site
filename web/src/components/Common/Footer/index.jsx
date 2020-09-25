@@ -56,7 +56,7 @@ const Footer = ({ social, logo, siteTitle, awards, disableOverlay }) => {
           </div>
         </Container>
       </footer>
-      <Container gutter className={styles.TrustPilotWrapper} size="wide">
+      <Container gutter center className={styles.TrustPilotWrapper} size="wide">
         <SmartLink
           className={styles.TrustPilot}
           href={awards.trustpilotReview.url}
