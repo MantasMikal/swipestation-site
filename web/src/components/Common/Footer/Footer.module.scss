@@ -154,6 +154,10 @@
 }
 
 @include mq($breakpoint-tablet) {
+  .Container {
+    flex-direction: row;
+  }
+
   .Footer {
     padding-top: spacing(12);
   }
