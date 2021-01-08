@@ -207,7 +207,7 @@ const Contact = ({
           required
         />
       </FieldTemplate>
-      <div className={styles.ButtonWrapper}>
+      <div className={styles.SubmitButton}>
         <ButtonStandard className={styles.SubmitButton} type="submit">
           <Type className={styles.ButtonText} size="displayTiny">
             Contact
