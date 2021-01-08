@@ -28,22 +28,24 @@ const Sponsors = ({ title, description, sponsors, withTestimonials }) => {
           />
         </div>
       )}
-      <div className={styles.SponsorsWrapper}>
-        {sponsors &&
-          sponsors.map((sponsor, i) => (
-            <SmartLink
-              className={styles.Sponsor}
-              href={sponsor.url}
-              target="__blank"
-            >
-              <Image
-                key={sponsor.name + i}
-                image={sponsor.image}
-                alt={sponsor.name}
-              />
-            </SmartLink>
-          ))}
-      </div>
+      {!withTestimonials && (
+        <div className={styles.SponsorsWrapper}>
+          {sponsors &&
+            sponsors.map((sponsor, i) => (
+              <SmartLink
+                className={styles.Sponsor}
+                href={sponsor.url}
+                target="__blank"
+              >
+                <Image
+                  key={sponsor.name + i}
+                  image={sponsor.image}
+                  alt={sponsor.name}
+                />
+              </SmartLink>
+            ))}
+        </div>
+      )}
     </Container>
   )
 }
