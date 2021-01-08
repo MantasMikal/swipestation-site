@@ -64,7 +64,7 @@ const Diagram = () => {
         {(isDone || onScreen) && (
           <Bar
             bars={[{ number: 15, width: '25%', color: '#ffba00' }]}
-            label="Swipestation"
+            label="Swipestation Click'n Collect"
             delay={0}
             shouldAnimate={onScreen}
             onFinish={() => setIsDone(true)}
