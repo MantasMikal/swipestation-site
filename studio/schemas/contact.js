@@ -36,6 +36,16 @@ export default {
       title: "Email",
       type: "string",
     },
+    {
+      name: "salesDeck",
+      title: "Latest sales deck",
+      type: "file",
+    },
+    {
+      name: "calendlyUrl",
+      title: "Calendly URL",
+      type: "string",
+    },
   ],
   preview: {
     prepare() {

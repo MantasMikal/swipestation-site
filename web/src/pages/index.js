@@ -96,6 +96,12 @@ export const query = graphql`
         phone
         address
         ctaLabel
+        calendlyUrl
+        salesDeck {
+          asset {
+            url
+          }
+        }
       }
     }
 

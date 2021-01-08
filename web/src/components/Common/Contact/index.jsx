@@ -12,10 +12,83 @@ import Icon from 'Primitive/Icon'
 
 import styles from './Contact.module.scss'
 import GatsbyImage from 'gatsby-image'
+import { openPopupWidget } from 'react-calendly'
 
-const Contact = ({ contactInfo, storeLinks, ctaLabel }) => (
+const Contact = ({
+  contactInfo,
+  storeLinks,
+  ctaLabel,
+  calendlyUrl,
+  salesDeck
+}) => (
   <div className={styles.Contact}>
+    <div className={styles.ButtonWrapperMobile}>
+      <ButtonStandard
+        tight
+        onClick={() => openPopupWidget({ url: calendlyUrl })}
+      >
+        <Type className={styles.ButtonText} size="displayTiny">
+          <Icon
+            type="calendar"
+            width={24}
+            height={24}
+            className={styles.Icon}
+          />
+          Book a demo
+        </Type>
+      </ButtonStandard>
+      <SmartLink
+        href={salesDeck && salesDeck.asset && salesDeck.asset.url}
+        target="__blank"
+      >
+        <ButtonStandard tight>
+          <Type className={styles.ButtonText} size="displayTiny">
+            {' '}
+            <Icon
+              type="download"
+              width={24}
+              height={24}
+              className={styles.Icon}
+            />
+            Download our latest deck
+          </Type>
+        </ButtonStandard>
+      </SmartLink>
+    </div>
     <div className={styles.Details}>
+      <div className={styles.ButtonWrapper}>
+        <ButtonStandard
+          tight
+          onClick={() => openPopupWidget({ url: calendlyUrl })}
+        >
+          <Type className={styles.ButtonText} size="displayTiny">
+            <Icon
+              type="calendar"
+              width={24}
+              height={24}
+              className={styles.Icon}
+            />
+            Book a demo
+          </Type>
+        </ButtonStandard>
+        <SmartLink
+          href={salesDeck && salesDeck.asset && salesDeck.asset.url}
+          target="__blank"
+        >
+          <ButtonStandard tight>
+            <Type className={styles.ButtonText} size="displayTiny">
+              {' '}
+              <Icon
+                type="download"
+                width={24}
+                height={24}
+                className={styles.Icon}
+              />
+              Download our latest deck
+            </Type>
+          </ButtonStandard>
+        </SmartLink>
+      </div>
       <div className={styles.ContactDetails}>
         <div className={styles.ContactDetail}>
           <Icon
@@ -136,7 +209,9 @@ const Contact = ({ contactInfo, storeLinks, ctaLabel }) => (
       </FieldTemplate>
       <div className={styles.ButtonWrapper}>
         <ButtonStandard className={styles.SubmitButton} type="submit">
-          <Type size="displayTiny">Contact</Type>
+          <Type className={styles.ButtonText} size="displayTiny">
+            Contact
+          </Type>
         </ButtonStandard>
       </div>
     </form>

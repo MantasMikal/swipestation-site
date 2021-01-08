@@ -144,10 +144,6 @@
 }
 
 @include mq($breakpoint-mobileLandscape) {
-  .Container {
-    flex-direction: row;
-  }
-
   .TrustPilotWrapper {
     margin-bottom: spacing(6);
   }
@@ -207,7 +203,7 @@
     width: 100%;
     height: 120%;
     left: 0;
-    top: -100%;
+    top: -85%;
     background-color: $color-primary-grey-lighter;
     z-index: -1;
   }
@@ -223,7 +219,7 @@
 
 @include mq($breakpoint-tabletLandscape) {
   .ContactOverlay {
-    top: -105%;
+    top: -90%;
   }
 }
 
@@ -235,7 +231,7 @@
 
 @include mq($breakpoint-desktopMedium) {
   .ContactOverlay {
-    top: -110%;
+    top: -95%;
     height: 130%;
   }
 }

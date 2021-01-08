@@ -1,6 +1,7 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { MdBusiness, MdSettings, MdHome, MdInfoOutline } from "react-icons/md";
-import { FaPhone, FaTrophy, FaQuestion } from "react-icons/fa";
+import { FaTrophy, FaQuestion } from "react-icons/fa";
+import { RiVirusLine } from "react-icons/ri";
 import { FiFileText } from "react-icons/fi";
 import { RiPagesLine } from "react-icons/ri";
 
@@ -21,7 +22,7 @@ const hiddenTypes = [
   "sponsor",
   "caseStudy",
   "faqPage",
-  "teamMember"
+  "teamMember",
 ];
 
 export default () =>
@@ -62,20 +63,21 @@ export default () =>
                 )
                 .icon(MdInfoOutline),
               S.listItem()
+                .title("Covid")
+                .child(
+                  S.editor()
+                    .id("covidPage")
+                    .schemaType("page")
+                    .documentId("covid")
+                )
+                .icon(RiVirusLine),
+              S.listItem()
                 .title("Terms And Conditions")
                 .child(
                   S.editor()
                     .id("termsAndConditionsPage")
                     .schemaType("page")
                     .documentId("termsAndConditions")
-                ),
-              S.listItem()
-                .title("Privacy Statement")
-                .child(
-                  S.editor()
-                    .id("privacyStatement")
-                    .schemaType("page")
-                    .documentId("privacyStatement")
                 ),
             ])
         )
