@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from 'react'
 import { node } from 'prop-types'
 import { useSpring, animated } from 'react-spring'
 import useOnScreen from 'libs/use-on-screen'
-import { easeCubicOut } from 'd3-ease'
 
 import Type from 'Primitive/Type'
 
@@ -19,7 +18,7 @@ const BarBlock = ({ number, width, color }) => (
   </div>
 )
 
-const Bar = ({ bars, label, delay, shouldAnimate, onFinish, duration }) => {
+const Bar = ({ bars, label, delay, shouldAnimate, onFinish }) => {
   const bar = useSpring({
     from: {
       transform: 'translate(-100%)'
@@ -27,11 +26,8 @@ const Bar = ({ bars, label, delay, shouldAnimate, onFinish, duration }) => {
     to: {
       transform: 'translate(0%)'
     },
-    delay: 0,
-    config: {
-      duration: duration,
-      easing: easeCubicOut
-    }
+    delay: delay,
+    config: { mass: 1, tension: 280, friction: 80, precision: 0.001 }
   })
 
   useEffect(() => {
@@ -70,7 +66,6 @@ const Diagram = () => {
             bars={[{ number: 15, width: '25%', color: '#ffba00' }]}
             label="Swipestation Click'n Collect"
             delay={0}
-            duration={1000}
             shouldAnimate={onScreen}
             onFinish={() => setIsDone(true)}
           />
@@ -85,8 +80,7 @@ const Diagram = () => {
               { number: 10, width: '12%', color: '#A4EDFF' }
             ]}
             label="Free Bar!"
-            delay={100}
-            duration={1500}
+            delay={250}
             shouldAnimate={onScreen}
           />
         )}
@@ -101,7 +95,6 @@ const Diagram = () => {
             ]}
             label="Other mobile Payment providers"
             delay={500}
-            duration={2000}
             shouldAnimate={onScreen}
           />
         )}
@@ -117,8 +110,7 @@ const Diagram = () => {
               { number: 10, width: '12%', color: '#A4EDFF' }
             ]}
             label="Contactless"
-            delay={200}
-            duration={2200}
+            delay={750}
             shouldAnimate={onScreen}
           />
         )}
@@ -134,8 +126,7 @@ const Diagram = () => {
               { number: 10, width: '12%', color: '#A4EDFF' }
             ]}
             label="Cash"
-            delay={300}
-            duration={2500}
+            delay={1000}
             shouldAnimate={onScreen}
           />
         )}
