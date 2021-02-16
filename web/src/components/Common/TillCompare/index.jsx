@@ -37,7 +37,7 @@ export default TillCompare
 const Till = ({ title, className, pints, pintCount }) => {
   const ref = useRef()
   const [isDone, setIsDone] = useState(false)
-  const onScreen = useOnScreen(ref, '10%')
+  const onScreen = useOnScreen(ref, '0%')
 
   return (
     <div ref={ref} className={classNames(styles.Till, className)}>
@@ -81,7 +81,7 @@ const Pints = ({ pints, handleFinish, shouldAnimate }) => {
   const transitions = useTransition(pints, (item) => item.key, {
     ref: transRef,
     unique: true,
-    trail: 15,
+    trail: 8,
     from: { opacity: '0', transform: 'scale(0.6) translateY(20px)' },
     enter: { opacity: '1', transform: 'scale(1) translateY(0px)' },
     config: { ...config.stiff, precision: 0.1 }
