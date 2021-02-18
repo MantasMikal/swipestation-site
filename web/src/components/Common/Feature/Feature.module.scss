@@ -21,7 +21,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 0 spacing(15);
   }
 
   .ImageWrapper {
@@ -45,13 +44,6 @@
 }
 
 @include mq($breakpoint-tabletLandscape) {
-  .Feature {
-    margin: 0 0 spacing(20);
-    &:last-of-type {
-      margin: 0 0 spacing(15);
-    }
-  }
-
   .ImageWrapper {
     margin: 0 spacing(15) 0 0;
   }
