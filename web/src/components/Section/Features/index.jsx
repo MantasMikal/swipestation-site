@@ -3,7 +3,7 @@ import { string, array } from 'prop-types'
 import classNames from 'classnames'
 
 import Container from 'Primitive/Container'
-import BlockText from 'Common/BlockText'
+import BlockContent from '../../Editor'
 import Feature from 'Common/Feature'
 import Type from 'Primitive/Type'
 import ButtonStandard from 'Primitive/ButtonStandard'
@@ -19,7 +19,7 @@ const Features = ({ title, description, features }) => {
       </Type>
       {description && (
         <div className={styles.Description}>
-          <BlockText size="baseLarge" blocks={description} />
+          <BlockContent baseFontSize="baseLarge" blocks={description} />
         </div>
       )}
       {features &&

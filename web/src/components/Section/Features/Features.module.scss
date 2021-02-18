@@ -6,7 +6,7 @@
 }
 
 .FeatureWrapper {
-  margin: spacing(10) 0 spacing(15);
+  margin: spacing(5) 0 spacing(10);
 
   &.last {
     margin-bottom: spacing(8);
@@ -27,7 +27,7 @@
 
 @include mq($breakpoint-tablet) {
   .FeatureWrapper {
-    margin: spacing(15) 0;
+    margin: spacing(10) 0;
   }
 
   .LearnMoreWrapper {

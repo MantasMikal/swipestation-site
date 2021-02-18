@@ -44,6 +44,8 @@ export default {
       name: "floating",
       title: "Float",
       type: "string",
+      description:
+        "Floats the image. You might want to set a max width for this.",
       options: {
         list: [
           {

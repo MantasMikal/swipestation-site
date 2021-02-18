@@ -10,7 +10,7 @@ import createGrid from './components/createGrid'
 import createFigure from './components/createFigure'
 import createSlideshow from './components/createSlideshow'
 
-const serializers = {
+const serializers = (baseFontSize) => ({
   marks: {
     button: ({ mark, children }) => {
       return (
@@ -37,7 +37,6 @@ const serializers = {
   },
   types: {
     block(props) {
-      console.log('props.node.style', props.node.style)
       switch (props.node.style) {
         case 'title':
           return (
@@ -86,7 +85,7 @@ const serializers = {
         default:
           if (props.children.length > 1 || props.children[0] !== '') {
             return (
-              <Type as="p" size="base">
+              <Type as="p" size={baseFontSize || 'base'}>
                 {props.children}
               </Type>
             )
@@ -103,13 +102,13 @@ const serializers = {
       return createGrid(props.node)
     }
   }
-}
+})
 
-const BlockContent = ({ blocks, className }) => (
+const BlockContent = ({ blocks, className, baseFontSize }) => (
   <BaseBlockContent
     className={className}
     blocks={blocks}
-    serializers={serializers}
+    serializers={serializers(baseFontSize)}
   />
 )
 
