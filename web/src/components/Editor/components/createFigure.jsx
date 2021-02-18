@@ -24,22 +24,14 @@ const floatStyleMap = {
 const createFigure = (figure) => {
   if (!figure || !figure.asset || !figure.asset.mimeType) return null
   const { isZoomable, asset, alt, maxWidth, floating } = figure
-  console.log(
-    '🚀 ~ file: createFigure.jsx ~ line 17 ~ createFigure ~ float',
-    floating
-  )
   const floatStyle = floatStyleMap[floating]
-  console.log(
-    '🚀 ~ file: createFigure.jsx ~ line 18 ~ createFigure ~ floatStyle',
-    floatStyle
-  )
 
   if (asset.mimeType === 'image/gif') {
     return (
       <img
         src={asset.url}
         alt={alt || ' '}
-        style={{ width: '100%' }}
+        style={{ width: '100%', ...floatStyle }}
         key={figure.asset.id}
       />
     )

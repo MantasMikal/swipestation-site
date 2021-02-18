@@ -37,7 +37,8 @@ export default TillCompare
 const Till = ({ title, className, pints, pintCount }) => {
   const ref = useRef()
   const [isDone, setIsDone] = useState(false)
-  const onScreen = useOnScreen(ref, '-200px')
+  const onScreen = useOnScreen(ref, '250px')
+  console.log('🚀 ~ file: index.jsx ~ line 41 ~ Till ~ onScreen', onScreen)
 
   return (
     <div ref={ref} className={classNames(styles.Till, className)}>
