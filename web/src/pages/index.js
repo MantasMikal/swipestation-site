@@ -36,6 +36,8 @@ export const query = graphql`
           smallTitle
           image {
             asset {
+              mimeType
+              url
               fluid(maxWidth: 700) {
                 ...GatsbySanityImageFluid
               }
