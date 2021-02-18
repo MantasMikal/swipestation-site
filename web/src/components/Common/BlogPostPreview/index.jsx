@@ -17,7 +17,6 @@ const BlogPostPreview = ({
   title,
   publishedAt,
   _rawExcerpt,
-  ratio,
   surround,
   className,
   category
