@@ -20,6 +20,7 @@ const SponsorCarousel = ({ sponsors }) => {
         naturalSlideHeight={300}
         totalSlides={sponsors.length}
         isIntrinsicHeight
+        infinite
       >
         <Slider className={styles.Slider}>
           {sponsors.map(

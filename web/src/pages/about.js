@@ -35,6 +35,24 @@ export const query = graphql`
           }
         }
       }
+      sponsors {
+        title
+        _rawDescription
+        sponsors {
+          name
+          url
+          isFeatured
+          image {
+            asset {
+              fluid(maxWidth: 350) {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+          quoteHeading
+          quoteBody
+        }
+      }
     }
   }
 `
