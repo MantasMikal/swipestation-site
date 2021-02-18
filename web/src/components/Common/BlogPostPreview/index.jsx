@@ -32,7 +32,7 @@ const BlogPostPreview = ({
       to={getBlogUrl(slug.current)}
     >
       <div className={styles.LeadMediaThumb}>
-        <Image ratio={ratio || undefined} image={mainImage} alt={title} />
+        <Image ratio={9 / 16} image={mainImage} alt={title} />
       </div>
       <Type as="h4" size="title" className={styles.Title}>
         {title}
