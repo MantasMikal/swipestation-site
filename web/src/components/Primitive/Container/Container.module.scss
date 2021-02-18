@@ -20,13 +20,13 @@
   padding-right: spacing(2);
 
   @include mq($breakpoint-tablet) {
-    padding-left: spacing(3);
-    padding-right: spacing(3);
+    padding-left: spacing(4);
+    padding-right: spacing(4);
   }
 
   @include mq($breakpoint-desktop) {
-    padding-left: spacing(4);
-    padding-right: spacing(4);
+    padding-left: spacing(6);
+    padding-right: spacing(6);
   }
 }
 
