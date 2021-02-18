@@ -35,36 +35,6 @@ export const query = graphql`
           }
         }
       }
-      locations {
-        title
-        _rawDescription
-        locations {
-          address
-          city
-          location {
-            lat
-            lng
-          }
-        }
-      }
-      sponsors {
-        title
-        _rawDescription
-        sponsors {
-          name
-          url
-          isFeatured
-          image {
-            asset {
-              fluid(maxWidth: 350) {
-                ...GatsbySanityImageFluid
-              }
-            }
-          }
-          quoteHeading
-          quoteBody
-        }
-      }
     }
   }
 `

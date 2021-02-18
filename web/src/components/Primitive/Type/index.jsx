@@ -14,6 +14,7 @@ export const sizes = [
   'displaySmall',
   'displayRegular',
   'displayTiny',
+  'displayEditorSmall',
   'menu',
   'title',
   'titleMedium',

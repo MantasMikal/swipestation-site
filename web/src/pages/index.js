@@ -33,6 +33,7 @@ export const query = graphql`
         features {
           title
           _rawDescription
+          smallTitle
           image {
             asset {
               fluid(maxWidth: 700) {

@@ -12,14 +12,21 @@ export default {
       type: "string",
     },
     {
+      name: "smallTitle",
+      title: "Small title",
+      type: "boolean",
+      description: "Makes the title smaller.",
+    },
+    {
       name: "description",
       title: "Description",
-      type: "blockText",
+      type: "blockContent",
     },
     {
       name: "image",
       title: "Image",
       type: "image",
+      description: "Image aspect ratio should be 1:1",
     },
   ],
 };

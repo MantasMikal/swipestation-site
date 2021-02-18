@@ -5,9 +5,35 @@ import { getFluidGatsbyImage } from 'gatsby-source-sanity'
 import Zoomable from 'Primitive/Zoomable'
 import Image from 'Primitive/Image'
 
+const floatStyleMap = {
+  right: {
+    display: 'inline',
+    float: 'right',
+    padding: '0 0px 16px 16px',
+    width: '100%'
+  },
+  left: {
+    display: 'inline',
+    float: 'left',
+    padding: '0 16px 16px 0',
+    width: '100%'
+  },
+  center: { margin: 'auto' }
+}
+
 const createFigure = (figure) => {
   if (!figure || !figure.asset || !figure.asset.mimeType) return null
-  const { isZoomable, asset, alt, maxWidth } = figure
+  const { isZoomable, asset, alt, maxWidth, floating } = figure
+  console.log(
+    '🚀 ~ file: createFigure.jsx ~ line 17 ~ createFigure ~ float',
+    floating
+  )
+  const floatStyle = floatStyleMap[floating]
+  console.log(
+    '🚀 ~ file: createFigure.jsx ~ line 18 ~ createFigure ~ floatStyle',
+    floatStyle
+  )
+
   if (asset.mimeType === 'image/gif') {
     return (
       <img
@@ -31,7 +57,7 @@ const createFigure = (figure) => {
 
     const El = isZoomable ? Zoomable : Image
     return (
-      <div key={figure._key} style={{ maxWidth: maxWidth }}>
+      <div key={figure._key} style={{ maxWidth: maxWidth, ...floatStyle }}>
         <El image={image} alt={alt || ' '} />
       </div>
     )

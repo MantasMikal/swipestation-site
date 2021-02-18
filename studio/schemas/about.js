@@ -16,19 +16,9 @@ export default {
       type: "blockContent",
     },
     {
-      name: "locations",
-      title: "Locations",
-      type: "pageAddress",
-    },
-    {
       name: "team",
       title: "Team",
       type: "pageTeamMember",
-    },
-    {
-      name: "sponsors",
-      title: "Sponsors",
-      type: "pageSponsors",
     },
   ],
 };

@@ -1,4 +1,13 @@
+import React from "react";
 import { FaExternalLinkAlt, FaExternalLinkSquareAlt } from "react-icons/fa";
+
+const displayMediumRender = (props) => (
+  <h2 style={{ textTransform: "uppercase" }}>{props.children}</h2>
+);
+
+const displaySmallRender = (props) => (
+  <h3 style={{ textTransform: "uppercase" }}>{props.children}</h3>
+);
 
 /**
  * This is the schema definition for the rich text fields used for
@@ -27,6 +36,20 @@ export default {
         { title: "H2", value: "h2" },
         { title: "H3", value: "h3" },
         { title: "H4", value: "h4" },
+        {
+          title: "Display Medium",
+          value: "displayMedium",
+          blockEditor: {
+            render: displayMediumRender,
+          },
+        },
+        {
+          title: "Display Small",
+          value: "displayEditorSmall",
+          blockEditor: {
+            render: displaySmallRender,
+          },
+        },
         { title: "Title", value: "title" },
         { title: "Quote", value: "blockquote" },
       ],

@@ -37,6 +37,7 @@ const serializers = {
   },
   types: {
     block(props) {
+      console.log('props.node.style', props.node.style)
       switch (props.node.style) {
         case 'title':
           return (
@@ -61,6 +62,20 @@ const serializers = {
         case 'h4':
           return (
             <Type as="h4" size="title" padded>
+              {props.children}
+            </Type>
+          )
+
+        case 'displayEditorSmall':
+          return (
+            <Type as="div" size="displayEditorSmall" padded>
+              {props.children}
+            </Type>
+          )
+
+        case 'displayMedium':
+          return (
+            <Type as="div" size="displayMedium" padded>
               {props.children}
             </Type>
           )
