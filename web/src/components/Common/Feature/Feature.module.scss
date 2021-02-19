@@ -2,7 +2,8 @@
 @import '_backline-mixins';
 
 .Feature {
-  display: block;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .ImageWrapper {
@@ -16,11 +17,16 @@
   }
 }
 
+.Title {
+  padding-bottom: spacing(1);
+}
+
 @include mq($breakpoint-tablet) {
   .Feature {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
   }
 
   .ImageWrapper {
