@@ -48,7 +48,7 @@
 
 .Title {
   color: $color-primary-white;
-  font-size: 8.5vw;
+  font-size: spacing(5);
   line-height: 1;
   max-width: 16ch;
   margin-bottom: spacing(1);
@@ -56,9 +56,9 @@
 
 .Subtitle {
   color: $color-primary-white;
-  font-size: 3.7vw;
+  font-size: spacing(2.25);
   line-height: 1;
-  max-width: 20ch;
+  max-width: 36ch;
   margin-bottom: spacing(2);
 }
 
@@ -85,6 +85,17 @@
   font-size: 5vw;
   line-height: 1;
   color: $color-primary-white;
+}
+
+@include mq($breakpoint-mobileLandscape) {
+  .Title {
+    font-size: spacing(7);
+  }
+
+  .Subtitle {
+    color: $color-primary-white;
+    font-size: spacing(3);
+  }
 }
 
 @include mq($breakpoint-tablet) {
@@ -119,19 +130,20 @@
   .SavedText {
     font-size: 3vw;
   }
+
+  .Title {
+    font-size: 7.7vw;
+  }
+
+  .Subtitle {
+    max-width: 20ch;
+    font-size: 3.7vw;
+  }
 }
 
 @include mq($breakpoint-desktop) {
   .Content {
     top: 15%;
-  }
-
-  .Title {
-    font-size: 7.2vw;
-  }
-
-  .Subtitle {
-    font-size: 3vw;
   }
 
   .MinutesSaved {
