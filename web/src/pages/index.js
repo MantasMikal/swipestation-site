@@ -38,7 +38,7 @@ export const query = graphql`
             asset {
               mimeType
               url
-              fluid(maxWidth: 700) {
+              fluid(maxWidth: 1200) {
                 ...GatsbySanityImageFluid
               }
             }
@@ -61,7 +61,7 @@ export const query = graphql`
           image {
             alt
             asset {
-              fluid(maxWidth: 1000) {
+              fluid(maxWidth: 1200) {
                 ...GatsbySanityImageFluid
               }
             }
@@ -187,7 +187,7 @@ const IndexPage = (props) => {
   } = home
 
   return (
-    <Layout hideBrandingBg>
+    <Layout hideBrandingBg location={props.location}>
       <SEO
         title={site.title}
         description={site.description}
