@@ -50,10 +50,20 @@ export default {
       type: "featuredCaseStudy",
     },
     {
-      name: "sponsors",
+      name: "sponsorList",
       title: "Sponsors",
-      type: "pageSponsors",
+      type: "array",
+      of: [
+        {
+          type: "pageSponsors",
+        },
+      ],
     },
+    // {
+    //   name: "sponsors",
+    //   title: "Sponsors",
+    //   type: "pageSponsors",
+    // },
     {
       name: "contactSection",
       title: "Contact",

@@ -77,21 +77,7 @@ export const query = graphql`
           alt
         }
       }
-      sponsors {
-        title
-        _rawDescription
-        sponsors {
-          name
-          url
-          image {
-            asset {
-              fluid(maxWidth: 300) {
-                ...GatsbySanityImageFluid
-              }
-            }
-          }
-        }
-      }
+
       contactSection {
         title
         _rawDescription
@@ -141,6 +127,22 @@ export const query = graphql`
     }
   }
 `
+
+// sponsors {
+//   title
+//   _rawDescription
+//   sponsors {
+//     name
+//     url
+//     image {
+//       asset {
+//         fluid(maxWidth: 300) {
+//           ...GatsbySanityImageFluid
+//         }
+//       }
+//     }
+//   }
+// }
 
 const IndexPage = (props) => {
   const { data, errors } = props
