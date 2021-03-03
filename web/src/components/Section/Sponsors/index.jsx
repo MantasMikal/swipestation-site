@@ -38,7 +38,39 @@ const Sponsors = ({ sponsors, title, _rawDescription }) => {
   )
 }
 
-const SponsorsRow = ({ title, description, sponsors, withTestimonials }) => {
+export const Testimonials = ({
+  title,
+  description,
+  sponsors,
+  withTestimonials
+}) => {
+  return (
+    <Container size="wide" center spacious gutter>
+      <Type size="displayEditorSmall" as="h4" className={styles.Title}>
+        {title}
+      </Type>
+      {description && (
+        <div className={styles.Description}>
+          <BlockText blocks={description} size="baseLarge" />
+        </div>
+      )}
+      {withTestimonials && (
+        <div className={styles.SponsorCarousel}>
+          <SponsorCarousel
+            sponsors={sponsors.filter((sponsor) => sponsor.isFeatured)}
+          />
+        </div>
+      )}
+    </Container>
+  )
+}
+
+export const SponsorsRow = ({
+  title,
+  description,
+  sponsors,
+  withTestimonials
+}) => {
   return (
     <Container size="full" center spacious noBottomSpace>
       <Type size="displayEditorSmall" as="h4" className={styles.Title}>

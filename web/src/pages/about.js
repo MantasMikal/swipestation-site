@@ -5,7 +5,7 @@ import BlockSection from 'Section/Block'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import Sponsors from 'Section/Sponsors'
+import { Testimonials } from 'Section/Sponsors'
 import Team from 'Section/Team'
 import Locations from 'Section/Locations'
 
@@ -93,7 +93,7 @@ const AboutPage = (props) => {
         description={team._rawDescription}
       />
       {sponsors && (
-        <Sponsors
+        <Testimonials
           title={sponsors.title}
           description={sponsors._rawDescription}
           sponsors={sponsors.sponsors}
