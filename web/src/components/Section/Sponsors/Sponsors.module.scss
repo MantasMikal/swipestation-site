@@ -11,6 +11,10 @@
   }
 }
 
+.Sponsors {
+  margin-bottom: spacing(8);
+}
+
 .SponsorCarousel {
   margin: spacing(4) 0 spacing(6);
 }
@@ -20,14 +24,14 @@
   grid-template-columns: repeat(3, 1fr);
   gap: spacing(4);
   text-align: center;
-  margin: spacing(0) 0 spacing(4);
+  margin: spacing(4) 0 0;
 }
 
 .Sponsor {
-  max-width: 150px;
+  max-width: 80px;
   text-align: center;
   display: block;
-  margin: auto;
+  margin: 0;
   height: 100%;
   width: 100%;
   transition: $easing-standard 0.25s;
@@ -38,13 +42,10 @@
   }
 }
 
-@include mq($breakpoint-tablet) {
-}
-
 @include mq($breakpoint-mobileLandscape) {
   .SponsorsWrapper {
     grid-template-columns: repeat(4, 1fr);
-    margin: spacing(6) 0 spacing(4);
+    margin: spacing(6) 0 0;
   }
 }
 
@@ -53,9 +54,13 @@
     margin-bottom: spacing(6);
   }
 
+  .Sponsor {
+    max-width: 150px;
+  }
+
   .SponsorsWrapper {
     grid-template-columns: repeat(6, 1fr);
-    margin: spacing(8) 0 spacing(0);
+    margin: spacing(8) 0 0;
   }
   .SponsorCarousel {
     margin: spacing(4) 0 spacing(2);
@@ -67,6 +72,6 @@
     margin-bottom: spacing(12);
   }
   .SponsorsWrapper {
-    margin: spacing(8) 0 spacing(8);
+    margin: spacing(8) 0 0;
   }
 }

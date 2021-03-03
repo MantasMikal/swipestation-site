@@ -85,6 +85,11 @@
   max-width: spacing(80);
 }
 
+.noBottomSpace {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
 .hideOverflow {
   overflow: hidden;
 }

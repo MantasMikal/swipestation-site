@@ -23,6 +23,7 @@ const Container = ({
   spacious,
   hideOverflow,
   spaciousMargin,
+  noBottomSpace,
   ...other
 }) => (
   <Element
@@ -36,6 +37,7 @@ const Container = ({
       spacious && styles.spacious,
       hideOverflow && styles.hideOverflow,
       spaciousMargin && styles.spaciousMargin,
+      noBottomSpace && styles.noBottomSpace,
       className
     )}
     {...other}

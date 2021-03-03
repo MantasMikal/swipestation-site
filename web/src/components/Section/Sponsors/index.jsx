@@ -10,10 +10,38 @@ import SponsorCarousel from 'Common/SponsorCarousel'
 
 import styles from './Sponsors.module.scss'
 
-const Sponsors = ({ title, description, sponsors, withTestimonials }) => {
+const Sponsors = ({ sponsors, title, _rawDescription }) => {
+  console.log('🚀 ~ file: index.jsx ~ line 15 ~ Sponsors ~ sponsors', sponsors)
   return (
-    <Container gutter size="wide" center spacious className={styles.Sponsors}>
+    <Container gutter size="wide" center className={styles.Sponsors}>
       <Type size="displayLarge" as="h3" className={styles.Title}>
+        {title}
+      </Type>
+      {_rawDescription && (
+        <div className={styles.MainDescription}>
+          <BlockText blocks={_rawDescription} size="baseLarge" />
+        </div>
+      )}
+      {sponsors &&
+        sponsors.map(
+          (sponsor, i) =>
+            sponsor && (
+              <SponsorsRow
+                key={`Sponsors-${i}`}
+                title={sponsor.title}
+                description={sponsor._rawDescription}
+                sponsors={sponsor.sponsors}
+              />
+            )
+        )}
+    </Container>
+  )
+}
+
+const SponsorsRow = ({ title, description, sponsors, withTestimonials }) => {
+  return (
+    <Container size="full" center spacious noBottomSpace>
+      <Type size="displayEditorSmall" as="h4" className={styles.Title}>
         {title}
       </Type>
       {description && (
@@ -50,7 +78,7 @@ const Sponsors = ({ title, description, sponsors, withTestimonials }) => {
   )
 }
 
-Sponsors.propTypes = {
+SponsorsRow.propTypes = {
   title: string,
   description: array
 }

@@ -52,18 +52,8 @@ export default {
     {
       name: "sponsorList",
       title: "Sponsors",
-      type: "array",
-      of: [
-        {
-          type: "pageSponsors",
-        },
-      ],
+      type: "allSponsors",
     },
-    // {
-    //   name: "sponsors",
-    //   title: "Sponsors",
-    //   type: "pageSponsors",
-    // },
     {
       name: "contactSection",
       title: "Contact",

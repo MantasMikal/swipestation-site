@@ -78,6 +78,26 @@ export const query = graphql`
         }
       }
 
+      sponsorList {
+        title
+        _rawDescription
+        sponsors {
+          title
+          _rawDescription
+          sponsors {
+            name
+            url
+            image {
+              asset {
+                fluid(maxWidth: 300) {
+                  ...GatsbySanityImageFluid
+                }
+              }
+            }
+          }
+        }
+      }
+
       contactSection {
         title
         _rawDescription
@@ -128,22 +148,6 @@ export const query = graphql`
   }
 `
 
-// sponsors {
-//   title
-//   _rawDescription
-//   sponsors {
-//     name
-//     url
-//     image {
-//       asset {
-//         fluid(maxWidth: 300) {
-//           ...GatsbySanityImageFluid
-//         }
-//       }
-//     }
-//   }
-// }
-
 const IndexPage = (props) => {
   const { data, errors } = props
 
@@ -182,7 +186,7 @@ const IndexPage = (props) => {
     features,
     tillComparison,
     contactSection,
-    sponsors,
+    sponsorList,
     featuredCaseStudy,
     goCashless,
     video
@@ -231,13 +235,20 @@ const IndexPage = (props) => {
           title="Latest news"
         />
       )}
-      {sponsors && (
-        <Sponsors
-          title={sponsors.title}
-          description={sponsors._rawDescription}
-          sponsors={sponsors.sponsors}
-        />
-      )}
+      {sponsorList && <Sponsors {...sponsorList} />}
+      {/* {sponsorList &&
+        sponsorList.map(
+          (sponsors, i) =>
+            sponsors && (
+              <Sponsors
+                key={`Sponsors-${i}`}
+                title={sponsors.title}
+                description={sponsors._rawDescription}
+                sponsors={sponsors.sponsors}
+              />
+            )
+        )} */}
+
       {contactSection && <Contact {...contactSection} />}
     </Layout>
   )
