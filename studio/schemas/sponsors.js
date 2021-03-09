@@ -2,13 +2,13 @@ import { MdGroup } from "react-icons/md";
 
 export default {
   name: "sponsors",
-  title: "Sponsors",
+  title: "Clients",
   type: "document",
   icon: MdGroup,
   fields: [
     {
       name: "sponsorList",
-      title: "Sponsors",
+      title: "Clients",
       type: "array",
       of: [{ type: "sponsor" }],
     },
@@ -16,7 +16,7 @@ export default {
   preview: {
     prepare() {
       return {
-        title: "Sponsors",
+        title: "Clients",
       };
     },
   },

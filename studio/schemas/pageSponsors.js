@@ -1,6 +1,6 @@
 export default {
   name: "pageSponsors",
-  title: "Sponsors",
+  title: "Clients",
   type: "object",
   liveEdit: false,
   // You probably want to uncomment the next line once you've made the pages documents in the Studio. This will remove the pages document type from the create-menus.
@@ -18,7 +18,7 @@ export default {
     },
     {
       name: "sponsors",
-      title: "Sponsors",
+      title: "Clients",
       type: "array",
       of: [
         {

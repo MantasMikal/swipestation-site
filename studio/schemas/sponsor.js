@@ -1,7 +1,7 @@
 import { MdGroup } from "react-icons/md";
 export default {
   name: "sponsor",
-  title: "Sponsor",
+  title: "Client",
   type: "document",
   icon: MdGroup,
   fields: [
