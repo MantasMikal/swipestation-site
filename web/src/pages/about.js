@@ -7,7 +7,6 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import { Testimonials } from 'Section/Sponsors'
 import Team from 'Section/Team'
-import Locations from 'Section/Locations'
 
 export const query = graphql`
   query AboutPageQuery {

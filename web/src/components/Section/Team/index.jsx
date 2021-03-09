@@ -11,7 +11,7 @@ import styles from './Team.module.scss'
 
 const Team = ({ title, description, team }) => {
   return (
-    <Container gutter spacious size="wide" center className={styles.Team}>
+    <Container gutter size="wide" center className={styles.Team}>
       <Type size="displayLarge" as="h3" className={styles.Title}>
         {title}
       </Type>

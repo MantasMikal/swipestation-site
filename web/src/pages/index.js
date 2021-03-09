@@ -11,7 +11,6 @@ import Features from 'Section/Features'
 import TillComparison from 'Section/TillComparison'
 import Contact from 'Section/Contact'
 import FeaturedCaseStudy from 'Section/FeaturedCaseStudy'
-import Sponsors from 'Section/Sponsors'
 import GoCashless from 'Section/GoCashless'
 import Video from 'Section/Video'
 
@@ -75,26 +74,6 @@ export const query = graphql`
           videoId
           caption
           alt
-        }
-      }
-
-      sponsorList {
-        title
-        _rawDescription
-        sponsors {
-          title
-          _rawDescription
-          sponsors {
-            name
-            url
-            image {
-              asset {
-                fluid(maxWidth: 300) {
-                  ...GatsbySanityImageFluid
-                }
-              }
-            }
-          }
         }
       }
 
@@ -186,7 +165,6 @@ const IndexPage = (props) => {
     features,
     tillComparison,
     contactSection,
-    sponsorList,
     featuredCaseStudy,
     goCashless,
     video
@@ -235,20 +213,6 @@ const IndexPage = (props) => {
           title="Latest news"
         />
       )}
-      {sponsorList && <Sponsors {...sponsorList} />}
-      {/* {sponsorList &&
-        sponsorList.map(
-          (sponsors, i) =>
-            sponsors && (
-              <Sponsors
-                key={`Sponsors-${i}`}
-                title={sponsors.title}
-                description={sponsors._rawDescription}
-                sponsors={sponsors.sponsors}
-              />
-            )
-        )} */}
-
       {contactSection && <Contact {...contactSection} />}
     </Layout>
   )

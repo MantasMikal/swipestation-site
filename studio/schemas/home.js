@@ -50,11 +50,6 @@ export default {
       type: "featuredCaseStudy",
     },
     {
-      name: "sponsorList",
-      title: "Sponsors",
-      type: "allSponsors",
-    },
-    {
       name: "contactSection",
       title: "Contact",
       type: "contact",

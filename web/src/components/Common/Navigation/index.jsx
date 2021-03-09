@@ -128,6 +128,9 @@ class Navigation extends React.PureComponent {
           <LinkWrapper className={styles.NavLink} to="/faqs/">
             FAQs
           </LinkWrapper>
+          <LinkWrapper className={styles.NavLink} to="/clients/">
+            Clients
+          </LinkWrapper>
           <LinkWrapper className={styles.NavLink} to="/news/">
             News
           </LinkWrapper>

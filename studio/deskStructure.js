@@ -4,6 +4,7 @@ import { FaTrophy, FaQuestion } from "react-icons/fa";
 import { RiVirusLine } from "react-icons/ri";
 import { FiFileText } from "react-icons/fi";
 import { RiPagesLine } from "react-icons/ri";
+import { IoMdPerson } from "react-icons/io";
 
 const hiddenTypes = [
   "category",
@@ -23,6 +24,7 @@ const hiddenTypes = [
   "caseStudy",
   "faqPage",
   "teamMember",
+  "clientPage",
 ];
 
 export default () =>
@@ -71,6 +73,15 @@ export default () =>
                     .documentId("covid")
                 )
                 .icon(RiVirusLine),
+              S.listItem()
+                .title("Clients")
+                .child(
+                  S.editor()
+                    .id("clientPage")
+                    .schemaType("clientPage")
+                    .documentId("clientPage")
+                )
+                .icon(IoMdPerson),
               S.listItem()
                 .title("Terms And Conditions")
                 .child(
