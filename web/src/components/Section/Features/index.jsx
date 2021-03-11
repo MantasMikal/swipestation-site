@@ -29,7 +29,8 @@ const Features = ({ title, description, features }) => {
           <div
             className={classNames(
               styles.FeatureWrapper,
-              i === features.length - 1 && styles.last
+              i === features.length - 1 && styles.last,
+              i === 0 && styles.first
             )}
             key={feat.title}
           >

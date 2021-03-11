@@ -181,7 +181,6 @@ const IndexPage = (props) => {
           title={features.title}
           description={features._rawDescription}
           features={features.features}
-          video={video}
         />
       )}
 

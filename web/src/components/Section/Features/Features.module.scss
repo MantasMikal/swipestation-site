@@ -2,7 +2,7 @@
 @import '_backline-mixins';
 
 .Description {
-  margin-bottom: spacing(6);
+  margin-bottom: spacing(1);
 }
 
 .FeatureWrapper {
@@ -10,6 +10,10 @@
 
   &.last {
     margin-bottom: spacing(8);
+  }
+
+  &.first {
+    margin-top: 0;
   }
 }
 
