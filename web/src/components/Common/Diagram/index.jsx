@@ -105,7 +105,7 @@ const Diagram = () => {
           <Bar
             bars={[
               { number: 15, width: '25%', color: '#ffba00' },
-              { number: 10, width: '12%', color: '#E6E6E6' },
+              { number: 10, width: '12%', color: '#7289DA' },
               { number: 15, width: '25%', color: '#CE74BF' },
               { number: 10, width: '12%', color: '#A4EDFF' }
             ]}
@@ -121,7 +121,7 @@ const Diagram = () => {
           <Bar
             bars={[
               { number: 15, width: '25%', color: '#ffba00' },
-              { number: 20, width: '30%', color: '#E6E6E6' },
+              { number: 20, width: '30%', color: '#7289DA' },
               { number: 15, width: '25%', color: '#CE74BF' },
               { number: 10, width: '12%', color: '#A4EDFF' }
             ]}

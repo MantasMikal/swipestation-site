@@ -67,15 +67,6 @@ export const query = graphql`
           }
         }
       }
-      video {
-        title
-        video {
-          videoType
-          videoId
-          caption
-          alt
-        }
-      }
 
       contactSection {
         title
@@ -190,19 +181,21 @@ const IndexPage = (props) => {
           title={features.title}
           description={features._rawDescription}
           features={features.features}
+          video={video}
         />
       )}
-      {video && <Video {...video} />}
-      {tillComparison && (
-        <TillComparison
-          title={tillComparison.title}
-          description={tillComparison._rawDescription}
-        />
-      )}
+
+      {/* {video && <Video {...video} />} */}
       {goCashless && (
         <GoCashless
           title={goCashless.title}
           description={goCashless._rawDescription}
+        />
+      )}
+      {tillComparison && (
+        <TillComparison
+          title={tillComparison.title}
+          description={tillComparison._rawDescription}
         />
       )}
       {featuredCaseStudy && <FeaturedCaseStudy {...featuredCaseStudy} />}

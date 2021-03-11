@@ -46,7 +46,12 @@ const Footer = ({ social, logo, siteTitle, awards, disableOverlay }) => {
               return (
                 <div key={i} className={styles.LinkList}>
                   {linkList.map((link, j) => (
-                    <SmartLink className={styles.Link} key={j} href={link.url}>
+                    <SmartLink
+                      className={styles.Link}
+                      key={j}
+                      href={link.url}
+                      target={link.isExternal && '_blank'}
+                    >
                       <Type size="base">{link.text}</Type>
                     </SmartLink>
                   ))}

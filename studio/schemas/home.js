@@ -30,11 +30,6 @@ export default {
       type: "features",
     },
     {
-      name: "video",
-      title: "Video",
-      type: "featuredVideo",
-    },
-    {
       name: "tillComparison",
       title: "Till Comparison",
       type: "tillComparison",

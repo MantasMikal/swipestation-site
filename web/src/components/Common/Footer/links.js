@@ -2,7 +2,7 @@ export default [
   [
     {
       text: 'Case Study',
-      url: '/case-study'
+      url: '#caseStudy'
     },
     {
       text: 'News',
@@ -10,7 +10,7 @@ export default [
     },
     {
       text: 'Contact',
-      url: '/contact'
+      url: '#contact'
     },
     {
       text: 'About',
@@ -20,19 +20,23 @@ export default [
   [
     {
       text: 'Facebook',
-      url: 'https://www.facebook.com/SwipeStation/'
+      url: 'https://www.facebook.com/SwipeStation/',
+      isExternal: true
     },
     {
       text: 'Instagram',
-      url: 'https://www.instagram.com/swipestation/'
+      url: 'https://www.instagram.com/swipestation/',
+      isExternal: true
     },
     {
       text: 'Twitter',
-      url: 'https://twitter.com/SwipeStation'
+      url: 'https://twitter.com/SwipeStation',
+      isExternal: true
     },
     {
       text: 'LinkedIn',
-      url: 'https://www.linkedin.com/company/swipestation-limited'
+      url: 'https://www.linkedin.com/company/swipestation-limited',
+      isExternal: true
     }
   ],
   [

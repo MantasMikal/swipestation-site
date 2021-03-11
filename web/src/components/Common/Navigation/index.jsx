@@ -128,6 +128,9 @@ class Navigation extends React.PureComponent {
           <LinkWrapper className={styles.NavLink} to="/faqs/">
             FAQs
           </LinkWrapper>
+          <LinkWrapper className={styles.NavLink} to="#caseStudy">
+            Case Study
+          </LinkWrapper>
           <LinkWrapper className={styles.NavLink} to="/clients/">
             Clients
           </LinkWrapper>
@@ -137,6 +140,9 @@ class Navigation extends React.PureComponent {
           <LinkWrapper className={styles.NavLink} to="/covid/">
             Covid
           </LinkWrapper>
+          {/* <LinkWrapper className={styles.NavLink} to="/">
+            Home
+          </LinkWrapper> */}
           <button
             className={styles.ToggleNavButton}
             onClick={showNav ? onHideNav : onShowNav}

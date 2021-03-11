@@ -9,6 +9,10 @@ const displaySmallRender = (props) => (
   <h3 style={{ textTransform: "uppercase" }}>{props.children}</h3>
 );
 
+const baseLargeRender = (props) => (
+  <p style={{ fontSize: "20px" }}>{props.children}</p>
+);
+
 /**
  * This is the schema definition for the rich text fields used for
  * for this blog studio. When you import it in schemas.js it can be
@@ -52,6 +56,17 @@ export default {
         },
         { title: "Title", value: "title" },
         { title: "Quote", value: "blockquote" },
+        {
+          title: "Base",
+          value: "base",
+        },
+        {
+          title: "Base Large",
+          value: "baseLarge",
+          blockEditor: {
+            render: baseLargeRender,
+          },
+        },
       ],
       lists: [{ title: "Bullet", value: "bullet" }],
       // Marks let you mark up inline text in the block editor.
@@ -130,6 +145,9 @@ export default {
     },
     {
       type: "grid",
+    },
+    {
+      type: "video",
     },
   ],
 };

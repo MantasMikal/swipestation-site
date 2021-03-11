@@ -4,9 +4,3 @@
 .Description {
   margin-bottom: spacing(6);
 }
-
-@include mq($breakpoint-tablet) {
-  .Description {
-    max-width: 60%;
-  }
-}

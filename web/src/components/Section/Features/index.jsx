@@ -8,13 +8,15 @@ import Feature from 'Common/Feature'
 import Type from 'Primitive/Type'
 import ButtonStandard from 'Primitive/ButtonStandard'
 import SmartLink from 'Primitive/SmartLink'
+import VideoPlayer from 'Primitive/Video'
+import ResponsiveMedia from 'Primitive/ResponsiveMedia'
 
 import styles from './Features.module.scss'
 
 const Features = ({ title, description, features }) => {
   return (
     <Container gutter size="wide" center spacious className={styles.Features}>
-      <Type size="displayLarge" as="h3" className={styles.Title}>
+      <Type size="displayMedium" as="h3" className={styles.Title}>
         {title}
       </Type>
       {description && (

@@ -9,6 +9,7 @@ import SmartLink from 'Primitive/SmartLink'
 import createGrid from './components/createGrid'
 import createFigure from './components/createFigure'
 import createSlideshow from './components/createSlideshow'
+import createVideo from './components/createVideo'
 
 const serializers = (baseFontSize) => ({
   marks: {
@@ -72,9 +73,23 @@ const serializers = (baseFontSize) => ({
             </Type>
           )
 
+        case 'base':
+          return (
+            <Type as="div" size="base" padded>
+              {props.children}
+            </Type>
+          )
+
+        case 'baseLarge':
+          return (
+            <Type as="div" size="baseLarge" padded>
+              {props.children}
+            </Type>
+          )
+
         case 'displayMedium':
           return (
-            <Type as="div" size="displayMedium" padded>
+            <Type as="div" size="displayMedium">
               {props.children}
             </Type>
           )
@@ -100,6 +115,9 @@ const serializers = (baseFontSize) => ({
     },
     grid(props) {
       return createGrid(props.node)
+    },
+    video(props) {
+      return createVideo(props.node)
     }
   }
 })

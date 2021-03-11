@@ -4,19 +4,25 @@ import { string, array } from 'prop-types'
 import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
 import TillCompare from 'Common/TillCompare'
-import BlockText from 'Common/BlockText'
+import BlockContent from '../../Editor'
 
 import styles from './TillComparison.module.scss'
 
 const TillComparison = ({ title, description }) => {
   return (
-    <Container gutter size="wide" center className={styles.TillComparison}>
+    <Container
+      gutter
+      size="wide"
+      spacious
+      center
+      className={styles.TillComparison}
+    >
       <Type size="displayLarge" as="h3" className={styles.Title}>
         {title}
       </Type>
       {description && (
         <div className={styles.Description}>
-          <BlockText blocks={description} size="baseLarge" />
+          <BlockContent blocks={description} baseFontSize="baseLarge" />
         </div>
       )}
       <TillCompare />

@@ -12,7 +12,7 @@ const FeaturedCaseStudy = ({ _rawDescription, caseStudy }) => {
   const { title, _rawExcerpt, image } = caseStudy
   return (
     <>
-      <Container size="full" spacious className={styles.Wrapper}>
+      <Container id="caseStudy" size="full" spacious className={styles.Wrapper}>
         <Container size="full" className={styles.FeaturedCaseStudy}>
           <Container
             className={styles.Content}

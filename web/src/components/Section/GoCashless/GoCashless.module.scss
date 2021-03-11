@@ -1,6 +1,20 @@
 @import 'settings';
 @import '_backline-mixins';
 
+.Main {
+  position: relative;
+  background-color: $color-primary-grey-lighter;
+  margin-bottom: spacing(10);
+  margin-top: 0;
+}
+
+.RoundedOverlay {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 100%;
+}
+
 .Description {
   margin-bottom: spacing(2);
 }
@@ -8,6 +22,14 @@
 @include mq($breakpoint-tablet) {
   .Description {
     max-width: 60%;
+  }
+
+  .Main {
+    margin-bottom: 110px;
+  }
+
+  .RoundedOverlay {
+    bottom: -65px;
   }
 }
 
@@ -67,7 +89,7 @@
 
   &.Payment {
     &:before {
-      background-color: $color-primary-grey-lighter;
+      background-color: #7289da;
     }
   }
 
@@ -147,5 +169,9 @@
       width: 20px;
       height: 20px;
     }
+  }
+
+  .RoundedOverlay {
+    bottom: -80px;
   }
 }
