@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react'
 import { useChain, useTransition, animated, config } from 'react-spring'
 import classNames from 'classnames'
 import useOnScreen from 'libs/use-on-screen'
-
+import useMedia from 'hooks/useMedia'
 import Icon from 'Primitive/Icon'
 import Type from 'Primitive/Type'
 
@@ -38,6 +38,7 @@ const Till = ({ title, className, pints, pintCount }) => {
   const ref = useRef()
   const [isDone, setIsDone] = useState(false)
   const onScreen = useOnScreen(ref, '50px')
+  const isTablet = useMedia('(max-width: 960px)')
 
   return (
     <div ref={ref} className={classNames(styles.Till, className)}>
@@ -62,7 +63,7 @@ const Till = ({ title, className, pints, pintCount }) => {
         </Type>
       </div>
       <div className={styles.PintsWrapper}>
-        {(onScreen || isDone) && (
+        {(onScreen || isDone) && !isTablet && (
           <Pints
             name={title}
             pints={pints}
@@ -70,6 +71,7 @@ const Till = ({ title, className, pints, pintCount }) => {
             handleFinish={() => setIsDone(true)}
           />
         )}
+        {isTablet && <PintsNoAnimation pints={pints} />}
       </div>
     </div>
   )
@@ -107,3 +109,16 @@ const Pints = ({ pints, handleFinish, shouldAnimate }) => {
     </animated.div>
   ))
 }
+
+const PintsNoAnimation = ({ pints }) =>
+  pints.map((p) => (
+    <div className={styles.Pint} key={p.key}>
+      <Icon
+        type="glass"
+        width={8}
+        height={15}
+        className={styles.GlassIcon}
+        a11yText="Pint"
+      />
+    </div>
+  ))
