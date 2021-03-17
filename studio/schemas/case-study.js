@@ -17,7 +17,7 @@ export default {
     {
       name: "image",
       title: "Image",
-      type: "figure",
+      type: "image",
     },
     {
       name: "excerpt",

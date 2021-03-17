@@ -20,10 +20,5 @@ export default {
       title: "Team",
       type: "pageTeamMember",
     },
-    {
-      name: "sponsors",
-      title: "Sponsors",
-      type: "pageSponsors",
-    },
   ],
 };

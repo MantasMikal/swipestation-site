@@ -1,12 +1,12 @@
 import React from 'react'
-import { node } from 'prop-types'
+import classNames from 'classnames'
 import ZoomableImage from 'Primitive/Zoomable'
 import BlockContent from '../../Editor'
 
 import styles from './CaseStudyPreview.module.scss'
 
-const CaseStudyPreview = ({ image, excerpt }) => (
-  <div className={styles.CaseStudyPreview}>
+const CaseStudyPreview = ({ image, excerpt, black }) => (
+  <div className={classNames(styles.CaseStudyPreview, black && styles.black)}>
     <div className={styles.Image}>
       <ZoomableImage image={image} alt={image.alt} />
     </div>
@@ -16,8 +16,6 @@ const CaseStudyPreview = ({ image, excerpt }) => (
   </div>
 )
 
-CaseStudyPreview.propTypes = {
-  children: node.isRequired
-}
+CaseStudyPreview.propTypes = {}
 
 export default CaseStudyPreview

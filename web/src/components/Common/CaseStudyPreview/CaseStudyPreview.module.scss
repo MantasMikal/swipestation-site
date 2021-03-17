@@ -26,3 +26,9 @@
     flex: 1 1 50%;
   }
 }
+
+.black {
+  .Excerpt {
+    color: $color-primary-black;
+  }
+}

@@ -5,7 +5,6 @@ import BlockSection from 'Section/Block'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import { Testimonials } from 'Section/Sponsors'
 import Team from 'Section/Team'
 
 export const query = graphql`
@@ -34,24 +33,6 @@ export const query = graphql`
           }
         }
       }
-      sponsors {
-        title
-        _rawDescription
-        sponsors {
-          name
-          url
-          isFeatured
-          image {
-            asset {
-              fluid(maxWidth: 350) {
-                ...GatsbySanityImageFluid
-              }
-            }
-          }
-          quoteHeading
-          quoteBody
-        }
-      }
     }
   }
 `
@@ -75,7 +56,7 @@ const AboutPage = (props) => {
     )
   }
 
-  const { sponsors, team, locations } = page
+  const { team } = page
 
   return (
     <Layout shouldHaveSpaceForNav disableFooterOverlay>
@@ -91,14 +72,6 @@ const AboutPage = (props) => {
         title={team.title}
         description={team._rawDescription}
       />
-      {sponsors && (
-        <Testimonials
-          title={sponsors.title}
-          description={sponsors._rawDescription}
-          sponsors={sponsors.sponsors}
-          withTestimonials
-        />
-      )}
     </Layout>
   )
 }

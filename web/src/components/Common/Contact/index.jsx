@@ -127,6 +127,7 @@ const Contact = ({
             className={classNames(styles.Icon, styles.location)}
           />
           <SmartLink
+            target="_blank"
             href={`https://www.google.com/maps/search/?api=1&query=${slugify(
               'SwipeStation' + contactInfo.address,
               '+'

@@ -13,6 +13,10 @@ import Icon from 'Primitive/Icon'
 import styles from './SponsorCarousel.module.scss'
 
 const SponsorCarousel = ({ sponsors }) => {
+  console.log(
+    '🚀 ~ file: index.jsx ~ line 16 ~ SponsorCarousel ~ sponsors',
+    sponsors
+  )
   return (
     <div className={styles.SponsorCarousel}>
       <CarouselProvider

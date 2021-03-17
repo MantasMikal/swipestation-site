@@ -2,7 +2,7 @@ export default [
   [
     {
       text: 'Case Study',
-      url: '/#caseStudy'
+      url: '/case-study'
     },
     {
       text: 'News',

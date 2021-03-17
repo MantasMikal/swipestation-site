@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import Sponsors from 'Section/Sponsors'
+import Sponsors, { Testimonials } from 'Section/Sponsors'
 import { mapEdgesToNodes } from 'libs/helpers'
 import Container from 'Primitive/Container'
 
@@ -20,8 +20,11 @@ export const query = graphql`
               title
               _rawDescription
               sponsors {
+                isFeatured
                 name
                 url
+                quoteHeading
+                quoteBody
                 image {
                   asset {
                     fluid(maxWidth: 300) {
@@ -50,8 +53,6 @@ const Clients = (props) => {
   }
 
   const page = (data || {}).page ? mapEdgesToNodes(data.page) : []
-  console.log('🚀 ~ file: clients.js ~ line 52 ~ Clients ~ page', page)
-
   const { sponsorList } = page[0]
 
   if (!page) {
@@ -60,11 +61,18 @@ const Clients = (props) => {
     )
   }
 
+  const allSponsors =
+    sponsorList &&
+    sponsorList.sponsors.map((sponsorCat) => sponsorCat.sponsors).flat()
+
   return (
     <Layout shouldHaveSpaceForNav disableFooterOverlay>
       <SEO title="Clients" slug="/clients" />
       <Container spacious>
         {sponsorList && <Sponsors {...sponsorList} />}
+        {sponsorList && (
+          <Testimonials title="Testimonials" sponsors={allSponsors} />
+        )}
       </Container>
     </Layout>
   )

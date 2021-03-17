@@ -1,0 +1,35 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Description {
+  margin-bottom: spacing(4);
+}
+
+.Title {
+  margin-bottom: spacing(4);
+}
+
+@include mq($breakpoint-tablet) {
+  .Description {
+    max-width: 60%;
+  }
+
+  // .Content {
+  //   padding-top: spacing(10);
+  //   padding-bottom: spacing(6);
+  // }
+}
+
+// @include mq($breakpoint-desktop) {
+//   .Content {
+//     padding-top: spacing(12);
+//     padding-bottom: spacing(8);
+//   }
+// }
+
+// @include mq($breakpoint-desktopMedium) {
+//   .Content {
+//     padding-top: spacing(16);
+//     padding-bottom: spacing(10);
+//   }
+// }

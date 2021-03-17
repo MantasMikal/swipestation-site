@@ -11,7 +11,6 @@ import SponsorCarousel from 'Common/SponsorCarousel'
 import styles from './Sponsors.module.scss'
 
 const Sponsors = ({ sponsors, title, _rawDescription }) => {
-  console.log('🚀 ~ file: index.jsx ~ line 15 ~ Sponsors ~ sponsors', sponsors)
   return (
     <Container gutter size="wide" center className={styles.Sponsors}>
       <Type size="displayLarge" as="h3" className={styles.Title}>
@@ -38,15 +37,10 @@ const Sponsors = ({ sponsors, title, _rawDescription }) => {
   )
 }
 
-export const Testimonials = ({
-  title,
-  description,
-  sponsors,
-  withTestimonials
-}) => {
+export const Testimonials = ({ title, description, sponsors }) => {
   return (
     <Container size="wide" center spacious gutter>
-      <Type size="displayEditorSmall" as="h4" className={styles.Title}>
+      <Type size="displayLarge" as="h4" className={styles.Title}>
         {title}
       </Type>
       {description && (
@@ -54,13 +48,12 @@ export const Testimonials = ({
           <BlockText blocks={description} size="baseLarge" />
         </div>
       )}
-      {withTestimonials && (
-        <div className={styles.SponsorCarousel}>
-          <SponsorCarousel
-            sponsors={sponsors.filter((sponsor) => sponsor.isFeatured)}
-          />
-        </div>
-      )}
+
+      <div className={styles.SponsorCarousel}>
+        <SponsorCarousel
+          sponsors={sponsors.filter((sponsor) => sponsor.isFeatured)}
+        />
+      </div>
     </Container>
   )
 }
