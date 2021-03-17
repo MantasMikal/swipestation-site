@@ -1,7 +1,9 @@
 ## Links
 
 Site: https://swipestation.co.uk
+
 Live preview: https://swipestation.herokuapp.com/
+
 CMS: https://swipestation.sanity.studio
 
 ## Setup
