@@ -1,14 +1,12 @@
 ## Links
 
-Site: https://swipestation.netlify.app
-
+Site: https://swipestation.co.uk
 Live preview: https://swipestation.herokuapp.com/
-
-Studio: https://swipestation.sanity.studio
+CMS: https://swipestation.sanity.studio
 
 ## Setup
 
-Use NPM
+Use NPM!
 
 ```bash
 # Install deps
