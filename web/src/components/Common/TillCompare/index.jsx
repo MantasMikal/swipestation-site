@@ -16,10 +16,19 @@ const TillCompare = () => {
     .fill()
     .map((_, i) => ({ key: `regular-${i}` }))
 
+  const ref = useRef()
+  const onScreen = useOnScreen(ref, '150px')
+
   return (
-    <div className={styles.TillCompare}>
-      <Till title="Regular till" pints={regularTillPints} pintCount={168} />
+    <div ref={ref} className={styles.TillCompare}>
       <Till
+        isOnScreen={onScreen}
+        title="Regular till"
+        pints={regularTillPints}
+        pintCount={168}
+      />
+      <Till
+        isOnScreen={onScreen}
         title="SwipeStation Fast Lane"
         className={styles.SwipeStationTill}
         pints={swipeStationPints}
@@ -34,14 +43,12 @@ TillCompare.propTypes = {}
 export default TillCompare
 
 // Wrapper for till
-const Till = ({ title, className, pints, pintCount }) => {
-  const ref = useRef()
+const Till = ({ title, className, pints, pintCount, isOnScreen }) => {
   const [isDone, setIsDone] = useState(false)
-  const onScreen = useOnScreen(ref, '50px')
   const isTablet = useMedia('(max-width: 960px)')
 
   return (
-    <div ref={ref} className={classNames(styles.Till, className)}>
+    <div className={classNames(styles.Till, className)}>
       <Type className={styles.TillTitle} as="h4" size="displayMedium">
         {title}
       </Type>
@@ -63,11 +70,11 @@ const Till = ({ title, className, pints, pintCount }) => {
         </Type>
       </div>
       <div className={styles.PintsWrapper}>
-        {(onScreen || isDone) && !isTablet && (
+        {(isOnScreen || isDone) && !isTablet && (
           <Pints
             name={title}
             pints={pints}
-            shouldAnimate={onScreen}
+            shouldAnimate={isOnScreen}
             handleFinish={() => setIsDone(true)}
           />
         )}
