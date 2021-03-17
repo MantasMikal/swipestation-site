@@ -1,11 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import BlockSection from 'Section/Block'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import FeaturedCaseStudy from 'Section/FeaturedCaseStudy'
 import CaseStudySection from 'Section/CaseStudy'
 
 export const query = graphql`
@@ -17,7 +15,6 @@ export const query = graphql`
           _rawExcerpt(resolveReferences: { maxDepth: 10 })
           title
           image {
-            alt
             asset {
               fluid(maxWidth: 1200) {
                 ...GatsbySanityImageFluid

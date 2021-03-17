@@ -58,7 +58,6 @@ export const query = graphql`
           title
           _rawExcerpt(resolveReferences: { maxDepth: 10 })
           image {
-            alt
             asset {
               fluid(maxWidth: 1200) {
                 ...GatsbySanityImageFluid
