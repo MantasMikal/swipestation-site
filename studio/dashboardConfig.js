@@ -7,8 +7,8 @@ export default {
         sites: [
           {
             title: "Deploy Swipestation",
-            apiId: "6fc94228-be94-4d16-8478-4cf6fb94432d",
-            buildHookId: "5f4a877786e5374883edafae",
+            apiId: "2360ecf2-68e4-49a4-b6b1-0c05c9f67014",
+            buildHookId: "60532f38569a0ac3d863afd9",
             name: "swipestation",
           },
         ],
