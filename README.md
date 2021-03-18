@@ -6,6 +6,8 @@ Live preview: https://swipestation.herokuapp.com/
 
 CMS: https://swipestation.sanity.studio
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2360ecf2-68e4-49a4-b6b1-0c05c9f67014/deploy-status)](https://swipestation.co.uk)
+
 ## Setup
 
 Use NPM!
