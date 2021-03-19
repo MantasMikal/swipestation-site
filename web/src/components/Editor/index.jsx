@@ -97,6 +97,7 @@ const serializers = (baseFontSize) => ({
         case 'blockquote':
           return <Blockquote quoteMarks>{props.children}</Blockquote>
 
+        // Inserts <br /> on new lines in the editor
         default:
           if (props.children.length > 1 || props.children[0] !== '') {
             return (
