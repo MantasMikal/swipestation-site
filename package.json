@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Mantas Mikalauskas <mantas.mikalauskas@clock.co.uk",
   "engines": {
-    "node": "12.x"
+    "node": ">=12.x"
   },
   "scripts": {
     "clean": "lerna clean",
@@ -26,6 +26,5 @@
   "devDependencies": {
     "lerna": "^3.22.1",
     "rimraf": "^3.0.2"
-  },
-  "dependencies": {}
+  }
 }
