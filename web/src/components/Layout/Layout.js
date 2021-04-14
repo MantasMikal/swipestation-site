@@ -21,6 +21,7 @@ const Layout = ({
   disableFooterOverlay,
   hideBrandingBg
 }) => {
+  console.log('RENDER THE LAYOUT')
   return (
     <div
       className={classNames(

@@ -1,6 +1,6 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef } from 'react'
 import { node } from 'prop-types'
-import { useSpring, animated } from 'react-spring'
+import classNames from 'classnames'
 import useOnScreen from 'libs/use-on-screen'
 
 import Type from 'Primitive/Type'
@@ -18,26 +18,12 @@ const BarBlock = ({ number, width, color }) => (
   </div>
 )
 
-const Bar = ({ bars, label, delay, shouldAnimate, onFinish }) => {
-  const bar = useSpring({
-    from: {
-      transform: 'translate(-100%)'
-    },
-    to: {
-      transform: 'translate(0%)'
-    },
-    delay: delay,
-    config: { mass: 1, tension: 280, friction: 80, precision: 0.001 }
-  })
-
-  useEffect(() => {
-    if (shouldAnimate) {
-      onFinish && onFinish()
-    }
-  }, [shouldAnimate, onFinish])
-
+const Bar = ({ bars, label, duration }) => {
   return (
-    <animated.div style={bar} className={styles.BarWrapper}>
+    <div
+      className={classNames(styles.BarWrapper, styles.animateBar)}
+      style={{ animationDuration: `${duration * 5}ms` }}
+    >
       {bars.map((bar, i) => (
         <BarBlock
           key={`${label}-${i}`}
@@ -49,59 +35,54 @@ const Bar = ({ bars, label, delay, shouldAnimate, onFinish }) => {
       <Type as="label" size="displayTiny" className={styles.DiagramLabel}>
         {label}
       </Type>
-    </animated.div>
+    </div>
   )
 }
 
 const Diagram = () => {
   const diagramRef = useRef()
   const onScreen = useOnScreen(diagramRef, '-7%')
-  const [isDone, setIsDone] = useState(false)
 
   return (
     <div ref={diagramRef} className={styles.Diagram}>
       <div className={styles.Wrapper}>
-        {(isDone || onScreen) && (
+        {onScreen && (
           <Bar
             bars={[{ number: 15, width: '25%', color: '#ffba00' }]}
             label="Swipestation Click & Collect"
-            delay={0}
-            shouldAnimate={onScreen}
-            onFinish={() => setIsDone(true)}
+            duration={150}
           />
         )}
       </div>
 
       <div className={styles.Wrapper}>
-        {(isDone || onScreen) && (
+        {onScreen && (
           <Bar
             bars={[
               { number: 15, width: '25%', color: '#ffba00' },
               { number: 10, width: '12%', color: '#A4EDFF' }
             ]}
             label="Free Bar!"
-            delay={250}
-            shouldAnimate={onScreen}
+            duration={250}
           />
         )}
       </div>
 
       <div className={styles.Wrapper}>
-        {(isDone || onScreen) && (
+        {onScreen && (
           <Bar
             bars={[
               { number: 15, width: '25%', color: '#ffba00' },
               { number: 15, width: '25%', color: '#CE74BF' }
             ]}
             label="Other mobile Payment providers"
-            delay={500}
-            shouldAnimate={onScreen}
+            duration={300}
           />
         )}
       </div>
 
       <div className={styles.Wrapper}>
-        {(isDone || onScreen) && (
+        {onScreen && (
           <Bar
             bars={[
               { number: 15, width: '25%', color: '#ffba00' },
@@ -110,14 +91,13 @@ const Diagram = () => {
               { number: 10, width: '12%', color: '#A4EDFF' }
             ]}
             label="Contactless"
-            delay={750}
-            shouldAnimate={onScreen}
+            duration={500}
           />
         )}
       </div>
 
       <div className={styles.Wrapper}>
-        {(isDone || onScreen) && (
+        {onScreen && (
           <Bar
             bars={[
               { number: 15, width: '25%', color: '#ffba00' },
@@ -126,8 +106,7 @@ const Diagram = () => {
               { number: 10, width: '12%', color: '#A4EDFF' }
             ]}
             label="Cash"
-            delay={1000}
-            shouldAnimate={onScreen}
+            duration={600}
           />
         )}
       </div>

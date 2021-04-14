@@ -28,6 +28,7 @@ const Accordion = ({ title, content }) => {
         </Type>
         <Icon
           type={isActive ? 'minus' : 'plus'}
+          a11yText={isActive ? 'Contract' : 'Expand'}
           width={24}
           height={24}
           className={styles.Icon}

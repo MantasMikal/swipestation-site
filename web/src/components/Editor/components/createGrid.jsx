@@ -20,7 +20,7 @@ export function createGrid(component) {
     : null
   const margin = component.margin ? { margin: component.margin } : null
   const centered = component.centered && component.centered
-  const preserveGrid = component.preserveGrid ? { display: 'grid' } : null
+  const preserveGrid = component.preserveGrid ? { display: 'grid' } : null // Overrides display:block on mobile
   const maxWidth = component.maxWidth ? { maxWidth: component.maxWidth } : null
 
   const styles = Object.assign(
@@ -38,8 +38,9 @@ export function createGrid(component) {
     return createMedia(item)
   })
   return (
-    gridComponents && (
-      <Grid style={styles} centered={centered} key={component._key}>
+    gridComponents &&
+    gridComponents.length > 0 && (
+      <Grid style={styles} centered={centered}>
         {gridComponents}
       </Grid>
     )

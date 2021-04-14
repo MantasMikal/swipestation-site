@@ -32,6 +32,24 @@
   overflow: hidden;
 }
 
+.animateBar {
+  animation-name: entrance;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: $easing-standard;
+  will-change: transform;
+  transform: translateX(-100%);
+}
+
+@keyframes entrance {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .Bar {
   display: inline-block;
   height: 30px;

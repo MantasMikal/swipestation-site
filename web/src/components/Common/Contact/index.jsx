@@ -22,6 +22,7 @@ const Contact = ({
   salesDeck
 }) => (
   <div className={styles.Contact}>
+    {/* MOBILE ONLY */}
     <div className={styles.ButtonWrapperMobile}>
       <ButtonStandard
         tight
@@ -30,6 +31,7 @@ const Contact = ({
         <Type className={styles.ButtonText} size="displayTiny">
           <Icon
             type="calendar"
+            a11yText="Book a demo"
             width={24}
             height={24}
             className={styles.Icon}
@@ -49,12 +51,15 @@ const Contact = ({
               width={24}
               height={24}
               className={styles.Icon}
+              a11yText="Download"
             />
             Download our latest deck
           </Type>
         </ButtonStandard>
       </SmartLink>
     </div>
+    {/* MOBILE ONLY */}
+
     <div className={styles.Details}>
       <div className={styles.ButtonWrapper}>
         <ButtonStandard
@@ -64,6 +69,7 @@ const Contact = ({
           <Type className={styles.ButtonText} size="displayTiny">
             <Icon
               type="calendar"
+              a11yText="Book a demo"
               width={24}
               height={24}
               className={styles.Icon}
@@ -82,6 +88,7 @@ const Contact = ({
                 type="download"
                 width={24}
                 height={24}
+                a11yText="Download"
                 className={styles.Icon}
               />
               Download our latest deck

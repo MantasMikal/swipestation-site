@@ -1,8 +1,7 @@
-import React, { useRef, useState, useEffect } from 'react'
-import { useChain, useTransition, animated, config } from 'react-spring'
+import React, { useRef } from 'react'
 import classNames from 'classnames'
 import useOnScreen from 'libs/use-on-screen'
-import useMedia from 'hooks/useMedia'
+// import useMedia from 'hooks/useMedia'
 import Icon from 'Primitive/Icon'
 import Type from 'Primitive/Type'
 
@@ -44,9 +43,7 @@ export default TillCompare
 
 // Wrapper for till
 const Till = ({ title, className, pints, pintCount, isOnScreen }) => {
-  const [isDone, setIsDone] = useState(false)
-  const isTablet = useMedia('(max-width: 960px)')
-
+  // const isTablet = useMedia('(max-width: 960px)')
   return (
     <div className={classNames(styles.Till, className)}>
       <Type className={styles.TillTitle} as="h4" size="displayMedium">
@@ -70,56 +67,20 @@ const Till = ({ title, className, pints, pintCount, isOnScreen }) => {
         </Type>
       </div>
       <div className={styles.PintsWrapper}>
-        {(isOnScreen || isDone) && !isTablet && (
-          <Pints
-            name={title}
-            pints={pints}
-            shouldAnimate={isOnScreen}
-            handleFinish={() => setIsDone(true)}
-          />
-        )}
-        {isTablet && <PintsNoAnimation pints={pints} />}
+        <Pints name={title} pints={pints} shouldAnimate={isOnScreen} />
       </div>
     </div>
   )
 }
 
 // Animates pints on the screen
-const Pints = ({ pints, handleFinish, shouldAnimate }) => {
-  const transRef = useRef()
-  const transitions = useTransition(pints, (item) => item.key, {
-    ref: transRef,
-    unique: true,
-    trail: 8,
-    from: { opacity: '0', transform: 'scale(0.6) translateY(20px)' },
-    enter: { opacity: '1', transform: 'scale(1) translateY(0px)' },
-    config: { ...config.stiff, precision: 0.1 }
-  })
-
-  useEffect(() => {
-    if (shouldAnimate) {
-      handleFinish()
-    }
-  }, [shouldAnimate, handleFinish])
-
-  useChain([transRef], [0])
-
-  return transitions.map(({ item, props, key }) => (
-    <animated.div className={styles.Pint} key={key} style={props}>
-      <Icon
-        type="glass"
-        width={8}
-        height={15}
-        className={styles.GlassIcon}
-        a11yText="Pint"
-      />
-    </animated.div>
-  ))
-}
-
-const PintsNoAnimation = ({ pints }) =>
-  pints.map((p) => (
-    <div className={styles.Pint} key={p.key}>
+const Pints = ({ pints, shouldAnimate }) => {
+  return pints.map((item, i) => (
+    <div
+      className={classNames(styles.Pint, shouldAnimate && styles.animatePint)}
+      key={item.key}
+      style={{ animationDelay: `${i * 10}ms` }}
+    >
       <Icon
         type="glass"
         width={8}
@@ -129,3 +90,4 @@ const PintsNoAnimation = ({ pints }) =>
       />
     </div>
   ))
+}

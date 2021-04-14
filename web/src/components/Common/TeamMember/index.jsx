@@ -1,14 +1,11 @@
 import React from 'react'
-import { node } from 'prop-types'
 
 import Image from 'Primitive/Image'
 import Type from 'Primitive/Type'
-import ModalWithTrigger from 'Primitive/ModalWithTrigger'
-
 import SocialLink from 'Common/Footer/component/SocialLink'
+import BlockText from 'Common/BlockText'
 
 import styles from './TeamMember.module.scss'
-import BlockText from 'Common/BlockText'
 
 export const Card = ({ name, position, image, social, onClick }) => (
   <div className={styles.TeamMember} onClick={onClick}>

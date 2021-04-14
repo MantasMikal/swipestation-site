@@ -56,6 +56,7 @@ class Navigation extends React.PureComponent {
   }, 15)
 
   render() {
+    console.log('RENDER THE NAV')
     const {
       onHideNav,
       onShowNav,

@@ -1,7 +1,6 @@
 import React from 'react'
 import { array, string } from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-import { openPopupWidget } from 'react-calendly'
 
 import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
@@ -9,7 +8,6 @@ import BlockText from 'Common/BlockText'
 import ContactForm from 'Common/Contact'
 
 import styles from './Contact.module.scss'
-import ButtonStandard from 'Primitive/ButtonStandard'
 
 /**
  * If deployed on Netlify the form will be handled automagically! Just check the 'Forms' section under site settings
