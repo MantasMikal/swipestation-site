@@ -1,5 +1,5 @@
 import React from 'react'
-import CountUp from 'react-countup'
+import { useCountUp } from 'react-countup'
 
 import Type from 'Primitive/Type'
 import Container from 'Primitive/Container'
@@ -7,7 +7,24 @@ import ResponsiveMedia from 'Primitive/ResponsiveMedia'
 
 import styles from './Hero.module.scss'
 
+const easeInSine = (t, b, c, d) => {
+  return -c * (t /= d) * (t - 2) + b
+}
+
+const easingFn = (t, b, c, d) => {
+  const ts = (t /= d) * t
+  const tc = ts * t
+  return b + c * (tc + -3 * ts + 3 * t)
+}
+
 const Hero = ({ title, subtitle, minutesSaved }) => {
+  const { countUp } = useCountUp({
+    start: 0,
+    end: minutesSaved,
+    duration: 4,
+    easingFn: easeInSine
+  })
+
   return (
     <div className={styles.Hero}>
       <ResponsiveMedia className={styles.DesktopHero} ratio={9 / 16}>
@@ -38,12 +55,7 @@ const Hero = ({ title, subtitle, minutesSaved }) => {
         )}
         <div className={styles.MinutesSaved}>
           <Type size="displayLarge" className={styles.MinutesWrapper}>
-            <CountUp
-              begin={0}
-              easing="outSine"
-              time={3000}
-              end={minutesSaved}
-            />
+            {countUp || 0}
           </Type>
           <Type size="displayLarge" className={styles.SavedText}>
             Minutes saved queuing
