@@ -83,10 +83,14 @@ const Footer = ({ social, logo, siteTitle, awards, disableOverlay }) => {
           ))}
       </Container>
       <Type size="small" className={styles.Copyright}>
-        Built by <SmartLink href='https://clock.co.uk' target='__blank'>Clock</SmartLink>
+        Built by{' '}
+        <SmartLink href="https://clock.co.uk" target="__blank">
+          Clock
+        </SmartLink>
       </Type>
       <Type size="small" className={styles.Copyright}>
-        Copyright © 2020 SwipeStation Limited. All rights reserved
+        Copyright © {new Date().getFullYear()} SwipeStation Limited. All rights
+        reserved
       </Type>
     </Container>
   )
