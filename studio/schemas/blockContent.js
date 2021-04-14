@@ -10,7 +10,7 @@ const displaySmallRender = (props) => (
 );
 
 const baseLargeRender = (props) => (
-  <p style={{ fontSize: "20px" }}>{props.children}</p>
+  <p style={{ fontSize: "18px" }}>{props.children}</p>
 );
 
 /**

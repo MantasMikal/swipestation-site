@@ -7,22 +7,12 @@ import ResponsiveMedia from 'Primitive/ResponsiveMedia'
 
 import styles from './Hero.module.scss'
 
-const easeInSine = (t, b, c, d) => {
-  return -c * (t /= d) * (t - 2) + b
-}
-
-const easingFn = (t, b, c, d) => {
-  const ts = (t /= d) * t
-  const tc = ts * t
-  return b + c * (tc + -3 * ts + 3 * t)
-}
-
 const Hero = ({ title, subtitle, minutesSaved }) => {
   const { countUp } = useCountUp({
     start: 0,
     end: minutesSaved,
     duration: 4,
-    easingFn: easeInSine
+    easingFn: (t, b, c, d) => -c * (t /= d) * (t - 2) + b // easeOutQuad
   })
 
   return (
@@ -40,7 +30,7 @@ const Hero = ({ title, subtitle, minutesSaved }) => {
             allowFullScreen
             muted
             autoPlay
-            title="Swipestation"
+            title="Swipestation explainer video"
           />
         </div>
       </ResponsiveMedia>

@@ -32,6 +32,7 @@ class Navigation extends React.PureComponent {
 
   // Hide or show the menu.
   handleScroll = debounce(() => {
+    const threshold = 300
     const { prevScrollPos } = this.state
 
     const currentScrollPos =
@@ -51,12 +52,11 @@ class Navigation extends React.PureComponent {
     this.setState({
       prevScrollPos: currentScrollPos,
       visible,
-      noBackground: currentScrollPos < 100
+      noBackground: currentScrollPos < threshold
     })
   }, 15)
 
   render() {
-    console.log('RENDER THE NAV')
     const {
       onHideNav,
       onShowNav,
@@ -100,32 +100,32 @@ class Navigation extends React.PureComponent {
             About
           </LinkWrapper>
           {/* <div className={styles.Dropdown}>
-          <SmartLink className={styles.DropdownBtn}>
-            <Type as="span" size="menu">
-              SubNav
-            </Type>
-          </SmartLink>
-          <div className={styles.DropdownContent}>
-            <LinkWrapper
-              className={classnames(styles.NavLink, styles.DropdownLink)}
-              to="/"
-            >
-              Sub Nav 1
-            </LinkWrapper>
-            <LinkWrapper
-              className={classnames(styles.NavLink, styles.DropdownLink)}
-              to="/"
-            >
-              SubNav 2
-            </LinkWrapper>
-            <LinkWrapper
-              className={classnames(styles.NavLink, styles.DropdownLink)}
-              to="/"
-            >
-              SubNav 3
-            </LinkWrapper>
-          </div>
-        </div> */}
+            <SmartLink className={styles.DropdownBtn}>
+              <Type as="span" size="menu">
+                SubNav
+              </Type>
+            </SmartLink>
+            <div className={styles.DropdownContent}>
+              <LinkWrapper
+                className={classnames(styles.NavLink, styles.DropdownLink)}
+                to="/"
+              >
+                Sub Nav 1
+              </LinkWrapper>
+              <LinkWrapper
+                className={classnames(styles.NavLink, styles.DropdownLink)}
+                to="/"
+              >
+                SubNav 2
+              </LinkWrapper>
+              <LinkWrapper
+                className={classnames(styles.NavLink, styles.DropdownLink)}
+                to="/"
+              >
+                SubNav 3
+              </LinkWrapper>
+            </div>
+          </div> */}
           <LinkWrapper className={styles.NavLink} to="/faqs/">
             FAQs
           </LinkWrapper>
@@ -141,9 +141,6 @@ class Navigation extends React.PureComponent {
           <LinkWrapper className={styles.NavLink} to="/covid/">
             Covid
           </LinkWrapper>
-          {/* <LinkWrapper className={styles.NavLink} to="/">
-            Home
-          </LinkWrapper> */}
           <button
             className={styles.ToggleNavButton}
             onClick={showNav ? onHideNav : onShowNav}

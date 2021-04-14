@@ -224,16 +224,22 @@
       position: absolute;
     }
 
-    .Dropdown:hover {
-      .DropdownBtn {
-        background-color: $color-primary-yellow;
-        color: $color-primary-white;
-      }
+    .Dropdown {
+      float: none;
 
-      .DropdownContent {
-        position: relative;
-        top: 0;
-        margin: spacing(0.5) 0;
+      &:hover,
+      &:focus,
+      &:active {
+        .DropdownBtn {
+          background-color: $color-primary-yellow;
+          color: $color-primary-white;
+        }
+
+        .DropdownContent {
+          position: relative;
+          top: 0;
+          margin: spacing(0.5) 0;
+        }
       }
     }
   }

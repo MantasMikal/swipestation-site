@@ -99,7 +99,7 @@
 .displayTiny {
   font-weight: bold;
   font-family: $font-heading;
-  font-size: spacing(1.7);
+  font-size: spacing(1.9);
   line-height: 1;
 
   @include mq($breakpoint-tabletLandscape) {
@@ -228,6 +228,11 @@
   }
 
   @include mq($breakpoint-desktop) {
+    font-size: spacing(4);
+    line-height: spacing(5);
+  }
+
+  @include mq($breakpoint-desktopLarge) {
     font-size: spacing(5);
     line-height: spacing(6);
   }
