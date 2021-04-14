@@ -1,7 +1,6 @@
 import React, { useRef } from 'react'
 import classNames from 'classnames'
 import useOnScreen from 'libs/use-on-screen'
-// import useMedia from 'hooks/useMedia'
 import Icon from 'Primitive/Icon'
 import Type from 'Primitive/Type'
 

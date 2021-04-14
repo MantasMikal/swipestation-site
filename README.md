@@ -1,10 +1,4 @@
-## Links
-
-Site: https://swipestation.co.uk
-
-Live preview: https://swipestation.herokuapp.com/
-
-CMS: https://swipestation.sanity.studio
+# Swipestation site
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2360ecf2-68e4-49a4-b6b1-0c05c9f67014/deploy-status)](https://swipestation.co.uk)
 
@@ -43,6 +37,14 @@ npm run sanity-deploy
 npm run storybook
 
 ```
+
+## Useful Links
+
+Site: https://swipestation.co.uk
+
+Live preview: https://swipestation.herokuapp.com/
+
+CMS: https://swipestation.sanity.studio
 
 ## Read the docs
 

@@ -194,17 +194,19 @@
   }
 }
 
-.Pint {
-  opacity: 0;
-  transform: translateY(20px) scale(0.5);
-}
+@include mq($breakpoint-mobileLandscape) {
+  .Pint {
+    opacity: 0;
+    transform: translateY(20px) scale(0.5);
+  }
 
-.animatePint {
-  animation-name: entrance;
-  animation-duration: 250ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
-  will-change: opacity, transform;
+  .animatePint {
+    animation-name: entrance;
+    animation-duration: 250ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    will-change: opacity, transform;
+  }
 }
 
 @keyframes entrance {
