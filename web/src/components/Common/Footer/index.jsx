@@ -89,8 +89,7 @@ const Footer = ({ social, logo, siteTitle, awards, disableOverlay }) => {
         </SmartLink>
       </Type>
       <Type size="small" className={styles.Copyright}>
-        Copyright © {new Date().getFullYear()} SwipeStation Limited. All rights
-        reserved
+        © {new Date().getFullYear()} SwipeStation Limited. All rights reserved
       </Type>
     </Container>
   )
