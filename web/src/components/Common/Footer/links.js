@@ -1,6 +1,10 @@
 export default [
   [
     {
+      text: 'Home',
+      url: '/'
+    },
+    {
       text: 'Case Study',
       url: '/case-study'
     },

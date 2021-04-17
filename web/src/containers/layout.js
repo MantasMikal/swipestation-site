@@ -3,8 +3,9 @@ import { graphql, StaticQuery } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 import Layout from '../components/Layout/Layout'
-import '../assets/scss/base.scss'
 import useScript from 'hooks/useScript'
+
+import '../assets/scss/base.scss'
 
 const query = graphql`
   query SiteTitleQuery {
@@ -60,7 +61,6 @@ const LayoutContainer = (props) => {
   function handleHideNav() {
     setShowNav(false)
   }
-
   useScript(`
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -95,9 +95,6 @@ const LayoutContainer = (props) => {
 
         return (
           <>
-            <Helmet>
-              <link rel="preconnect" href="https://use.typekit.net" />
-            </Helmet>
             <Layout
               {...props}
               showNav={showNav}
