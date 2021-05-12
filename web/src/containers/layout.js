@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { graphql, StaticQuery } from 'gatsby'
-import { Helmet } from 'react-helmet'
 
 import Layout from '../components/Layout/Layout'
 import useScript from 'hooks/useScript'
