@@ -36,7 +36,7 @@ const SponsorCarousel = ({ sponsors }) => {
                     heading={sponsor.quoteHeading}
                     body={sponsor.quoteBody}
                     alt={sponsor.image.alt}
-                    image={sponsor.image.asset.fluid}
+                    image={sponsor.image}
                     url={sponsor.url}
                   />
                 </Slide>

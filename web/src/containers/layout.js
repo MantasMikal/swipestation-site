@@ -4,17 +4,14 @@ import { graphql, StaticQuery } from 'gatsby'
 import Layout from '../components/Layout/Layout'
 import useScript from 'hooks/useScript'
 
-import '../assets/scss/base.scss'
-
 const query = graphql`
   query SiteTitleQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       title
       logo {
         asset {
-          fluid(maxWidth: 300) {
-            ...GatsbySanityImageFluid_noBase64
-          }
+          url
+          _id
         }
       }
     }
@@ -31,9 +28,8 @@ const query = graphql`
         url
         image {
           asset {
-            fluid(maxWidth: 300) {
-              ...GatsbySanityImageFluid
-            }
+            url
+            _id
           }
         }
       }
@@ -42,9 +38,8 @@ const query = graphql`
         url
         image {
           asset {
-            fluid(maxWidth: 300) {
-              ...GatsbySanityImageFluid
-            }
+            url
+            _id
           }
         }
       }
@@ -60,6 +55,7 @@ const LayoutContainer = (props) => {
   function handleHideNav() {
     setShowNav(false)
   }
+
   useScript(`
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -70,7 +66,6 @@ const LayoutContainer = (props) => {
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 `)
-
   return (
     <StaticQuery
       query={query}

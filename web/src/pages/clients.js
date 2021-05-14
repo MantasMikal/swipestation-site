@@ -27,9 +27,8 @@ export const query = graphql`
                 quoteBody
                 image {
                   asset {
-                    fluid(maxWidth: 300) {
-                      ...GatsbySanityImageFluid
-                    }
+                    url
+                    _id
                   }
                 }
               }

@@ -26,23 +26,17 @@ const Contact = ({
     query {
       appStore: file(relativePath: { eq: "app-store.png" }) {
         childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 400)
         }
       }
       googleStore: file(relativePath: { eq: "google-store.png" }) {
         childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 400)
         }
       }
       barcode: file(relativePath: { eq: "barcode.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 300)
         }
       }
     }
@@ -51,15 +45,15 @@ const Contact = ({
   const storeLinks = {
     apple: {
       link: 'https://apps.apple.com/gb/app/swipestation/id1012471579',
-      image: data.appStore.childImageSharp.fluid
+      image: data.appStore
     },
     google: {
       link:
         'https://play.google.com/store/apps/details?id=com.adbibio.push&hl=en',
-      image: data.googleStore.childImageSharp.fluid
+      image: data.googleStore
     },
     barcode: {
-      image: data.barcode.childImageSharp.fluid
+      image: data.barcode
     }
   }
   return (

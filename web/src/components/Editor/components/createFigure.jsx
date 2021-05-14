@@ -1,7 +1,4 @@
 import React from 'react'
-import cfg from '../../../../../config'
-import { getFluidGatsbyImage } from 'gatsby-source-sanity'
-
 import Zoomable from 'Primitive/Zoomable'
 import Image from 'Primitive/Image'
 
@@ -26,37 +23,23 @@ const createFigure = (figure) => {
   const { isZoomable, asset, alt, maxWidth, floating } = figure
   const floatStyle = floatStyleMap[floating]
 
+  let imgCmp = <Image image={figure} />
+
   if (asset.mimeType === 'image/gif') {
-    return (
+    imgCmp = (
       <img
         src={asset.url}
-        alt={alt || ' '}
+        alt={alt || ''}
         style={{ width: '100%', ...floatStyle }}
-        key={figure.asset.id}
       />
     )
-  } else {
-    const imageProps = getFluidGatsbyImage(
-      asset._id,
-      { maxWidth: maxWidth || 800 },
-      cfg.project
-    )
-    const image = {
-      asset: {
-        fluid: imageProps
-      }
-    }
-
-    const El = isZoomable ? Zoomable : Image
-    return (
-      <div
-        key={figure._key || figure._id}
-        style={{ maxWidth: maxWidth, ...floatStyle }}
-      >
-        <El image={image} alt={alt || ' '} />
-      </div>
-    )
   }
+
+  return (
+    <div key={figure._key} style={{ maxWidth: maxWidth, marginBottom: '10px' }}>
+      {!isZoomable ? imgCmp : <Zoomable>{imgCmp}</Zoomable>}
+    </div>
+  )
 }
 
 export default createFigure

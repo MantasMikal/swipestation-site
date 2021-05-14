@@ -19,17 +19,8 @@ export const query = graphql`
       }
       mainImage {
         asset {
-          _id
-          fluid(maxWidth: 2000) {
-            ...GatsbySanityImageFluid
-          }
           url
-          metadata {
-            dimensions {
-              width
-              height
-            }
-          }
+          _id
         }
       }
       title

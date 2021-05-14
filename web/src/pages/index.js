@@ -37,9 +37,7 @@ export const query = graphql`
             asset {
               mimeType
               url
-              fluid(maxWidth: 1200) {
-                ...GatsbySanityImageFluid
-              }
+              _id
             }
           }
         }
@@ -59,9 +57,8 @@ export const query = graphql`
           _rawExcerpt(resolveReferences: { maxDepth: 10 })
           image {
             asset {
-              fluid(maxWidth: 1200) {
-                ...GatsbySanityImageFluid
-              }
+              url
+              _id
             }
           }
         }
@@ -95,9 +92,8 @@ export const query = graphql`
           isFeatured
           mainImage {
             asset {
-              fluid(maxWidth: 500) {
-                ...GatsbySanityImageFluid
-              }
+              url
+              _id
             }
           }
           category {

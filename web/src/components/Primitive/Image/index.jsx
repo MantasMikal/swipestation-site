@@ -1,61 +1,69 @@
 import React from 'react'
-import { object, number, string, oneOfType } from 'prop-types'
+import { object, number, string, oneOfType, oneOf } from 'prop-types'
+import { getGatsbyImageData } from 'gatsby-source-sanity'
 
-import GatsbyImage from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import ResponsiveMedia from 'Primitive/ResponsiveMedia'
+import cfg from '../../../../../config'
 
 /**
- * Component to hanlde all types images with ratio support
+ * Component to handle all types images with ratio support
  */
-const Image = ({ image, ratio, imgWrapperStyle, imgStyle, alt, ...other }) => {
+const Image = ({
+  image,
+  ratio,
+  imgWrapperStyle,
+  width,
+  imgStyle,
+  alt,
+  layout = 'constrained',
+  ...other
+}) => {
   if (!image) return null
+  let imageData = {}
+  if (image.localFile) {
+    imageData = image.localFile.childImageSharp.gatsbyImageData
+  } else {
+    imageData = getGatsbyImageData(
+      image.asset,
+      { width: width || 800, layout: layout, placeholder: 'blurred' },
+      cfg.project
+    )
+  }
 
-  const fixedImg =
-    image.asset && image.asset.fixed ? image.asset.fixed : undefined
-  const fluidImg =
-    image.asset && image.asset.fluid ? image.asset.fluid : undefined
-  const regularImg = image
+  const altText = alt || image.alt || ''
 
-  if (fixedImg || fluidImg) {
-    return ratio ? (
+  if (ratio) {
+    return (
       <ResponsiveMedia ratio={ratio}>
         <GatsbyImage
           style={imgWrapperStyle}
           imgStyle={imgStyle}
-          fixed={fixedImg}
-          fluid={fluidImg}
-          alt={image.alt || alt}
+          image={imageData}
+          alt={altText}
           {...other}
         />
       </ResponsiveMedia>
-    ) : (
-      <GatsbyImage
-        style={imgWrapperStyle}
-        imgStyle={imgStyle}
-        fixed={fixedImg}
-        fluid={fluidImg}
-        alt={image.alt || alt}
-        {...other}
-      />
     )
   }
 
-  if (regularImg) {
-    return ratio ? (
-      <ResponsiveMedia ratio={ratio}>
-        <img src={regularImg} alt={alt} {...other} />
-      </ResponsiveMedia>
-    ) : (
-      <img src={regularImg} alt={alt} {...other} />
-    )
-  }
+  return (
+    <GatsbyImage
+      style={imgWrapperStyle}
+      imgStyle={imgStyle}
+      image={imageData}
+      alt={altText}
+      {...other}
+    />
+  )
 }
 
 Image.propTypes = {
-  image: oneOfType([string, object]),
+  image: oneOfType([string, object]).isRequired,
   ratio: number,
   imgWrapperStyle: object,
   imgStyle: object,
+  layout: oneOf(['fullWidth', 'constrained', 'fixed']),
   alt: string
 }
 

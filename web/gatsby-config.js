@@ -1,9 +1,7 @@
 require('dotenv').config()
 const path = require('path')
 const config = require('../config')
-const {
-  api: { projectId, dataset }
-} = requireConfig('../studio/sanity.json')
+const { projectId, dataset } = config.project
 
 module.exports = {
   flags: { PRESERVE_WEBPACK_CACHE: true },
@@ -16,11 +14,20 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sass',
       options: {
-        includePaths: [
-          ...require('backline-mixins').includePaths,
-          ...require('backline-normalize').includePaths,
-          path.join(__dirname, 'src/assets/scss/settings')
-        ],
+        cssLoaderOptions: {
+          esModule: false,
+          modules: {
+            namedExport: false
+          }
+        },
+        sassOptions: {
+          includePaths: [
+            ...require('backline-mixins').includePaths,
+            ...require('backline-normalize').includePaths,
+            path.join(__dirname, 'src/assets/scss/settings')
+          ]
+        },
+        sassRuleTest: /\.global\.s(a|c)ss$/,
         sassRuleModulesTest: /\.module\.s(a|c)ss$/
       }
     },
@@ -45,6 +52,7 @@ module.exports = {
         }
       }
     },
+    'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
@@ -72,12 +80,6 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-transform-portable-text',
-      options: {
-        extendTypes: [{ typeName: 'SanityPost', contentFieldName: 'body' }]
-      }
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
@@ -94,30 +96,15 @@ module.exports = {
         enableImprovedAccessibility: true // Optional. Sets aria-label attribute on pop-up icon for screen readers. Defaults to true.
       }
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        typekit: {
+          id: 'pze1zot'
+        }
+      }
+    },
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt'
   ]
-}
-
-/**
- * We're requiring a file in the studio folder to make the monorepo
- * work "out-of-the-box". Sometimes you would to run this web frontend
- * in isolation (e.g. on codesandbox). This will give you an error message
- * with directions to enter the info manually or in the environment.
- */
-
-function requireConfig(path) {
-  try {
-    return require('../studio/sanity.json')
-  } catch (e) {
-    console.error(
-      'Failed to require sanity.json. Fill in projectId and dataset name manually in gatsby-config.js'
-    )
-    return {
-      api: {
-        projectId: process.env.SANITY_PROJECT_ID || '',
-        dataset: process.env.SANITY_DATASET || ''
-      }
-    }
-  }
 }
