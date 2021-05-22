@@ -52,7 +52,7 @@
   }
 
   @include mq($breakpoint-tabletLandscape) {
-    margin-top: spacing(1);
+    margin-top: spacing(2);
 
     button {
       font-size: 2em;

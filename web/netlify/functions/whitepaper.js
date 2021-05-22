@@ -26,12 +26,16 @@ exports.handler = async function (event) {
   })
 
   try {
-    await mail.send({
+    const res = await mail.send({
       template: 'whitepaper',
       message: {
         to: email
+      },
+      locals: {
+        siteUrl: 'https://swipestation-staging.app'
       }
     })
+    console.log(res)
     return {
       statusCode: 200,
       body: `OK`
