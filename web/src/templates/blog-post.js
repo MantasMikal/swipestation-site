@@ -21,6 +21,12 @@ export const query = graphql`
         asset {
           url
           _id
+          metadata {
+            dimensions {
+              height
+              width
+            }
+          }
         }
       }
       title

@@ -21,8 +21,6 @@ const Contact = ({
   calendlyUrl,
   salesDeck
 }) => {
-  console.log('🚀 ~ file: index.jsx ~ line 24 ~ storeLinks', storeLinks)
-
   return (
     <div className={styles.Contact}>
       {/* MOBILE ONLY */}
