@@ -1,4 +1,4 @@
-export default [
+const links = [
   [
     {
       text: 'Home',
@@ -50,3 +50,5 @@ export default [
     }
   ]
 ]
+
+export default links

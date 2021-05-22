@@ -1,5 +1,4 @@
 import React, { useRef } from 'react'
-import { node } from 'prop-types'
 import classNames from 'classnames'
 import useOnScreen from 'libs/use-on-screen'
 
@@ -114,8 +113,6 @@ const Diagram = () => {
   )
 }
 
-Diagram.propTypes = {
-  children: node.isRequired
-}
+Diagram.propTypes = {}
 
 export default Diagram

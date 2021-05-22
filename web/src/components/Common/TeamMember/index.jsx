@@ -8,7 +8,7 @@ import BlockText from 'Common/BlockText'
 import styles from './TeamMember.module.scss'
 
 export const Card = ({ name, position, image, social, onClick }) => (
-  <div className={styles.TeamMember} onClick={onClick}>
+  <button className={styles.TeamMember} onClick={onClick}>
     <div className={styles.ImageWrapper}>
       <Image className={styles.Image} ratio={1} image={image} alt={name} />
     </div>
@@ -32,7 +32,7 @@ export const Card = ({ name, position, image, social, onClick }) => (
           ))}
       </div>
     </div>
-  </div>
+  </button>
 )
 
 export const Page = (props) => {

@@ -23,17 +23,14 @@ const createVideo = (video) => {
   const floatStyle = floatStyleMap[floating]
   return (
     <div
+      key={video._key || video._id}
       style={{
         maxWidth: maxWidth || 'auto',
         ...floatStyle,
         padding: '0px 0 16px'
       }}
     >
-      <Video
-        key={video._key}
-        videoType={video.videoType}
-        videoId={video.videoId}
-      />
+      <Video videoType={video.videoType} videoId={video.videoId} />
     </div>
   )
 }

@@ -8,10 +8,6 @@ import Image from 'Primitive/Image'
 import styles from './SponsorSlide.module.scss'
 
 const SponsorSlide = ({ image, alt, heading, body, url }) => {
-  console.log(
-    '🚀 ~ file: SponsorSlide.jsx ~ line 11 ~ SponsorSlide ~ image',
-    image
-  )
   return (
     <SmartLink href={url} className={styles.Slide} target="_blank">
       <div className={styles.ImageWrapper}>

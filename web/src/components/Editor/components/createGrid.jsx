@@ -37,6 +37,7 @@ export function createGrid(component) {
   const gridComponents = gridMedia.map((item) => {
     return createMedia(item)
   })
+
   return (
     gridComponents &&
     gridComponents.length > 0 && (

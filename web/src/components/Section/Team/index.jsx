@@ -15,9 +15,11 @@ const Team = ({ title, description, team }) => {
       <Type size="displayLarge" as="h3" className={styles.Title}>
         {title}
       </Type>
-      <div className={styles.Description}>
-        <BlockText blocks={description} />
-      </div>
+      {description && (
+        <div className={styles.Description}>
+          <BlockText blocks={description} />
+        </div>
+      )}
       <div className={styles.TeamMembers}>
         {team &&
           [...team].map((member, i) => (

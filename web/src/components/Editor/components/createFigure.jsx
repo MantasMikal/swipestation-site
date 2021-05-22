@@ -36,7 +36,10 @@ const createFigure = (figure) => {
   }
 
   return (
-    <div key={figure._key} style={{ maxWidth: maxWidth, marginBottom: '10px' }}>
+    <div
+      key={figure._key || figure._id}
+      style={{ maxWidth: maxWidth, marginBottom: '10px', ...floatStyle }}
+    >
       {!isZoomable ? imgCmp : <Zoomable>{imgCmp}</Zoomable>}
     </div>
   )

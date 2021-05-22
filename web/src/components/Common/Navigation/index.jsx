@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { func, bool, string, object, node } from 'prop-types'
 import classnames from 'classnames'
 import debounce from 'libs/debounce'
@@ -11,29 +11,27 @@ import Container from 'Primitive/Container'
 
 import styles from './Navigation.module.scss'
 
-class Navigation extends React.PureComponent {
-  constructor(props) {
-    super(props)
+const MemoImage = React.memo(Image)
 
-    this.state = {
-      prevScrollPos: typeof window !== 'undefined' ? window.pageYOffset : 0,
-      visible: true,
-      noBackground: true
-    }
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
-  }
+const Navigation = ({
+  onHideNav,
+  onShowNav,
+  showNav,
+  siteTitle,
+  hideBrandingBg,
+  logo,
+  id
+}) => {
+  const [navState, setNavState] = useState({
+    prevScrollPos: typeof window !== 'undefined' ? window.pageYOffset : 0,
+    visible: true,
+    noBackground: true
+  })
 
   // Hide or show the menu.
-  handleScroll = debounce(() => {
-    const threshold = 300
-    const { prevScrollPos } = this.state
+  const handleScroll = debounce(() => {
+    const threshold = 400
+    const { prevScrollPos } = navState
 
     const currentScrollPos =
       typeof window !== 'undefined' ? window.pageYOffset : 0
@@ -41,120 +39,90 @@ class Navigation extends React.PureComponent {
 
     // Fix for ios when scrolled offscreen
     if (currentScrollPos < 50) {
-      this.setState({
+      setNavState({
         prevScrollPos: currentScrollPos,
         visible: true,
         noBackground: true
       })
+
       return
     }
 
-    this.setState({
+    setNavState({
       prevScrollPos: currentScrollPos,
       visible,
       noBackground: currentScrollPos < threshold
     })
-  }, 15)
+  }, 20)
 
-  render() {
-    const {
-      onHideNav,
-      onShowNav,
-      showNav,
-      siteTitle,
-      hideBrandingBg,
-      logo,
-      id
-    } = this.props
-    const { visible, noBackground } = this.state
-    return (
-      <Container
-        as="nav"
-        gutter
-        size="wide"
-        center
-        className={classnames(
-          styles.Root,
-          showNav && styles.showNav,
-          !visible && styles.hidden,
-          noBackground && hideBrandingBg && styles.noBackground
-        )}
-        id={id}
-      >
-        <h1 hidden>{siteTitle}</h1>
-        <div className={styles.Branding}>
-          <SmartLink to="/">
-            <Image
-              image={logo}
-              className={styles.Logo}
-              alt={siteTitle}
-              loading="eager"
-            />
-          </SmartLink>
-        </div>
-        <div className={styles.Links}>
-          <LinkWrapper to="/#contact" className={styles.NavLink}>
-            Contact
-          </LinkWrapper>
-          <LinkWrapper className={styles.NavLink} to="/about/">
-            About
-          </LinkWrapper>
-          {/* <div className={styles.Dropdown}>
-            <SmartLink className={styles.DropdownBtn}>
-              <Type as="span" size="menu">
-                SubNav
-              </Type>
-            </SmartLink>
-            <div className={styles.DropdownContent}>
-              <LinkWrapper
-                className={classnames(styles.NavLink, styles.DropdownLink)}
-                to="/"
-              >
-                Sub Nav 1
-              </LinkWrapper>
-              <LinkWrapper
-                className={classnames(styles.NavLink, styles.DropdownLink)}
-                to="/"
-              >
-                SubNav 2
-              </LinkWrapper>
-              <LinkWrapper
-                className={classnames(styles.NavLink, styles.DropdownLink)}
-                to="/"
-              >
-                SubNav 3
-              </LinkWrapper>
-            </div>
-          </div> */}
-          <LinkWrapper className={styles.NavLink} to="/faqs/">
-            FAQs
-          </LinkWrapper>
-          <LinkWrapper className={styles.NavLink} to="/case-study">
-            Case Study
-          </LinkWrapper>
-          <LinkWrapper className={styles.NavLink} to="/clients/">
-            Clients
-          </LinkWrapper>
-          <LinkWrapper className={styles.NavLink} to="/news/">
-            News
-          </LinkWrapper>
-          <LinkWrapper className={styles.NavLink} to="/covid/">
-            Covid
-          </LinkWrapper>
-          <button
-            className={styles.ToggleNavButton}
-            onClick={showNav ? onHideNav : onShowNav}
-          >
-            {showNav ? (
-              <Icon a11yText="Close" type="close" width={24} height={24} />
-            ) : (
-              <Icon a11yText="Open Menu" type="menu" width={24} height={24} />
-            )}
-          </button>
-        </div>
-      </Container>
-    )
-  }
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [handleScroll, navState])
+
+  const { visible, noBackground } = navState
+  return (
+    <Container
+      as="nav"
+      gutter
+      size="wide"
+      center
+      className={classnames(
+        styles.Root,
+        showNav && styles.showNav,
+        !visible && styles.hidden,
+        noBackground && hideBrandingBg && styles.noBackground
+      )}
+      id={id}
+    >
+      <h1 hidden>{siteTitle}</h1>
+      <div className={styles.Branding}>
+        <SmartLink to="/">
+          <MemoImage
+            image={logo}
+            className={styles.Logo}
+            alt={siteTitle}
+            loading="eager"
+          />
+        </SmartLink>
+      </div>
+      <div className={styles.Links}>
+        <LinkWrapper to="/#contact" className={styles.NavLink}>
+          Contact
+        </LinkWrapper>
+        <LinkWrapper className={styles.NavLink} to="/about/">
+          About
+        </LinkWrapper>
+        <LinkWrapper className={styles.NavLink} to="/faqs/">
+          FAQs
+        </LinkWrapper>
+        <LinkWrapper className={styles.NavLink} to="/case-study">
+          Case Study
+        </LinkWrapper>
+        <LinkWrapper className={styles.NavLink} to="/clients/">
+          Clients
+        </LinkWrapper>
+        <LinkWrapper className={styles.NavLink} to="/news/">
+          News
+        </LinkWrapper>
+        <LinkWrapper className={styles.NavLink} to="/covid/">
+          Covid
+        </LinkWrapper>
+        <button
+          className={styles.ToggleNavButton}
+          onClick={showNav ? onHideNav : onShowNav}
+        >
+          {showNav ? (
+            <Icon a11yText="Close" type="close" width={24} height={24} />
+          ) : (
+            <Icon a11yText="Open Menu" type="menu" width={24} height={24} />
+          )}
+        </button>
+      </div>
+    </Container>
+  )
 }
 
 Navigation.propTypes = {

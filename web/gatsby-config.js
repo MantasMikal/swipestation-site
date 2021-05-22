@@ -4,11 +4,16 @@ const config = require('../config')
 const { projectId, dataset } = config.project
 
 module.exports = {
-  flags: { PRESERVE_WEBPACK_CACHE: true },
   siteMetadata: {
     title: config.site.siteTitle,
     siteUrl: config.site.siteUrl,
     description: config.site.description
+  },
+  flags: {
+    FAST_DEV: true,
+    PARALLEL_SOURCING: false,
+    PRESERVE_WEBPACK_CACHE: true,
+    DEV_SSR: false
   },
   plugins: [
     {
@@ -52,10 +57,6 @@ module.exports = {
         }
       }
     },
-    'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-sanity',
       options: {
@@ -66,6 +67,10 @@ module.exports = {
         overlayDrafts: true
       }
     },
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

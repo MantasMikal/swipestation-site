@@ -15,7 +15,6 @@ import page from "./page";
 import post from "./post";
 import siteSettings from "./siteSettings";
 import slideshow from "./slideshow";
-import seo from "./seo";
 import video from "./video";
 import grid from "./grid";
 import contentBlock from "./contentBlock";
@@ -68,7 +67,6 @@ export default createSchema({
     siteSettings,
     slideshow,
     video,
-    seo,
     contentBlock,
     grid,
     location,
@@ -98,8 +96,8 @@ export default createSchema({
     address,
     pageAddress,
     allSponsors,
-    clientPage,
+    clientPage
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
-  ]),
+  ])
 });

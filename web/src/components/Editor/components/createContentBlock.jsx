@@ -7,11 +7,11 @@ const createContentBlock = (block) => {
   const border = block.border ? { border: `${block.border}` } : null
 
   const styles = Object.assign({}, padding, margin, border, { width: '100%' })
-  return (
+  return block.contentBlock ? (
     <div key={block._key || block._id} style={styles}>
       <BlockContent blocks={block.contentBlock} />
     </div>
-  )
+  ) : null
 }
 
 export default createContentBlock

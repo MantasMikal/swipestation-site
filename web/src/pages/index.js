@@ -12,7 +12,6 @@ import TillComparison from 'Section/TillComparison'
 import Contact from 'Section/Contact'
 import FeaturedCaseStudy from 'Section/FeaturedCaseStudy'
 import GoCashless from 'Section/GoCashless'
-import Video from 'Section/Video'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -178,8 +177,6 @@ const IndexPage = (props) => {
           features={features.features}
         />
       )}
-
-      {/* {video && <Video {...video} />} */}
       {goCashless && (
         <GoCashless
           title={goCashless.title}

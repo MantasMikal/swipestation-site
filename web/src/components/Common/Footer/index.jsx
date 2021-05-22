@@ -78,7 +78,7 @@ const Footer = ({ social, logo, siteTitle, awards, disableOverlay }) => {
               className={styles.Award}
               key={'award-' + i}
             >
-              <Image image={award.image} alt={award.title} />
+              <Image image={award.image} alt={award.title} width={200} />
             </SmartLink>
           ))}
       </Container>

@@ -14,7 +14,6 @@ const hiddenTypes = [
   "person",
   "post",
   "siteSettings",
-  "seo-plugin",
   "contactPage",
   "homePage",
   "award",
@@ -24,7 +23,7 @@ const hiddenTypes = [
   "caseStudy",
   "faqPage",
   "teamMember",
-  "clientPage",
+  "clientPage"
 ];
 
 export default () =>
@@ -89,7 +88,7 @@ export default () =>
                     .id("termsAndConditionsPage")
                     .schemaType("page")
                     .documentId("termsAndConditions")
-                ),
+                )
             ])
         )
         .icon(RiPagesLine),
@@ -103,7 +102,7 @@ export default () =>
         .schemaType("category")
         .child(S.documentTypeList("category").title("Categories")),
       ...S.documentTypeListItems().filter(
-        (listItem) => !hiddenTypes.includes(listItem.getId())
+        listItem => !hiddenTypes.includes(listItem.getId())
       ),
       S.listItem()
         .title("Case Studies")
@@ -114,7 +113,7 @@ export default () =>
         .schemaType("sponsor")
         .child(S.documentTypeList("sponsor").title("Sponsors")),
       ...S.documentTypeListItems().filter(
-        (listItem) => !hiddenTypes.includes(listItem.getId())
+        listItem => !hiddenTypes.includes(listItem.getId())
       ),
       S.listItem()
         .title("Awards")
@@ -142,5 +141,5 @@ export default () =>
             .schemaType("companyInfo")
             .documentId("companyInfo")
         )
-        .icon(MdBusiness),
+        .icon(MdBusiness)
     ]);
