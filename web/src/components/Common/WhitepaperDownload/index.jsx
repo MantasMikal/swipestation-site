@@ -9,8 +9,19 @@ import styles from './WhitepaperDownload.module.scss'
 /**
  * Component for showing whitepaper download
  */
-const WhitepaperDownload = () => {
+const WhitepaperDownload = ({ subject, emailBody, attachment, title }) => {
+  console.log(
+    '🚀 ~ file: index.jsx ~ line 13 ~ WhitepaperDownload ~ subject, emailBody, attachment',
+    subject,
+    emailBody,
+    attachment,
+    title
+  )
   const [emailInput, setEmailInput] = useState('')
+  console.log(
+    '🚀 ~ file: index.jsx ~ line 21 ~ WhitepaperDownload ~ emailInput',
+    emailInput
+  )
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -19,7 +30,13 @@ const WhitepaperDownload = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ email: emailInput })
+      body: JSON.stringify({
+        email: emailInput,
+        subject: subject,
+        emailBody: emailBody,
+        attachment: attachment,
+        title: title
+      })
     })
       .then((response) => response.json())
       .then((data) => {

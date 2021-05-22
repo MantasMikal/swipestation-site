@@ -46,6 +46,7 @@ import address from "./address";
 import pageAddress from "./pageAddress";
 import allSponsors from "./allSponsors";
 import clientPage from "./clientPage";
+import whitepaperEmail from "./whitepaperEmail";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -96,7 +97,8 @@ export default createSchema({
     address,
     pageAddress,
     allSponsors,
-    clientPage
+    clientPage,
+    whitepaperEmail
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ])

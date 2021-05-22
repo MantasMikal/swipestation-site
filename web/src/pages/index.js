@@ -63,7 +63,6 @@ export const query = graphql`
           }
         }
       }
-
       contactSection {
         title
         _rawDescription
@@ -76,6 +75,19 @@ export const query = graphql`
           asset {
             url
           }
+        }
+      }
+    }
+
+    email: sanityWhitepaperEmail(
+      _id: { regex: "/(drafts.|)whitepaperEmail/" }
+    ) {
+      subject
+      emailBody
+      title
+      attachment {
+        asset {
+          url
         }
       }
     }
@@ -126,6 +138,7 @@ const IndexPage = (props) => {
 
   const site = (data || {}).site
   const home = (data || {}).home
+  const email = (data || {}).email
 
   const postNodes = (data || {}).posts
     ? mapEdgesToNodes(data.posts).filter(filterOutDocsWithoutSlugs)
@@ -198,7 +211,7 @@ const IndexPage = (props) => {
           title="Latest news"
         />
       )}
-      <WhitepaperDownload />
+      <WhitepaperDownload {...email} />
       {contactSection && <Contact {...contactSection} />}
     </Layout>
   )

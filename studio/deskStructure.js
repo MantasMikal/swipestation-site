@@ -5,6 +5,7 @@ import { RiVirusLine } from "react-icons/ri";
 import { FiFileText } from "react-icons/fi";
 import { RiPagesLine } from "react-icons/ri";
 import { IoMdPerson } from "react-icons/io";
+import { GoMail } from "react-icons/go";
 
 const hiddenTypes = [
   "category",
@@ -23,7 +24,8 @@ const hiddenTypes = [
   "caseStudy",
   "faqPage",
   "teamMember",
-  "clientPage"
+  "clientPage",
+  "whitepaperEmail"
 ];
 
 export default () =>
@@ -124,6 +126,24 @@ export default () =>
             .documentId("awards")
         )
         .icon(FaTrophy),
+      S.listItem()
+        .title("Email")
+        .child(
+          S.list()
+            .title("Emails")
+            .items([
+              S.listItem()
+                .title("Whitepaper download")
+                .child(
+                  S.editor()
+                    .id("whitepaperEmail")
+                    .schemaType("whitepaperEmail")
+                    .documentId("whitepaperEmail")
+                )
+                .icon(GoMail)
+            ])
+        )
+        .icon(GoMail),
       S.listItem()
         .title("Site Settings")
         .child(

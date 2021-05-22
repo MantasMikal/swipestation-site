@@ -1,20 +1,22 @@
 const mg = require('nodemailer-mailgun-transport')
 const Email = require('email-templates')
-var path = require('path')
 
 exports.handler = async function (event) {
-  const { email } = JSON.parse(event.body)
+  const { email, emailBody, emailSubject, attachment, title } = JSON.parse(
+    event.body
+  )
+  console.log(
+    '🚀 ~ file: whitepaper.js ~ line 7 ~ email, emailBody, emailSubject, attachment',
+    email,
+    emailBody,
+    emailSubject,
+    attachment
+  )
+  const attachmentUrl = attachment.asset.url
   const mail = new Email({
     message: {
       from: 'Swipestation example@example.com',
-      subject: 'Swipestation whitepaper',
-      attachments: [
-        {
-          filename: 'whitepaper.pdf',
-          contentType: 'application/pdf',
-          path: path.join(__dirname, '../../emails/attachments/whitepaper.pdf')
-        }
-      ]
+      subject: emailSubject
     },
     transport: mg({
       auth: {
@@ -32,7 +34,10 @@ exports.handler = async function (event) {
         to: email
       },
       locals: {
-        siteUrl: 'https://swipestation-staging.netlify.app'
+        siteUrl: 'https://swipestation-staging.netlify.app/',
+        emailBody: emailBody,
+        attachmentUrl: attachmentUrl,
+        title: title
       }
     })
     console.log(res)
