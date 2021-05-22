@@ -2,14 +2,14 @@ const mg = require('nodemailer-mailgun-transport')
 const Email = require('email-templates')
 
 exports.handler = async function (event) {
-  const { email, emailBody, emailSubject, attachment, title } = JSON.parse(
+  const { email, emailBody, subject, attachment, title } = JSON.parse(
     event.body
   )
   const attachmentUrl = attachment.asset.url
   const mail = new Email({
     message: {
       from: 'Swipestation example@example.com',
-      subject: emailSubject
+      subject: subject
     },
     transport: mg({
       auth: {
@@ -24,7 +24,8 @@ exports.handler = async function (event) {
     const res = await mail.send({
       template: 'whitepaper',
       message: {
-        to: email
+        to: email,
+        subject: subject
       },
       locals: {
         siteUrl: 'https://swipestation-staging.netlify.app/',
