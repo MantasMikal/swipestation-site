@@ -8,7 +8,6 @@ import styles from './Locations.module.scss'
 import BlockText from 'Common/BlockText'
 
 const Locations = ({ locations, title, description }) => {
-  console.log('Locations -> locations', locations)
   return (
     <Container gutter size="wide" center spacious className={styles.Locations}>
       <Type size="displayLarge" as="h3" className={styles.Title}>

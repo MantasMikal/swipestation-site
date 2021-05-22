@@ -17,6 +17,7 @@ const ButtonStandard = ({
   loading,
   size,
   tight,
+  secondary,
   ...other
 }) => (
   <ButtonBase
@@ -26,6 +27,7 @@ const ButtonStandard = ({
       loading && styles.loading,
       size && styles[size],
       tight && styles.tight,
+      secondary && styles.secondary,
       className
     )}
     disabled={disabled}

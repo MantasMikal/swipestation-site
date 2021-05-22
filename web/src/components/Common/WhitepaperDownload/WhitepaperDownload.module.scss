@@ -1,0 +1,66 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.WhitepaperDownload {
+  background-color: $color-primary-yellow;
+  color: $color-primary-white;
+  padding: spacing(8) 0;
+
+  h3 {
+    margin-bottom: spacing(1);
+  }
+
+  @include mq($breakpoint-tabletLandscape) {
+    padding: spacing(10) 0;
+    h3 {
+      margin-bottom: spacing(2);
+    }
+  }
+}
+
+.Download {
+  display: flex;
+  flex-direction: column;
+
+  @include mq($breakpoint-tabletLandscape) {
+    flex-direction: row;
+  }
+}
+
+.Title {
+  margin-right: spacing(2);
+  margin-bottom: spacing(2);
+  flex: 1 1 50%;
+}
+
+.WhitepaperDownload form {
+  display: flex;
+  flex: 1 1 50%;
+
+  button {
+    color: $color-primary-white;
+    font-family: $font-heading;
+    font-size: 1.7em;
+    max-height: 1.8em;
+    line-height: 1;
+  }
+
+  input {
+    height: 3em;
+    margin-right: spacing(1);
+    color: $color-primary-black;
+  }
+
+  @include mq($breakpoint-tabletLandscape) {
+    margin-top: spacing(1);
+
+    button {
+      font-size: 2em;
+      max-height: 1.7em;
+    }
+
+    input {
+      height: 3.4em;
+    }
+  }
+}

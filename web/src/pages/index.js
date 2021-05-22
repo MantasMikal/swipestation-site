@@ -12,6 +12,7 @@ import TillComparison from 'Section/TillComparison'
 import Contact from 'Section/Contact'
 import FeaturedCaseStudy from 'Section/FeaturedCaseStudy'
 import GoCashless from 'Section/GoCashless'
+import WhitepaperDownload from 'Common/WhitepaperDownload'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -197,6 +198,7 @@ const IndexPage = (props) => {
           title="Latest news"
         />
       )}
+      <WhitepaperDownload />
       {contactSection && <Contact {...contactSection} />}
     </Layout>
   )

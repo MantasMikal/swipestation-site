@@ -89,7 +89,7 @@ const Navigation = ({
         </SmartLink>
       </div>
       <div className={styles.Links}>
-        <LinkWrapper to="/#contact" className={styles.NavLink}>
+        <LinkWrapper to="#contact" className={styles.NavLink}>
           Contact
         </LinkWrapper>
         <LinkWrapper className={styles.NavLink} to="/about/">

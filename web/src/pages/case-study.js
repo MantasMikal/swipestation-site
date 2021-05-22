@@ -28,8 +28,6 @@ export const query = graphql`
 
 const CaseStudy = (props) => {
   const { data, errors } = props
-  console.log('🚀 ~ file: case-study.js ~ line 35 ~ CaseStudy ~ data', data)
-
   if (errors) {
     return (
       <Layout>
