@@ -113,3 +113,5 @@ dist
 .vscode-test
 
 package_lock.json
+# Local Netlify folder
+.netlify

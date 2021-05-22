@@ -49,6 +49,7 @@ const WhitepaperDownload = () => {
               placeholder="Your email"
               name="email"
               type="email"
+              required
             />
             <ButtonStandard type="submit" secondary>
               DOWNLOAD

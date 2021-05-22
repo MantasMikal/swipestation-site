@@ -13,7 +13,7 @@ exports.handler = async function (event) {
         {
           filename: 'whitepaper.pdf',
           contentType: 'application/pdf',
-          path: path.join(__dirname, '../emails/attachments/whitepaper.pdf')
+          path: path.join(__dirname, '../email/attachments/whitepaper.pdf')
         }
       ]
     },
