@@ -6,58 +6,63 @@ export default {
   type: "document",
   icon: MdMenu,
   options: {
-    hotspot: true,
+    hotspot: true
   },
   fields: [
     {
       name: "title",
       title: "Title",
-      type: "string",
+      type: "string"
     },
     {
       name: "subtitle",
       title: "Subtitle",
-      type: "string",
+      type: "string"
     },
     {
       name: "minutesSaved",
       title: "Minutes Saved Queuing",
-      type: "number",
+      type: "number"
     },
     {
       name: "features",
       title: "Features",
-      type: "features",
+      type: "features"
     },
     {
       name: "tillComparison",
       title: "Till Comparison",
-      type: "tillComparison",
+      type: "tillComparison"
     },
     {
       name: "goCashless",
       title: "Go Cashless",
-      type: "goCashless",
+      type: "goCashless"
     },
     {
       title: "Featured Case Study",
       name: "featuredCaseStudy",
-      type: "featuredCaseStudy",
+      type: "featuredCaseStudy"
+    },
+    {
+      title: "Whitepaper",
+      name: "whitepaperSection",
+      type: "whitepaperSection"
     },
     {
       name: "contactSection",
       title: "Contact",
-      type: "contact",
-    },
+      type: "contact"
+    }
   ],
   preview: {
     select: {
-      title: "title",
+      title: "title"
     },
     prepare({ title = "Home Page" }) {
       return {
-        title: title,
+        title: title
       };
-    },
-  },
+    }
+  }
 };

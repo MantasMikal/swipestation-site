@@ -5,13 +5,6 @@ exports.handler = async function (event) {
   const { email, emailBody, emailSubject, attachment, title } = JSON.parse(
     event.body
   )
-  console.log(
-    '🚀 ~ file: whitepaper.js ~ line 7 ~ email, emailBody, emailSubject, attachment',
-    email,
-    emailBody,
-    emailSubject,
-    attachment
-  )
   const attachmentUrl = attachment.asset.url
   const mail = new Email({
     message: {

@@ -30,7 +30,7 @@ const Navigation = ({
 
   // Hide or show the menu.
   const handleScroll = debounce(() => {
-    const threshold = 400
+    const threshold = 200
     const { prevScrollPos } = navState
 
     const currentScrollPos =
@@ -38,7 +38,7 @@ const Navigation = ({
     const visible = prevScrollPos > currentScrollPos
 
     // Fix for ios when scrolled offscreen
-    if (currentScrollPos < 50) {
+    if (currentScrollPos < 30) {
       setNavState({
         prevScrollPos: currentScrollPos,
         visible: true,
@@ -53,7 +53,7 @@ const Navigation = ({
       visible,
       noBackground: currentScrollPos < threshold
     })
-  }, 20)
+  }, 40)
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)

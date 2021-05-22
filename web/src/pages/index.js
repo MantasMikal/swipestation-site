@@ -63,6 +63,11 @@ export const query = graphql`
           }
         }
       }
+      whitepaperSection {
+        title
+        _rawDescription
+        buttonText
+      }
       contactSection {
         title
         _rawDescription
@@ -166,6 +171,7 @@ const IndexPage = (props) => {
     contactSection,
     featuredCaseStudy,
     goCashless,
+    whitepaperSection,
     video
   } = home
 
@@ -211,7 +217,7 @@ const IndexPage = (props) => {
           title="Latest news"
         />
       )}
-      <WhitepaperDownload {...email} />
+      <WhitepaperDownload email={email} {...whitepaperSection} />
       {contactSection && <Contact {...contactSection} />}
     </Layout>
   )
