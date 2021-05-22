@@ -32,7 +32,7 @@ exports.handler = async function (event) {
         to: email
       },
       locals: {
-        siteUrl: 'https://swipestation-staging.app'
+        siteUrl: 'https://swipestation-staging.netlify.app'
       }
     })
     console.log(res)
