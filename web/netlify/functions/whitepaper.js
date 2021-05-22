@@ -3,8 +3,7 @@ const Email = require('email-templates')
 var path = require('path')
 
 exports.handler = async function (event) {
-  console.log(event.queryStringParameters)
-  const { email } = event.queryStringParameters
+  const { email } = JSON.parse(event.body)
   const mail = new Email({
     message: {
       from: 'Swipestation example@example.com',
@@ -13,7 +12,7 @@ exports.handler = async function (event) {
         {
           filename: 'whitepaper.pdf',
           contentType: 'application/pdf',
-          path: path.join(__dirname, '../email/attachments/whitepaper.pdf')
+          path: path.join(__dirname, '../../emails/attachments/whitepaper.pdf')
         }
       ]
     },
@@ -26,24 +25,22 @@ exports.handler = async function (event) {
     send: true
   })
 
-  mail
-    .send({
+  try {
+    await mail.send({
       template: 'whitepaper',
       message: {
         to: email
       }
     })
-    .then(() => {
-      return {
-        statusCode: 500,
-        body: `Server error`
-      }
-    })
-    .catch((error) => {
-      console.log(error)
-      return {
-        statusCode: 200,
-        body: `OK`
-      }
-    })
+    return {
+      statusCode: 200,
+      body: `OK`
+    }
+  } catch (error) {
+    console.log(error)
+    return {
+      statusCode: 500,
+      body: `Server error`
+    }
+  }
 }
