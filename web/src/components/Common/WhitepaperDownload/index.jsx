@@ -66,7 +66,7 @@ const WhitepaperDownload = ({ email, title, _rawDescription, buttonText }) => {
                 type="email"
                 required
               />
-              <ButtonStandard type="submit" secondary loading={isLoading}>
+              <ButtonStandard type="submit" loading={isLoading}>
                 {buttonText}
               </ButtonStandard>
             </form>

@@ -5,7 +5,7 @@ import Element from 'Primitive/Element'
 
 import styles from './Container.module.scss'
 
-export const sizes = ['small', 'medium', 'large', 'wide', 'full']
+export const sizes = ['small', 'medium', 'large', 'wide', 'hero', 'full']
 
 /**
  * A component used to provide a maximum width for child components.

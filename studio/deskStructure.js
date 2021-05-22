@@ -127,13 +127,13 @@ export default () =>
         )
         .icon(FaTrophy),
       S.listItem()
-        .title("Email")
+        .title("Emails")
         .child(
           S.list()
             .title("Emails")
             .items([
               S.listItem()
-                .title("Whitepaper download")
+                .title("Whitepaper")
                 .child(
                   S.editor()
                     .id("whitepaperEmail")

@@ -28,6 +28,11 @@
     padding-left: spacing(6);
     padding-right: spacing(6);
   }
+
+  @include mq($breakpoint-desktopLarge) {
+    padding-left: spacing(8);
+    padding-right: spacing(8);
+  }
 }
 
 // SIZES
@@ -65,11 +70,19 @@
   width: 100%;
 }
 
-.wide {
-  max-width: spacing(200);
+.hero {
+  max-width: spacing(180);
 
   @include mq($breakpoint-full + 100) {
     max-width: 80vw;
+  }
+}
+
+.wide {
+  max-width: spacing(180);
+
+  @include mq($breakpoint-full + 100) {
+    max-width: spacing(220);
   }
 }
 

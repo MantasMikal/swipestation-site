@@ -10,17 +10,11 @@ import ButtonStandard from 'Primitive/ButtonStandard'
 import Type from 'Primitive/Type'
 import SmartLink from 'Primitive/SmartLink'
 import Icon from 'Primitive/Icon'
-import Image from 'Primitive/Image'
+import { StaticImage } from 'gatsby-plugin-image'
 
 import styles from './Contact.module.scss'
 
-const Contact = ({
-  contactInfo,
-  storeLinks,
-  ctaLabel,
-  calendlyUrl,
-  salesDeck
-}) => {
+const Contact = ({ contactInfo, ctaLabel, calendlyUrl, salesDeck }) => {
   return (
     <div className={styles.Contact}>
       {/* MOBILE ONLY */}
@@ -154,21 +148,35 @@ const Contact = ({
           <div className={styles.StoreLinks}>
             <SmartLink
               className={styles.StoreLink}
-              href={storeLinks.apple.link}
+              href={'https://apps.apple.com/gb/app/swipestation/id1012471579'}
               target="__blank"
             >
-              <Image image={storeLinks.apple.image} alt="App Store" />
+              <StaticImage
+                placeholder="blurred"
+                src={'../../../assets/images/app-store.png'}
+                alt="App Store"
+              />
             </SmartLink>
             <SmartLink
               className={styles.StoreLink}
-              href={storeLinks.google.link}
+              href={
+                'https://play.google.com/store/apps/details?id=com.adbibio.push&hl=en'
+              }
               target="__blank"
             >
-              <Image image={storeLinks.google.image} alt="Google Play Store" />
+              <StaticImage
+                placeholder="blurred"
+                src={'../../../assets/images/google-store.png'}
+                alt="Google Play Store"
+              />
             </SmartLink>
           </div>
           <div className={styles.Barcode}>
-            <Image image={storeLinks.barcode.image} alt="QR Code" />
+            <StaticImage
+              placeholder="blurred"
+              src={'../../../assets/images/barcode.png'}
+              alt="QR Code"
+            />
           </div>
         </div>
       </div>
@@ -207,7 +215,7 @@ const Contact = ({
         <FieldTemplate label="Message" required controlName="message">
           <TextControl
             name="message"
-            placeholder="Say hi!"
+            placeholder="Your message"
             multiLine
             rows={10}
             required

@@ -2,12 +2,16 @@
 @import '_backline-mixins';
 
 .WhitepaperDownload {
-  background-color: $color-primary-yellow;
+  background-color: $color-primary-grey-dark;
   color: $color-primary-white;
   padding: spacing(8) 0;
 
+  border-bottom: spacing(1) solid $color-primary-yellow;
+
   h3 {
+    display: inline-block;
     margin-bottom: spacing(1);
+    // border-bottom: spacing(1) solid $color-primary-yellow;
   }
 
   @include mq($breakpoint-tabletLandscape) {
@@ -28,7 +32,7 @@
 }
 
 .Title {
-  margin-right: spacing(2);
+  margin-right: spacing(4);
   margin-bottom: spacing(2);
   flex: 1 1 50%;
 }
@@ -49,6 +53,7 @@
     height: 3em;
     margin-right: spacing(1);
     color: $color-primary-black;
+    background-color: $color-primary-white;
   }
 
   @include mq($breakpoint-tabletLandscape) {

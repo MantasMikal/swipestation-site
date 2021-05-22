@@ -22,59 +22,13 @@ const Navigation = ({
   logo,
   id
 }) => {
-  const [navState, setNavState] = useState({
-    prevScrollPos: typeof window !== 'undefined' ? window.pageYOffset : 0,
-    visible: true,
-    noBackground: true
-  })
-
-  // Hide or show the menu.
-  const handleScroll = debounce(() => {
-    const threshold = 200
-    const { prevScrollPos } = navState
-
-    const currentScrollPos =
-      typeof window !== 'undefined' ? window.pageYOffset : 0
-    const visible = prevScrollPos > currentScrollPos
-
-    // Fix for ios when scrolled offscreen
-    if (currentScrollPos < 30) {
-      setNavState({
-        prevScrollPos: currentScrollPos,
-        visible: true,
-        noBackground: true
-      })
-
-      return
-    }
-
-    setNavState({
-      prevScrollPos: currentScrollPos,
-      visible,
-      noBackground: currentScrollPos < threshold
-    })
-  }, 40)
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [handleScroll, navState])
-
-  const { visible, noBackground } = navState
   return (
     <Container
       as="nav"
       gutter
       size="wide"
       center
-      className={classnames(
-        styles.Root,
-        showNav && styles.showNav,
-        !visible && styles.hidden,
-        noBackground && hideBrandingBg && styles.noBackground
-      )}
+      className={classnames(styles.Root)}
       id={id}
     >
       <h1 hidden>{siteTitle}</h1>
@@ -89,7 +43,7 @@ const Navigation = ({
         </SmartLink>
       </div>
       <div className={styles.Links}>
-        <LinkWrapper to="#contact" className={styles.NavLink}>
+        <LinkWrapper to="/#contact" className={styles.NavLink}>
           Contact
         </LinkWrapper>
         <LinkWrapper className={styles.NavLink} to="/about/">

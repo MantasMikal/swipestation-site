@@ -34,7 +34,7 @@ const Hero = ({ title, subtitle, minutesSaved }) => {
           />
         </div>
       </ResponsiveMedia>
-      <Container size="wide" gutter center className={styles.Content}>
+      <Container size="hero" gutter center className={styles.Content}>
         <Type size="displayLarge" as="h2" className={styles.Title}>
           {title}
         </Type>

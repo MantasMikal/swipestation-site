@@ -21,7 +21,7 @@ const BlogPost = (props) => {
   return (
     <article ref={ref} className={styles.Root}>
       <ResponsiveMedia className={styles.MainImage} ratio={9 / 20}>
-        <Image image={mainImage} alt={title} />
+        <Image image={mainImage} alt={title} layout="fullWidth" />
       </ResponsiveMedia>
       <div
         className={styles.LoadingBar}

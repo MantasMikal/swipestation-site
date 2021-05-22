@@ -31,9 +31,12 @@ export default {
     }
   ],
   preview: {
-    prepare({ title = "Whitepaper" }) {
+    select: {
+      name: "title"
+    },
+    prepare({ name = "Unnamed" }) {
       return {
-        title: title
+        title: name
       };
     }
   }

@@ -70,4 +70,4 @@ Image.propTypes = {
   alt: string
 }
 
-export default Image
+export default React.memo(Image)

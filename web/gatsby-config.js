@@ -101,14 +101,6 @@ module.exports = {
         enableImprovedAccessibility: true // Optional. Sets aria-label attribute on pop-up icon for screen readers. Defaults to true.
       }
     },
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        typekit: {
-          id: 'pze1zot'
-        }
-      }
-    },
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt'
   ]
