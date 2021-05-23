@@ -74,6 +74,10 @@
   max-width: spacing(180);
 
   @include mq($breakpoint-full + 100) {
+    max-width: spacing(220);
+  }
+
+  @include mq(150em) {
     max-width: 80vw;
   }
 }
