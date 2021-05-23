@@ -28,7 +28,7 @@ const Navigation = ({
       gutter
       size="wide"
       center
-      className={classnames(styles.Root)}
+      className={classnames(styles.Root, showNav && styles.showNav)}
       id={id}
     >
       <h1 hidden>{siteTitle}</h1>
