@@ -22,7 +22,7 @@ const Hero = ({ title, subtitle, minutesSaved }) => {
         <div className={styles.EmbedContainer}>
           <iframe
             className={styles.Video}
-            src="https://player.vimeo.com/video/455515299?background=1"
+            src="https://player.vimeo.com/video/455515299?background=1&dnt=1"
             width="100%"
             height="100%"
             frameBorder="0"

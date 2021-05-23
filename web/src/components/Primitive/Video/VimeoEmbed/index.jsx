@@ -23,7 +23,8 @@ const VimeoEmbed = ({
     ...(color && { color: color.replace('#', '') }),
     ...(hideByline && { byline: 0 }),
     ...(hideTitle && { title: 0 }),
-    ...additionalParams
+    ...additionalParams,
+    dnt: 1
   }
   const formattedStart = start ? `#t=${start}s` : ``
 
