@@ -217,7 +217,7 @@ const IndexPage = (props) => {
           title="Latest news"
         />
       )}
-      <WhitepaperDownload email={email} {...whitepaperSection} />
+      {/* <WhitepaperDownload email={email} {...whitepaperSection} /> */}
       {contactSection && <Contact {...contactSection} />}
     </Layout>
   )

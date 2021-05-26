@@ -1,6 +1,8 @@
 const mg = require('nodemailer-mailgun-transport')
 const Email = require('email-templates')
 
+import config from '../../../config'
+
 exports.handler = async function (event) {
   const { email, emailBody, subject, attachment, title } = JSON.parse(
     event.body
@@ -28,13 +30,12 @@ exports.handler = async function (event) {
         subject: subject
       },
       locals: {
-        siteUrl: 'https://swipestation-staging.netlify.app/',
+        siteUrl: config.site.siteUrl,
         emailBody: emailBody,
         attachmentUrl: attachmentUrl,
         title: title
       }
     })
-    console.log(res)
     return {
       statusCode: 200,
       body: `OK`
