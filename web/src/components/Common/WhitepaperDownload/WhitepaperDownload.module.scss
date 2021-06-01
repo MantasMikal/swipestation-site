@@ -5,45 +5,11 @@
   background-color: $color-primary-grey;
   color: $color-primary-white;
   padding: spacing(8) 0;
-
   border-bottom: spacing(1) solid $color-primary-yellow;
 
   h3 {
     display: inline-block;
     margin-bottom: spacing(1);
-    // border-bottom: spacing(1) solid $color-primary-yellow;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-
-    & > input {
-      margin-bottom: spacing(1);
-    }
-
-    @include mq($breakpoint-tablet) {
-      flex-direction: row;
-      & > input {
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  @include mq($breakpoint-tabletLandscape) {
-    padding: spacing(10) 0;
-    h3 {
-      margin-bottom: spacing(2);
-    }
-  }
-}
-
-.Download {
-  display: flex;
-  flex-direction: column;
-
-  @include mq($breakpoint-tabletLandscape) {
-    flex-direction: row;
   }
 }
 
@@ -54,52 +20,62 @@
 }
 
 .WhitepaperDownload form {
-  display: flex;
-  flex: 1 1 50%;
+  max-width: 60em;
+  margin-top: spacing(3);
 
   button {
     color: $color-primary-white;
     font-family: $font-heading;
     font-size: 1.5em;
     line-height: 1;
+    min-width: 250px;
+    height: 2.5em;
+    margin: auto 0;
   }
 
+  .Input {
+    color: $color-primary-white;
+    margin-bottom: spacing(1);
+  }
+}
+
+.Field {
+  display: flex;
+  flex-direction: column;
+  
   input {
-    height: 3.6em;
-    margin-right: spacing(1);
+    margin-right: spacing(2);
     color: $color-primary-black;
-    background-color: $color-primary-white;
+    height: 3.8em;
+    margin-bottom: spacing(1);
   }
 
   @include mq($breakpoint-tablet) {
-    input {
-      height: 4.2em;
-    }
-  }
-  @include mq($breakpoint-tabletLandscape) {
-    margin-top: spacing(2);
-
-    button {
-      margin: auto;
-    }
+    margin-bottom: 0;
+    flex-direction: row;
+    align-items: center;
 
     input {
-      height: 4.2em;
-      margin: auto spacing(1) auto;
+      margin-bottom: 0;
     }
   }
 }
 
 .Complete {
-  flex: 1 1 50%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
+  animation: slideIn 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  color: $color-status-success;
+  font-size: 24px;
+
+  span {
+    display: block;
+    margin-right: spacing(1);
+  }
 
   svg {
-    fill: $color-primary-white;
-    animation: slideIn 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    display: block;
+    fill: $color-status-success;
   }
 }
 

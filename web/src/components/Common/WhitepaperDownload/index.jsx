@@ -8,6 +8,7 @@ import Container from 'Primitive/Container'
 import Icon from 'Primitive/Icon'
 import styles from './WhitepaperDownload.module.scss'
 import BlockText from 'Common/BlockText'
+import Field from 'Primitive/Field'
 
 /**
  * Component for showing whitepaper download
@@ -52,23 +53,30 @@ const WhitepaperDownload = ({ email, title, _rawDescription, buttonText }) => {
           </div>
           {isSent ? (
             <div className={styles.Complete}>
-              <Icon type="emailSent" width={120} height={120} />
-              <Type as="p" size="baseLarge">
-                Check your email!
-              </Type>
+              <Icon type="emailSent" width={42} height={42} />
+              Check your email!
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
-              <TextControl
-                onChange={(e) => setEmailInput(e.target.value)}
-                placeholder="Your email"
-                name="email"
-                type="email"
-                required
-              />
-              <ButtonStandard type="submit" loading={isLoading}>
-                {buttonText}
-              </ButtonStandard>
+              <Field className={styles.Input} status="success">
+                <Field.Question htmlFor="email">
+                  Email address <Field.Required />
+                </Field.Question>
+                <Field.Answer>
+                  <div className={styles.Field}>
+                    <TextControl
+                      placeholder="Your email"
+                      name="email"
+                      type="email"
+                      onChange={(e) => setEmailInput(e.target.value)}
+                    />
+                    <ButtonStandard type="submit" loading={isLoading}>
+                      {buttonText}
+                    </ButtonStandard>
+                  </div>
+                  <Field.Feedback>{isSent ? 'Email sent!' : ''}</Field.Feedback>
+                </Field.Answer>
+              </Field>
             </form>
           )}
         </div>
