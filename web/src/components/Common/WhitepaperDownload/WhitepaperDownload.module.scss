@@ -14,6 +14,22 @@
     // border-bottom: spacing(1) solid $color-primary-yellow;
   }
 
+  form {
+    display: flex;
+    flex-direction: column;
+
+    & > input {
+      margin-bottom: spacing(1);
+    }
+
+    @include mq($breakpoint-tablet) {
+      flex-direction: row;
+      & > input {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   @include mq($breakpoint-tabletLandscape) {
     padding: spacing(10) 0;
     h3 {
@@ -44,29 +60,31 @@
   button {
     color: $color-primary-white;
     font-family: $font-heading;
-    font-size: 1.7em;
-    max-height: 1.8em;
+    font-size: 1.5em;
     line-height: 1;
   }
 
   input {
-    height: 3em;
+    height: 3.6em;
     margin-right: spacing(1);
     color: $color-primary-black;
     background-color: $color-primary-white;
   }
 
+  @include mq($breakpoint-tablet) {
+    input {
+      height: 4.2em;
+    }
+  }
   @include mq($breakpoint-tabletLandscape) {
     margin-top: spacing(2);
 
     button {
-      font-size: 2em;
-      max-height: 1.7em;
       margin: auto;
     }
 
     input {
-      height: 3.4em;
+      height: 4.2em;
       margin: auto spacing(1) auto;
     }
   }
