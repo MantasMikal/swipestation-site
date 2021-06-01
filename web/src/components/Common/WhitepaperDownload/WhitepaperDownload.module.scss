@@ -22,6 +22,7 @@
 .WhitepaperDownload form {
   max-width: 60em;
   margin-top: spacing(3);
+  overflow: hidden;
 
   button {
     color: $color-primary-white;
@@ -81,7 +82,7 @@
 
 @keyframes slideIn {
   0% {
-    transform: translateX(-150%);
+    transform: translateX(-120%);
     opacity: 0;
   }
 

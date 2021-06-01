@@ -53,7 +53,7 @@ const WhitepaperDownload = ({ email, title, _rawDescription, buttonText }) => {
           </div>
           {isSent ? (
             <div className={styles.Complete}>
-              <Icon type="emailSent" width={42} height={42} />
+              <Icon type="check" width={42} height={42} />
               Check your email!
             </div>
           ) : (
