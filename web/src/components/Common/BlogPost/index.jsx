@@ -9,9 +9,9 @@ import Image from 'Primitive/Image'
 import Type from 'Primitive/Type'
 import Badge from 'Primitive/Badge'
 import SocialBlock from '../SocialShare/SocialBlock'
+import ResponsiveMedia from 'Primitive/ResponsiveMedia'
 
 import styles from './BlogPost.module.scss'
-import ResponsiveMedia from 'Primitive/ResponsiveMedia'
 
 const BlogPost = (props) => {
   const { _rawBody, title, mainImage, publishedAt, category, url } = props
