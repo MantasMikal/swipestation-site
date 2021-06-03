@@ -1,7 +1,6 @@
 const mg = require('nodemailer-mailgun-transport')
 const Email = require('email-templates')
-
-import config from '../../../config'
+const config = require('../../../config')
 
 exports.handler = async function (event) {
   const { email, emailBody, subject, attachment, title } = JSON.parse(
