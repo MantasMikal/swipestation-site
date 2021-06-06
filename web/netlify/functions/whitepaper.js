@@ -9,7 +9,7 @@ exports.handler = async function (event) {
   const attachmentUrl = attachment.asset.url
   const mail = new Email({
     message: {
-      from: 'Swipestation example@example.com',
+      from: 'Swipestation swipestation@swipestation.co.uk',
       subject: subject
     },
     transport: mg({
