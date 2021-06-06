@@ -209,7 +209,7 @@ const IndexPage = (props) => {
           description={tillComparison._rawDescription}
         />
       )}
-      {featuredCaseStudy && <FeaturedCaseStudy {...featuredCaseStudy} />}
+      {/* {featuredCaseStudy && <FeaturedCaseStudy {...featuredCaseStudy} />} */}
       {postNodes.length > 0 && (
         <BlogPostCarouselSection
           postNodes={postNodes}

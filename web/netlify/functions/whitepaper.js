@@ -22,7 +22,7 @@ exports.handler = async function (event) {
   })
 
   try {
-    const res = await mail.send({
+    await mail.send({
       template: 'whitepaper',
       message: {
         to: email,
