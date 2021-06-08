@@ -1,23 +1,30 @@
-const mg = require('nodemailer-mailgun-transport')
 const Email = require('email-templates')
+const nodemailer = require('nodemailer')
 const config = require('../../../config')
 
 exports.handler = async function (event) {
   const { email, emailBody, subject, attachment, title } = JSON.parse(
     event.body
   )
+
+  const options = {
+    pass: process.env.MAILGUN_TOKEN,
+    user: process.env.MAILGUN_DOMAIN,
+    port: 587
+  }
+
+  const transport = nodemailer.createTransport({
+    service: 'mailgun',
+    auth: options
+  })
+
   const attachmentUrl = attachment.asset.url
   const mail = new Email({
     message: {
-      from: 'Swipestation swipestation@swipestation.co.uk',
+      from: 'SwipeStation no-reply@email.swipestation.co.uk',
       subject: subject
     },
-    transport: mg({
-      auth: {
-        api_key: process.env.MAILGUN_TOKEN,
-        domain: process.env.MAILGUN_DOMAIN
-      }
-    }),
+    transport: transport,
     send: true
   })
 
