@@ -1,10 +1,6 @@
 @import 'settings';
 @import '_backline-mixins';
 
-// .Team {
-//   padding-top: 0;
-// }
-
 .Title {
   margin-bottom: spacing(1);
 }
@@ -29,9 +25,6 @@
   grid-template-columns: repeat(1, 1fr);
   gap: spacing(2);
   margin-bottom: spacing(8);
-}
-
-.TeamMember {
 }
 
 @include mq($breakpoint-mobile-large) {

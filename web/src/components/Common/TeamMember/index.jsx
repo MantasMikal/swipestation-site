@@ -12,7 +12,6 @@ export const Card = ({ name, position, image, social, onClick }) => (
     <div className={styles.ImageWrapper}>
       <Image className={styles.Image} ratio={1} image={image} alt={name} />
     </div>
-
     <div className={styles.Details}>
       <Type className={styles.Name} size="subtitle" bold>
         {name}
