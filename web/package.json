@@ -49,7 +49,6 @@
     "gatsby-source-filesystem": "^3.5.0",
     "gatsby-source-sanity": "^7.0.4",
     "gatsby-transformer-sharp": "^3.5.0",
-    "nodemailer-mailgun-transport": "^2.1.3",
     "pure-react-carousel": "^1.27.6",
     "react": "^17.0.2",
     "react-calendly": "^2.0.2",
