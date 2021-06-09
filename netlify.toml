@@ -10,3 +10,5 @@
 
 [[plugins]]
   package = "netlify-plugin-gatsby-cache"
+
+included_files = ["emails/*.pug"]
