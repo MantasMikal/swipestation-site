@@ -23,7 +23,7 @@ exports.handler = async function (event) {
 
 
   try {
-    let template = pug.renderFile('./whitepaper.pug', {
+    let template = pug.renderFile('whitepaper.pug', {
       siteUrl: config.site.siteUrl,
       emailBody: emailBody,
       attachmentUrl: attachmentUrl,
