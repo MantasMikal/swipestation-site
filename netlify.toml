@@ -13,4 +13,4 @@
 
 [[functions]]
   included_files = ["emails/*.pug"]
-  
+  directory = "functions"
