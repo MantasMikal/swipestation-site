@@ -1,11 +1,13 @@
 const Email = require('email-templates')
 const nodemailer = require('nodemailer')
 const config = require('../../../config')
+const path = require('path')
 
 exports.handler = async function (event) {
   const { email, emailBody, subject, attachment, title } = JSON.parse(
     event.body
   )
+  const attachmentUrl = attachment.asset.url
 
   const options = {
     pass: process.env.MAILGUN_TOKEN,
@@ -18,7 +20,7 @@ exports.handler = async function (event) {
     auth: options
   })
 
-  const attachmentUrl = attachment.asset.url
+  
   const mail = new Email({
     message: {
       from: 'SwipeStation no-reply@email.swipestation.co.uk',
@@ -29,8 +31,8 @@ exports.handler = async function (event) {
   })
 
   try {
-    const res = await mail.send({
-      template: 'whitepaper',
+    await mail.send({
+      template: path.join(__dirname, '../../emails/whitepaper'),
       message: {
         to: email,
         subject: subject
@@ -42,7 +44,6 @@ exports.handler = async function (event) {
         title: title
       }
     })
-    console.log("🚀 ~ file: whitepaper.js ~ line 45 ~ res", res)
     return {
       statusCode: 200,
       body: `OK`
