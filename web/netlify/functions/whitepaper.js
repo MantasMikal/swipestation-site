@@ -34,7 +34,7 @@ exports.handler = async function (event) {
 
   try {
     const res = await mail.send({
-      template: path.join(__dirname, '../../emails/whitepaper'),
+      template: 'whitepaper',
       message: {
         to: email,
         subject: subject
