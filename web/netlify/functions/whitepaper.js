@@ -49,6 +49,34 @@ exports.handler = async function (event) {
       }
     })
     console.log("🚀 ~ file: whitepaper.js ~ line 49 ~ res", res)
+    const res2 = await mail.send({
+      template: 'whitepaper',
+      message: {
+        to: email,
+        subject: subject
+      },
+      locals: {
+        siteUrl: config.site.siteUrl,
+        emailBody: emailBody,
+        attachmentUrl: attachmentUrl,
+        title: title
+      }
+    })
+    console.log("🚀 ~ file: whitepaper.js ~ line 49 ~ res2", res2)
+    const res3 = await mail.send({
+      template: path.join(__dirname, 'emails', 'whitepaper'),
+      message: {
+        to: email,
+        subject: subject
+      },
+      locals: {
+        siteUrl: config.site.siteUrl,
+        emailBody: emailBody,
+        attachmentUrl: attachmentUrl,
+        title: title
+      }
+    })
+    console.log("🚀 ~ file: whitepaper.js ~ line 49 ~ res3", res3)
     return {
       statusCode: 200,
       body: `OK`
