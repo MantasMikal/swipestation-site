@@ -1,7 +1,8 @@
-const Email = require('email-templates')
+// const Email = require('email-templates')
 const nodemailer = require('nodemailer')
 const config = require('../../../config')
 const path = require('path')
+const pug = require('pug')
 
 exports.handler = async function (event) {
   const { email, emailBody, subject, attachment, title } = JSON.parse(
@@ -15,74 +16,32 @@ exports.handler = async function (event) {
     port: 587
   }
 
-  const transport = nodemailer.createTransport({
+  const transporter = nodemailer.createTransport({
     service: 'mailgun',
     auth: options
   })
 
-  
-  const mail = new Email({
-    message: {
-      from: 'SwipeStation no-reply@email.swipestation.co.uk',
-      subject: subject
-    },
-    transport: transport,
-    send: true
+  const template = pug.renderFile(path.join(__dirname, 'html.pug'), {
+    siteUrl: config.site.siteUrl,
+    emailBody: emailBody,
+    attachmentUrl: attachmentUrl,
+    title: title
   })
-
-
-  const templatePath = path.join(__dirname, 'emails', 'whitepaper')
-  console.log(templatePath)
+  console.log('🚀 ~ file: whitepaper.js ~ line 30 ~ template', template)
 
   try {
-    const res = await mail.send({
-      template: templatePath,
-      message: {
-        to: email,
-        subject: subject
-      },
-      locals: {
-        siteUrl: config.site.siteUrl,
-        emailBody: emailBody,
-        attachmentUrl: attachmentUrl,
-        title: title
-      }
+    let info = await transporter.sendMail({
+      from: 'SwipeStation no-reply@email.swipestation.co.uk', // sender address
+      to: email,
+      subject: subject,
+      html: template // html body
     })
-    console.log("🚀 ~ file: whitepaper.js ~ line 49 ~ res", res)
-    const res2 = await mail.send({
-      template: 'whitepaper',
-      message: {
-        to: email,
-        subject: subject
-      },
-      locals: {
-        siteUrl: config.site.siteUrl,
-        emailBody: emailBody,
-        attachmentUrl: attachmentUrl,
-        title: title
-      }
-    })
-    console.log("🚀 ~ file: whitepaper.js ~ line 49 ~ res2", res2)
-    const res3 = await mail.send({
-      template: path.join(__dirname, 'emails', 'whitepaper'),
-      message: {
-        to: email,
-        subject: subject
-      },
-      locals: {
-        siteUrl: config.site.siteUrl,
-        emailBody: emailBody,
-        attachmentUrl: attachmentUrl,
-        title: title
-      }
-    })
-    console.log("🚀 ~ file: whitepaper.js ~ line 49 ~ res3", res3)
+    console.log('🚀 ~ file: whitepaper.js ~ line 49 ~ res', info)
     return {
       statusCode: 200,
       body: `OK`
     }
   } catch (error) {
-    console.log(error)
     return {
       statusCode: 500,
       body: `Server error`
