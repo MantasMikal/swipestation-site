@@ -21,17 +21,6 @@ exports.handler = async function (event) {
     auth: options
   })
 
-  try {
-    let template = pug.renderFile(path.join(__dirname, './whitepaper.pug'), {
-      siteUrl: config.site.siteUrl,
-      emailBody: emailBody,
-      attachmentUrl: attachmentUrl,
-      title: title
-    })
-    console.log('🚀 ~ file: whitepaper.js ~ line 30 ~ template', template)
-  } catch (err) {
-    console.log(err)
-  }
 
   try {
     let template = pug.renderFile('whitepaper.pug', {
@@ -44,20 +33,6 @@ exports.handler = async function (event) {
   } catch (err) {
     console.log(err)
   }
-
-
-  try {
-    let template = pug.renderFile('./whitepaper.pug', {
-      siteUrl: config.site.siteUrl,
-      emailBody: emailBody,
-      attachmentUrl: attachmentUrl,
-      title: title
-    })
-    console.log('🚀 ~ file: whitepaper.js ~ line 30 ~ template', template)
-  } catch (err) {
-    console.log(err)
-  }
-  
 
   try {
     let info = await transporter.sendMail({
