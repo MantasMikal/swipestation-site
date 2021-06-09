@@ -30,8 +30,10 @@ exports.handler = async function (event) {
     send: true
   })
 
+  console.log("🚀 ~ file: whitepaper.js ~ line 32 ~ mail", mail)
+
   try {
-    await mail.send({
+    const res = await mail.send({
       template: path.join(__dirname, '../../emails/whitepaper'),
       message: {
         to: email,
@@ -44,6 +46,7 @@ exports.handler = async function (event) {
         title: title
       }
     })
+    console.log("🚀 ~ file: whitepaper.js ~ line 49 ~ res", res)
     return {
       statusCode: 200,
       body: `OK`
