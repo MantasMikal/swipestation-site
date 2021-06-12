@@ -1,10 +1,8 @@
 // const Email = require('email-templates')
 const nodemailer = require('nodemailer')
 const config = require('../../../config')
-const path = require('path')
 const pug = require('pug')
-const templ = require('./whitepaper.pug')
-var fs = require("fs");
+var fs = require('fs')
 
 exports.handler = async function (event) {
   const { email, emailBody, subject, attachment, title } = JSON.parse(
@@ -24,12 +22,10 @@ exports.handler = async function (event) {
     auth: options
   })
 
-
   try {
-    var text = fs.readFileSync("./whitepaper.pug");
-    console.log("🚀 ~ file: whitepaper.js ~ line 14 ~ text", text)
-    console.log('templ: ', templ)
-    let template = pug.renderFile('./whitepaper.pug', {
+    var html = fs.readFileSync(require.resolve('./whitepaper.pug'))
+    console.log('🚀 ~ file: whitepaper.js ~ line 14 ~ text', html)
+    let template = pug.render(html, {
       siteUrl: config.site.siteUrl,
       emailBody: emailBody,
       attachmentUrl: attachmentUrl,
